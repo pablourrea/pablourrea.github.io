@@ -9,11 +9,35 @@ Array.prototype.map.call(document.getElementsByClassName('scroll-to-next-page'),
   };
 });
 
-// Send email
-Array.prototype.map.call(document.getElementsByClassName('send-contact-email'), (element) => {
+// Translate page, provide Spanish by default.
+let currentLanguage = 'es';
+let translator = new EOTranslator(EOTranslatorDictionary, currentLanguage);
+Array.prototype.map.call(document.getElementsByClassName('translate'), (element) => {
+  element.setAttribute('eo-translator-html', true);
+  element.setAttribute('eo-translator', element.innerText);
+});
+translator.translateDOM();
+
+Array.prototype.map.call(document.getElementsByClassName('translate-component'), (element) => {
+  if (element.getAttribute('eo-translator-component') === currentLanguage) {
+    element.style.display = 'none';
+  }
+  else {
+    element.style.display = 'flex';
+  }
+
   element.onclick = function() {
-    const sendEmailLink = document.createElement('a');
-    sendEmailLink.setAttribute('href', 'mailto:paurca@gmail.com?subject=Desarrollo&amp;body=' + document.getElementById('contact-form--message').value);
-    sendEmailLink.click();
+    currentLanguage = element.getAttribute('eo-translator-component');
+    translator = new EOTranslator(EOTranslatorDictionary, currentLanguage);
+    translator.translateDOM();
+
+    Array.prototype.map.call(document.getElementsByClassName('translate-component'), (element) => {
+      if (element.getAttribute('eo-translator-component') === currentLanguage) {
+        element.style.display = 'none';
+      }
+      else {
+        element.style.display = 'flex';
+      }
+    });
   };
 });

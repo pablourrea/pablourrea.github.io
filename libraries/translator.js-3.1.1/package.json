@@ -1,0 +1,44 @@
+{
+  "name": "eo-translatorjs",
+  "version": "3.1.1",
+  "description": "A simple javascript library for translating web content.",
+  "keywords": [
+    "translate",
+    "javascript-library",
+    "text-translation",
+    "node-package"
+  ],
+  "scripts": {
+    "build": "npx gulp",
+    "test": "npx jest",
+    "clean": "rm -rf ./dist/",
+    "demos": "cp ./dist/translator.min.js ./demos/assets/js/",
+    "prod": "npm run clean && npm run build && npm run demos"
+  },
+  "main": "./dist/translator.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "types": "types/translator.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EOussama/translatorjs.git"
+  },
+  "author": "EOussama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EOussama/translatorjs/issues"
+  },
+  "homepage": "https://eoussama.github.io/translatorjs/",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-beautify": "^2.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1",
+    "jest": "^24.9.0",
+    "jsdom": "^16.0.0"
+  }
+}
