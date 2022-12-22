@@ -22,7 +22,7 @@ const EOTranslatorDictionary = {
     'Todos los derechos reservados' : 'Todos los derechos reservados',
 	},
 	'en': {
-		'Diseñador y Desarrollador Web Fullstack' : 'Designer and Web Developer',
+		'Diseñador y Desarrollador Web Fullstack' : 'Designer and Fullstack Web Developer',
     'EXPERIENCIA LABORAL' : 'WORK EXPERIENCE',
     'Experiencia Laboral' : 'Work Experience',
     'Julio 2021 - Actualidad' : 'July 2021 - Current',
