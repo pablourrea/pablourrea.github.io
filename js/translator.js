@@ -1,5 +1,0 @@
-/**
- * Provides EO Translator functions.
- */
-
-
