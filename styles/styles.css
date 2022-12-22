@@ -273,6 +273,10 @@ body {
   align-items: center;
 }
 
+.main-content__section__contact a {
+  margin-bottom: calc(var(--spacer) * 2);
+}
+
 .main-content__section__contact a:hover {
   text-decoration: none;
 }
