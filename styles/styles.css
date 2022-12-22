@@ -54,6 +54,7 @@ body {
 }
 
 .icon-menu-wrapper {
+  margin-bottom: calc(var(--spacer) / 2);
   display: flex;
   justify-content: center;
   align-items: center;
