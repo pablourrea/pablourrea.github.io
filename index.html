@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html lang="es">
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+  <title>A Basic HTML5 Template</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  -->
+
+  <!-- Contributed pre-load styles injection -->
+  <link rel="stylesheet" href="libraries/navigo-1.0.0/lib/navigo.min.js">
+  <link rel="stylesheet" href="libraries/scrollCue-2.0.0/scrollCue.css">
+  <link rel="stylesheet" href="libraries/docSlider-3.0.1/docSlider.css">
+  <link rel="stylesheet" href="libraries/animate.css-4.1.1/animate.min.css">
+  <link rel="stylesheet" href="libraries/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="libraries/feather-4.29.0/css/feathericon.min.css">
+
+  <!-- Custom pre-load styles injection -->
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <!-- Contributed pre-load scripts injection -->
+  <script src="libraries/particles.js-2.0.0/particles.min.js"></script>
+  <script src="libraries/feather-4.29.0/js/feather.min.js"></script>
+</head>
+
+<body>
+  <div class="main-content docSlider">
+    <section id="section-intro" class="main-content__section" data-cues="fadeIn" data-group="sections">
+      <div id="particles-js"></div>
+      <div class="main-content__section__logo scroll-to-next-page cursor-pointer">
+        PU
+      </div>
+      <div class="main-content__section__name scroll-to-next-page cursor-pointer">
+        Pablo Urrea
+      </div>
+      <div class="main-content__section__continue-scroll scroll-to-next-page">
+        <i class="icon cursor-pointer animate__animated animate__bounce animate__infinite infinite animate__delay-3s 3s" data-feather="chevrons-down"></i>
+      </div>
+      <div class="main-content__section__title scroll-to-next-page cursor-pointer">
+        Diseñador y Desarrollador Web Fullstack
+      </div>
+    </section>
+
+    <section id="section-skills" class="main-content__section" data-cues="fadeIn" data-group="sections">
+      <div class="main-content__section__skills-progress"></div>
+    </section>
+
+    <section id="section-experience" class="main-content__section" data-cues="fadeIn" data-group="sections">
+      <div class="main-content__section__title">
+        Experiencia Laboral
+      </div>
+      <div class="timeline">
+        <div class="timeline-container timeline-right">
+          <div class="timeline-container-content">
+            <div class="timeline-container-content-title">LaborFox</div>
+            <div class="timeline-container-content-subtitle">Julio 2021 - Actualidad</div>
+            <div class="timeline-container-content-paragraph">Diseñador y Desarrollador Fullstack en LaborFox</div>
+          </div>
+        </div>
+        <div class="timeline-container timeline-left">
+          <div class="timeline-container-content">
+            <div class="timeline-container-content-title">LaborFox</div>
+            <div class="timeline-container-content-subtitle">Abril 2021 - Junio 2021</div>
+            <div class="timeline-container-content-paragraph">Prácticas de Desarrollo de Aplicaciones Web en LaborFox</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-studies" class="main-content__section" data-cues="fadeIn" data-group="sections">
+      <div class="main-content__section__title">
+        Estudios
+      </div>
+      <div class="timeline">
+        <div class="timeline-container timeline-right">
+          <div class="timeline-container-content">
+            <div class="timeline-container-content-title">Desarrollo de Aplicaciones Web</div>
+            <div class="timeline-container-content-subtitle">2019 - 2021</div>
+            <div class="timeline-container-content-paragraph">IES Tetuán de las Victorias</div>
+          </div>
+        </div>
+        <div class="timeline-container timeline-left">
+          <div class="timeline-container-content">
+            <div class="timeline-container-content-title">Bachillerato Tecnológico Biligüe</div>
+            <div class="timeline-container-content-subtitle">2016 - 2019</div>
+            <div class="timeline-container-content-paragraph">IES San Juan Bautista</div>
+          </div>
+        </div>
+        <div class="timeline-container timeline-right">
+          <div class="timeline-container-content">
+            <div class="timeline-container-content-title">Enseñanza Secundaria Obligatoria</div>
+            <div class="timeline-container-content-subtitle">2012 - 2016</div>
+            <div class="timeline-container-content-paragraph">IES San Juan Bautista</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-contact-form" class="main-content__section" data-cues="fadeIn" data-group="sections">
+      <div class="main-content__section__title">
+        Contacto
+      </div>
+      <form class="contact-form">
+        <label for="message">Mensaje</label>
+        <textarea id="contact-form--message" name="message" rows="10" placeholder="Déjame un mensaje"></textarea>
+        <div class="button send-contact-email">Enviar</div>
+      </form>
+      <div class="main-content__section__footer">
+        <div class="footer-name">Pablo Urrea</div>
+        &nbsp;&nbsp;
+        <div class="footer-year"><script>document.write(new Date().getFullYear())</script></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contributed post-load scripts injection -->
+  <script src="libraries/scrollCue-2.0.0/scrollCue.min.js"></script>
+  <script src="libraries/docSlider-3.0.1/docSlider.min.js"></script>
+
+  <!-- Custom post-load scripts injection -->
+  <script src="js/icons.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/singlePage.js"></script>
+  <script src="js/eventListeners.js"></script>
+  <script src="js/skillsProgress.js"></script>
+</body>
+
+</html>
