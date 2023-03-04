@@ -1,0 +1,44 @@
+[
+  {
+    "id": "jin",
+    "group": "bts",
+    "start_time": 1669849200,
+    "end_time": 1717192800
+  },
+  {
+    "id": "yoongi",
+    "group": "bts",
+    "start_time": 1680300000,
+    "end_time": 1725141600
+  },
+  {
+    "id": "hobi",
+    "group": "bts",
+    "start_time": 1706742000,
+    "end_time": 1753999200
+  },
+  {
+    "id": "rm",
+    "group": "bts",
+    "start_time": 1706742000,
+    "end_time": 1753999200
+  },
+  {
+    "id": "jimin",
+    "group": "bts",
+    "start_time": 1717192800,
+    "end_time": 1764543600
+  },
+  {
+    "id": "v",
+    "group": "bts",
+    "start_time": 1717192800,
+    "end_time": 1764543600
+  },
+  {
+    "id": "jk",
+    "group": "bts",
+    "start_time": 1717192800,
+    "end_time": 1764543600
+  }
+]
