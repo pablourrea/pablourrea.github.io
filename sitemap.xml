@@ -6,7 +6,7 @@
   <loc>https://pablourrea.github.io/es</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:00:48+00:00</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
  </url>
@@ -14,88 +14,558 @@
   <loc>https://pablourrea.github.io/en</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:00:48+00:00</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.0</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/sitemap.xml</loc>
+  <lastmod>2024-04-02T16:27:18+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/sitio-web-en-mantenimiento</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/sitio-web-en-mantenimiento"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/website-under-maintenance"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:01:11+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>1.0</priority>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/markup.gif</image:loc>
+   <image:title>Lenguaje de marcado animado</image:title>
+   <image:caption>Lenguaje de marcado animado</image:caption>
+  </image:image>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/website-under-maintenance</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/sitio-web-en-mantenimiento"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/website-under-maintenance"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:01:11+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>1.0</priority>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/markup.gif</image:loc>
+   <image:title>Lenguaje de marcado animado</image:title>
+   <image:caption>Lenguaje de marcado animado</image:caption>
+  </image:image>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/404"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/404"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:00:03+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>1.0</priority>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/question_mark.gif</image:loc>
+   <image:title>Interrogación animada</image:title>
+   <image:caption>Interrogación animada</image:caption>
+  </image:image>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/404</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/404"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/404"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:00:03+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>1.0</priority>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/question_mark.gif</image:loc>
+   <image:title>Interrogación animada</image:title>
+   <image:caption>Interrogación animada</image:caption>
+  </image:image>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/403</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/403"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/403"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:00:10+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>1.0</priority>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/shield.gif</image:loc>
+   <image:title>Escudo animado</image:title>
+   <image:caption>Escudo animado</image:caption>
+  </image:image>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/403</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/403"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/403"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:00:10+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>1.0</priority>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/shield.gif</image:loc>
+   <image:title>Escudo animado</image:title>
+   <image:caption>Escudo animado</image:caption>
+  </image:image>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/pagina-en-mantenimiento</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/pagina-en-mantenimiento"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/page-under-maintenance"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:01:18+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>1.0</priority>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/markup.gif</image:loc>
+   <image:title>Lenguaje de marcado animado</image:title>
+   <image:caption>Lenguaje de marcado animado</image:caption>
+  </image:image>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/page-under-maintenance</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/pagina-en-mantenimiento"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/page-under-maintenance"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:01:18+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>1.0</priority>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/markup.gif</image:loc>
+   <image:title>Lenguaje de marcado animado</image:title>
+   <image:caption>Lenguaje de marcado animado</image:caption>
+  </image:image>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/405</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/405"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/405"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:01:22+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>1.0</priority>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/shield.gif</image:loc>
+   <image:title>Escudo animado</image:title>
+   <image:caption>Escudo animado</image:caption>
+  </image:image>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/405</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/405"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/405"/>
-  <lastmod>2024-03-08T15:50:20+00:00</lastmod>
+  <lastmod>2024-04-02T16:01:22+00:00</lastmod>
   <changefreq>yearly</changefreq>
+  <priority>0.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/shield.gif</image:loc>
+   <image:title>Escudo animado</image:title>
+   <image:caption>Escudo animado</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome"/>
+  <lastmod>2024-04-02T16:02:53+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/tome.png</image:loc>
+   <image:title>Tome</image:title>
+   <image:caption>Tome</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome"/>
+  <lastmod>2024-04-02T16:02:53+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/tome.png</image:loc>
+   <image:title>Tome</image:title>
+   <image:caption>Tome</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/migrate-content-paragraphs-migrate"/>
+  <lastmod>2024-04-02T16:02:55+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/birds-migrating.jpg</image:loc>
+   <image:title>¿Cómo saben las aves cómo migrar? - The Daily Illini</image:title>
+   <image:caption>¿Cómo saben las aves cómo migrar? - The Daily Illini</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/migrate-content-paragraphs-migrate</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/migrate-content-paragraphs-migrate"/>
+  <lastmod>2024-04-02T16:02:55+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/birds-migrating.jpg</image:loc>
+   <image:title>¿Cómo saben las aves cómo migrar? - The Daily Illini</image:title>
+   <image:caption>¿Cómo saben las aves cómo migrar? - The Daily Illini</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/portada</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/portada"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/home"/>
+  <lastmod>2024-04-02T16:00:48+00:00</lastmod>
+  <changefreq>always</changefreq>
   <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/home</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/portada"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/home"/>
+  <lastmod>2024-04-02T16:00:48+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles"/>
+  <lastmod>2024-04-02T16:00:22+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles"/>
+  <lastmod>2024-04-02T16:00:22+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects"/>
+  <lastmod>2024-04-02T16:00:28+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects"/>
+  <lastmod>2024-04-02T16:00:28+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/acerca-de</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/acerca-de"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/about"/>
+  <lastmod>2024-04-02T16:00:15+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/pablo-urrea-profile.png</image:loc>
+   <image:title>Pablo Urrea</image:title>
+   <image:caption>Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/about</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/acerca-de"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/about"/>
+  <lastmod>2024-04-02T16:00:15+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/pablo-urrea-profile.png</image:loc>
+   <image:title>Pablo Urrea</image:title>
+   <image:caption>Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/licencia</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/licencia"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/license"/>
+  <lastmod>2024-04-02T16:00:39+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/license</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/licencia"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/license"/>
+  <lastmod>2024-04-02T16:00:39+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/politica-de-cookies</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/politica-de-cookies"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/cookie-policy"/>
+  <lastmod>2024-04-02T16:00:53+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/cookie-policy</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/politica-de-cookies"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/cookie-policy"/>
+  <lastmod>2024-04-02T16:00:53+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/categorias</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories"/>
+  <lastmod>2024-04-02T16:01:04+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/categories</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories"/>
+  <lastmod>2024-04-02T16:01:04+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/categorias</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories"/>
+  <lastmod>2024-04-02T16:01:08+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories"/>
+  <lastmod>2024-04-02T16:01:08+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/laborfox</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/laborfox"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/laborfox"/>
+  <lastmod>2024-04-02T15:57:39+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/laborfox.png</image:loc>
+   <image:title>LaborFox</image:title>
+   <image:caption>LaborFox</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/laborfox</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/laborfox"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/laborfox"/>
+  <lastmod>2024-04-02T15:57:39+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/laborfox.png</image:loc>
+   <image:title>LaborFox</image:title>
+   <image:caption>LaborFox</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/self-bank</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/self-bank"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/self-bank"/>
+  <lastmod>2024-04-02T15:57:59+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/selfbank.png</image:loc>
+   <image:title>Selfbank</image:title>
+   <image:caption>Selfbank</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/self-bank</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/self-bank"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/self-bank"/>
+  <lastmod>2024-04-02T15:57:59+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/selfbank.png</image:loc>
+   <image:title>Selfbank</image:title>
+   <image:caption>Selfbank</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/mancomunidad-de-la-comarca-de-pamplona</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/mancomunidad-de-la-comarca-de-pamplona"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/commonwealth-pamplona-region"/>
+  <lastmod>2024-04-02T15:57:50+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/mcp.png</image:loc>
+   <image:title>Mancomunidad de la Comarca de Pamplona (MCP)</image:title>
+   <image:caption>Mancomunidad de la Comarca de Pamplona (MCP)</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/commonwealth-pamplona-region</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/mancomunidad-de-la-comarca-de-pamplona"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/commonwealth-pamplona-region"/>
+  <lastmod>2024-04-02T15:57:50+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/mcp.png</image:loc>
+   <image:title>Mancomunidad de la Comarca de Pamplona (MCP)</image:title>
+   <image:caption>Mancomunidad de la Comarca de Pamplona (MCP)</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
+  <lastmod>2024-04-02T15:58:08+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/mncars.png</image:loc>
+   <image:title>Museo Nacional Centro de Arte Reina Sofía</image:title>
+   <image:caption>Museo Nacional Centro de Arte Reina Sofía</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
+  <lastmod>2024-04-02T15:58:08+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/mncars.png</image:loc>
+   <image:title>Museo Nacional Centro de Arte Reina Sofía</image:title>
+   <image:caption>Museo Nacional Centro de Arte Reina Sofía</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/content-title-links-edition</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/content-title-links-edition"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/content-title-links-edition"/>
+  <lastmod>2024-04-02T15:57:30+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/content_title_links_to_edition.png</image:loc>
+   <image:title>Content Title Links to Edition</image:title>
+   <image:caption>Content Title Links to Edition</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/content-title-links-edition</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/content-title-links-edition"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/content-title-links-edition"/>
+  <lastmod>2024-04-02T15:57:30+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/content_title_links_to_edition.png</image:loc>
+   <image:title>Content Title Links to Edition</image:title>
+   <image:caption>Content Title Links to Edition</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/tome-add-paths</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/tome-add-paths"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/tome-add-paths"/>
+  <lastmod>2024-04-02T15:57:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/tome_add_paths.png</image:loc>
+   <image:title>Tome Add Paths</image:title>
+   <image:caption>Tome Add Paths</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/tome-add-paths</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/tome-add-paths"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/tome-add-paths"/>
+  <lastmod>2024-04-02T15:57:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.1</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/tome_add_paths.png</image:loc>
+   <image:title>Tome Add Paths</image:title>
+   <image:caption>Tome Add Paths</image:caption>
+  </image:image>
  </url>
 </urlset>
