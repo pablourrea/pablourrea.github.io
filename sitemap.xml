@@ -20,39 +20,13 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-04-06T22:01:32+00:00</lastmod>
- </url>
- <url>
-  <loc>https://pablourrea.github.io/es/sitio-web-en-mantenimiento</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/sitio-web-en-mantenimiento"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/website-under-maintenance"/>
-  <lastmod>2024-04-02T16:01:11+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.0</priority>
-  <image:image>
-   <image:loc>https://pablourrea.github.io/sites/default/files/images/markup.gif</image:loc>
-   <image:title>Lenguaje de marcado animado</image:title>
-   <image:caption>Lenguaje de marcado animado</image:caption>
-  </image:image>
- </url>
- <url>
-  <loc>https://pablourrea.github.io/en/website-under-maintenance</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/sitio-web-en-mantenimiento"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/website-under-maintenance"/>
-  <lastmod>2024-04-02T16:01:11+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.0</priority>
-  <image:image>
-   <image:loc>https://pablourrea.github.io/sites/default/files/images/markup.gif</image:loc>
-   <image:title>Lenguaje de marcado animado</image:title>
-   <image:caption>Lenguaje de marcado animado</image:caption>
-  </image:image>
+  <lastmod>2024-04-07T00:24:52+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/404"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/404"/>
-  <lastmod>2024-04-02T16:00:03+00:00</lastmod>
+  <lastmod>2024-04-07T00:22:51+00:00</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.0</priority>
   <image:image>
@@ -65,7 +39,7 @@
   <loc>https://pablourrea.github.io/en/404</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/404"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/404"/>
-  <lastmod>2024-04-02T16:00:03+00:00</lastmod>
+  <lastmod>2024-04-07T00:22:51+00:00</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.0</priority>
   <image:image>
@@ -78,7 +52,7 @@
   <loc>https://pablourrea.github.io/es/403</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/403"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/403"/>
-  <lastmod>2024-04-02T16:00:10+00:00</lastmod>
+  <lastmod>2024-04-07T00:23:37+00:00</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.0</priority>
   <image:image>
@@ -91,7 +65,7 @@
   <loc>https://pablourrea.github.io/en/403</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/403"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/403"/>
-  <lastmod>2024-04-02T16:00:10+00:00</lastmod>
+  <lastmod>2024-04-07T00:23:37+00:00</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.0</priority>
   <image:image>
@@ -101,36 +75,10 @@
   </image:image>
  </url>
  <url>
-  <loc>https://pablourrea.github.io/es/pagina-en-mantenimiento</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/pagina-en-mantenimiento"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/page-under-maintenance"/>
-  <lastmod>2024-04-02T16:01:18+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.0</priority>
-  <image:image>
-   <image:loc>https://pablourrea.github.io/sites/default/files/images/markup.gif</image:loc>
-   <image:title>Lenguaje de marcado animado</image:title>
-   <image:caption>Lenguaje de marcado animado</image:caption>
-  </image:image>
- </url>
- <url>
-  <loc>https://pablourrea.github.io/en/page-under-maintenance</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/pagina-en-mantenimiento"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/page-under-maintenance"/>
-  <lastmod>2024-04-02T16:01:18+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.0</priority>
-  <image:image>
-   <image:loc>https://pablourrea.github.io/sites/default/files/images/markup.gif</image:loc>
-   <image:title>Lenguaje de marcado animado</image:title>
-   <image:caption>Lenguaje de marcado animado</image:caption>
-  </image:image>
- </url>
- <url>
   <loc>https://pablourrea.github.io/es/405</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/405"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/405"/>
-  <lastmod>2024-04-02T16:01:22+00:00</lastmod>
+  <lastmod>2024-04-07T00:23:26+00:00</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.0</priority>
   <image:image>
@@ -143,7 +91,7 @@
   <loc>https://pablourrea.github.io/en/405</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/405"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/405"/>
-  <lastmod>2024-04-02T16:01:22+00:00</lastmod>
+  <lastmod>2024-04-07T00:23:26+00:00</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.0</priority>
   <image:image>
@@ -286,7 +234,7 @@
   <loc>https://pablourrea.github.io/es/acerca-de</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/acerca-de"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/about"/>
-  <lastmod>2024-04-02T16:00:15+00:00</lastmod>
+  <lastmod>2024-04-07T00:11:13+00:00</lastmod>
   <changefreq>always</changefreq>
   <priority>1.0</priority>
   <image:image>
@@ -299,7 +247,7 @@
   <loc>https://pablourrea.github.io/en/about</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/acerca-de"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/about"/>
-  <lastmod>2024-04-02T16:00:15+00:00</lastmod>
+  <lastmod>2024-04-07T00:11:13+00:00</lastmod>
   <changefreq>always</changefreq>
   <priority>1.0</priority>
   <image:image>
@@ -338,7 +286,7 @@
   <loc>https://pablourrea.github.io/es/politica-de-cookies</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/politica-de-cookies"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/cookie-policy"/>
-  <lastmod>2024-04-02T16:00:53+00:00</lastmod>
+  <lastmod>2024-04-06T23:27:49+00:00</lastmod>
   <changefreq>always</changefreq>
   <priority>1.0</priority>
   <image:image>
@@ -351,7 +299,7 @@
   <loc>https://pablourrea.github.io/en/cookie-policy</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/politica-de-cookies"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/cookie-policy"/>
-  <lastmod>2024-04-02T16:00:53+00:00</lastmod>
+  <lastmod>2024-04-06T23:27:49+00:00</lastmod>
   <changefreq>always</changefreq>
   <priority>1.0</priority>
   <image:image>
@@ -404,6 +352,58 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories"/>
   <lastmod>2024-04-02T16:01:08+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/aviso-legal</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/aviso-legal"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/legal-notice"/>
+  <lastmod>2024-04-07T00:05:17+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/legal-notice</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/aviso-legal"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/legal-notice"/>
+  <lastmod>2024-04-07T00:05:17+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/politica-de-proteccion-de-datos</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/politica-de-proteccion-de-datos"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/data-protection-policy"/>
+  <lastmod>2024-04-07T00:03:59+00:00</lastmod>
+  <changefreq>always</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/logo.png</image:loc>
+   <image:title>Logo Drupal Pablo Urrea</image:title>
+   <image:caption>Logo Drupal Pablo Urrea</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/data-protection-policy</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/politica-de-proteccion-de-datos"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/data-protection-policy"/>
+  <lastmod>2024-04-07T00:03:59+00:00</lastmod>
   <changefreq>always</changefreq>
   <priority>1.0</priority>
   <image:image>
