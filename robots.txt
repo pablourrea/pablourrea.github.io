@@ -13,3 +13,5 @@
 
 User-agent: *
 Allow: /
+
+Sitemap: https://pablourrea.github.io/sitemap.xml
