@@ -13,5 +13,6 @@
 
 User-agent: *
 Allow: /
+Disallow: /*.md
 
 Sitemap: https://pablourrea.github.io/sitemap.xml
