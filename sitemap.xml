@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-04-09T16:16:32+00:00</lastmod>
+  <lastmod>2024-04-09T17:19:11+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -106,7 +106,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome"/>
   <lastmod>2024-04-02T16:02:53+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/tome.png</image:loc>
    <image:title>Tome</image:title>
@@ -119,7 +119,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome"/>
   <lastmod>2024-04-02T16:02:53+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/tome.png</image:loc>
    <image:title>Tome</image:title>
@@ -132,7 +132,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/migrate-content-paragraphs-migrate"/>
   <lastmod>2024-04-02T16:02:55+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/birds-migrating.jpg</image:loc>
    <image:title>¿Cómo saben las aves cómo migrar? - The Daily Illini</image:title>
@@ -145,7 +145,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/migrate-content-paragraphs-migrate"/>
   <lastmod>2024-04-02T16:02:55+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/birds-migrating.jpg</image:loc>
    <image:title>¿Cómo saben las aves cómo migrar? - The Daily Illini</image:title>
@@ -418,7 +418,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/laborfox"/>
   <lastmod>2024-04-02T15:57:39+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/laborfox.png</image:loc>
    <image:title>LaborFox</image:title>
@@ -431,7 +431,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/laborfox"/>
   <lastmod>2024-04-02T15:57:39+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/laborfox.png</image:loc>
    <image:title>LaborFox</image:title>
@@ -444,7 +444,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/self-bank"/>
   <lastmod>2024-04-02T15:57:59+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/selfbank.png</image:loc>
    <image:title>Selfbank</image:title>
@@ -457,7 +457,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/self-bank"/>
   <lastmod>2024-04-02T15:57:59+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/selfbank.png</image:loc>
    <image:title>Selfbank</image:title>
@@ -470,7 +470,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/commonwealth-pamplona-region"/>
   <lastmod>2024-04-02T15:57:50+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/mcp.png</image:loc>
    <image:title>Mancomunidad de la Comarca de Pamplona (MCP)</image:title>
@@ -483,7 +483,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/commonwealth-pamplona-region"/>
   <lastmod>2024-04-02T15:57:50+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/mcp.png</image:loc>
    <image:title>Mancomunidad de la Comarca de Pamplona (MCP)</image:title>
@@ -496,7 +496,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
   <lastmod>2024-04-02T15:58:08+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/mncars.png</image:loc>
    <image:title>Museo Nacional Centro de Arte Reina Sofía</image:title>
@@ -509,7 +509,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
   <lastmod>2024-04-02T15:58:08+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/mncars.png</image:loc>
    <image:title>Museo Nacional Centro de Arte Reina Sofía</image:title>
@@ -522,7 +522,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/content-title-links-edition"/>
   <lastmod>2024-04-02T15:57:30+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/content_title_links_to_edition.png</image:loc>
    <image:title>Content Title Links to Edition</image:title>
@@ -535,7 +535,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/content-title-links-edition"/>
   <lastmod>2024-04-02T15:57:30+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/content_title_links_to_edition.png</image:loc>
    <image:title>Content Title Links to Edition</image:title>
@@ -548,7 +548,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/tome-add-paths"/>
   <lastmod>2024-04-06T18:22:18+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/tome_add_paths.png</image:loc>
    <image:title>Tome Add Paths</image:title>
@@ -561,7 +561,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/tome-add-paths"/>
   <lastmod>2024-04-06T18:22:18+00:00</lastmod>
   <changefreq>yearly</changefreq>
-  <priority>0.1</priority>
+  <priority>1.0</priority>
   <image:image>
    <image:loc>https://pablourrea.github.io/sites/default/files/images/tome_add_paths.png</image:loc>
    <image:title>Tome Add Paths</image:title>
@@ -574,7 +574,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/decoupled-drupal"/>
   <lastmod>2024-04-01T20:09:42+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/articles/categories/decoupled-drupal</loc>
@@ -582,7 +582,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/decoupled-drupal"/>
   <lastmod>2024-04-01T20:09:42+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/articulos/categorias/drupal</loc>
@@ -590,7 +590,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/drupal"/>
   <lastmod>2024-03-26T10:37:27+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/articles/categories/drupal</loc>
@@ -598,7 +598,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/drupal"/>
   <lastmod>2024-03-26T10:37:27+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/articulos/categorias/migrate</loc>
@@ -606,7 +606,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/migrate"/>
   <lastmod>2024-03-26T10:37:27+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/articles/categories/migrate</loc>
@@ -614,7 +614,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/migrate"/>
   <lastmod>2024-03-26T10:37:27+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/proyectos/categorias/drupal-10</loc>
@@ -622,7 +622,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-10"/>
   <lastmod>2024-04-01T20:08:37+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/projects/categories/drupal-10</loc>
@@ -630,7 +630,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-10"/>
   <lastmod>2024-04-01T20:08:37+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/proyectos/categorias/drupal-8</loc>
@@ -638,7 +638,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-8"/>
   <lastmod>2024-04-01T20:08:48+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/projects/categories/drupal-8</loc>
@@ -646,7 +646,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-8"/>
   <lastmod>2024-04-01T20:08:48+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/proyectos/categorias/drupal-9</loc>
@@ -654,7 +654,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-9"/>
   <lastmod>2024-04-01T20:08:57+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/projects/categories/drupal-9</loc>
@@ -662,7 +662,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-9"/>
   <lastmod>2024-04-01T20:08:57+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/proyectos/categorias/drupal-11</loc>
@@ -670,7 +670,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-11"/>
   <lastmod>2024-04-01T20:08:43+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/projects/categories/drupal-11</loc>
@@ -678,7 +678,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-11"/>
   <lastmod>2024-04-01T20:08:43+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/proyectos/categorias/aplicacion-web</loc>
@@ -686,7 +686,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/web-application"/>
   <lastmod>2024-03-18T15:34:44+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/projects/categories/web-application</loc>
@@ -694,7 +694,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/web-application"/>
   <lastmod>2024-03-18T15:34:44+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/proyectos/categorias/modulo</loc>
@@ -702,7 +702,7 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/module"/>
   <lastmod>2024-03-18T15:34:20+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/projects/categories/module</loc>
@@ -710,6 +710,6 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/module"/>
   <lastmod>2024-03-18T15:34:20+00:00</lastmod>
   <changefreq>monthly</changefreq>
-  <priority>0.4</priority>
+  <priority>1.0</priority>
  </url>
 </urlset>
