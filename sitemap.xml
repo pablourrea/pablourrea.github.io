@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-04-11T07:52:28+00:00</lastmod>
+  <lastmod>2024-04-11T14:29:19+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -494,7 +494,7 @@
   <loc>https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
-  <lastmod>2024-04-02T15:58:08+00:00</lastmod>
+  <lastmod>2024-04-11T14:16:01+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -507,7 +507,7 @@
   <loc>https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
-  <lastmod>2024-04-02T15:58:08+00:00</lastmod>
+  <lastmod>2024-04-11T14:16:01+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -709,6 +709,22 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/modulo"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/module"/>
   <lastmod>2024-03-18T15:34:20+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/categorias/drupal-7</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/drupal-7"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-7"/>
+  <lastmod>2024-04-11T14:18:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/categories/drupal-7</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/drupal-7"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-7"/>
+  <lastmod>2024-04-11T14:18:13+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
  </url>
