@@ -1,4 +1,7 @@
-<img alt="Pablo Urrea" src="themes/custom/pablo_urrea/assets/logo.png" height="300px">
+![Pablo Urrea Badge](https://pablourrea.github.io/sites/default/files/badges/pablourrea.svg)
+![License Badge](https://pablourrea.github.io/sites/default/files/badges/license.svg)
+![Operative Badge](https://pablourrea.github.io/themes/custom/pablo_urrea/assets/badges/status_operative.svg)
+[![Production Deployment](https://github.com/pablourrea/pablourrea.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/pablourrea/pablourrea.github.io/actions/workflows/pages/pages-build-deployment)
 
 # pablourrea.github.io-drupal
 
