@@ -10,4 +10,4 @@ Web repository for pablourrea.github.io.
 
 ## License
 
-[Copyright © | All rights reserved](https://pablourrea.github.io/es/licencia/)
+[Copyright © | All rights reserved](https://pablourrea.github.io/es/licencia)
