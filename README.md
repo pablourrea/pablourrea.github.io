@@ -3,7 +3,7 @@
 [![Operative Badge](https://pablourrea.github.io/sites/default/files/badges/status_operative.svg)](https://pablourrea.github.io)
 [![Production Deployment](https://github.com/pablourrea/pablourrea.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/pablourrea/pablourrea.github.io/actions/workflows/pages/pages-build-deployment)
 
-# pablourrea.github.io-drupal
+# pablourrea.github.io
 
 Web repository for pablourrea.github.io.
 
