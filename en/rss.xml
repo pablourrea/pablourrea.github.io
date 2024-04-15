@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>Prism como servidor API REST de pruebas</title>
+  <link>https://pablourrea.github.io/es/articulos/prism-como-servidor-api-rest-de-pruebas</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Prism as a REST API testing server&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Prism simplifies REST API development by providing a realistic and controlled testing environment, without relying on external servers. An essential tool for REST API developers.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-04-15T16:09:49+00:00" title="Monday, April 15, 2024 - 16:09" class="datetime"&gt;Mon, 15/04/2024 - 16:09&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Mon, 15 Apr 2024 16:09:49 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">26 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Migrar Paragraphs de Contenidos con Migrate</title>
   <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrate Content Paragraphs with Migrate&lt;/span&gt;
