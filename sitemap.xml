@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-04-15T18:33:42+00:00</lastmod>
+  <lastmod>2024-04-15T18:44:02+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -645,6 +645,15 @@
  <url>
   <loc>https://pablourrea.github.io/es/articulos/categorias/nodejs</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/nodejs"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/nodejs"/>
+  <lastmod>2024-04-15T16:15:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories/nodejs</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/nodejs"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/nodejs"/>
   <lastmod>2024-04-15T16:15:12+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
@@ -652,6 +661,15 @@
  <url>
   <loc>https://pablourrea.github.io/es/articulos/categorias/api</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/api"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/api"/>
+  <lastmod>2024-04-15T16:15:12+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories/api</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/api"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/api"/>
   <lastmod>2024-04-15T16:15:12+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
