@@ -12,23 +12,15 @@ import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.8.0/es/core.min.j
       .then(module => hljs.registerLanguage(language, module.default));
   });
 
-  if (drupalSettings.enableCopyButton == true) {
-    promises.push(
-        import('./highlightjs-copy.min.js')
-            .then(module => hljs.addPlugin(new module.default))
-    );
-  }
+  promises.push(
+    import('./highlightjs-copy.min.js')
+      .then(module => hljs.addPlugin(new module.default))
+) ;
 
-  Drupal.behaviors.highlightInit = {
-    attach (context, settings) {
-      // Run this once, on first page load.
-      if (context !== document) {
-        return;
-      }
-      Promise.all(promises).then(() => {
-        hljs.highlightAll();
-        document.dispatchEvent(initEvent);
-      })
-    }
-  }
+  // Run this once, on first page load.
+  Promise.all(promises).then(() => {
+    hljs.highlightAll();
+    document.dispatchEvent(initEvent);
+  })
+
 })(Drupal, drupalSettings)
