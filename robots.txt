@@ -11,6 +11,15 @@
 # Ignored: http://example.com/site/robots.txt
 #
 
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
 User-agent: *
 Allow: /
 Disallow: /*.md

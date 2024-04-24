@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-04-18T19:53:11+00:00</lastmod>
+  <lastmod>2024-04-24T14:16:24+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -592,6 +592,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/tome_add_paths.png</image:loc>
    <image:title>Tome Add Paths</image:title>
    <image:caption>Tome Add Paths</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/repensar-guernica</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/repensar-guernica"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/rethinking-guernica"/>
+  <lastmod>2024-04-24T13:59:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/repensar_guernica.png</image:loc>
+   <image:title>Repensar Guernica</image:title>
+   <image:caption>Repensar Guernica</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/rethinking-guernica</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/repensar-guernica"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/rethinking-guernica"/>
+  <lastmod>2024-04-24T13:59:27+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/repensar_guernica.png</image:loc>
+   <image:title>Repensar Guernica</image:title>
+   <image:caption>Repensar Guernica</image:caption>
   </image:image>
  </url>
  <url>
