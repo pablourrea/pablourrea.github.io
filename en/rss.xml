@@ -38,6 +38,22 @@
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">19 at https://pablourrea.github.io</guid>
     </item>
+<item>
+  <title>Extensiones de Visual Studio Code para desarrollo PHP y Drupal</title>
+  <link>https://pablourrea.github.io/es/articulos/extensiones-de-visual-studio-code-para-desarrollo-php-y-drupal</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Visual Studio Code extensions for PHP and Drupal development&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;&lt;em&gt;Visual Studio Code&lt;/em&gt; extensions that have transformed the development experience in &lt;em&gt;PHP&lt;/em&gt; and &lt;em&gt;Drupal&lt;/em&gt;. From syntax highlighting to intelligent code completion, these essential tools streamline workflow and ensure more efficient, error-free coding.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-03-18T20:00:31+00:00" title="Monday, March 18, 2024 - 20:00" class="datetime"&gt;Mon, 18/03/2024 - 20:00&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Mon, 18 Mar 2024 20:00:31 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">18 at https://pablourrea.github.io</guid>
+    </item>
 
   </channel>
 </rss>
