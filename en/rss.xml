@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>Prism Como Servidor API proxy de validación</title>
+  <link>https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Prism as a validation proxy API Server&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Use &lt;em&gt;Prism&lt;/em&gt; as a proxy for REST APIs, a tool that not only validates requests according to &lt;em&gt;OpenAPI&lt;/em&gt; definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-05-25T14:18:30+00:00" title="Saturday, May 25, 2024 - 14:18" class="datetime"&gt;Sat, 25/05/2024 - 14:18&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Sat, 25 May 2024 14:18:30 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">28 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Prism como servidor API REST de pruebas</title>
   <link>https://pablourrea.github.io/es/articulos/prism-como-servidor-api-rest-de-pruebas</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Prism as a REST API testing server&lt;/span&gt;
