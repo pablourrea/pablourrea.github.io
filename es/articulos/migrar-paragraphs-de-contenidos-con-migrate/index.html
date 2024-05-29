@@ -51,7 +51,7 @@
 <meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating.jpg" property="og:image:url">
 <meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating.jpg" property="og:image:secure_url">
 <meta content="image/jpeg" property="og:image:type">
-<meta content="Jue, 09/05/2024 - 14:35" property="og:updated_time">
+<meta content="Mié, 29/05/2024 - 14:25" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -63,7 +63,7 @@
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
 <meta content="Lun, 18/03/2024 - 22:13" property="article:published_time">
-<meta content="Jue, 09/05/2024 - 14:35" property="article:modified_time">
+<meta content="Mié, 29/05/2024 - 14:25" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
@@ -255,7 +255,7 @@
                 <li class="menu-item">
         <a href="/es" target="_self" class="stroke" data-drupal-link-system-path="<front>">Portada</a>
               </li>
-                <li class="menu-item menu-item--active-trail">
+                <li class="menu-item">
         <a href="/es/articulos" data-drupal-link-system-path="node/9">Artículos</a>
               </li>
                 <li class="menu-item">
@@ -419,7 +419,7 @@
 <div class="reading-time">
       
 
-            <div content="17">Lectura de 17 minutos</div>
+            <div content="20">Lectura de 20 minutos</div>
       
   </div>
 
@@ -440,8 +440,8 @@
     Actualizado
   </div>
 
-  <time class="datetime" datetime="2024-05-09">
-    09/05/2024
+  <time class="datetime" datetime="2024-05-29">
+    29/05/2024
   </time>
 </div>
 
@@ -618,6 +618,117 @@ if ($paragraph instanceof ParagraphInterface && $entity->hasField($field_name) &
 <p>Adicionalmente, como mejora, se pueden aplicar los atributos <code>$this->migrate_db_prefix</code> (Que no estaban siendo aplicados con el valor <em>"migrate_map_"</em>); y como corrección de bugs, se puede eliminar el atributo <code>$this->match_entity_regex</code> ya que este solamente se utilizaba una vez (Lo mejor es aplicar la expresión regular o <em>RegEx</em> en <em>string</em> directamente dentro de la función de <em>PHP</em> <code>preg_match</code>).</p>
 <p> </p>
 <p><strong>Código.</strong> Si lo necesitas, el código completo analizado en esta actualización del artículo puedes verlo en <a href="https://gist.github.com/pablourrea/20e292ada2796698b3ecab25dcc523a6"><em>este GitHub Gist</em></a>.</p>
+<p> </p>
+<p> </p>
+<h3><strong>Actualización del 29 de mayo de 2024</strong></h3>
+<p>Tras realizar múltiples pruebas de migración de distintos tipos de entidades, hay casos en los que se producía un error en la fila o <em>row</em> porque se había saltado la entidad en diferentes escenarios (traducción de entidades, paragraphs anidados, etc.), algo que me he dignado a corregir.</p>
+<p><br><strong>Es mejor dejar ir que aferrarse al error fatal.</strong> En realidad depurar código es muy saludable y ahorra bastante tiempo (aunque no siempre guste), esto me llevó al último bloque de código, donde se cincela la base de datos para que el paragraph no quede huérfano y se actualiza la entidad padre para que no se quede sin hijo. En casos específicos donde no encuentra el ID del hijo, intenta actualizar ambos y ahí termina el proceso, perdiendo la entidad y poniendo en riesgo la continuidad de la migración.</p>
+<pre><code class="language-php">                    if (!empty($paragraphs)) {
+                      foreach ($paragraphs as $paragraphs_source_data) {
+                        if (!empty($paragraphs_source_data->{$this->migrate_db_target_id_column})) {
+                          // It is assumed that website's default language is the same as the entity's default language.
+                          // This is used only to define if the Paragraph translation is the default translation.
+                          /** @var \Drupal\Core\Language\LanguageInterface $default_language */
+                          $default_language = $this->language_manager->getDefaultLanguage();
+                          $default_language_id = $default_language->getId();
+                          $entity_langcode = ($entity->hasField('langcode') && $entity->langcode->value) ? $entity->langcode->value : 'und';
+
+                          // Update the Paragraph values to have the entity field as parent.
+                          $this->database->update('paragraphs_item_field_data')
+                            ->fields([
+                              'langcode' => $entity_langcode,
+                              'parent_id' => $source_data->{$this->migrate_db_target_id_column},
+                              'parent_type' => $entity_type,
+                              'default_langcode' => ($default_language_id == $entity_langcode) ? 1 : 0,
+                              'parent_field_name' => $field_name,
+                              'content_translation_source' => $default_language_id,
+                            ])
+                            ->condition('id', $paragraphs_source_data->{$this->migrate_db_target_id_column})
+                            ->execute();
+
+                          /** @var \Drupal\paragraphs\ParagraphInterface|null $paragraph */
+                          $paragraph = Paragraph::load($paragraphs_source_data->{$this->migrate_db_target_id_column});
+                          // For security reasons, check that the reference to the Paragraph
+                          // in the entity field is not duplicated and consolidate its reference.
+                          if ($paragraph instanceof ParagraphInterface && $entity->hasField($field_name) && !$this->isParagrahDuplicated($entity, $paragraph, $field_name)) {
+                            $entity->{$field_name}->appendItem($paragraph);
+                            $entity->save();
+                          }
+                        }
+                      }
+                    }</code></pre><p> </p>
+<p><strong>La mejor solución lleva implementada mucho tiempo.</strong> Lo mejor para detectar errores y continuar la migración sin mayor incidencia es implementar en este caso un <code>try-catch</code> tanto en el cincelado de la base de datos, como en la actualización de la entidad padre. Pero yendo un paso más allá, y mejorando el sistema para que realice un menor número de actualizaciones de base de datos, el cincelado de esta se puede incluir tras validar la existencia del paragraph, evitando así repeticiones y actualizaciones innecesarias, reemplazando el bloque anterior por:</p>
+<pre><code class="language-php">                    if (!empty($paragraphs)) {
+                      foreach ($paragraphs as $paragraphs_source_data) {
+                        if (!empty($paragraphs_source_data->{$this->migrate_db_target_id_column})) {
+                          /** @var \Drupal\paragraphs\ParagraphInterface|null $paragraph */
+                          $paragraph = Paragraph::load($paragraphs_source_data->{$this->migrate_db_target_id_column});
+                          // For security reasons, check that the reference to the Paragraph
+                          // in the entity field is not duplicated and consolidate its reference.
+                          if ($paragraph instanceof ParagraphInterface && $entity->hasField($field_name) && !$this->isParagrahDuplicated($entity, $paragraph, $field_name)) {
+                            try {
+                              // It is assumed that website's default language is the same as the entity's default language.
+                              // This is used only to define if the Paragraph translation is the default translation.
+                              /** @var \Drupal\Core\Language\LanguageInterface $default_language */
+                              $default_language = $this->language_manager->getDefaultLanguage();
+                              $default_language_id = $default_language->getId();
+                              $entity_langcode = ($entity->hasField('langcode') && $entity->langcode->value) ? $entity->langcode->value : 'und';
+
+                              // Update the Paragraph values to have the entity field as parent.
+                              $this->database->update('paragraphs_item_field_data')
+                                ->fields([
+                                  'langcode' => $entity_langcode,
+                                  'parent_id' => $source_data->{$this->migrate_db_target_id_column},
+                                  'parent_type' => $entity_type,
+                                  'default_langcode' => ($default_language_id == $entity_langcode) ? 1 : 0,
+                                  'parent_field_name' => $field_name,
+                                  'content_translation_source' => $default_language_id,
+                                ])
+                                ->condition('id', $paragraphs_source_data->{$this->migrate_db_target_id_column})
+                                ->execute();
+                            }
+                            catch (\Exception $e) {
+                              $this->logger->error($e->getMessage());
+                            }
+
+                            try {
+                              $entity->{$field_name}->appendItem($paragraph);
+                              $entity->save();
+                            }
+                            catch (\Exception $e) {
+                              $this->logger->error($e->getMessage());
+                            }
+                          }
+                        }
+                      }
+                    }</code></pre><p>Dentro del catch, se puede observar la implementación del sistema logger de Drupal, para añadirlo es tan sencillo como añadir el servicio <code>@logger.factory</code> al <em>event subscriber</em> en el archivo <code>services.yml</code>, agregar la dependencia <code>Drupal\Core\Logger\LoggerChannelFactory</code> al <em>event subscriber</em>, incluir dentro de este el objeto para registrar errores</p>
+<pre><code class="language-php"> /**
+  * The logger channel.
+  *
+  * @var \Drupal\Core\Logger\LoggerChannelInterface
+  */
+ protected $logger;</code></pre><p>y actualizar el constructor de la clase para que este asocie el servicio al objeto:</p>
+<pre><code class="language-php">  /**
+   * Constructor.
+   *
+   * @param \Drupal\Core\Database\Connection $database
+   *   The database connection.
+   * @param \Drupal\Core\Logger\LoggerChannelFactory $logger
+   *   The logger channel.
+   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
+   *   The language manager.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
+   */
+  public function __construct(Connection $database, LoggerChannelFactory $logger, LanguageManagerInterface $language_manager, EntityTypeManagerInterface $entity_type_manager) {
+    $this->database = $database;
+    $this->language_manager = $language_manager;
+    $this->logger = $logger->get('module');
+    $this->entity_type_manager = $entity_type_manager;
+  }</code></pre><p>Este último paso es opcional, si no se desea tener un registro de fallos durante la migración, simplemente se puede dejar vacío el <code>catch</code>.</p>
+<p> </p>
+<p><strong>Código.</strong> Si lo necesitas, el código completo analizado en esta actualización del artículo puedes verlo en <a href="https://gist.github.com/pablourrea/25be307778ac008a7e08f1b103982f48"><em>este GitHub Gist</em></a>.</p>
+<p> </p>
 </div>
       
   </div>
@@ -740,7 +851,7 @@ if ($paragraph instanceof ParagraphInterface && $entity->hasField($field_name) &
 
                   </li>
                       
-        <li class="menu-item menu-item--active-trail menu-item--expanded">
+        <li class="menu-item menu-item--expanded">
           <span>Páginas</span>
                                 
   
@@ -760,7 +871,7 @@ if ($paragraph instanceof ParagraphInterface && $entity->hasField($field_name) &
 
                   </li>
                       
-        <li class="menu-item menu-item--active-trail">
+        <li class="menu-item">
           <a href="/es/articulos" target="_self" data-drupal-link-system-path="node/9">Todos los artículos 🗞️</a>
                                 
   
