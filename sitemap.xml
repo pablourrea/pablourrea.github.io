@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-05-29T14:27:49+00:00</lastmod>
+  <lastmod>2024-06-08T19:56:13+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -670,6 +670,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/repensar_guernica.png</image:loc>
    <image:title>Repensar Guernica</image:title>
    <image:caption>Repensar Guernica</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/museo-nacional-thyssen-bornemisza</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-thyssen-bornemisza"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-thyssen-bornemisza"/>
+  <lastmod>2024-06-08T19:53:15+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/museo_nacional_thyssen_bornemisza.png</image:loc>
+   <image:title>Museo Nacional Thyssen-Bornemisza</image:title>
+   <image:caption>Museo Nacional Thyssen-Bornemisza</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/museo-nacional-thyssen-bornemisza</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-thyssen-bornemisza"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-thyssen-bornemisza"/>
+  <lastmod>2024-06-08T19:53:15+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/museo_nacional_thyssen_bornemisza.png</image:loc>
+   <image:title>Museo Nacional Thyssen-Bornemisza</image:title>
+   <image:caption>Museo Nacional Thyssen-Bornemisza</image:caption>
   </image:image>
  </url>
  <url>
