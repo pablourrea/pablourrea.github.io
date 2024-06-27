@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-06-11T18:42:13+00:00</lastmod>
+  <lastmod>2024-06-27T16:08:43+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -699,6 +699,32 @@
   </image:image>
  </url>
  <url>
+  <loc>https://pablourrea.github.io/es/proyectos/rosazulado</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/rosazulado"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/rosazulado-pinkish-blue"/>
+  <lastmod>2024-06-27T16:01:40+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/rosazulado.png</image:loc>
+   <image:title>RosaZulado</image:title>
+   <image:caption>RosaZulado</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/rosazulado-pinkish-blue</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/rosazulado"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/rosazulado-pinkish-blue"/>
+  <lastmod>2024-06-27T16:01:40+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/rosazulado.png</image:loc>
+   <image:title>RosaZulado</image:title>
+   <image:caption>RosaZulado</image:caption>
+  </image:image>
+ </url>
+ <url>
   <loc>https://pablourrea.github.io/es/articulos/categorias/drupal-desacoplado</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/drupal-desacoplado"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/decoupled-drupal"/>
@@ -951,6 +977,38 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/drupal-7"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/drupal-7"/>
   <lastmod>2024-04-11T14:18:13+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/categorias/tfg</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/tfg"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/thesis"/>
+  <lastmod>2024-06-27T15:57:31+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/categories/thesis</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/tfg"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/thesis"/>
+  <lastmod>2024-06-27T15:57:31+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/categorias/xampp</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/xampp"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/xampp"/>
+  <lastmod>2024-06-27T16:02:05+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/categories/xampp</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/xampp"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/xampp"/>
+  <lastmod>2024-06-27T16:02:05+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
  </url>
