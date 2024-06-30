@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+
+
+<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-QPJMYH8NQN"></script>
+<script type="text/plain" data-category="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QPJMYH8NQN');
+</script>
+<meta content="Descubre cómo SASS (Super CSS para los amigos), puede mejorar el rendimiento y la organización de las hojas de estilos CSS. Te enseño como instalarlo y utilizarlo eficientemente en tus proyectos." name="description">
+<meta content="Descubre cómo SASS (Super CSS para los amigos), puede mejorar el rendimiento y la organización de las hojas de estilos CSS. Te enseño como instalarlo y utilizarlo eficientemente en tus proyectos." name="abstract">
+<meta content="Pablo Urrea,Optimización y compilación automática de estilos web con SASS,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,SASS,CSS" name="keywords">
+<link href="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" rel="canonical">
+<meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
+<meta content="Drupal" name="generator">
+<meta content="Pablo Urrea" name="author">
+<meta content="https://pablourrea.github.io" name="original-source">
+<link href="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" rel="image_src">
+<meta content="origin" name="referrer">
+<link href="/sites/default/files/logo.png" rel="icon">
+<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
+<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32">
+<link href="/sites/default/files/favicons/android-chrome-192x192.png" rel="icon" sizes="96x96">
+<link href="/sites/default/files/favicons/android-chrome-192x192.png" rel="icon" sizes="192x192">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="72x72">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="114x114">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="120x120">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="144x144">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="152x152">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="76x76">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="120x120">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="152x152">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
+<meta content="Pablo Urrea" property="og:site_name">
+<meta content="article" property="og:type">
+<meta content="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" property="og:url">
+<meta content="Optimización y compilación automática de estilos web con SASS" property="og:title">
+<meta content="Descubre cómo SASS (Super CSS para los amigos), puede mejorar el rendimiento y la organización de las hojas de estilos CSS. Te enseño como instalarlo y utilizarlo eficientemente en tus proyectos." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image:secure_url">
+<meta content="image/jpeg" property="og:image:type">
+<meta content="Dom, 30/06/2024 - 15:02" property="og:updated_time">
+<meta content="https://pablourrea.github.io" property="og:see_also">
+<meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
+<meta content="es_ES" property="og:locale:alternate">
+<meta content="en_AU" property="og:locale:alternate">
+<meta content="en_BE" property="og:locale:alternate">
+<meta content="en_GB" property="og:locale:alternate">
+<meta content="en_JP" property="og:locale:alternate">
+<meta content="en_US" property="og:locale:alternate">
+<meta content="en_ZA" property="og:locale:alternate">
+<meta content="Pablo Urrea" property="article:section">
+<meta content="Dom, 30/06/2024 - 14:36" property="article:published_time">
+<meta content="Dom, 30/06/2024 - 15:02" property="article:modified_time">
+<meta content="Pablo" property="profile:first_name">
+<meta content="Urrea" property="profile:last_name">
+<meta content="male" property="profile:gender">
+<meta content="purrea" property="profile:username">
+<meta content="Optimización y compilación automática de estilos web con SASS" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" property="pin:url">
+<meta content="Descubre cómo SASS (Super CSS para los amigos), puede mejorar el rendimiento y la organización de las hojas de estilos CSS. Te enseño como instalarlo y utilizarlo eficientemente en tus proyectos." property="pin:description">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="Descubre cómo SASS (Super CSS para los amigos), puede mejorar el rendimiento y la organización de las hojas de estilos CSS. Te enseño como instalarlo y utilizarlo eficientemente en tus proyectos." name="twitter:description">
+<meta content="Optimización y compilación automática de estilos web con SASS | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" name="twitter:image">
+<meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
+<link href="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/optimization-and-automatic-compilation-web-styles-sass" rel="alternate" hreflang="en">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<meta content="Drupal responsive_favicons + realfavicongenerator.net" name="favicon-generator">
+<meta content="Drupal 10 (https://www.drupal.org)" name="Generator">
+<meta content="width" name="MobileOptimized">
+<meta content="true" name="HandheldFriendly">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass",en:"/en/articles/optimization-and-automatic-compilation-web-styles-sass",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://pablourrea.github.io",
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Portada",
+                        "item": "https://pablourrea.github.io/es"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Artículos",
+                        "item": "https://pablourrea.github.io/es/articulos"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Optimización y Compilación Automática de Estilos Web Con SASS",
+                        "item": "https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass"
+                    }
+                ]
+            },
+            "description": "Optimización y compilación automática de estilos web con SASS",
+            "author": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.iohttps://pablourrea.github.io/es/user/1",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ]
+            },
+            "publisher": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.iohttps://pablourrea.github.io/es/user/1",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "representativeOfPage": "True",
+                    "url": "/asset/es/image/logopng",
+                    "width": "600",
+                    "height": "600"
+                }
+            },
+            "isAccessibleForFree": "True",
+            "hasPart": {
+                "@type": "SiteNavigationElement",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.io",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "datePublished": "2024-06-30T14:36:38+0000"
+            },
+            "inLanguage": "Español",
+            "workTranslation": [
+                "Inglés",
+                "English"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "pablourrea.github.io",
+            "name": "Pablo Urrea",
+            "url": "https://pablourrea.github.io",
+            "publisher": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "representativeOfPage": "True",
+                    "url": "/asset/es/image/logopng",
+                    "width": "600",
+                    "height": "600"
+                }
+            },
+            "inLanguage": "Español",
+            "workTranslation": [
+                "Inglés",
+                "English"
+            ]
+        }
+    ]
+}</script>
+
+    <title>Optimización y compilación automática de estilos web con SASS | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_nTytp-fKSAwHs3VsqlsXVQ5prXNg2bGpYqTh4PR27f0.css?delta=0&language=es&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="all">
+<link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
+<link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_GgKgqaCFpzGjSQOfkPufTeeZ7cn4VyOQwwrbl9kk9ls.css?delta=3&language=es&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_IBODtB5CjdjzCYebAP3DIU4024Em9kBMKrbdhfkGU94.css?delta=4&language=es&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=es&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="all">
+
+    
+  </head>
+          
+      <body class="no-sidebar page-articulos-optimizacion-y-compilacion-automatica-de-estilos-web-con-sass role--anonymous section-articulos with-subnav">
+    <div id="skip">
+      <a href="#main-menu" class="visually-hidden focusable skip-link">
+        Skip to main navigation
+      </a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="layout-container">
+
+  
+
+      <header id="header">
+      <div class="container">
+        <div id="header-region">
+            <div class="region region-header">
+    <nav aria-labelledby="pablo-urrea-logo-menu" class="block block-menu navigation menu--logo" role="navigation" id="pablo-urrea-logo">
+            
+  <h2 class="visually-hidden" id="pablo-urrea-logo-menu">Logo</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/es" target="_self" class="logo" data-drupal-link-system-path="<front>"><img alt="Pablo Urrea's logo" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav aria-labelledby="pablo-urrea-main-navigation-menu" class="block block-menu navigation menu--main" role="navigation" id="pablo-urrea-main-navigation">
+            
+  <h2 class="visually-hidden" id="pablo-urrea-main-navigation-menu">Navegación principal</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <button class="hamburger hamburger--spring" type="button">Menú</button>
+              </li>
+                <li class="menu-item">
+        <a href="/es" target="_self" class="stroke" data-drupal-link-system-path="<front>">Portada</a>
+              </li>
+                <li class="menu-item">
+        <a href="/es/articulos" data-drupal-link-system-path="node/9">Artículos</a>
+              </li>
+                <li class="menu-item">
+        <a href="/es/proyectos" data-drupal-link-system-path="node/10">Proyectos</a>
+              </li>
+                <li class="menu-item">
+        <a href="/es/acerca-de" data-drupal-link-system-path="node/11">Acerca de</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div class="block-language-switcher-langcode-block language-switcher-language-url pablo-urrea-language-switcher-langcode" id="pablo-urrea-language-switcher-langcode">
+  
+    
+      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/31" hreflang="es"><a href="/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" class="is-active language-link" title="Español" data-drupal-link-system-path="node/31" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/31" hreflang="en"><a href="/en/articles/optimization-and-automatic-compilation-web-styles-sass" class="language-link" title="Inglés" data-drupal-link-system-path="node/31" hreflang="en">en</a></li></ul>
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </header>
+  
+  
+  
+
+  <div id="main">
+    <div class="container">
+      <div id="content-wrapper">
+        <section id="content">
+
+          
+          <div id="content-area">
+              <div class="region region-content">
+    <div class="hidden" data-drupal-messages-fallback></div><div class="block-system block-pablo-urrea-content" id="block-pablo-urrea-content">
+  
+    
+      
+<article class="node node--type-article">
+  <div class="content">
+    
+<h1 class="content-title">
+      
+
+            <div class="clearfix text-formatted"><p>Optimización y compilación automática de estilos web con <em>SASS</em></p>
+</div>
+      
+  </h1>
+
+<div class="border-top content-tags link-no-hover">
+      
+
+      <div>
+              <div><a href="/es/articulos/categorias/nodejs" hreflang="es">NodeJS</a></div>
+              <div><a href="/es/articulos/categorias/sass" hreflang="es">SASS</a></div>
+              <div><a href="/es/articulos/categorias/css" hreflang="es">CSS</a></div>
+          </div>
+  
+  </div>
+
+<div class="content-image">
+      
+<div class="polaroid">
+      
+
+            <div><article class="media media--type-image media--view-mode-landscape-full">
+  
+      
+
+            <div>  <img alt="Logo de SASS" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/sass_logo.jpg?itok=022OdC9E" height="540" loading="lazy" title="Logo de SASS" width="1072">
+
+
+</div>
+      
+  </article>
+</div>
+      
+<div class="title title-right title-small">
+      
+
+            <div class="clearfix text-formatted"><p>Logo de <em>SASS</em></p>
+</div>
+      
+  </div>
+
+  </div>
+
+  </div>
+
+<div class="border-bottom content-authorship">
+      
+<div class="authorship-group-1 content-align-left content-align-top">
+      <article class="profile">
+  
+<div class="image">
+      
+
+            <div><article class="media media--type-image media--view-mode-thumbnail">
+  
+      
+<div class="thumbnail">
+      
+
+            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+
+
+</div>
+      
+  </div>
+
+  </article>
+</div>
+      
+  </div>
+
+<div class="name">
+      
+
+            <div class="clearfix text-formatted"><p>Pablo Urrea</p>
+</div>
+      
+  </div>
+
+<div class="contact">
+      
+
+            <div>
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" target="_blank" class="icon" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.linkedin.com/in/pablourrea" target="_blank" class="icon" title="LinkedIn"><img alt="LinkedIn" class="icon" src="/sites/default/files/icons/linkedin.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/u/enchufe" target="_blank" class="icon" title="Drupal"><img alt="Drupal" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://github.com/pablourrea" target="_blank" class="icon" title="GitHub"><img alt="GitHub" class="icon" src="/sites/default/files/icons/github.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://git.drupalcode.org/Enchufe" target="_blank" class="icon" title="DrupalCode"><img alt="DrupalCode" class="icon" src="/sites/default/files/icons/drupalcode.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/user/3685606/contact" target="_blank" class="icon" title="Formulario de contacto de Drupal"><img alt="Drupal Contact Form" class="icon" src="/sites/default/files/icons/drupal_contact_form.svg"></a>
+              </li>
+        </ul>
+  
+
+
+</div>
+      
+  </div>
+</article>
+
+  </div>
+
+<div class="authorship-group-2 content-align-bottom content-align-right">
+      
+<div class="reading-time">
+      
+
+            <div content="10">Lectura de 10 minutos</div>
+      
+  </div>
+
+<div class="authorship-dates">
+      
+<div class="date">
+  <div class="label">
+    Publicado
+  </div>
+
+  <time class="datetime" datetime="2024-06-30">
+    30/06/2024
+  </time>
+</div>
+
+  </div>
+
+  </div>
+
+  </div>
+
+<div class="content-description-short">
+      
+
+            <div class="clearfix text-formatted"><p>Descubre cómo <em>SASS</em> (<em>Super CSS</em> para los amigos), puede mejorar el rendimiento y la organización de las hojas de estilos <em>CSS</em>. Te enseño como instalarlo y utilizarlo eficientemente en tus proyectos.</p>
+</div>
+      
+  </div>
+
+<div class="content-description">
+      
+
+            <div class="clearfix text-formatted"><p><em>SASS</em> (<em>Syntactically Awesome Style Sheets</em>) o <em>Super CSS</em> para los amigos (<em>SIUUUUUUUSS</em> en potugués), permite compilar de manera automática el desarrollo de estilos por componentes para la creación de temas web. Este sistema resulta bastante útil para unificar el archivo de <em>CSS</em> de una página web para reducir la transferencia de archivos y mejorar el rendimiento (Un paso más cerca de que <em>Google Lighthouse</em> le dé a tu página una puntuación <em>100/100</em>).</p>
+<p> </p>
+<p><strong>Rápido, fácil, y para toda la familia.</strong> Lo primero de todo es instalar <a href="https://nodejs.org/en/download/package-manager"><em>Node</em></a>, el ejecutor principal de <em>SASS</em>, para ello lo mejor es seguir los pasos de la página oficial de <a href="https://nodejs.org/en/download/package-manager"><em>Node</em></a> para el entorno en el que necesites: <a href="https://nodejs.org/en/download/package-manager">https://nodejs.org/en/download/package-manager</a>.</p>
+<p>Ahora que <em>Node</em> funciona correctamente en la máquina (O debería), es el momento de instalar <em>SASS</em>, puedes instalarlo globalmente en toda la máquina (recomendado para pruebas) <a href="https://sass-lang.com/install/">como recomiendan en la documentación oficial de <em>SASS</em></a>:</p>
+<pre><code class="language-bash">npm install -g sass</code></pre><p>O puedes instalar <em>SASS</em> en el proyecto en el cual vas a utilizar el paquete desde la carpeta raíz del paquete (No olvides ejecutar antes el comando de iniciación de proyecto de <em>Node</em> <code>npm init</code>):</p>
+<pre><code class="language-bash">npm install sass</code></pre><p> </p>
+<p><strong>El tiempo de ejecución es menor al esperado.</strong> Compilar el archivo es bastante sencillo, el comando <code>sass</code> acepta diversos parámetros, pero los más útiles (probablemente) son la ruta de entrada <em>SCSS</em>, la ruta de salida <em>CSS</em>, y el parámetro de estilos <em>style</em>. Un ejemplo de como queda el comando con estos parámetros aplicados es:</p>
+<pre><code class="language-bash">npx sass --style=compressed ruta/al/archivo.scss:ruta/al/archivo.css</code></pre><p>En este ejemplo se le ha indicado a <em>SASS</em> que compile de forma comprimida el archivo principal <em>SCSS</em> (Ese que suele contener todas las dependencias) y que compile el resultado comprimido en el archivo <em>CSS</em> de la ruta especificada.</p>
+<p>En un ejemplo real, pongamos el siguiente archivo <em>CSS</em> sin optimizar con <em>SASS</em>:</p>
+<pre><code class="language-css">body {
+  font: Helvetica, sans-serif;
+  color: #333;
+}</code></pre><p>Este ocupa <u>54 bytes</u>, y de ser necesario añadir más estilos con el mismo color o fuente, habría que realizar una copia del mismo estilo, lo cual es engorroso para el desarrollador.</p>
+<p>Ahora bien, convierto este archivo <em>CSS</em> a <em>SCSS</em>:</p>
+<pre><code class="language-scss">$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+ font: $font-stack;
+ color: $primary-color;
+}</code></pre><p>Y al compilarlo con compresión este es el resultado:</p>
+<pre><code class="language-css">body{font:Helvetica,sans-serif;color:#333}</code></pre><p>Ocupa <u>43 bytes</u>, y el desarrollador no se tiene que molestar en descomprimirlo para editarlo, porque los estilos se configuran desde el archivo <em>SCSS</em>.</p>
+<p> </p>
+<p>En los ejemplos anteriores, la diferencia de tamaño puede no parecer demasiada, pero al escalarlo a proyectos más grandes, la diferencia se vuelve considerable y la comodidad del uso de variables se vuelve más necesaria.</p>
+<p>Otro ejemplo de las ventajas de <em>SASS</em> es el anidamiento de elementos, pudiendo anidar bajo un mismo paraguas padre varios elementos hijos, el siguiente archivo CSS tiene muchos anidamientos que en el momento del desarrollo pueden resultar confusos e inducir a error, dejando de funcionar los estilos porque no reconoce correctamente el elemento que se desea seleccionar:</p>
+<pre><code class="language-css">body element.class__one#id-element .class__one__two {
+ font: $font-stack;
+ color: $primary-color;
+}</code></pre><p>Al convertirlo a <em>SASS</em> se observa que los anidamientos mejoran la legibilidad de los estilos:</p>
+<pre><code class="language-scss">$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  element {
+    &.class {
+      &__one {
+        &#id-element {
+          .class {
+            &__two {
+              font: $font-stack;
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}</code></pre><p> </p>
+<p> </p>
+<p><strong>Conclusión.</strong> Estos ejemplos son solo la punta del iceberg que hace que <em>SASS</em> mejore el desarrollo de estilos. Lo mejor es leer la documentación oficial de <em>SASS</em> para ver todas las posibilidades de la herramienta, donde también disponen de un <a href="https://sass-lang.com/playground/">compilador online</a> para que puedas hacer pruebas con el código <em>CSS</em> antes de migrar tu proyecto.</p>
+<p> </p>
+</div>
+      
+  </div>
+
+  </div>
+
+  
+</article>
+
+  </div>
+<div class="block-system breadcrumbs content-breadcrumbs" id="content-breadcrumbs">
+  
+    
+        <nav aria-labelledby="system-breadcrumb" class="breadcrumb" role="navigation">
+    <h2 class="visually-hidden" id="system-breadcrumb">Ruta de navegación</h2>
+    <ol>
+          <li>
+                  <a href="/es">Portada</a>
+              </li>
+          <li>
+                  <a href="/es/articulos">Artículos</a>
+              </li>
+          <li>
+                  Optimización y Compilación Automática de Estilos Web Con SASS
+              </li>
+        </ol>
+  </nav>
+
+  </div>
+
+  </div>
+
+          </div>
+
+        </section>
+
+        
+        
+      </div>
+    </div>
+  </div>
+
+  
+
+      <footer id="footer">
+      <div class="container">
+        <div id="footer-region">
+            <div class="region region-footer">
+    <nav aria-labelledby="block-pablo-urrea-footer-menu" class="block block-menu navigation menu--footer" role="navigation" id="block-pablo-urrea-footer">
+            
+  <h2 class="visually-hidden" id="block-pablo-urrea-footer-menu">Pie de página</h2>
+  
+
+        
+
+  <ul class="menu menu-level-0" data-region="footer">
+                  
+        <li class="menu-item">
+          <span class="hidden-title">Acerca de</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-dropdown-0 menu-type-user view-mode-user">
+              
+
+            <div><article class="profile">
+  
+
+            <div><article class="media media--type-image media--view-mode-thumbnail">
+  
+      
+<div class="thumbnail">
+      
+
+            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+
+
+</div>
+      
+  </div>
+
+  </article>
+</div>
+      
+
+            <div class="clearfix text-formatted"><p>Nacido y criado en la metrópolis madrileña, desde una temprana edad mostró un ferviente interés por el mundo de los ordenadores y la programación. Este proyecto de blog le da la oportunidad de documentar y compartir los desafíos tecnológicos a los que se enfrenta.</p>
+</div>
+      
+
+            <div>
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" target="_blank" class="icon" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.linkedin.com/in/pablourrea" target="_blank" class="icon" title="LinkedIn"><img alt="LinkedIn" class="icon" src="/sites/default/files/icons/linkedin.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/u/enchufe" target="_blank" class="icon" title="Drupal"><img alt="Drupal" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://github.com/pablourrea" target="_blank" class="icon" title="GitHub"><img alt="GitHub" class="icon" src="/sites/default/files/icons/github.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://git.drupalcode.org/Enchufe" target="_blank" class="icon" title="DrupalCode"><img alt="DrupalCode" class="icon" src="/sites/default/files/icons/drupalcode.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/user/3685606/contact" target="_blank" class="icon" title="Formulario de contacto de Drupal"><img alt="Drupal Contact Form" class="icon" src="/sites/default/files/icons/drupal_contact_form.svg"></a>
+              </li>
+        </ul>
+  
+
+
+</div>
+      </article>
+</div>
+      
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <span>Páginas</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-0">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/es" target="_self" data-drupal-link-system-path="<front>">Portada 📰</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/articulos" target="_self" data-drupal-link-system-path="node/9">Todos los artículos 🗞️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/articulos/categorias" target="_self" data-drupal-link-system-path="node/23">Categorías de artículos 🗂️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/proyectos" target="_self" data-drupal-link-system-path="node/10">Proyectos de Pablo Urrea 🏗️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/proyectos/categorias" target="_self" data-drupal-link-system-path="node/22">Categorías de proyectos 📊</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <span>Acerca de</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-0">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/es/acerca-de" target="_self" class="stroke" data-drupal-link-system-path="node/11">Acerca de Pablo Urrea 👤</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/aviso-legal" data-drupal-link-system-path="node/24">Aviso Legal ⚖️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/politica-de-cookies" target="_self" data-drupal-link-system-path="node/21">Política de Cookies 🍪</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/politica-de-proteccion-de-datos" data-drupal-link-system-path="node/25">Política de protección de datos 🔒</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+  </nav>
+<div class="block-block-content block-pablo-urrea-footer-license footer footer-license" id="block-pablo-urrea-footer-license">
+  
+    
+      
+
+            <div class="clearfix text-formatted"><p><a href="/es/licencia">Pablo Urrea <strong>©</strong> Todos los derechos reservados</a></p>
+</div>
+      
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </footer>
+  
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/31","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast"}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","css":"css","scss":"scss"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
+<script src="/sites/default/files/js/js_5BieCCcQkhKgdqV4MSVAAcULRDilmBzsyp2Q3cYjDH4.js?scope=footer&delta=0&language=es&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
+<script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
+
+      </body>
+</html>

@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="In the article Prism As A REST API Testing Server I delve into the installation and basic configuration of Prism, so in this article, I will skip the installation and validation process that Prism uses with OpenAPI definitions. Using Prism as a REST API proxy has the main advantage of validating requests against the port, but it is also important to note that this functionality redirects all requests to a single REST API port, which can be challenging if you have more than one port in your functionality. This concept is easier to understand with the following diagrams:      Intercepting requests with Prism's network. With this clear, setting up the proxy is as simple as running the following command:prism proxy openapi.yaml https://www.example.com/api/v1/port/ Although Prism allows configuring some proxy settings via parameters, below are the most useful ones:--errors: Recommended parameter. The response to the request generates an error if it does not validate with the definitions. For example:prism proxy openapi.yaml https://www.example.com/api/v1/port/ --errors-h: Changes the IP address to the one provided. For example:prism proxy -h 0.0.0.0 openapi.yaml https://www.example.com/api/v1/port/-p: Changes the network port to the one provided. For example:prism proxy -p 9999 openapi.yaml https://www.example.com/api/v1/port/-m: Enables multiprocessing. Recommended parameter if the proxy is going to receive many requests. For example:prism proxy -m openapi.yaml https://www.example.com/api/v1/port/ Once the server is started, you can make requests to the service from your machine to the local IP (or to the IP of the remote machine if installed on a remote server):curl http://localhost:4010/usersPrism accepts configurations for GET, POST, PUT, PATCH, and DELETE methods.  What happens at the real REST API port? Debugging the request at the real REST API port, you can verify that the proxy has made the request against the port, sending the query parameter “q” with the URL of the port to interact with. For example, if you have a REST API port /users/delete that performs an action with the DELETE method on a user ID in the body {id: 1}, when making the request against the Prism proxy, it validates the request and forwards it to the real REST API port /api/v1/port as /api/v1/port?q=/users/delete with the DELETE method and the request body {id: 1}. The port returns a status code and a message in the body that is transferred to the proxy, and then the proxy returns to the client:    Conclusion. Prism emerges as a valuable tool for validating and redirecting REST API requests, functioning as an effective proxy that ensures requests comply with OpenAPI definitions before being processed by the real REST API port. This not only simplifies the workflow by intercepting and validating requests but also enhances the robustness of applications through strict adherence to the REST API specifications, resulting in a more secure and efficient development process. If you need more information about the package, you can check Prism's documentation. " name="description">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." name="abstract">
-<meta content="Pablo Urrea,Prism as a validation proxy API Server,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,API,Proxy" name="keywords">
-<link href="https://pablourrea.github.io/en/articles/prism-validation-proxy-api-server" rel="canonical">
+<meta content="SASS (Syntactically Awesome Style Sheets) or Super CSS for friends (SIUUUUUUUSS in Portuguese), allows for automatic compilation of component-based styles for web theme creation. This system is quite useful for unifying the CSS file of a web page to reduce file transfer and improve performance (One step closer to getting a 100/100 score from Google Lighthouse). Quick, easy, and for the whole family. The first thing to do is to install Node, the main executor of SASS. It's best to follow the steps on the official Node page for the environment you need: https://nodejs.org/en/download/package-manager.Now that Node is working correctly on your machine (or should be), it's time to install SASS. You can install it globally on the whole machine (recommended for testing) as recommended in the official SASS documentation:npm install -g sassOr you can install SASS in the project where you will use the package from the root folder of the package (don't forget to run the Node project initiation command npm init first):npm install sass Execution time is shorter than expected. Compiling the file is quite simple, the sass command accepts various parameters, but the most useful (probably) are the input SCSS path, the output CSS path, and the style parameter. An example of how the command looks with these parameters applied is:npx sass --style=compressed path/to/file.scss:path/to/file.cssIn this example, SASS is instructed to compile the main SCSS file (the one that usually contains all dependencies) in a compressed form and compile the compressed result into the specified CSS file.In a real example, let's consider the following unoptimized CSS file without SASS:body { font: Helvetica, sans-serif; color: #333; }This file takes up 54 bytes, and if more styles with the same color or font need to be added, a copy of the same style would be required, which is cumbersome for the developer.Now, I convert this CSS file to SCSS:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: $font-stack; color: $primary-color; }And upon compiling it with compression, this is the result:body{font:Helvetica,sans-serif;color:#333}It takes up 43 bytes, and the developer does not need to bother decompressing it to edit it, as the styles are configured from the SCSS file. In the previous examples, the size difference may not seem significant, but when scaled to larger projects, the difference becomes considerable, and the convenience of using variables becomes more necessary.Another example of the advantages of SASS is element nesting. Multiple child elements can be nested under the same parent umbrella. The following CSS file has many nestings that, during development, can be confusing and lead to errors, causing styles to not function correctly because the element to be selected is not properly recognized:body element.class__one#id-element .class__one__two { font: $font-stack; color: $primary-color; }When converted to SASS, it is evident that the nestings improve the readability of the styles:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { element { &.class { &__one { &#id-element { .class { &__two { font: $font-stack; color: $primary-color; } } } } } } }  Conclusion. These examples are just the tip of the iceberg that makes SASS improve style development. It is best to read the official SASS documentation to see all the tool's possibilities. They also have an online compiler so you can test the CSS code before migrating your project. " name="description">
+<meta content="Discover how SASS (Super CSS for friends) can improve the performance and organization of CSS stylesheets. I will show you how to install and use it efficiently in your projects." name="abstract">
+<meta content="Pablo Urrea,Optimization and automatic compilation of web styles with SASS,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,SASS,CSS" name="keywords">
+<link href="https://pablourrea.github.io/en/articles/optimization-and-automatic-compilation-web-styles-sass" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" property="og:url">
-<meta content="Prism as a validation proxy API Server" property="og:title">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="og:image:secure_url">
+<meta content="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" property="og:url">
+<meta content="Optimization and automatic compilation of web styles with SASS" property="og:title">
+<meta content="Discover how SASS (Super CSS for friends) can improve the performance and organization of CSS stylesheets. I will show you how to install and use it efficiently in your projects." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image:secure_url">
 <meta content="image/jpeg" property="og:image:type">
-<meta content="Sat, 25/05/2024 - 16:16" property="og:updated_time">
+<meta content="Sun, 30/06/2024 - 15:02" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,24 +62,24 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Sat, 25/05/2024 - 14:18" property="article:published_time">
-<meta content="Sat, 25/05/2024 - 16:16" property="article:modified_time">
+<meta content="Sun, 30/06/2024 - 14:36" property="article:published_time">
+<meta content="Sun, 30/06/2024 - 15:02" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content="Prism as a validation proxy API Server" property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" property="pin:url">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." property="pin:description">
+<meta content="Optimization and automatic compilation of web styles with SASS" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" property="pin:url">
+<meta content="Discover how SASS (Super CSS for friends) can improve the performance and organization of CSS stylesheets. I will show you how to install and use it efficiently in your projects." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." name="twitter:description">
-<meta content="Prism as a validation proxy API Server | Pablo Urrea" name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" name="twitter:image">
+<meta content="Discover how SASS (Super CSS for friends) can improve the performance and organization of CSS stylesheets. I will show you how to install and use it efficiently in your projects." name="twitter:description">
+<meta content="Optimization and automatic compilation of web styles with SASS | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/prism-validation-proxy-api-server" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/optimization-and-automatic-compilation-web-styles-sass" rel="alternate" hreflang="en">
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -88,7 +88,7 @@
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/prism-como-servidor-api-proxy-de-validacion",en:"/en/articles/prism-validation-proxy-api-server",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass",en:"/en/articles/optimization-and-automatic-compilation-web-styles-sass",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -112,12 +112,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Prism As A Validation Proxy API Server",
-                        "item": "https://pablourrea.github.io/en/articles/prism-validation-proxy-api-server"
+                        "name": "Optimization And Automatic Compilation Of Web Styles With SASS",
+                        "item": "https://pablourrea.github.io/en/articles/optimization-and-automatic-compilation-web-styles-sass"
                     }
                 ]
             },
-            "description": "Prism as a validation proxy API Server",
+            "description": "Optimization and automatic compilation of web styles with SASS",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -160,7 +160,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-05-25T14:18:30+0000"
+                "datePublished": "2024-06-30T14:36:38+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -200,18 +200,18 @@
     ]
 }</script>
 
-    <title>Prism as a validation proxy API Server | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css__iEcXsVtQ688vyPDw7lKVHRyIqdOV8UmK5BSk3lUiao.css?delta=0&language=en&theme=pablo_urrea&include=eJyNTMsOwyAM-6F2fBIKLKOZAkFJeqBfP6SV46QdbNnyw4Y51pDAcJtE-SuzKIYmWoHpWklhScC3qWgGBW3rkFjiqYqwGgeVgyf8bZFaPz2-iB01_Aoe5oPn1z_DPUsfa1DxSRDukwzdSdoHDa9TBw" rel="stylesheet" media="all">
+    <title>Optimization and automatic compilation of web styles with SASS | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_nTytp-fKSAwHs3VsqlsXVQ5prXNg2bGpYqTh4PR27f0.css?delta=0&language=en&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_GgKgqaCFpzGjSQOfkPufTeeZ7cn4VyOQwwrbl9kk9ls.css?delta=3&language=en&theme=pablo_urrea&include=eJyNTMsOwyAM-6F2fBIKLKOZAkFJeqBfP6SV46QdbNnyw4Y51pDAcJtE-SuzKIYmWoHpWklhScC3qWgGBW3rkFjiqYqwGgeVgyf8bZFaPz2-iB01_Aoe5oPn1z_DPUsfa1DxSRDukwzdSdoHDa9TBw" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_IBODtB5CjdjzCYebAP3DIU4024Em9kBMKrbdhfkGU94.css?delta=4&language=en&theme=pablo_urrea&include=eJyNTMsOwyAM-6F2fBIKLKOZAkFJeqBfP6SV46QdbNnyw4Y51pDAcJtE-SuzKIYmWoHpWklhScC3qWgGBW3rkFjiqYqwGgeVgyf8bZFaPz2-iB01_Aoe5oPn1z_DPUsfa1DxSRDukwzdSdoHDa9TBw" rel="stylesheet" media="print">
-<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNTMsOwyAM-6F2fBIKLKOZAkFJeqBfP6SV46QdbNnyw4Y51pDAcJtE-SuzKIYmWoHpWklhScC3qWgGBW3rkFjiqYqwGgeVgyf8bZFaPz2-iB01_Aoe5oPn1z_DPUsfa1DxSRDukwzdSdoHDa9TBw" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_GgKgqaCFpzGjSQOfkPufTeeZ7cn4VyOQwwrbl9kk9ls.css?delta=3&language=en&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_IBODtB5CjdjzCYebAP3DIU4024Em9kBMKrbdhfkGU94.css?delta=4&language=en&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="no-sidebar page-articles-prism-validation-proxy-api-server role--anonymous section-articles with-subnav">
+      <body class="no-sidebar page-articles-optimization-and-automatic-compilation-web-styles-sass role--anonymous section-articles with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -272,7 +272,7 @@
 <div class="block-language-switcher-langcode-block language-switcher-language-url pablo-urrea-language-switcher-langcode" id="pablo-urrea-language-switcher-langcode">
   
     
-      <ul class="links"><li data-drupal-link-system-path="node/28" hreflang="es"><a href="/es/articulos/prism-como-servidor-api-proxy-de-validacion" class="language-link" title="Español" data-drupal-link-system-path="node/28" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/28" hreflang="en"><a href="/en/articles/prism-validation-proxy-api-server" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/28" hreflang="en" aria-current="page">en</a></li></ul>
+      <ul class="links"><li data-drupal-link-system-path="node/31" hreflang="es"><a href="/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" class="language-link" title="Español" data-drupal-link-system-path="node/31" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/31" hreflang="en"><a href="/en/articles/optimization-and-automatic-compilation-web-styles-sass" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/31" hreflang="en" aria-current="page">en</a></li></ul>
   </div>
 
   </div>
@@ -302,7 +302,7 @@
 <h1 class="content-title">
       
 
-            <div class="clearfix text-formatted"><p>Prism as a validation proxy API Server</p>
+            <div class="clearfix text-formatted"><p>Optimization and automatic compilation of web styles with <em>SASS</em></p>
 </div>
       
   </h1>
@@ -312,8 +312,8 @@
 
       <div>
               <div><a href="/en/articles/categories/nodejs" hreflang="en">NodeJS</a></div>
-              <div><a href="/en/articles/categories/api" hreflang="en">API</a></div>
-              <div><a href="/en/articles/categories/proxy" hreflang="en">Proxy</a></div>
+              <div><a href="/en/articles/categories/sass" hreflang="en">SASS</a></div>
+              <div><a href="/en/articles/categories/css" hreflang="en">CSS</a></div>
           </div>
   
   </div>
@@ -327,7 +327,7 @@
   
       
 
-            <div>  <img alt="Network - Pixabay" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/network_pixabay.jpg?itok=1MMEELD_" height="540" loading="lazy" title="Network - Pixabay" width="1072">
+            <div>  <img alt="SASS logo" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/sass_logo.jpg?itok=022OdC9E" height="540" loading="lazy" title="SASS logo" width="1072">
 
 
 </div>
@@ -338,7 +338,7 @@
 <div class="title title-right title-small">
       
 
-            <div class="clearfix text-formatted"><p>Network - Pixabay</p>
+            <div class="clearfix text-formatted"><p><em>SASS</em> logo</p>
 </div>
       
   </div>
@@ -420,7 +420,7 @@
 <div class="reading-time">
       
 
-            <div content="5">5 minutes reading</div>
+            <div content="10">10 minutes reading</div>
       
   </div>
 
@@ -431,8 +431,8 @@
     Published
   </div>
 
-  <time class="datetime" datetime="2024-05-25">
-    25/05/2024
+  <time class="datetime" datetime="2024-06-30">
+    30/06/2024
   </time>
 </div>
 
@@ -445,7 +445,7 @@
 <div class="content-description-short">
       
 
-            <div class="clearfix text-formatted"><p>Use <em>Prism</em> as a proxy for REST APIs, a tool that not only validates requests according to <em>OpenAPI</em> definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications.</p>
+            <div class="clearfix text-formatted"><p>Discover how <em>SASS</em> (<em>Super CSS</em> for friends) can improve the performance and organization of <em>CSS</em> stylesheets. I will show you how to install and use it efficiently in your projects.</p>
 </div>
       
   </div>
@@ -453,73 +453,57 @@
 <div class="content-description">
       
 
-            <div class="clearfix text-formatted"><p>In the article <a href="https://pablourrea.github.io/en/articles/prism-rest-api-testing-server/"><em>Prism As A REST API Testing Server</em></a> I delve into the installation and basic configuration of <em>Prism</em>, so in this article, I will skip the installation and validation process that <em>Prism</em> uses with <em>OpenAPI</em> definitions.</p>
+            <div class="clearfix text-formatted"><p><em>SASS</em> (<em>Syntactically Awesome Style Sheets</em>) or <em>Super CSS</em> for friends (<em>SIUUUUUUUSS</em> in Portuguese), allows for automatic compilation of component-based styles for web theme creation. This system is quite useful for unifying the CSS file of a web page to reduce file transfer and improve performance (One step closer to getting a <em>100/100</em> score from <em>Google Lighthouse</em>).</p>
 <p> </p>
-<p>Using <em>Prism</em> as a <em>REST API proxy</em> has the main advantage of validating requests against the port, but it is also important to note that this functionality redirects all requests to a single REST API port, which can be challenging if you have more than one port in your functionality. This concept is easier to understand with the following diagrams:</p>
+<p><strong>Quick, easy, and for the whole family.</strong> The first thing to do is to install <a href="https://nodejs.org/en/download/package-manager"><em>Node</em></a>, the main executor of <em>SASS</em>. It's best to follow the steps on the official <a href="https://nodejs.org/en/download/package-manager"><em>Node</em></a> page for the environment you need: <a href="https://nodejs.org/en/download/package-manager">https://nodejs.org/en/download/package-manager</a>.</p>
+<p>Now that <em>Node</em> is working correctly on your machine (or should be), it's time to install <em>SASS</em>. You can install it globally on the whole machine (recommended for testing) <a href="https://sass-lang.com/install/">as recommended in the official <em>SASS</em> documentation</a>:</p>
+<pre><code class="language-bash">npm install -g sass</code></pre><p>Or you can install <em>SASS</em> in the project where you will use the package from the root folder of the package (don't forget to run the <em>Node</em> project initiation command <code>npm init</code> first):</p>
+<pre><code class="language-bash">npm install sass</code></pre><p> </p>
+<p><strong>Execution time is shorter than expected.</strong> Compiling the file is quite simple, the <code>sass</code> command accepts various parameters, but the most useful (probably) are the input <em>SCSS</em> path, the output <em>CSS</em> path, and the <em>style</em> parameter. An example of how the command looks with these parameters applied is:</p>
+<pre><code class="language-bash">npx sass --style=compressed path/to/file.scss:path/to/file.css</code></pre><p>In this example, <em>SASS</em> is instructed to compile the main <em>SCSS</em> file (the one that usually contains all dependencies) in a compressed form and compile the compressed result into the specified <em>CSS</em> file.</p>
+<p>In a real example, let's consider the following unoptimized <em>CSS</em> file without <em>SASS</em>:</p>
+<pre><code class="language-css">body {
+  font: Helvetica, sans-serif;
+  color: #333;
+}</code></pre><p>This file takes up <u>54 bytes</u>, and if more styles with the same color or font need to be added, a copy of the same style would be required, which is cumbersome for the developer.</p>
+<p>Now, I convert this <em>CSS</em> file to <em>SCSS</em>:</p>
+<pre><code class="language-scss">$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+ font: $font-stack;
+ color: $primary-color;
+}</code></pre><p>And upon compiling it with compression, this is the result:</p>
+<pre><code class="language-css">body{font:Helvetica,sans-serif;color:#333}</code></pre><p>It takes up <u>43 bytes</u>, and the developer does not need to bother decompressing it to edit it, as the styles are configured from the <em>SCSS</em> file.</p>
 <p> </p>
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-  
-      
+<p>In the previous examples, the size difference may not seem significant, but when scaled to larger projects, the difference becomes considerable, and the convenience of using variables becomes more necessary.</p>
+<p>Another example of the advantages of <em>SASS</em> is element nesting. Multiple child elements can be nested under the same parent umbrella. The following CSS file has many nestings that, during development, can be confusing and lead to errors, causing styles to not function correctly because the element to be selected is not properly recognized:</p>
+<pre><code class="language-css">body element.class__one#id-element .class__one__two {
+ font: $font-stack;
+ color: $primary-color;
+}</code></pre><p>When converted to <em>SASS</em>, it is evident that the nestings improve the readability of the styles:</p>
+<pre><code class="language-scss">$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
 
-            <div>  <img alt="Prism As A Validation Proxy API Server - The proxy receives requests to multiple REST API ports and redirects them to a single real port" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/prism_as_a_validation_proxy_api_server-the_proxy_receives_requests_to_multiple_rest_api_ports_and_redirects_them_to_a_single_real_port.png?itok=ml7iFBzA" height="563" loading="lazy" title="Prism As A Validation Proxy API Server - The proxy receives requests to multiple REST API ports and redirects them to a single real port" width="1920">
-
-
-</div>
-      
-  </article>
-
-<figcaption><em>The proxy receives requests to multiple REST API ports and redirects them to a single real port.</em></figcaption>
-</figure>
+body {
+  element {
+    &.class {
+      &__one {
+        &#id-element {
+          .class {
+            &__two {
+              font: $font-stack;
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}</code></pre><p> </p>
 <p> </p>
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-  
-      
-
-            <div>  <img alt="Prism As A Validation Proxy API Server - The proxy receives requests to a single REST API port and redirects them to the real port, facilitating development" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/prism_as_a_validation_proxy_api_server-the_proxy_receives_requests_to_a_single_rest_api_port_and_redirects_them_to_the_real_port_facilitating_development.png?itok=AIPMytTW" height="116" loading="lazy" title="Prism As A Validation Proxy API Server - The proxy receives requests to a single REST API port and redirects them to the real port, facilitating development" width="1920">
-
-
-</div>
-      
-  </article>
-
-<figcaption><em>The proxy receives requests to a single REST API port and redirects them to the real port, facilitating development.</em></figcaption>
-</figure>
+<p><strong>Conclusion.</strong> These examples are just the tip of the iceberg that makes <em>SASS</em> improve style development. It is best to read the official <em>SASS</em> documentation to see all the tool's possibilities. They also have an <a href="https://sass-lang.com/playground/">online compiler</a> so you can test the <em>CSS</em> code before migrating your project.</p>
 <p> </p>
-<p> </p>
-<p><strong>Intercepting requests with Prism's network.</strong> With this clear, setting up the proxy is as simple as running the following command:</p>
-<pre><code class="language-bash">prism proxy openapi.yaml https://www.example.com/api/v1/port/</code></pre><p> </p>
-<p>Although Prism allows configuring some proxy settings via parameters, below are the most useful ones:<br><strong>--errors:</strong> Recommended parameter. The response to the request generates an error if it does not validate with the definitions. For example:</p>
-<pre><code class="language-bash">prism proxy openapi.yaml https://www.example.com/api/v1/port/ --errors</code></pre><p><strong>-h:</strong> Changes the IP address to the one provided. For example:</p>
-<pre><code class="language-bash">prism proxy -h 0.0.0.0 openapi.yaml https://www.example.com/api/v1/port/</code></pre><p><strong>-p:</strong> Changes the network port to the one provided. For example:</p>
-<pre><code class="language-bash">prism proxy -p 9999 openapi.yaml https://www.example.com/api/v1/port/</code></pre><p><strong>-m:</strong> Enables multiprocessing. Recommended parameter if the proxy is going to receive many requests. For example:</p>
-<pre><code class="language-bash">prism proxy -m openapi.yaml https://www.example.com/api/v1/port/</code></pre><p> </p>
-<p>Once the server is started, you can make requests to the service from your machine to the local IP (or to the IP of the remote machine if installed on a remote server):</p>
-<pre><code class="language-bash">curl http://localhost:4010/users</code></pre><p><em>Prism</em> accepts configurations for <em>GET</em>, <em>POST</em>, <em>PUT</em>, <em>PATCH</em>, and <em>DELETE</em> methods.</p>
-<p> </p>
-<p> </p>
-<p><strong>What happens at the real REST API port?</strong> Debugging the request at the real REST API port, you can verify that the proxy has made the request against the port, sending the query parameter “q” with the URL of the port to interact with. For example, if you have a REST API port <code>/users/delete</code> that performs an action with the <em>DELETE</em> method on a user ID in the body <code>{id: 1}</code>, when making the request against the Prism proxy, it validates the request and forwards it to the real REST API port <code>/api/v1/port</code> as <code>/api/v1/port?q=/users/delete</code> with the <em>DELETE</em> method and the request body <code>{id: 1}</code>. The port returns a <em>status code</em> and a <em>message in the body</em> that is transferred to the proxy, and then the proxy returns to the client:</p>
-<p> </p>
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-  
-      
-
-            <div>  <img alt="Prism As A Validation Proxy API Server - The proxy returns the requests from the real port, or a validation error according to the OpenAPI definitions." class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/prism_as_a_validation_proxy_api_server-the_proxy_returns_the_requests_from_the_real_port_or_a_validation_error_according_to_the_openapi_definitions.png?itok=UJDYSO3W" height="116" loading="lazy" title="Prism As A Validation Proxy API Server - The proxy returns the requests from the real port, or a validation error according to the OpenAPI definitions." width="1920">
-
-
-</div>
-      
-  </article>
-
-<figcaption><em>The proxy returns the requests from the real port, or a validation error according to the OpenAPI definitions.</em></figcaption>
-</figure>
-<p> </p>
-<p> </p>
-<p><strong>Conclusion.</strong> <em>Prism</em> emerges as a valuable tool for validating and redirecting REST API requests, functioning as an effective proxy that ensures requests comply with <em>OpenAPI</em> definitions before being processed by the real REST API port. This not only simplifies the workflow by intercepting and validating requests but also enhances the robustness of applications through strict adherence to the REST API specifications, resulting in a more secure and efficient development process.</p>
-<p><br> </p>
-<p><span style='background-color:#fafafa;color:#0c0c0c;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif'><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:.48px;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:normal;widows:2;word-spacing:0">If you need more information about the package, you can check </span></span><a href="https://docs.stoplight.io/docs/prism" style='-webkit-text-stroke-width:0;background-color:#fafafa;box-sizing:inherit;color:#545454;display:inline-block;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:.48px;orphans:2;text-align:start;text-decoration:none;text-indent:0;text-transform:none;transition:all .5s ease 0s;white-space:normal;widows:2;word-spacing:0'><em><strong>Prism's</strong></em><strong> documentation</strong></a><span style='background-color:#fafafa;color:#0c0c0c;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif'><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:.48px;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:normal;widows:2;word-spacing:0">.</span></span><br> </p>
 </div>
       
   </div>
@@ -543,7 +527,7 @@
                   <a href="/en/articles">Articles</a>
               </li>
           <li>
-                  Prism As A Validation Proxy API Server
+                  Optimization And Automatic Compilation Of Web Styles With SASS
               </li>
         </ol>
   </nav>
@@ -642,7 +626,7 @@
 
                   </li>
                       
-        <li class="menu-item menu-item--active-trail menu-item--expanded">
+        <li class="menu-item menu-item--expanded">
           <span>Pages</span>
                                 
   
@@ -698,7 +682,7 @@
 
                   </li>
                       
-        <li class="menu-item menu-item--active-trail">
+        <li class="menu-item">
           <a href="/en/projects/categories" target="_self" data-drupal-link-system-path="node/22">Project categories 📊</a>
                                 
   
@@ -808,7 +792,7 @@
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/28","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast"}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/31","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast"}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","css":"css","scss":"scss"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
 <script src="/sites/default/files/js/js_yuVLhA786BzH9Pri7dChweUDe0cDxLdDJAH48kjcU2Q.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 

@@ -7,6 +7,22 @@
     <language>es</language>
     
     <item>
+  <title>Optimización y compilación automática de estilos web con SASS</title>
+  <link>https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Optimización y compilación automática de estilos web con SASS&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Descubre cómo &lt;em&gt;SASS&lt;/em&gt; (&lt;em&gt;Super CSS&lt;/em&gt; para los amigos), puede mejorar el rendimiento y la organización de las hojas de estilos &lt;em&gt;CSS&lt;/em&gt;. Te enseño como instalarlo y utilizarlo eficientemente en tus proyectos.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-06-30T14:36:38+00:00" title="Domingo, Junio 30, 2024 - 14:36" class="datetime"&gt;Dom, 30/06/2024 - 14:36&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Sun, 30 Jun 2024 14:36:38 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">31 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Prism Como Servidor API proxy de validación</title>
   <link>https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Prism Como Servidor API proxy de validación&lt;/span&gt;
