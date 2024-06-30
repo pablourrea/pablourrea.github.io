@@ -11,7 +11,7 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="SASS (Syntactically Awesome Style Sheets) or Super CSS for friends (SIUUUUUUUSS in Portuguese), allows for automatic compilation of component-based styles for web theme creation. This system is quite useful for unifying the CSS file of a web page to reduce file transfer and improve performance (One step closer to getting a 100/100 score from Google Lighthouse). Quick, easy, and for the whole family. The first thing to do is to install Node, the main executor of SASS. It's best to follow the steps on the official Node page for the environment you need: https://nodejs.org/en/download/package-manager.Now that Node is working correctly on your machine (or should be), it's time to install SASS. You can install it globally on the whole machine (recommended for testing) as recommended in the official SASS documentation:npm install -g sassOr you can install SASS in the project where you will use the package from the root folder of the package (don't forget to run the Node project initiation command npm init first):npm install sass Execution time is shorter than expected. Compiling the file is quite simple, the sass command accepts various parameters, but the most useful (probably) are the input SCSS path, the output CSS path, and the style parameter. An example of how the command looks with these parameters applied is:npx sass --style=compressed path/to/file.scss:path/to/file.cssIn this example, SASS is instructed to compile the main SCSS file (the one that usually contains all dependencies) in a compressed form and compile the compressed result into the specified CSS file.In a real example, let's consider the following unoptimized CSS file without SASS:body { font: Helvetica, sans-serif; color: #333; }This file takes up 54 bytes, and if more styles with the same color or font need to be added, a copy of the same style would be required, which is cumbersome for the developer.Now, I convert this CSS file to SCSS:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: $font-stack; color: $primary-color; }And upon compiling it with compression, this is the result:body{font:Helvetica,sans-serif;color:#333}It takes up 43 bytes, and the developer does not need to bother decompressing it to edit it, as the styles are configured from the SCSS file. In the previous examples, the size difference may not seem significant, but when scaled to larger projects, the difference becomes considerable, and the convenience of using variables becomes more necessary.Another example of the advantages of SASS is element nesting. Multiple child elements can be nested under the same parent umbrella. The following CSS file has many nestings that, during development, can be confusing and lead to errors, causing styles to not function correctly because the element to be selected is not properly recognized:body element.class__one#id-element .class__one__two { font: $font-stack; color: $primary-color; }When converted to SASS, it is evident that the nestings improve the readability of the styles:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { element { &.class { &__one { &#id-element { .class { &__two { font: $font-stack; color: $primary-color; } } } } } } }  Conclusion. These examples are just the tip of the iceberg that makes SASS improve style development. It is best to read the official SASS documentation to see all the tool's possibilities. They also have an online compiler so you can test the CSS code before migrating your project. " name="description">
+<meta content="SASS (Syntactically Awesome Style Sheets) or Super CSS for friends (SIUUUUUUUSS in Portuguese), allows for automatic compilation of component-based styles for web theme creation. This system is quite useful for unifying the CSS file of a web page to reduce file transfer and improve performance (One step closer to getting a 100/100 score from Google Lighthouse). Quick, easy, and for the whole family. The first thing to do is to install Node, the main executor of SASS. It's best to follow the steps on the official Node page for the environment you need: https://nodejs.org/en/download/package-manager.Now that Node is working correctly on your machine (or should be), it's time to install SASS. You can install it globally on the whole machine (recommended for testing) as recommended in the official SASS documentation:npm install -g sassOr you can install SASS in the project where you will use the package from the root folder of the package (don't forget to run the Node project initiation command npm init first):npm install sass Execution time is shorter than expected. Compiling the file is quite simple; the sass command accepts various parameters, but the most useful ones (probably) are the input path SCSS, the output path CSS, the style parameter for compiling expanded or compressed styles (expanded (default) or compressed), and the watch parameter to automatically compile whenever it detects a saved change in the SCSS files. An example of how the command looks with these parameters applied is:npx sass --watch --style=compressed path/to/file.scss:path/to/file.cssIn this example, SASS is instructed to compile the main SCSS file in a compressed format (the one that usually contains all the dependencies) and to compile the compressed result into the CSS file at the specified path. If you need more configurations, here is the output of sass --help: Compile Sass to CSS. Usage: sass [output.css] sass : : ━━━ Input and Output ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --[no-]stdin Read the stylesheet from stdin. --[no-]indented Use the indented syntax for input from stdin. -I, --load-path= A path to use when resolving imports. May be passed multiple times. -p, --pkg-importer= Built-in importer(s) to use for pkg: URLs. [node] Load files like Node.js package resolution. -s, --style= Output style. [expanded (default), compressed] --[no-]charset Emit a @charset or BOM for CSS with non-ASCII characters. (defaults to on) --[no-]error-css When an error occurs, emit a stylesheet describing it. Defaults to true when compiling to a file. --update Only compile out-of-date stylesheets. ━━━ Source Maps ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --[no-]source-map Whether to generate source maps. (defaults to on) --source-map-urls How to link from source maps to source files. [relative (default), absolute] --[no-]embed-sources Embed source file contents in source maps. --[no-]embed-source-map Embed source map contents in CSS. ━━━ Warnings ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -q, --[no-]quiet Don't print warnings. --[no-]quiet-deps Don't print compiler warnings from dependencies. Stylesheets imported through load paths count as dependencies. --[no-]verbose Print all deprecation warnings even when they're repetitive. --fatal-deprecation Deprecations to treat as errors. You may also pass a Sass version to include any behavior deprecated in or before it. See https://sass-lang.com/documentation/breaking-changes for a complete list. --silence-deprecation Deprecations to ignore. --future-deprecation Opt in to a deprecation early. ━━━ Other ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -w, --watch Watch stylesheets and recompile when they change. --[no-]poll Manually check for changes rather than using a native watcher. Only valid with --watch. --[no-]stop-on-error Don't compile more files once an error is encountered. -i, --interactive Run an interactive SassScript shell. -c, --[no-]color Whether to use terminal colors for messages. --[no-]unicode Whether to use Unicode characters for messages. --[no-]trace Print full Dart stack traces for exceptions. -h, --help Print this usage information. --version Print the version of Dart Sass.  In a real example, let's consider the following unoptimized CSS file without SASS:body { font: Helvetica, sans-serif; color: #333; }This file takes up 54 bytes, and if more styles with the same color or font need to be added, a copy of the same style would be required, which is cumbersome for the developer.Now, I convert this CSS file to SCSS:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: $font-stack; color: $primary-color; }And upon compiling it with compression, this is the result:body{font:Helvetica,sans-serif;color:#333}It takes up 43 bytes, and the developer does not need to bother decompressing it to edit it, as the styles are configured from the SCSS file. In the previous examples, the size difference may not seem significant, but when scaled to larger projects, the difference becomes considerable, and the convenience of using variables becomes more necessary.Another example of the advantages of SASS is element nesting. Multiple child elements can be nested under the same parent umbrella. The following CSS file has many nestings that, during development, can be confusing and lead to errors, causing styles to not function correctly because the element to be selected is not properly recognized:body element.class__one#id-element .class__one__two { font: $font-stack; color: $primary-color; }When converted to SASS, it is evident that the nestings improve the readability of the styles:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { element { &.class { &__one { &#id-element { .class { &__two { font: $font-stack; color: $primary-color; } } } } } } }  Conclusion. These examples are just the tip of the iceberg that makes SASS improve style development. It is best to read the official SASS documentation to see all the tool's possibilities. They also have an online compiler so you can test the CSS code before migrating your project. " name="description">
 <meta content="Discover how SASS (Super CSS for friends) can improve the performance and organization of CSS stylesheets. I will show you how to install and use it efficiently in your projects." name="abstract">
 <meta content="Pablo Urrea,Optimization and automatic compilation of web styles with SASS,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,SASS,CSS" name="keywords">
 <link href="https://pablourrea.github.io/en/articles/optimization-and-automatic-compilation-web-styles-sass" rel="canonical">
@@ -51,7 +51,7 @@
 <meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image:url">
 <meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image:secure_url">
 <meta content="image/jpeg" property="og:image:type">
-<meta content="Sun, 30/06/2024 - 15:02" property="og:updated_time">
+<meta content="Sun, 30/06/2024 - 19:26" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -63,7 +63,7 @@
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
 <meta content="Sun, 30/06/2024 - 14:36" property="article:published_time">
-<meta content="Sun, 30/06/2024 - 15:02" property="article:modified_time">
+<meta content="Sun, 30/06/2024 - 19:26" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
@@ -459,8 +459,50 @@
 <p>Now that <em>Node</em> is working correctly on your machine (or should be), it's time to install <em>SASS</em>. You can install it globally on the whole machine (recommended for testing) <a href="https://sass-lang.com/install/">as recommended in the official <em>SASS</em> documentation</a>:</p>
 <pre><code class="language-bash">npm install -g sass</code></pre><p>Or you can install <em>SASS</em> in the project where you will use the package from the root folder of the package (don't forget to run the <em>Node</em> project initiation command <code>npm init</code> first):</p>
 <pre><code class="language-bash">npm install sass</code></pre><p> </p>
-<p><strong>Execution time is shorter than expected.</strong> Compiling the file is quite simple, the <code>sass</code> command accepts various parameters, but the most useful (probably) are the input <em>SCSS</em> path, the output <em>CSS</em> path, and the <em>style</em> parameter. An example of how the command looks with these parameters applied is:</p>
-<pre><code class="language-bash">npx sass --style=compressed path/to/file.scss:path/to/file.css</code></pre><p>In this example, <em>SASS</em> is instructed to compile the main <em>SCSS</em> file (the one that usually contains all dependencies) in a compressed form and compile the compressed result into the specified <em>CSS</em> file.</p>
+<p><strong>Execution time is shorter than expected.</strong> Compiling the file is quite simple; the <code>sass</code> command accepts various parameters, but the most useful ones (probably) are the input path <em>SCSS</em>, the output path <em>CSS</em>, the <em>style</em> parameter for compiling expanded or compressed styles (<em>expanded</em> (default) or <em>compressed</em>), and the <em>watch</em> parameter to automatically compile whenever it detects a saved change in the <em>SCSS</em> files. An example of how the command looks with these parameters applied is:</p>
+<pre><code class="language-bash">npx sass --watch --style=compressed path/to/file.scss:path/to/file.css</code></pre><p>In this example, <em>SASS</em> is instructed to compile the main <em>SCSS</em> file in a compressed format (the one that usually contains all the dependencies) and to compile the compressed result into the <em>CSS</em> file at the specified path. If you need more configurations, here is the output of <code>sass --help</code>:</p>
+<pre><code class="language-bash">
+Compile Sass to CSS.
+
+Usage: sass &lt;input.scss> [output.css]
+       sass &lt;input.scss>:&lt;output.css> &lt;input/>:&lt;output/> &lt;dir/>
+
+━━━ Input and Output ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+   --[no-]stdin               Read the stylesheet from stdin.
+   --[no-]indented            Use the indented syntax for input from stdin.
+-I, --load-path=&lt;PATH>        A path to use when resolving imports. May be passed multiple times.
+-p, --pkg-importer=&lt;TYPE>     Built-in importer(s) to use for pkg: URLs.
+         [node]               Load files like Node.js package resolution.
+-s, --style=&lt;NAME>            Output style. [expanded (default), compressed]
+   --[no-]charset             Emit a @charset or BOM for CSS with non-ASCII characters. (defaults to on)
+   --[no-]error-css           When an error occurs, emit a stylesheet describing it. Defaults to true when compiling to a file.
+   --update                   Only compile out-of-date stylesheets.
+
+━━━ Source Maps ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+   --[no-]source-map          Whether to generate source maps. (defaults to on)
+   --source-map-urls          How to link from source maps to source files. [relative (default), absolute]
+   --[no-]embed-sources       Embed source file contents in source maps.
+   --[no-]embed-source-map    Embed source map contents in CSS.
+
+━━━ Warnings ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+-q, --[no-]quiet              Don't print warnings.
+   --[no-]quiet-deps          Don't print compiler warnings from dependencies. Stylesheets imported through load paths count as dependencies.
+   --[no-]verbose             Print all deprecation warnings even when they're repetitive.
+   --fatal-deprecation        Deprecations to treat as errors. You may also pass a Sass version to include any behavior deprecated in or before it. See https://sass-lang.com/documentation/breaking-changes for a complete list.
+   --silence-deprecation      Deprecations to ignore.
+   --future-deprecation       Opt in to a deprecation early.
+
+━━━ Other ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+-w, --watch                   Watch stylesheets and recompile when they change.
+   --[no-]poll                Manually check for changes rather than using a native watcher. Only valid with --watch.
+   --[no-]stop-on-error       Don't compile more files once an error is encountered.
+-i, --interactive             Run an interactive SassScript shell.
+-c, --[no-]color              Whether to use terminal colors for messages.
+   --[no-]unicode             Whether to use Unicode characters for messages.
+   --[no-]trace               Print full Dart stack traces for exceptions.
+-h, --help                    Print this usage information.
+   --version                  Print the version of Dart Sass.
+</code></pre><p> </p>
 <p>In a real example, let's consider the following unoptimized <em>CSS</em> file without <em>SASS</em>:</p>
 <pre><code class="language-css">body {
   font: Helvetica, sans-serif;
@@ -469,7 +511,6 @@
 <p>Now, I convert this <em>CSS</em> file to <em>SCSS</em>:</p>
 <pre><code class="language-scss">$font-stack: Helvetica, sans-serif;
 $primary-color: #333;
-
 body {
  font: $font-stack;
  color: $primary-color;
@@ -484,7 +525,6 @@ body {
 }</code></pre><p>When converted to <em>SASS</em>, it is evident that the nestings improve the readability of the styles:</p>
 <pre><code class="language-scss">$font-stack: Helvetica, sans-serif;
 $primary-color: #333;
-
 body {
   element {
     &.class {

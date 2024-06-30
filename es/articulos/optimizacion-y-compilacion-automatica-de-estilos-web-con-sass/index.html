@@ -51,7 +51,7 @@
 <meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image:url">
 <meta content="https://pablourrea.github.io/sites/default/files/images/sass_logo.jpg" property="og:image:secure_url">
 <meta content="image/jpeg" property="og:image:type">
-<meta content="Dom, 30/06/2024 - 15:02" property="og:updated_time">
+<meta content="Dom, 30/06/2024 - 19:26" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -63,7 +63,7 @@
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
 <meta content="Dom, 30/06/2024 - 14:36" property="article:published_time">
-<meta content="Dom, 30/06/2024 - 15:02" property="article:modified_time">
+<meta content="Dom, 30/06/2024 - 19:26" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
@@ -459,8 +459,50 @@
 <p>Ahora que <em>Node</em> funciona correctamente en la máquina (O debería), es el momento de instalar <em>SASS</em>, puedes instalarlo globalmente en toda la máquina (recomendado para pruebas) <a href="https://sass-lang.com/install/">como recomiendan en la documentación oficial de <em>SASS</em></a>:</p>
 <pre><code class="language-bash">npm install -g sass</code></pre><p>O puedes instalar <em>SASS</em> en el proyecto en el cual vas a utilizar el paquete desde la carpeta raíz del paquete (No olvides ejecutar antes el comando de iniciación de proyecto de <em>Node</em> <code>npm init</code>):</p>
 <pre><code class="language-bash">npm install sass</code></pre><p> </p>
-<p><strong>El tiempo de ejecución es menor al esperado.</strong> Compilar el archivo es bastante sencillo, el comando <code>sass</code> acepta diversos parámetros, pero los más útiles (probablemente) son la ruta de entrada <em>SCSS</em>, la ruta de salida <em>CSS</em>, y el parámetro de estilos <em>style</em>. Un ejemplo de como queda el comando con estos parámetros aplicados es:</p>
-<pre><code class="language-bash">npx sass --style=compressed ruta/al/archivo.scss:ruta/al/archivo.css</code></pre><p>En este ejemplo se le ha indicado a <em>SASS</em> que compile de forma comprimida el archivo principal <em>SCSS</em> (Ese que suele contener todas las dependencias) y que compile el resultado comprimido en el archivo <em>CSS</em> de la ruta especificada.</p>
+<p><strong>El tiempo de ejecución es menor al esperado.</strong> Compilar el archivo es bastante sencillo, el comando <code>sass</code> acepta diversos parámetros, pero los más útiles (probablemente) son la ruta de entrada <em>SCSS</em>, la ruta de salida <em>CSS</em>, el parámetro de estilos <em>style</em> para compilar los estilos expandidos o comprimidos (<em>expanded</em> (Por defecto) o <em>compressed</em>), y el parámetro <em>watch</em> para que se compile automáticamente cada vez que detecta un cambio guardado en los archivos <em>SCSS</em>. Un ejemplo de como queda el comando con estos parámetros aplicados es:</p>
+<pre><code class="language-bash">npx sass --watch --style=compressed ruta/al/archivo.scss:ruta/al/archivo.css</code></pre><p>En este ejemplo se le ha indicado a <em>SASS</em> que compile de forma comprimida el archivo principal <em>SCSS</em> (Ese que suele contener todas las dependencias) y que compile el resultado comprimido en el archivo <em>CSS</em> de la ruta especificada. Si necesitas más configuraciones, esta es la salida de <code>sass --help</code>:</p>
+<pre><code class="language-bash">
+Compile Sass to CSS.
+
+Usage: sass &lt;input.scss> [output.css]
+       sass &lt;input.scss>:&lt;output.css> &lt;input/>:&lt;output/> &lt;dir/>
+
+━━━ Input and Output ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+   --[no-]stdin               Read the stylesheet from stdin.
+   --[no-]indented            Use the indented syntax for input from stdin.
+-I, --load-path=&lt;PATH>        A path to use when resolving imports. May be passed multiple times.
+-p, --pkg-importer=&lt;TYPE>     Built-in importer(s) to use for pkg: URLs.
+         [node]               Load files like Node.js package resolution.
+-s, --style=&lt;NAME>            Output style. [expanded (default), compressed]
+   --[no-]charset             Emit a @charset or BOM for CSS with non-ASCII characters. (defaults to on)
+   --[no-]error-css           When an error occurs, emit a stylesheet describing it. Defaults to true when compiling to a file.
+   --update                   Only compile out-of-date stylesheets.
+
+━━━ Source Maps ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+   --[no-]source-map          Whether to generate source maps. (defaults to on)
+   --source-map-urls          How to link from source maps to source files. [relative (default), absolute]
+   --[no-]embed-sources       Embed source file contents in source maps.
+   --[no-]embed-source-map    Embed source map contents in CSS.
+
+━━━ Warnings ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+-q, --[no-]quiet              Don't print warnings.
+   --[no-]quiet-deps          Don't print compiler warnings from dependencies. Stylesheets imported through load paths count as dependencies.
+   --[no-]verbose             Print all deprecation warnings even when they're repetitive.
+   --fatal-deprecation        Deprecations to treat as errors. You may also pass a Sass version to include any behavior deprecated in or before it. See https://sass-lang.com/documentation/breaking-changes for a complete list.
+   --silence-deprecation      Deprecations to ignore.
+   --future-deprecation       Opt in to a deprecation early.
+
+━━━ Other ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 
+-w, --watch                   Watch stylesheets and recompile when they change.
+   --[no-]poll                Manually check for changes rather than using a native watcher. Only valid with --watch.
+   --[no-]stop-on-error       Don't compile more files once an error is encountered.
+-i, --interactive             Run an interactive SassScript shell.
+-c, --[no-]color              Whether to use terminal colors for messages.
+   --[no-]unicode             Whether to use Unicode characters for messages.
+   --[no-]trace               Print full Dart stack traces for exceptions.
+-h, --help                    Print this usage information.
+   --version                  Print the version of Dart Sass.
+</code></pre><p> </p>
 <p>En un ejemplo real, pongamos el siguiente archivo <em>CSS</em> sin optimizar con <em>SASS</em>:</p>
 <pre><code class="language-css">body {
   font: Helvetica, sans-serif;
