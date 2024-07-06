@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="es" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+
+
+<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-QPJMYH8NQN"></script>
+<script type="text/plain" data-category="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QPJMYH8NQN');
+</script>
+<meta content="La compilación, compresión y optimización automática de JavaScript es una práctica esencial para mejorar el rendimiento de las páginas web." name="description">
+<meta content="La compilación, compresión y optimización automática de JavaScript es una práctica esencial para mejorar el rendimiento de las páginas web." name="abstract">
+<meta content="Pablo Urrea,Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,JavaScript,Babel" name="keywords">
+<link href="https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel" rel="canonical">
+<meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
+<meta content="Drupal" name="generator">
+<meta content="Pablo Urrea" name="author">
+<meta content="https://pablourrea.github.io" name="original-source">
+<link href="https://pablourrea.github.io/sites/default/files/images/la_torre_de_babel_con_javascript_y_navegadores.jpg" rel="image_src">
+<meta content="origin" name="referrer">
+<link href="/sites/default/files/logo.png" rel="icon">
+<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
+<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32">
+<link href="/sites/default/files/favicons/android-chrome-192x192.png" rel="icon" sizes="96x96">
+<link href="/sites/default/files/favicons/android-chrome-192x192.png" rel="icon" sizes="192x192">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="72x72">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="114x114">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="120x120">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="144x144">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="152x152">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="76x76">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="120x120">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="152x152">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
+<meta content="Pablo Urrea" property="og:site_name">
+<meta content="article" property="og:type">
+<meta content="https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel" property="og:url">
+<meta content="Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel" property="og:title">
+<meta content="La compilación, compresión y optimización automática de JavaScript es una práctica esencial para mejorar el rendimiento de las páginas web." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/la_torre_de_babel_con_javascript_y_navegadores.jpg" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/la_torre_de_babel_con_javascript_y_navegadores.jpg" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/la_torre_de_babel_con_javascript_y_navegadores.jpg" property="og:image:secure_url">
+<meta content="image/jpeg" property="og:image:type">
+<meta content="Sáb, 06/07/2024 - 15:41" property="og:updated_time">
+<meta content="https://pablourrea.github.io" property="og:see_also">
+<meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
+<meta content="es_ES" property="og:locale:alternate">
+<meta content="en_AU" property="og:locale:alternate">
+<meta content="en_BE" property="og:locale:alternate">
+<meta content="en_GB" property="og:locale:alternate">
+<meta content="en_JP" property="og:locale:alternate">
+<meta content="en_US" property="og:locale:alternate">
+<meta content="en_ZA" property="og:locale:alternate">
+<meta content="Pablo Urrea" property="article:section">
+<meta content="Mar, 02/07/2024 - 18:37" property="article:published_time">
+<meta content="Sáb, 06/07/2024 - 15:41" property="article:modified_time">
+<meta content="Pablo" property="profile:first_name">
+<meta content="Urrea" property="profile:last_name">
+<meta content="male" property="profile:gender">
+<meta content="purrea" property="profile:username">
+<meta content="Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/la_torre_de_babel_con_javascript_y_navegadores.jpg" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel" property="pin:url">
+<meta content="La compilación, compresión y optimización automática de JavaScript es una práctica esencial para mejorar el rendimiento de las páginas web." property="pin:description">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="La compilación, compresión y optimización automática de JavaScript es una práctica esencial para mejorar el rendimiento de las páginas web." name="twitter:description">
+<meta content="Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/la_torre_de_babel_con_javascript_y_navegadores.jpg" name="twitter:image">
+<meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
+<link href="https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/compile-compress-and-improve-compatibility-javascript-files-babel" rel="alternate" hreflang="en">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<meta content="Drupal responsive_favicons + realfavicongenerator.net" name="favicon-generator">
+<meta content="Drupal 10 (https://www.drupal.org)" name="Generator">
+<meta content="width" name="MobileOptimized">
+<meta content="true" name="HandheldFriendly">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel",en:"/en/articles/compile-compress-and-improve-compatibility-javascript-files-babel",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://pablourrea.github.io",
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Portada",
+                        "item": "https://pablourrea.github.io/es"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Artículos",
+                        "item": "https://pablourrea.github.io/es/articulos"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Compilar, Comprimir y Mejorar La Compatibilidad de Los Archivos JavaScript Con Babel",
+                        "item": "https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel"
+                    }
+                ]
+            },
+            "description": "Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel",
+            "author": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.iohttps://pablourrea.github.io/es/user/1",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ]
+            },
+            "publisher": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.iohttps://pablourrea.github.io/es/user/1",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "representativeOfPage": "True",
+                    "url": "/asset/es/image/logopng",
+                    "width": "600",
+                    "height": "600"
+                }
+            },
+            "isAccessibleForFree": "True",
+            "hasPart": {
+                "@type": "SiteNavigationElement",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.io",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "datePublished": "2024-07-02T18:37:12+0000"
+            },
+            "inLanguage": "Español",
+            "workTranslation": [
+                "Inglés",
+                "English"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "pablourrea.github.io",
+            "name": "Pablo Urrea",
+            "url": "https://pablourrea.github.io",
+            "publisher": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "representativeOfPage": "True",
+                    "url": "/asset/es/image/logopng",
+                    "width": "600",
+                    "height": "600"
+                }
+            },
+            "inLanguage": "Español",
+            "workTranslation": [
+                "Inglés",
+                "English"
+            ]
+        }
+    ]
+}</script>
+
+    <title>Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_OAmf-UsXrI01hn_1bjMDQmPPhunHGjkVCqKjmXs3p5M.css?delta=0&language=es&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="all">
+<link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
+<link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_ZZOBgrCtUTxjAlZYhV8FCe_fxWmCvtJX7x480azmpqk.css?delta=3&language=es&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_d7FuXt72EHddr7gffGz-fLI3dmDvHU3LZs8NfQOUjS8.css?delta=4&language=es&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=es&theme=pablo_urrea&include=eJyNTEsKhTAMvJC-HqmkJdZIakoSF_X0FtTlAxczzDAf6-ZYQwLDaRDlW2ZRDLtoBabzTQpLAn5MRTMoaFODxBIPVYS3sVJZecA3i7S3w-NC7KjhX_Az7zy-vgznLK0_gwuRKEsK" rel="stylesheet" media="all">
+
+    
+  </head>
+          
+      <body class="no-sidebar page-articulos-compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel role--anonymous section-articulos with-subnav">
+    <div id="skip">
+      <a href="#main-menu" class="visually-hidden focusable skip-link">
+        Skip to main navigation
+      </a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="layout-container">
+
+  
+
+      <header id="header">
+      <div class="container">
+        <div id="header-region">
+            <div class="region region-header">
+    <nav aria-labelledby="pablo-urrea-logo-menu" class="block block-menu navigation menu--logo" role="navigation" id="pablo-urrea-logo">
+            
+  <h2 class="visually-hidden" id="pablo-urrea-logo-menu">Logo</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/es" target="_self" class="logo" data-drupal-link-system-path="<front>"><img alt="Pablo Urrea's logo" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav aria-labelledby="pablo-urrea-main-navigation-menu" class="block block-menu navigation menu--main" role="navigation" id="pablo-urrea-main-navigation">
+            
+  <h2 class="visually-hidden" id="pablo-urrea-main-navigation-menu">Navegación principal</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <button class="hamburger hamburger--spring" type="button">Menú</button>
+              </li>
+                <li class="menu-item">
+        <a href="/es" target="_self" class="stroke" data-drupal-link-system-path="<front>">Portada</a>
+              </li>
+                <li class="menu-item">
+        <a href="/es/articulos" data-drupal-link-system-path="node/9">Artículos</a>
+              </li>
+                <li class="menu-item">
+        <a href="/es/proyectos" data-drupal-link-system-path="node/10">Proyectos</a>
+              </li>
+                <li class="menu-item">
+        <a href="/es/acerca-de" data-drupal-link-system-path="node/11">Acerca de</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div class="block-language-switcher-langcode-block language-switcher-language-url pablo-urrea-language-switcher-langcode" id="pablo-urrea-language-switcher-langcode">
+  
+    
+      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/32" hreflang="es"><a href="/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel" class="is-active language-link" title="Español" data-drupal-link-system-path="node/32" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/32" hreflang="en"><a href="/en/articles/compile-compress-and-improve-compatibility-javascript-files-babel" class="language-link" title="Inglés" data-drupal-link-system-path="node/32" hreflang="en">en</a></li></ul>
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </header>
+  
+  
+  
+
+  <div id="main">
+    <div class="container">
+      <div id="content-wrapper">
+        <section id="content">
+
+          
+          <div id="content-area">
+              <div class="region region-content">
+    <div class="hidden" data-drupal-messages-fallback></div><div class="block-system block-pablo-urrea-content" id="block-pablo-urrea-content">
+  
+    
+      
+<article class="node node--type-article">
+  <div class="content">
+    
+<h1 class="content-title">
+      
+
+            <div class="clearfix text-formatted"><p>Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con <em>Babel</em></p>
+</div>
+      
+  </h1>
+
+<div class="border-top content-tags link-no-hover">
+      
+
+      <div>
+              <div><a href="/es/articulos/categorias/nodejs" hreflang="es">NodeJS</a></div>
+              <div><a href="/es/articulos/categorias/javascript" hreflang="es">JavaScript</a></div>
+              <div><a href="/es/articulos/categorias/babel" hreflang="es">Babel</a></div>
+          </div>
+  
+  </div>
+
+<div class="content-image">
+      
+<div class="polaroid">
+      
+
+            <div><article class="media media--type-image media--view-mode-landscape-full">
+  
+      
+
+            <div>  <img alt="La Torre de Babel representada junto con los logos de JavaScript y distintos navegadores" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/la_torre_de_babel_con_javascript_y_navegadores.jpg?itok=LT9hJr_6" height="540" loading="lazy" title="La Torre de Babel representada junto con los logos de JavaScript y distintos navegadores" width="1072">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+
+  </div>
+
+<div class="border-bottom content-authorship">
+      
+<div class="authorship-group-1 content-align-left content-align-top">
+      <article class="profile">
+  
+<div class="image">
+      
+
+            <div><article class="media media--type-image media--view-mode-thumbnail">
+  
+      
+<div class="thumbnail">
+      
+
+            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+
+
+</div>
+      
+  </div>
+
+  </article>
+</div>
+      
+  </div>
+
+<div class="name">
+      
+
+            <div class="clearfix text-formatted"><p>Pablo Urrea</p>
+</div>
+      
+  </div>
+
+<div class="contact">
+      
+
+            <div>
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" target="_blank" class="icon" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.linkedin.com/in/pablourrea" target="_blank" class="icon" title="LinkedIn"><img alt="LinkedIn" class="icon" src="/sites/default/files/icons/linkedin.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/u/enchufe" target="_blank" class="icon" title="Drupal"><img alt="Drupal" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://github.com/pablourrea" target="_blank" class="icon" title="GitHub"><img alt="GitHub" class="icon" src="/sites/default/files/icons/github.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://git.drupalcode.org/Enchufe" target="_blank" class="icon" title="DrupalCode"><img alt="DrupalCode" class="icon" src="/sites/default/files/icons/drupalcode.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/user/3685606/contact" target="_blank" class="icon" title="Formulario de contacto de Drupal"><img alt="Drupal Contact Form" class="icon" src="/sites/default/files/icons/drupal_contact_form.svg"></a>
+              </li>
+        </ul>
+  
+
+
+</div>
+      
+  </div>
+</article>
+
+  </div>
+
+<div class="authorship-group-2 content-align-bottom content-align-right">
+      
+<div class="reading-time">
+      
+
+            <div content="7">Lectura de 7 minutos</div>
+      
+  </div>
+
+<div class="authorship-dates">
+      
+<div class="date">
+  <div class="label">
+    Publicado
+  </div>
+
+  <time class="datetime" datetime="2024-07-02">
+    02/07/2024
+  </time>
+</div>
+
+  </div>
+
+  </div>
+
+  </div>
+
+<div class="content-description">
+      
+
+            <div class="clearfix text-formatted"><p>En el artículo <a href="/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass"><em><strong>Optimización Y Compilación Automática De Estilos Web Con SASS</strong></em></a> hablo sobre compilación y compresión de archivos <em>CSS</em> y lo que supone en el rendimiento de una web reducir la tasa de transferencia de archivos. A diferencia de los <em>CSS</em>, los archivos de <em>JavaScript</em> ofrecen más posibilidades de compresión, y la compilación de estos mejora la compatibilidad entre diferentes versiones de navegadores.</p>
+<p> </p>
+<p><strong>Primeros pasos.</strong> Lo primero de todo es instalar <a href="https://nodejs.org/en/download/package-manager"><em>Node</em></a>, el ejecutor principal de <em>Babel</em>, para ello lo mejor es seguir los pasos de la página oficial de <a href="https://nodejs.org/en/download/package-manager"><em>Node</em></a> para el entorno en el que necesites: <a href="https://nodejs.org/en/download/package-manager">https://nodejs.org/en/download/package-manager</a>.</p>
+<p>Ahora que <em>Node</em> funciona correctamente en la máquina (O debería), es el momento de instalar <em>Babel</em> en el proyecto, en <a href="https://babeljs.io/setup#installation">la documentación oficial</a> recomiendan guardar todos los paquetes en la sección de desarrollo con el parámetro <code>--save-dev</code>, pero esto lo dejo bajo tu decisión (No olvides ejecutar antes el comando de iniciación de proyecto de <em>Node</em> <code>npm init</code>):</p>
+<pre><code class="language-bash">npm install @babel/core
+npm install @babel/preset-env</code></pre><p>Y si quieres comprimir los archivos de <em>JavaScript</em>, te recomiendo instalar el paquete de compresión:</p>
+<pre><code class="language-bash">npm install babel-preset-minify</code></pre><p> </p>
+<p><strong>Configuraciones básicas.</strong> <em>Babel</em> funciona con entornos llamados "<em>presets</em>", puedes crear uno propio, pero lo más cómodo es utilizar <a href="https://babeljs.io/docs/presets">uno publicado</a>, entre los paquetes anteriores está el preset básico de <em>Babel</em> (<code>@babel/preset-env</code>) y el preset de compresión (<code>babel-preset-minify</code>). El archivo de configuración de <em>Babel</em> debe llamarse (O suele llamarse) <code>babel.config.json</code>, y debe tener la siguiente estructura mínima:</p>
+<pre><code class="language-json">{
+ "targets": "",
+ "presets": [],
+ "plugins": []
+}</code></pre><p>El elemento <code><strong>targets</strong></code> es un <em>string</em> o <em>array</em> de <em>strings</em> que hace referencia a la compatibilidad entre navegadores, su configuración es tan sencilla como incluir, por ejemplo, <code>"last 3 versions"</code> para que el código <em>JavaScript</em> se compile con compatibilidad de las 3 últimas versiones de todos los navegadores (Este elemento es en realidad solicitudes al <a href="https://github.com/browserslist/browserslist"><em>API</em> <code>browserslist-compatible</code> de <em>caveats</em></a>), realmente no es un elemento obligatorio, pero simplifica tus primeros pasos con <em>Babel</em>; el elemento <code><strong>presets</strong></code> es un <em>array</em> de <em>strings</em> que indica los presets que vas a utilizar durante el proceso de compilación, con los instalados anteriormente el valor de este elemento debe ser:</p>
+<pre><code class="language-json">{
+ "presets": [
+   "@babel/preset-env",
+   "minify"
+ ],
+}</code></pre><p>Y por último, el elemento <code><strong>plugins</strong></code>, este <em>array</em> de <em>strings</em> contiene todos los plug-ins o add-ons de la comunidad de <em>Babel</em> que se van a utilizar durante el proceso de compilación. Los plug-ins son muy útiles para extender la funcionalidad de <em>Babel</em>, <a href="https://github.com/babel/awesome-babel">este repositorio público</a> recoge muchos de ellos.</p>
+<p>Al final, debe quedarte un archivo <code>babel.config.json</code> parecido a esto:</p>
+<pre><code class="language-json">{
+ "targets": "last 3 versions",
+ "presets": [
+   "@babel/preset-env",
+   "minify"
+ ],
+ "plugins": []
+}</code></pre><p> </p>
+<p><strong>Probar la máquina.</strong> Para ejecutar <em>Babel</em> hay infinidad de parámetros que encontrarás en su documentación, pero lo más relevante para empezar es saber que por defecto requiere una ruta al directorio o archivo <em>JavaScript</em>, y si no quieres mancillar tu maravilloso código, te recomiendo usar el parámetro <code>--out-dir</code> con un directorio de salida:</p>
+<pre><code class="language-bash">npx babel ruta/al/directorio/js --out-dir ruta/al/directorio/de/salida/js</code></pre><p>Pero lo mejor es verlo con un ejemplo real, para ello utilizaré el archivo de configuración anterior y el siguiente código <em>JavaScript</em>:</p>
+<pre><code class="language-javascript">// Función para cambiar el texto de un elemento.
+function changeText() {
+   document.getElementById("demo-text").innerText = "¡Texto cambiado!";
+}
+
+// Función para mostrar una alerta.
+function showAlert() {
+   alert("¡Hola! Esto es una alerta.");
+}
+
+// Función para sumar dos números e imprimir el resultado en el DOM.
+function sumNumbers() {
+   let num1 = parseInt(document.getElementById("num1").value);
+   let num2 = parseInt(document.getElementById("num2").value);
+   let sum = num1 + num2;
+   document.getElementById("result").innerText = "La suma es: " + sum;
+}
+
+// Evento para cambiar el color de fondo del cuerpo.
+function changeBackgroundColor() {
+   document.body.style.backgroundColor = "#f0f0f0";
+}
+
+// Agregar eventos a botones al cargar la página.
+window.onload = function() {
+   document.getElementById("change-text-btn").addEventListener("click", changeText);
+   document.getElementById("alert-btn").addEventListener("click", showAlert);
+   document.getElementById("sum-btn").addEventListener("click", sumNumbers);
+   document.getElementById("change-bg-btn").addEventListener("click", changeBackgroundColor);
+}</code></pre><p>Este ocupa <em>1.1 KiB</em>, pero después de compilarlo con <em>Babel</em> este es el resultado:</p>
+<pre><code class="language-javascript">"use strict";// Función para cambiar el texto de un elemento.
+function changeText(){document.getElementById("demo-text").innerText="\xA1Texto cambiado!"}// Función para mostrar una alerta.
+function showAlert(){alert("\xA1Hola! Esto es una alerta.")}// Función para sumar dos números e imprimir el resultado en el DOM.
+function sumNumbers(){var a=parseInt(document.getElementById("num1").value),b=parseInt(document.getElementById("num2").value);document.getElementById("result").innerText="La suma es: "+(a+b)}// Evento para cambiar el color de fondo del cuerpo.
+function changeBackgroundColor(){document.body.style.backgroundColor="#f0f0f0"}// Agregar eventos a botones al cargar la página.
+window.onload=function(){document.getElementById("change-text-btn").addEventListener("click",changeText),document.getElementById("alert-btn").addEventListener("click",showAlert),document.getElementById("sum-btn").addEventListener("click",sumNumbers),document.getElementById("change-bg-btn").addEventListener("click",changeBackgroundColor)};</code></pre><p>El tamaño de este es de <em>1.09 KiB</em>, número el cual se puede reducir mucho más mediante el uso de plug-ins.</p>
+<p> </p>
+<p><strong>Plug-ins esenciales.</strong> El uso de plug-ins en <em>Babel</em> mejora el paquete base hasta tal punto de ser irreconocible, algunos de los plug-ins que recomiendo son los siguientes:</p>
+<ul>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-minify-replace"><em>minify-replace</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-minify-simplify"><em>minify-simplify</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-minify-infinity"><em>minify-infinity</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-minify-builtins"><em>minify-builtins</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-minify-numeric-literals"><em>minify-numeric-literals</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-minify-flip-comparisons"><em>minify-flip-comparisons</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-minify-constant-folding"><em>minify-constant-folding</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-minify-type-constructors"><em>minify-type-constructors</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-transform-minify-booleans"><em>transform-minify-booleans</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-minify-guarded-expressions"><em>minify-guarded-expressions</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-transform-regexp-constructors"><em>transform-regexp-constructors</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-transform-merge-sibling-variables"><em>transform-merge-sibling-variables</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-transform-inline-consecutive-adds"><em>transform-inline-consecutive-adds</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-transform-simplify-comparison-operators"><em>transform-simplify-comparison-operators</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-transform-remove-undefined"><em>babel-plugin-transform-remove-undefined</em></a></li>
+<li><em> ➡ </em><a href="https://babeljs.io/docs/babel-plugin-transform-member-expression-literals"><em>@babel/plugin-transform-member-expression-literals</em></a></li>
+</ul>
+<p> </p>
+<p><strong>Conclusión.</strong> La compilación y optimización automática de <em>JavaScript</em> con <em>Babel</em>, es una práctica esencial para mejorar el rendimiento de las páginas web. Al reducir significativamente el tamaño de los archivos, se reduce también la tasa de transferencia de archivos, esto no solo acelera el tiempo de carga, sino que también mantiene un alto estándar de calidad y rendimiento en los proyectos y proporciona una experiencia de usuario más fluida en una variedad de entornos y dispositivos.</p>
+<p> </p>
+</div>
+      
+  </div>
+
+  </div>
+
+  
+</article>
+
+  </div>
+<div class="block-system breadcrumbs content-breadcrumbs" id="content-breadcrumbs">
+  
+    
+        <nav aria-labelledby="system-breadcrumb" class="breadcrumb" role="navigation">
+    <h2 class="visually-hidden" id="system-breadcrumb">Ruta de navegación</h2>
+    <ol>
+          <li>
+                  <a href="/es">Portada</a>
+              </li>
+          <li>
+                  <a href="/es/articulos">Artículos</a>
+              </li>
+          <li>
+                  Compilar, Comprimir y Mejorar La Compatibilidad de Los Archivos JavaScript Con Babel
+              </li>
+        </ol>
+  </nav>
+
+  </div>
+
+  </div>
+
+          </div>
+
+        </section>
+
+        
+        
+      </div>
+    </div>
+  </div>
+
+  
+
+      <footer id="footer">
+      <div class="container">
+        <div id="footer-region">
+            <div class="region region-footer">
+    <nav aria-labelledby="block-pablo-urrea-footer-menu" class="block block-menu navigation menu--footer" role="navigation" id="block-pablo-urrea-footer">
+            
+  <h2 class="visually-hidden" id="block-pablo-urrea-footer-menu">Pie de página</h2>
+  
+
+        
+
+  <ul class="menu menu-level-0" data-region="footer">
+                  
+        <li class="menu-item">
+          <span class="hidden-title">Acerca de</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-dropdown-0 menu-type-user view-mode-user">
+              
+
+            <div><article class="profile">
+  
+
+            <div><article class="media media--type-image media--view-mode-thumbnail">
+  
+      
+<div class="thumbnail">
+      
+
+            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+
+
+</div>
+      
+  </div>
+
+  </article>
+</div>
+      
+
+            <div class="clearfix text-formatted"><p>Nacido y criado en la metrópolis madrileña, desde una temprana edad mostró un ferviente interés por el mundo de los ordenadores y la programación. Este proyecto de blog le da la oportunidad de documentar y compartir los desafíos tecnológicos a los que se enfrenta.</p>
+</div>
+      
+
+            <div>
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" target="_blank" class="icon" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.linkedin.com/in/pablourrea" target="_blank" class="icon" title="LinkedIn"><img alt="LinkedIn" class="icon" src="/sites/default/files/icons/linkedin.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/u/enchufe" target="_blank" class="icon" title="Drupal"><img alt="Drupal" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://github.com/pablourrea" target="_blank" class="icon" title="GitHub"><img alt="GitHub" class="icon" src="/sites/default/files/icons/github.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://git.drupalcode.org/Enchufe" target="_blank" class="icon" title="DrupalCode"><img alt="DrupalCode" class="icon" src="/sites/default/files/icons/drupalcode.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/user/3685606/contact" target="_blank" class="icon" title="Formulario de contacto de Drupal"><img alt="Drupal Contact Form" class="icon" src="/sites/default/files/icons/drupal_contact_form.svg"></a>
+              </li>
+        </ul>
+  
+
+
+</div>
+      </article>
+</div>
+      
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <span>Páginas</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-0">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/es" target="_self" data-drupal-link-system-path="<front>">Portada 📰</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/articulos" target="_self" data-drupal-link-system-path="node/9">Todos los artículos 🗞️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/articulos/categorias" target="_self" data-drupal-link-system-path="node/23">Categorías de artículos 🗂️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/proyectos" target="_self" data-drupal-link-system-path="node/10">Proyectos de Pablo Urrea 🏗️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/proyectos/categorias" target="_self" data-drupal-link-system-path="node/22">Categorías de proyectos 📊</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <span>Acerca de</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-0">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/es/acerca-de" target="_self" class="stroke" data-drupal-link-system-path="node/11">Acerca de Pablo Urrea 👤</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/aviso-legal" data-drupal-link-system-path="node/24">Aviso Legal ⚖️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/politica-de-cookies" target="_self" data-drupal-link-system-path="node/21">Política de Cookies 🍪</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/es/politica-de-proteccion-de-datos" data-drupal-link-system-path="node/25">Política de protección de datos 🔒</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+  </nav>
+<div class="block-block-content block-pablo-urrea-footer-license footer footer-license" id="block-pablo-urrea-footer-license">
+  
+    
+      
+
+            <div class="clearfix text-formatted"><p><a href="/es/licencia">Pablo Urrea <strong>©</strong> Todos los derechos reservados</a></p>
+</div>
+      
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </footer>
+  
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/32","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast"}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","json":"json","javascript":"javascript"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
+<script src="/sites/default/files/js/js_S9WeI8_cNLqTIWiGy9yBiTQ_ax_51gG-Y4M5D8I0nSs.js?scope=footer&delta=0&language=es&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
+<script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
+
+      </body>
+</html>

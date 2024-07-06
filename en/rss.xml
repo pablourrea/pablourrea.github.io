@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel</title>
+  <link>https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Compile, compress, and improve the compatibility of JavaScript files with Babel&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;The automatic compilation, compression, and optimization of &lt;em&gt;JavaScript&lt;/em&gt; is an essential practice for improving web page performance.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-07-02T18:37:12+00:00" title="Tuesday, July 2, 2024 - 18:37" class="datetime"&gt;Tue, 02/07/2024 - 18:37&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Tue, 02 Jul 2024 18:37:12 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">32 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Optimización y compilación automática de estilos web con SASS</title>
   <link>https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Optimization and automatic compilation of web styles with SASS&lt;/span&gt;
