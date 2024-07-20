@@ -7,6 +7,22 @@
     <language>es</language>
     
     <item>
+  <title>Configurar VPN de Fortinet en Linux</title>
+  <link>https://pablourrea.github.io/es/articulos/configurar-vpn-de-fortinet-en-linux</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Configurar VPN de Fortinet en Linux&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;En &lt;em&gt;Linux&lt;/em&gt;, la VPN de &lt;em&gt;Fortinet&lt;/em&gt; se puede configurar a través de la interfaz gráfica, la consola o las conexiones de red del sistema, cada método con sus ventajas y desventajas. Combina facilidad de uso y flexibilidad técnica, adaptándose a diversas necesidades de los usuarios.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-07-20T14:51:48+00:00" title="Sábado, Julio 20, 2024 - 14:51" class="datetime"&gt;Sáb, 20/07/2024 - 14:51&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Sat, 20 Jul 2024 14:51:48 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">33 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel</title>
   <link>https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel&lt;/span&gt;

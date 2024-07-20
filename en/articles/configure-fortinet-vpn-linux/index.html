@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="In the article Prism As A REST API Testing Server I delve into the installation and basic configuration of Prism, so in this article, I will skip the installation and validation process that Prism uses with OpenAPI definitions. Using Prism as a REST API proxy has the main advantage of validating requests against the port, but it is also important to note that this functionality redirects all requests to a single REST API port, which can be challenging if you have more than one port in your functionality. This concept is easier to understand with the following diagrams:      Intercepting requests with Prism's network. With this clear, setting up the proxy is as simple as running the following command:prism proxy openapi.yaml https://www.example.com/api/v1/port/ Although Prism allows configuring some proxy settings via parameters, below are the most useful ones:--errors: Recommended parameter. The response to the request generates an error if it does not validate with the definitions. For example:prism proxy openapi.yaml https://www.example.com/api/v1/port/ --errors-h: Changes the IP address to the one provided. For example:prism proxy -h 0.0.0.0 openapi.yaml https://www.example.com/api/v1/port/-p: Changes the network port to the one provided. For example:prism proxy -p 9999 openapi.yaml https://www.example.com/api/v1/port/-m: Enables multiprocessing. Recommended parameter if the proxy is going to receive many requests. For example:prism proxy -m openapi.yaml https://www.example.com/api/v1/port/ Once the server is started, you can make requests to the service from your machine to the local IP (or to the IP of the remote machine if installed on a remote server):curl http://localhost:4010/usersPrism accepts configurations for GET, POST, PUT, PATCH, and DELETE methods.  What happens at the real REST API port? Debugging the request at the real REST API port, you can verify that the proxy has made the request against the port, sending the query parameter “q” with the URL of the port to interact with. For example, if you have a REST API port /users/delete that performs an action with the DELETE method on a user ID in the body {id: 1}, when making the request against the Prism proxy, it validates the request and forwards it to the real REST API port /api/v1/port as /api/v1/port?q=/users/delete with the DELETE method and the request body {id: 1}. The port returns a status code and a message in the body that is transferred to the proxy, and then the proxy returns to the client:    Conclusion. Prism emerges as a valuable tool for validating and redirecting REST API requests, functioning as an effective proxy that ensures requests comply with OpenAPI definitions before being processed by the real REST API port. This not only simplifies the workflow by intercepting and validating requests but also enhances the robustness of applications through strict adherence to the REST API specifications, resulting in a more secure and efficient development process. If you need more information about the package, you can check Prism's documentation. " name="description">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." name="abstract">
-<meta content="Pablo Urrea,Prism as a validation proxy API Server,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,API,Proxy" name="keywords">
-<link href="https://pablourrea.github.io/en/articles/prism-validation-proxy-api-server" rel="canonical">
+<meta content="FortiClientDownload and run. The easiest way to access the Fortinet VPN is to download the FortiClient executable and install it from its official page.    This is probably the method recommended by your company's IT department if you are downloading it for work, as it is universal and works on Windows, MacOS, iOS, Linux, and Android at the time of publishing this article.Configuring FortiClient and connecting to the VPN is as simple as following the steps in the graphical interface:        While there are many advantages to installing and using the Fortinet FortiClient on Linux, there are also some disadvantages, which are outlined below:Advantages:➡ Quick and convenient installation.➡ Cross-platform, with each system having its corresponding installation method.➡ Easy to configure and use thanks to the graphical interface.Disadvantages:➡ Depending on your Linux system configuration, you will likely need to enter your Fortinet password each time you want to start the connection.➡ Neglects the native VPN configuration of Linux and leaves an icon in the system tray (fortitray).➡ Automation is difficult to configure. Linux ConsoleWhat would the penguin's operating system be without its console? The most “Linux” way to access the Fortinet VPN is through the system console, but it requires following a few steps. First, you need to install the Fortinet package, as it likely isn’t installed by default, so execute the following commands in the console:sudo apt update sudo apt install network-manager-fortisslvpn-gnomeNext, to connect, you need to provide a security certificate hash. The easiest way to obtain it is by inducing an error with the connection command. To do this, run the following command, replacing IP_ADDRESS, NETWORK_PORT, YOUR_USERNAME, and YOUR_PASSWORD with your Fortinet account values:sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORDThis should generate an error in the console output due to the absence of a trusted certificate. Look for a line similar to:ERROR:      --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyzEach Linux machine has its own trusted certificate hash. To connect, simply repeat the previous command and add the trusted certificate parameter obtained from the error:sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORD --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyzWhile there are many advantages to installing and using the Fortinet VPN via the Linux console, there are also some disadvantages, which are outlined below:Advantages:➡ Quick installation via console.➡ Connection can be automated.➡ Does not require the system's graphical interface. (Advantage and disadvantage)Disadvantages:➡ Requires using the Linux console.➡ Complex to use.➡ Does not require the system's graphical interface. (Advantage and disadvantage) Linux Network ConnectionsLike any other network connection. Adding the Fortinet VPN to the list of Linux networks is probably the most convenient way to connect, as it is added as a VPN to your WiFi networks, and connecting is as simple as accessing a WiFi network.The graphical layout and texts of the configurations vary depending on the Linux distribution. For this guide, I will use Kubuntu 22.04 LTS. First, install the Fortinet package, as it is likely not installed by default. Execute the following commands in the console:sudo apt update sudo apt install network-manager-fortisslvpn-gnomeNext, to configure the VPN connection, you need to provide a security certificate hash. The easiest way to obtain it is by inducing an error with the connection command. To do this, run the following command, replacing IP_ADDRESS, NETWORK_PORT, YOUR_USERNAME, and YOUR_PASSWORD with your Fortinet account values:sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORDThis should generate an error in the console output due to the absence of a trusted certificate. Look for a line similar to:ERROR:      --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyzCopy the trusted certificate hash obtained from the error, as it will be needed later.Now, you need to create the VPN connection. You can access the network connection settings from system settings or by right-clicking on the WiFi icon in the taskbar. Once in the settings, look for the “+” button or “Add new connection” and a window with multiple connection options will open. Under the “VPN Connections” group or section, select a connection called “Fortinet SSLVPN (fortisslvpn)” and click “Create”. This will open the VPN network configuration window.For the connection name, you can choose any value you prefer; this will later appear in the network connections along with the VPN connection type icon. The gateway should be the VPN IP address, and if you have a port, it should be included after the IP address separated by “:”, resulting in “IP_ADDRESS:NETWORK_PORT”. The username and password should be the values of your Fortinet account. Depending on the Linux distribution, there will be sections, tabs, or buttons that open windows. After configuring “Advanced”, include the hash you copied from the console error in the trusted certificate field. After configuring “IPv4” > “Routes”, you should check the “Use only for resources on this connection” option to prevent it from affecting your other network connections.After saving the VPN connection configuration, it should appear alongside the WiFi networks in its own section in settings, or with all connections if you click the network icon in the taskbar. To connect, simply click the “Connect” button.While there are many advantages to installing and using the Fortinet VPN through Linux networks, there are also some disadvantages, which are outlined below:Advantages:➡ Once installed, its use is very straightforward.➡ Does not require open windows during connection.➡ The interface integrates with the Linux distribution.Disadvantages:➡ Requires using the Linux console.➡ Complex to configure and varies depending on the Linux distribution.➡ Automation is difficult to configure. Conclusion. Fortinet offers various options for configuring and using its VPN on multiple platforms. Its installation is straightforward and quick, especially through the official FortiClient client, and is notable for its ease of use thanks to an intuitive graphical interface. However, Linux users have additional alternatives, such as using the console and integrating with the system’s network connections, each with its own advantages and disadvantages. Overall, it is a versatile tool that adapts to different user needs and preferences, with configuration methods that balance ease of use and technical flexibility. " name="description">
+<meta content="On Linux, the Fortinet VPN can be configured through the graphical interface, the console, or the system's network connections, each method having its own advantages and disadvantages. It combines ease of use and technical flexibility, catering to various user needs." name="abstract">
+<meta content="Pablo Urrea,Configure Fortinet VPN on Linux,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,VPN,Linux" name="keywords">
+<link href="https://pablourrea.github.io/en/articles/configure-fortinet-vpn-linux" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/vpn.png" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" property="og:url">
-<meta content="Prism as a validation proxy API Server" property="og:title">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="og:image:secure_url">
-<meta content="image/jpeg" property="og:image:type">
-<meta content="Sat, 25/05/2024 - 16:16" property="og:updated_time">
+<meta content="https://pablourrea.github.io/es/articulos/configurar-vpn-de-fortinet-en-linux" property="og:url">
+<meta content="Configure Fortinet VPN on Linux" property="og:title">
+<meta content="On Linux, the Fortinet VPN can be configured through the graphical interface, the console, or the system's network connections, each method having its own advantages and disadvantages. It combines ease of use and technical flexibility, catering to various user needs." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/vpn.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/vpn.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/vpn.png" property="og:image:secure_url">
+<meta content="image/png" property="og:image:type">
+<meta content="Sat, 20/07/2024 - 15:05" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,24 +62,24 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Sat, 25/05/2024 - 14:18" property="article:published_time">
-<meta content="Sat, 25/05/2024 - 16:16" property="article:modified_time">
+<meta content="Sat, 20/07/2024 - 14:51" property="article:published_time">
+<meta content="Sat, 20/07/2024 - 15:05" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content="Prism as a validation proxy API Server" property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" property="pin:url">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." property="pin:description">
+<meta content="Configure Fortinet VPN on Linux" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/vpn.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/configurar-vpn-de-fortinet-en-linux" property="pin:url">
+<meta content="On Linux, the Fortinet VPN can be configured through the graphical interface, the console, or the system's network connections, each method having its own advantages and disadvantages. It combines ease of use and technical flexibility, catering to various user needs." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." name="twitter:description">
-<meta content="Prism as a validation proxy API Server | Pablo Urrea" name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" name="twitter:image">
+<meta content="On Linux, the Fortinet VPN can be configured through the graphical interface, the console, or the system's network connections, each method having its own advantages and disadvantages. It combines ease of use and technical flexibility, catering to various user needs." name="twitter:description">
+<meta content="Configure Fortinet VPN on Linux | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/vpn.png" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/prism-validation-proxy-api-server" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/configurar-vpn-de-fortinet-en-linux" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/configurar-vpn-de-fortinet-en-linux" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/configure-fortinet-vpn-linux" rel="alternate" hreflang="en">
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -88,7 +88,7 @@
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/prism-como-servidor-api-proxy-de-validacion",en:"/en/articles/prism-validation-proxy-api-server",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/configurar-vpn-de-fortinet-en-linux",en:"/en/articles/configure-fortinet-vpn-linux",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -112,12 +112,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Prism As A Validation Proxy API Server",
-                        "item": "https://pablourrea.github.io/en/articles/prism-validation-proxy-api-server"
+                        "name": "Configure Fortinet VPN On Linux",
+                        "item": "https://pablourrea.github.io/en/articles/configure-fortinet-vpn-linux"
                     }
                 ]
             },
-            "description": "Prism as a validation proxy API Server",
+            "description": "Configure Fortinet VPN on Linux",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -160,7 +160,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-05-25T14:18:30+0000"
+                "datePublished": "2024-07-20T14:51:48+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -200,7 +200,7 @@
     ]
 }</script>
 
-    <title>Prism as a validation proxy API Server | Pablo Urrea</title>
+    <title>Configure Fortinet VPN on Linux | Pablo Urrea</title>
     <link href="/sites/default/files/css/css_MmkehPR9ZH0uX82ITSQpEZr_1w8rGkzJSzvIGzbkCy4.css?delta=0&language=en&theme=pablo_urrea&include=eJyNTMsOwyAM-6F2fBIKLKOZAkFJeqBfP6SV46QdbNnyw4Y51pDAcJtE-SuzKIYmWoHpWklhScC3qWgGBW3rkFjiqYqwGgeVgyf8bZFaPz2-iB01_Aoe5oPn1z_DPUsfa1DxSRDukwzdSdoHDa9TBw" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
@@ -211,7 +211,7 @@
     
   </head>
           
-      <body class="no-sidebar page-articles-prism-validation-proxy-api-server role--anonymous section-articles with-subnav">
+      <body class="no-sidebar page-articles-configure-fortinet-vpn-linux role--anonymous section-articles with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -272,7 +272,7 @@
 <div class="block-language-switcher-langcode-block language-switcher-language-url pablo-urrea-language-switcher-langcode" id="pablo-urrea-language-switcher-langcode">
   
     
-      <ul class="links"><li data-drupal-link-system-path="node/28" hreflang="es"><a href="/es/articulos/prism-como-servidor-api-proxy-de-validacion" class="language-link" title="Español" data-drupal-link-system-path="node/28" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/28" hreflang="en"><a href="/en/articles/prism-validation-proxy-api-server" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/28" hreflang="en" aria-current="page">en</a></li></ul>
+      <ul class="links"><li data-drupal-link-system-path="node/33" hreflang="es"><a href="/es/articulos/configurar-vpn-de-fortinet-en-linux" class="language-link" title="Español" data-drupal-link-system-path="node/33" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/33" hreflang="en"><a href="/en/articles/configure-fortinet-vpn-linux" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/33" hreflang="en" aria-current="page">en</a></li></ul>
   </div>
 
   </div>
@@ -302,7 +302,7 @@
 <h1 class="content-title">
       
 
-            <div class="clearfix text-formatted"><p>Prism as a validation proxy API Server</p>
+            <div class="clearfix text-formatted"><p>Configure <em>Fortinet</em> VPN on <em>Linux</em></p>
 </div>
       
   </h1>
@@ -311,9 +311,8 @@
       
 
       <div>
-              <div><a href="/en/articles/categories/nodejs" hreflang="en">NodeJS</a></div>
-              <div><a href="/en/articles/categories/api" hreflang="en">API</a></div>
-              <div><a href="/en/articles/categories/proxy" hreflang="en">Proxy</a></div>
+              <div><a href="/es/articulos/categorias/vpn" hreflang="es">VPN</a></div>
+              <div><a href="/es/articulos/categorias/linux" hreflang="es">Linux</a></div>
           </div>
   
   </div>
@@ -327,7 +326,7 @@
   
       
 
-            <div>  <img alt="Network - Pixabay" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/network_pixabay.jpg?itok=1MMEELD_" height="540" loading="lazy" title="Network - Pixabay" width="1072">
+            <div>  <img alt="Graphic representation of a VPN" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/vpn.png?itok=L-ab-M-9" height="540" loading="lazy" title="Graphic representation of a VPN" width="1072">
 
 
 </div>
@@ -335,14 +334,6 @@
   </article>
 </div>
       
-<div class="title title-right title-small">
-      
-
-            <div class="clearfix text-formatted"><p>Network - Pixabay</p>
-</div>
-      
-  </div>
-
   </div>
 
   </div>
@@ -420,7 +411,7 @@
 <div class="reading-time">
       
 
-            <div content="5">5 minutes reading</div>
+            <div content="9">9 minutes reading</div>
       
   </div>
 
@@ -431,8 +422,8 @@
     Published
   </div>
 
-  <time class="datetime" datetime="2024-05-25">
-    25/05/2024
+  <time class="datetime" datetime="2024-07-20">
+    20/07/2024
   </time>
 </div>
 
@@ -445,73 +436,118 @@
 <div class="content-description">
       
 
-            <div class="clearfix text-formatted"><p>In the article <a href="https://pablourrea.github.io/en/articles/prism-rest-api-testing-server/"><em>Prism As A REST API Testing Server</em></a> I delve into the installation and basic configuration of <em>Prism</em>, so in this article, I will skip the installation and validation process that <em>Prism</em> uses with <em>OpenAPI</em> definitions.</p>
+            <div class="clearfix text-formatted"><h3><strong>FortiClient</strong></h3>
+<p><strong>Download and run.</strong> The easiest way to access the <em>Fortinet</em> VPN is to download the <em>FortiClient</em> executable and install it from <a href="https://www.fortinet.com/lat/support/product-downloads">its official page</a>.</p>
+<article class="media media--type-image media--view-mode-default align-center">
+  
+      
+
+            <div>  <img alt="Install FortiClient - Step 1" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/fortinet-forticlient-setup_wizard_1.png?itok=B93hkLqx" height="1080" loading="lazy" title="Install FortiClient - Step 1" width="1365">
+
+
+</div>
+      
+  </article>
 <p> </p>
-<p>Using <em>Prism</em> as a <em>REST API proxy</em> has the main advantage of validating requests against the port, but it is also important to note that this functionality redirects all requests to a single REST API port, which can be challenging if you have more than one port in your functionality. This concept is easier to understand with the following diagrams:</p>
+<article class="media media--type-image media--view-mode-default align-center">
+  
+      
+
+            <div>  <img alt="Install FortiClient - Step 2" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/fortinet-forticlient-setup_wizard_2.png?itok=06ponyof" height="1080" loading="lazy" title="Install FortiClient - Step 2" width="1365">
+
+
+</div>
+      
+  </article>
 <p> </p>
-<figure class="caption caption-drupal-media" role="group">
+<p>This is probably the method recommended by your company's IT department if you are downloading it for work, as it is universal and works on <em>Windows</em>, <em>MacOS</em>, <em>iOS</em>, <em>Linux</em>, and <em>Android</em> at the time of publishing this article.</p>
+<p>Configuring <em>FortiClient</em> and connecting to the VPN is as simple as following the steps in the graphical interface:</p>
+<figure class="align-center caption caption-drupal-media" role="group">
 <article class="media media--type-image media--view-mode-default">
   
       
 
-            <div>  <img alt="Prism As A Validation Proxy API Server - The proxy receives requests to multiple REST API ports and redirects them to a single real port" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/prism_as_a_validation_proxy_api_server-the_proxy_receives_requests_to_multiple_rest_api_ports_and_redirects_them_to_a_single_real_port.png?itok=ml7iFBzA" height="563" loading="lazy" title="Prism As A Validation Proxy API Server - The proxy receives requests to multiple REST API ports and redirects them to a single real port" width="1920">
+            <div>  <img alt="Configure FortiClient - Step 1" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/fortinet-forticlient-configure_1.png?itok=PeBlIMqX" height="1080" loading="lazy" title="Configure FortiClient - Step 1" width="1416">
 
 
 </div>
       
   </article>
 
-<figcaption><em>The proxy receives requests to multiple REST API ports and redirects them to a single real port.</em></figcaption>
+<figcaption>First, you need to “<em>Configure VPN</em>”</figcaption>
 </figure>
 <p> </p>
-<figure class="caption caption-drupal-media" role="group">
+<figure class="align-center caption caption-drupal-media" role="group">
 <article class="media media--type-image media--view-mode-default">
   
       
 
-            <div>  <img alt="Prism As A Validation Proxy API Server - The proxy receives requests to a single REST API port and redirects them to the real port, facilitating development" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/prism_as_a_validation_proxy_api_server-the_proxy_receives_requests_to_a_single_rest_api_port_and_redirects_them_to_the_real_port_facilitating_development.png?itok=AIPMytTW" height="116" loading="lazy" title="Prism As A Validation Proxy API Server - The proxy receives requests to a single REST API port and redirects them to the real port, facilitating development" width="1920">
+            <div>  <img alt="Configure FortiClient - Step 2" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/fortinet-forticlient-configure_2_en.png?itok=bLEs7Yk9" height="1080" loading="lazy" title="Configure FortiClient - Step 2" width="1416">
 
 
 </div>
       
   </article>
 
-<figcaption><em>The proxy receives requests to a single REST API port and redirects them to the real port, facilitating development.</em></figcaption>
+<figcaption>Next, you need to enter the VPN name (any name you want), description (any description you want), VPN IP address and port if available, and <em>Fortinet</em> username, although there may be an option to save the password, and click “<em>Save</em>”</figcaption>
 </figure>
 <p> </p>
-<p> </p>
-<p><strong>Intercepting requests with Prism's network.</strong> With this clear, setting up the proxy is as simple as running the following command:</p>
-<pre><code class="language-bash">prism proxy openapi.yaml https://www.example.com/api/v1/port/</code></pre><p> </p>
-<p>Although Prism allows configuring some proxy settings via parameters, below are the most useful ones:<br><strong>--errors:</strong> Recommended parameter. The response to the request generates an error if it does not validate with the definitions. For example:</p>
-<pre><code class="language-bash">prism proxy openapi.yaml https://www.example.com/api/v1/port/ --errors</code></pre><p><strong>-h:</strong> Changes the IP address to the one provided. For example:</p>
-<pre><code class="language-bash">prism proxy -h 0.0.0.0 openapi.yaml https://www.example.com/api/v1/port/</code></pre><p><strong>-p:</strong> Changes the network port to the one provided. For example:</p>
-<pre><code class="language-bash">prism proxy -p 9999 openapi.yaml https://www.example.com/api/v1/port/</code></pre><p><strong>-m:</strong> Enables multiprocessing. Recommended parameter if the proxy is going to receive many requests. For example:</p>
-<pre><code class="language-bash">prism proxy -m openapi.yaml https://www.example.com/api/v1/port/</code></pre><p> </p>
-<p>Once the server is started, you can make requests to the service from your machine to the local IP (or to the IP of the remote machine if installed on a remote server):</p>
-<pre><code class="language-bash">curl http://localhost:4010/users</code></pre><p><em>Prism</em> accepts configurations for <em>GET</em>, <em>POST</em>, <em>PUT</em>, <em>PATCH</em>, and <em>DELETE</em> methods.</p>
-<p> </p>
-<p> </p>
-<p><strong>What happens at the real REST API port?</strong> Debugging the request at the real REST API port, you can verify that the proxy has made the request against the port, sending the query parameter “q” with the URL of the port to interact with. For example, if you have a REST API port <code>/users/delete</code> that performs an action with the <em>DELETE</em> method on a user ID in the body <code>{id: 1}</code>, when making the request against the Prism proxy, it validates the request and forwards it to the real REST API port <code>/api/v1/port</code> as <code>/api/v1/port?q=/users/delete</code> with the <em>DELETE</em> method and the request body <code>{id: 1}</code>. The port returns a <em>status code</em> and a <em>message in the body</em> that is transferred to the proxy, and then the proxy returns to the client:</p>
-<p> </p>
-<figure class="caption caption-drupal-media" role="group">
+<figure class="align-center caption caption-drupal-media" role="group">
 <article class="media media--type-image media--view-mode-default">
   
       
 
-            <div>  <img alt="Prism As A Validation Proxy API Server - The proxy returns the requests from the real port, or a validation error according to the OpenAPI definitions." class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/prism_as_a_validation_proxy_api_server-the_proxy_returns_the_requests_from_the_real_port_or_a_validation_error_according_to_the_openapi_definitions.png?itok=UJDYSO3W" height="116" loading="lazy" title="Prism As A Validation Proxy API Server - The proxy returns the requests from the real port, or a validation error according to the OpenAPI definitions." width="1920">
+            <div>  <img alt="Configure FortiClient - Step 3" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/fortinet-forticlient-configure_3_en.png?itok=agX2ptWq" height="1080" loading="lazy" title="Configure FortiClient - Step 3" width="1416">
 
 
 </div>
       
   </article>
 
-<figcaption><em>The proxy returns the requests from the real port, or a validation error according to the OpenAPI definitions.</em></figcaption>
+<figcaption>Once the VPN connection is saved, you can access it by checking your <em>Fortinet</em> username and password and clicking the “<em>Connect</em>” button</figcaption>
 </figure>
 <p> </p>
+<figure class="align-center caption caption-drupal-media" role="group">
+<article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="Configure FortiClient - Step 4" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/fortinet-forticlient-configure_4.png?itok=r2MKE7-U" height="1080" loading="lazy" title="Configure FortiClient - Step 4" width="1416">
+
+
+</div>
+      
+  </article>
+
+<figcaption>To disconnect the VPN, you can use the “<em>Disconnect</em>” button</figcaption>
+</figure>
 <p> </p>
-<p><strong>Conclusion.</strong> <em>Prism</em> emerges as a valuable tool for validating and redirecting REST API requests, functioning as an effective proxy that ensures requests comply with <em>OpenAPI</em> definitions before being processed by the real REST API port. This not only simplifies the workflow by intercepting and validating requests but also enhances the robustness of applications through strict adherence to the REST API specifications, resulting in a more secure and efficient development process.</p>
-<p><br> </p>
-<p><span style='background-color:#fafafa;color:#0c0c0c;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif'><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:.48px;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:normal;widows:2;word-spacing:0">If you need more information about the package, you can check </span></span><a href="https://docs.stoplight.io/docs/prism" style='-webkit-text-stroke-width:0;background-color:#fafafa;box-sizing:inherit;color:#545454;display:inline-block;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:.48px;orphans:2;text-align:start;text-decoration:none;text-indent:0;text-transform:none;transition:all .5s ease 0s;white-space:normal;widows:2;word-spacing:0'><em><strong>Prism's</strong></em><strong> documentation</strong></a><span style='background-color:#fafafa;color:#0c0c0c;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif'><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:.48px;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:normal;widows:2;word-spacing:0">.</span></span><br> </p>
+<p>While there are many advantages to installing and using the <em>Fortinet</em> <em>FortiClient</em> on <em>Linux</em>, there are also some disadvantages, which are outlined below:<br><strong>Advantages:</strong><br>➡ <em>Quick and convenient installation.</em><br>➡ <em>Cross-platform, with each system having its corresponding installation method.</em><br>➡ <em>Easy to configure and use thanks to the graphical interface.</em><br><strong>Disadvantages:</strong><br>➡ <em>Depending on your Linux system configuration, you will likely need to enter your Fortinet password each time you want to start the connection.</em><br>➡ <em>Neglects the native VPN configuration of Linux and leaves an icon in the system tray (fortitray).</em><br>➡ <em>Automation is difficult to configure.</em></p>
+<p> </p>
+<h3><strong>Linux Console</strong></h3>
+<p><strong>What would the penguin's operating system be without its console?</strong> The most “Linux” way to access the <em>Fortinet</em> VPN is through the system console, but it requires following a few steps. First, you need to install the <em>Fortinet</em> package, as it likely isn’t installed by default, so execute the following commands in the console:</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install network-manager-fortisslvpn-gnome</code></pre><p>Next, to connect, you need to provide a security certificate hash. The easiest way to obtain it is by inducing an error with the connection command. To do this, run the following command, replacing <em>IP_ADDRESS</em>, <em>NETWORK_PORT</em>, <em>YOUR_USERNAME</em>, and <em>YOUR_PASSWORD</em> with your <em>Fortinet</em> account values:</p>
+<pre><code class="language-bash">sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORD</code></pre><p>This should generate an error in the console output due to the absence of a trusted certificate. Look for a line similar to:</p>
+<p><span style="background-color:#0d0d0d;color:#e54c4c"><code>ERROR:      --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyz</code></span></p>
+<p>Each <em>Linux</em> machine has its own trusted certificate hash. To connect, simply repeat the previous command and add the trusted certificate parameter obtained from the error:</p>
+<pre><code class="language-bash">sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORD --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyz</code></pre><p>While there are many advantages to installing and using the <em>Fortinet</em> VPN via the <em>Linux</em> console, there are also some disadvantages, which are outlined below:<br><strong>Advantages:</strong><br>➡ <em>Quick installation via console.</em><br>➡ <em>Connection can be automated.</em><br>➡ <em>Does not require the system's graphical interface. (Advantage and disadvantage)</em><br><strong>Disadvantages:</strong><br>➡ <em>Requires using the Linux console.</em><br>➡ <em>Complex to use.</em><br>➡ <em>Does not require the system's graphical interface. (Advantage and disadvantage)</em></p>
+<p> </p>
+<h3><strong>Linux Network Connections</strong></h3>
+<p><strong>Like any other network connection.</strong> Adding the <em>Fortinet</em> VPN to the list of <em>Linux</em> networks is probably the most convenient way to connect, as it is added as a VPN to your WiFi networks, and connecting is as simple as accessing a WiFi network.</p>
+<p>The graphical layout and texts of the configurations vary depending on the <em>Linux</em> distribution. For this guide, I will use <a href="https://kubuntu.org/"><em><strong>Kubuntu 22.04 LTS</strong></em></a>. First, install the <em>Fortinet</em> package, as it is likely not installed by default. Execute the following commands in the console:</p>
+<pre><code class="language-bash">sudo apt update
+sudo apt install network-manager-fortisslvpn-gnome</code></pre><p>Next, to configure the VPN connection, you need to provide a security certificate hash. The easiest way to obtain it is by inducing an error with the connection command. To do this, run the following command, replacing <em>IP_ADDRESS</em>, <em>NETWORK_PORT</em>, <em>YOUR_USERNAME</em>, and <em>YOUR_PASSWORD</em> with your <em>Fortinet</em> account values:</p>
+<pre><code class="language-bash">sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORD</code></pre><p>This should generate an error in the console output due to the absence of a trusted certificate. Look for a line similar to:</p>
+<p><span style="background-color:#0d0d0d;color:#e54c4c"><code>ERROR:      --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyz</code></span></p>
+<p>Copy the trusted certificate hash obtained from the error, as it will be needed later.</p>
+<p>Now, you need to create the VPN connection. You can access the network connection settings from system settings or by right-clicking on the WiFi icon in the taskbar. Once in the settings, look for the “<em>+</em>” button or “<em>Add new connection</em>” and a window with multiple connection options will open. Under the “<em>VPN Connections</em>” group or section, select a connection called “<em>Fortinet SSLVPN (fortisslvpn)</em>” and click “<em>Create</em>”. This will open the VPN network configuration window.</p>
+<p>For the connection name, you can choose any value you prefer; this will later appear in the network connections along with the VPN connection type icon. The gateway should be the VPN IP address, and if you have a port, it should be included after the IP address separated by “:”, resulting in “<code>IP_ADDRESS:NETWORK_PORT</code>”. The username and password should be the values of your <em>Fortinet</em> account. Depending on the <em>Linux</em> distribution, there will be sections, tabs, or buttons that open windows. After configuring “<em>Advanced</em>”, include the hash you copied from the console error in the trusted certificate field. After configuring “<em>IPv4</em>” <em>></em> “<em>Routes</em>”, you should check the “<em>Use only for resources on this connection</em>” option to prevent it from affecting your other network connections.</p>
+<p>After saving the VPN connection configuration, it should appear alongside the WiFi networks in its own section in settings, or with all connections if you click the network icon in the taskbar. To connect, simply click the “<em>Connect</em>” button.</p>
+<p>While there are many advantages to installing and using the <em>Fortinet</em> VPN through <em>Linux</em> networks, there are also some disadvantages, which are outlined below:<br><strong>Advantages:</strong><br>➡ <em>Once installed, its use is very straightforward.</em><br>➡ <em>Does not require open windows during connection.</em><br>➡ <em>The interface integrates with the Linux distribution.</em><br><strong>Disadvantages:</strong><br>➡ <em>Requires using the Linux console.</em><br>➡ <em>Complex to configure and varies depending on the Linux distribution.</em><br>➡ <em>Automation is difficult to configure.</em></p>
+<p> </p>
+<p><strong>Conclusion.</strong> <em>Fortinet</em> offers various options for configuring and using its VPN on multiple platforms. Its installation is straightforward and quick, especially through the official <em>FortiClient</em> client, and is notable for its ease of use thanks to an intuitive graphical interface. However, <em>Linux</em> users have additional alternatives, such as using the console and integrating with the system’s network connections, each with its own advantages and disadvantages. Overall, it is a versatile tool that adapts to different user needs and preferences, with configuration methods that balance ease of use and technical flexibility.</p>
+<p> </p>
 </div>
       
   </div>
@@ -535,7 +571,7 @@
                   <a href="/en/articles">Articles</a>
               </li>
           <li>
-                  Prism As A Validation Proxy API Server
+                  Configure Fortinet VPN On Linux
               </li>
         </ol>
   </nav>
@@ -800,7 +836,7 @@
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/28","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast"}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/33","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast"}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
 <script src="/sites/default/files/js/js_lIPt_vcqOtkZd4cd9U9oiRUDWu_kGQRz2aUlyXYCSHU.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 
