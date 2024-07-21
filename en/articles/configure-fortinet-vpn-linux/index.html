@@ -11,7 +11,7 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="FortiClientDownload and run. The easiest way to access the Fortinet VPN is to download the FortiClient executable and install it from its official page.    This is probably the method recommended by your company's IT department if you are downloading it for work, as it is universal and works on Windows, MacOS, iOS, Linux, and Android at the time of publishing this article.Configuring FortiClient and connecting to the VPN is as simple as following the steps in the graphical interface:        While there are many advantages to installing and using the Fortinet FortiClient on Linux, there are also some disadvantages, which are outlined below:Advantages:➡ Quick and convenient installation.➡ Cross-platform, with each system having its corresponding installation method.➡ Easy to configure and use thanks to the graphical interface.Disadvantages:➡ Depending on your Linux system configuration, you will likely need to enter your Fortinet password each time you want to start the connection.➡ Neglects the native VPN configuration of Linux and leaves an icon in the system tray (fortitray).➡ Automation is difficult to configure. Linux ConsoleWhat would the penguin's operating system be without its console? The most “Linux” way to access the Fortinet VPN is through the system console, but it requires following a few steps. First, you need to install the Fortinet package, as it likely isn’t installed by default, so execute the following commands in the console:sudo apt update sudo apt install network-manager-fortisslvpn-gnomeNext, to connect, you need to provide a security certificate hash. The easiest way to obtain it is by inducing an error with the connection command. To do this, run the following command, replacing IP_ADDRESS, NETWORK_PORT, YOUR_USERNAME, and YOUR_PASSWORD with your Fortinet account values:sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORDThis should generate an error in the console output due to the absence of a trusted certificate. Look for a line similar to:ERROR:      --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyzEach Linux machine has its own trusted certificate hash. To connect, simply repeat the previous command and add the trusted certificate parameter obtained from the error:sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORD --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyzWhile there are many advantages to installing and using the Fortinet VPN via the Linux console, there are also some disadvantages, which are outlined below:Advantages:➡ Quick installation via console.➡ Connection can be automated.➡ Does not require the system's graphical interface. (Advantage and disadvantage)Disadvantages:➡ Requires using the Linux console.➡ Complex to use.➡ Does not require the system's graphical interface. (Advantage and disadvantage) Linux Network ConnectionsLike any other network connection. Adding the Fortinet VPN to the list of Linux networks is probably the most convenient way to connect, as it is added as a VPN to your WiFi networks, and connecting is as simple as accessing a WiFi network.The graphical layout and texts of the configurations vary depending on the Linux distribution. For this guide, I will use Kubuntu 22.04 LTS. First, install the Fortinet package, as it is likely not installed by default. Execute the following commands in the console:sudo apt update sudo apt install network-manager-fortisslvpn-gnomeNext, to configure the VPN connection, you need to provide a security certificate hash. The easiest way to obtain it is by inducing an error with the connection command. To do this, run the following command, replacing IP_ADDRESS, NETWORK_PORT, YOUR_USERNAME, and YOUR_PASSWORD with your Fortinet account values:sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORDThis should generate an error in the console output due to the absence of a trusted certificate. Look for a line similar to:ERROR:      --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyzCopy the trusted certificate hash obtained from the error, as it will be needed later.Now, you need to create the VPN connection. You can access the network connection settings from system settings or by right-clicking on the WiFi icon in the taskbar. Once in the settings, look for the “+” button or “Add new connection” and a window with multiple connection options will open. Under the “VPN Connections” group or section, select a connection called “Fortinet SSLVPN (fortisslvpn)” and click “Create”. This will open the VPN network configuration window.For the connection name, you can choose any value you prefer; this will later appear in the network connections along with the VPN connection type icon. The gateway should be the VPN IP address, and if you have a port, it should be included after the IP address separated by “:”, resulting in “IP_ADDRESS:NETWORK_PORT”. The username and password should be the values of your Fortinet account. Depending on the Linux distribution, there will be sections, tabs, or buttons that open windows. After configuring “Advanced”, include the hash you copied from the console error in the trusted certificate field. After configuring “IPv4” > “Routes”, you should check the “Use only for resources on this connection” option to prevent it from affecting your other network connections.After saving the VPN connection configuration, it should appear alongside the WiFi networks in its own section in settings, or with all connections if you click the network icon in the taskbar. To connect, simply click the “Connect” button.While there are many advantages to installing and using the Fortinet VPN through Linux networks, there are also some disadvantages, which are outlined below:Advantages:➡ Once installed, its use is very straightforward.➡ Does not require open windows during connection.➡ The interface integrates with the Linux distribution.Disadvantages:➡ Requires using the Linux console.➡ Complex to configure and varies depending on the Linux distribution.➡ Automation is difficult to configure. Conclusion. Fortinet offers various options for configuring and using its VPN on multiple platforms. Its installation is straightforward and quick, especially through the official FortiClient client, and is notable for its ease of use thanks to an intuitive graphical interface. However, Linux users have additional alternatives, such as using the console and integrating with the system’s network connections, each with its own advantages and disadvantages. Overall, it is a versatile tool that adapts to different user needs and preferences, with configuration methods that balance ease of use and technical flexibility. " name="description">
+<meta content="FortiClientDownload and run. The easiest way to access the Fortinet VPN is to download the FortiClient executable and install it from its official page.  This is probably the method recommended by your company's IT department if you are downloading it for work, as it is universal and works on Windows, MacOS, iOS, Linux, and Android at the time of publishing this article.Configuring FortiClient and connecting to the VPN is as simple as following the steps in the graphical interface:    While there are many advantages to installing and using the Fortinet FortiClient on Linux, there are also some disadvantages, which are outlined below:Advantages:➡ Quick and convenient installation.➡ Cross-platform, with each system having its corresponding installation method.➡ Easy to configure and use thanks to the graphical interface.Disadvantages:➡ Depending on your Linux system configuration, you will likely need to enter your Fortinet password each time you want to start the connection.➡ Neglects the native VPN configuration of Linux and leaves an icon in the system tray (fortitray).➡ Automation is difficult to configure. Linux ConsoleWhat would the penguin's operating system be without its console? The most “Linux” way to access the Fortinet VPN is through the system console, but it requires following a few steps. First, you need to install the Fortinet package, as it likely isn’t installed by default, so execute the following commands in the console:sudo apt update sudo apt install network-manager-fortisslvpn-gnomeNext, to connect, you need to provide a security certificate hash. The easiest way to obtain it is by inducing an error with the connection command. To do this, run the following command, replacing IP_ADDRESS, NETWORK_PORT, YOUR_USERNAME, and YOUR_PASSWORD with your Fortinet account values:sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORDThis should generate an error in the console output due to the absence of a trusted certificate. Look for a line similar to:ERROR:      --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyzEach Linux machine has its own trusted certificate hash. To connect, simply repeat the previous command and add the trusted certificate parameter obtained from the error:sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORD --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyz While there are many advantages to installing and using the Fortinet VPN via the Linux console, there are also some disadvantages, which are outlined below:Advantages:➡ Quick installation via console.➡ Connection can be automated.➡ Does not require the system's graphical interface. (Advantage and disadvantage)Disadvantages:➡ Requires using the Linux console.➡ Complex to use.➡ Does not require the system's graphical interface. (Advantage and disadvantage) Linux Network ConnectionsLike any other network connection. Adding the Fortinet VPN to the list of Linux networks is probably the most convenient way to connect, as it is added as a VPN to your WiFi networks, and connecting is as simple as accessing a WiFi network.The graphical layout and texts of the configurations vary depending on the Linux distribution. For this guide, I will use Kubuntu 22.04 LTS. First, install the Fortinet package, as it is likely not installed by default. Execute the following commands in the console:sudo apt update sudo apt install network-manager-fortisslvpn-gnomeNext, to configure the VPN connection, you need to provide a security certificate hash. The easiest way to obtain it is by inducing an error with the connection command. To do this, run the following command, replacing IP_ADDRESS, NETWORK_PORT, YOUR_USERNAME, and YOUR_PASSWORD with your Fortinet account values:sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORDThis should generate an error in the console output due to the absence of a trusted certificate. Look for a line similar to:ERROR:      --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyzCopy the trusted certificate hash obtained from the error, as it will be needed later.Now, you need to create the VPN connection. You can access the network connection settings from system settings or by right-clicking on the WiFi icon in the taskbar. Once in the settings, look for the “+” button or “Add new connection” and a window with multiple connection options will open. Under the “VPN Connections” group or section, select a connection called “Fortinet SSLVPN (fortisslvpn)” and click “Create”. This will open the VPN network configuration window.For the connection name, you can choose any value you prefer; this will later appear in the network connections along with the VPN connection type icon. The gateway should be the VPN IP address, and if you have a port, it should be included after the IP address separated by “:”, resulting in “IP_ADDRESS:NETWORK_PORT”. The username and password should be the values of your Fortinet account. Depending on the Linux distribution, there will be sections, tabs, or buttons that open windows. After configuring “Advanced”, include the hash you copied from the console error in the trusted certificate field. After configuring “IPv4” > “Routes”, you should check the “Use only for resources on this connection” option to prevent it from affecting your other network connections.After saving the VPN connection configuration, it should appear alongside the WiFi networks in its own section in settings, or with all connections if you click the network icon in the taskbar. To connect, simply click the “Connect” button.While there are many advantages to installing and using the Fortinet VPN through Linux networks, there are also some disadvantages, which are outlined below:Advantages:➡ Once installed, its use is very straightforward.➡ Does not require open windows during connection.➡ The interface integrates with the Linux distribution.Disadvantages:➡ Requires using the Linux console.➡ Complex to configure and varies depending on the Linux distribution.➡ Automation is difficult to configure.  Conclusion. Fortinet offers various options for configuring and using its VPN on multiple platforms. Its installation is straightforward and quick, especially through the official FortiClient client, and is notable for its ease of use thanks to an intuitive graphical interface. However, Linux users have additional alternatives, such as using the console and integrating with the system’s network connections, each with its own advantages and disadvantages. Overall, it is a versatile tool that adapts to different user needs and preferences, with configuration methods that balance ease of use and technical flexibility. " name="description">
 <meta content="On Linux, the Fortinet VPN can be configured through the graphical interface, the console, or the system's network connections, each method having its own advantages and disadvantages. It combines ease of use and technical flexibility, catering to various user needs." name="abstract">
 <meta content="Pablo Urrea,Configure Fortinet VPN on Linux,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,VPN,Linux" name="keywords">
 <link href="https://pablourrea.github.io/en/articles/configure-fortinet-vpn-linux" rel="canonical">
@@ -51,7 +51,7 @@
 <meta content="https://pablourrea.github.io/sites/default/files/images/vpn.png" property="og:image:url">
 <meta content="https://pablourrea.github.io/sites/default/files/images/vpn.png" property="og:image:secure_url">
 <meta content="image/png" property="og:image:type">
-<meta content="Sat, 20/07/2024 - 15:05" property="og:updated_time">
+<meta content="Sun, 21/07/2024 - 11:15" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -63,7 +63,7 @@
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
 <meta content="Sat, 20/07/2024 - 14:51" property="article:published_time">
-<meta content="Sat, 20/07/2024 - 15:05" property="article:modified_time">
+<meta content="Sun, 21/07/2024 - 11:15" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
@@ -438,7 +438,12 @@
 
             <div class="clearfix text-formatted"><h3><strong>FortiClient</strong></h3>
 <p><strong>Download and run.</strong> The easiest way to access the <em>Fortinet</em> VPN is to download the <em>FortiClient</em> executable and install it from <a href="https://www.fortinet.com/lat/support/product-downloads">its official page</a>.</p>
-<article class="media media--type-image media--view-mode-default align-center">
+<table style="background-color:#fff;border:1px solid #fff">
+<tbody>
+<tr>
+<td style="background-color:#fff;border:1px solid #fff;padding:1rem;text-align:center">
+<figure class="align-center caption caption-drupal-media" role="group">
+<article class="media media--type-image media--view-mode-default">
   
       
 
@@ -448,8 +453,13 @@
 </div>
       
   </article>
-<p> </p>
-<article class="media media--type-image media--view-mode-default align-center">
+
+<figcaption>Initial installation step</figcaption>
+</figure>
+</td>
+<td style="background-color:#fff;border:1px solid #fff;padding:1rem;text-align:center">
+<figure class="align-center caption caption-drupal-media" role="group">
+<article class="media media--type-image media--view-mode-default">
   
       
 
@@ -459,9 +469,19 @@
 </div>
       
   </article>
-<p> </p>
+
+<figcaption>Final installation step</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
 <p>This is probably the method recommended by your company's IT department if you are downloading it for work, as it is universal and works on <em>Windows</em>, <em>MacOS</em>, <em>iOS</em>, <em>Linux</em>, and <em>Android</em> at the time of publishing this article.</p>
 <p>Configuring <em>FortiClient</em> and connecting to the VPN is as simple as following the steps in the graphical interface:</p>
+<table style="background-color:#fff;border:1px solid #fff">
+<tbody>
+<tr>
+<td style="background-color:#fff;border:1px solid #fff;padding:1rem;text-align:justify">
 <figure class="align-center caption caption-drupal-media" role="group">
 <article class="media media--type-image media--view-mode-default">
   
@@ -474,9 +494,10 @@
       
   </article>
 
-<figcaption>First, you need to “<em>Configure VPN</em>”</figcaption>
+<figcaption>1. First, you need to “<em>Configure VPN</em>”</figcaption>
 </figure>
-<p> </p>
+</td>
+<td style="background-color:#fff;border:1px solid #fff;padding:1rem;text-align:justify">
 <figure class="align-center caption caption-drupal-media" role="group">
 <article class="media media--type-image media--view-mode-default">
   
@@ -489,9 +510,12 @@
       
   </article>
 
-<figcaption>Next, you need to enter the VPN name (any name you want), description (any description you want), VPN IP address and port if available, and <em>Fortinet</em> username, although there may be an option to save the password, and click “<em>Save</em>”</figcaption>
+<figcaption>2. Next, you need to enter the VPN name (any name you want), description (any description you want), VPN IP address and port if available, and <em>Fortinet</em> username, although there may be an option to save the password, and click “<em>Save</em>”</figcaption>
 </figure>
-<p> </p>
+</td>
+</tr>
+<tr>
+<td style="background-color:#fff;border:1px solid #fff;padding:1rem;text-align:justify">
 <figure class="align-center caption caption-drupal-media" role="group">
 <article class="media media--type-image media--view-mode-default">
   
@@ -504,9 +528,10 @@
       
   </article>
 
-<figcaption>Once the VPN connection is saved, you can access it by checking your <em>Fortinet</em> username and password and clicking the “<em>Connect</em>” button</figcaption>
+<figcaption>3. Once the VPN connection is saved, you can access it by checking your <em>Fortinet</em> username and password and clicking the “<em>Connect</em>” button</figcaption>
 </figure>
-<p> </p>
+</td>
+<td style="background-color:#fff;border:1px solid #fff;padding:1rem;text-align:justify">
 <figure class="align-center caption caption-drupal-media" role="group">
 <article class="media media--type-image media--view-mode-default">
   
@@ -519,10 +544,24 @@
       
   </article>
 
-<figcaption>To disconnect the VPN, you can use the “<em>Disconnect</em>” button</figcaption>
+<figcaption>4. To disconnect the VPN, you can use the “<em>Disconnect</em>” button</figcaption>
 </figure>
-<p> </p>
-<p>While there are many advantages to installing and using the <em>Fortinet</em> <em>FortiClient</em> on <em>Linux</em>, there are also some disadvantages, which are outlined below:<br><strong>Advantages:</strong><br>➡ <em>Quick and convenient installation.</em><br>➡ <em>Cross-platform, with each system having its corresponding installation method.</em><br>➡ <em>Easy to configure and use thanks to the graphical interface.</em><br><strong>Disadvantages:</strong><br>➡ <em>Depending on your Linux system configuration, you will likely need to enter your Fortinet password each time you want to start the connection.</em><br>➡ <em>Neglects the native VPN configuration of Linux and leaves an icon in the system tray (fortitray).</em><br>➡ <em>Automation is difficult to configure.</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>While there are many advantages to installing and using the <em>Fortinet</em> <em>FortiClient</em> on <em>Linux</em>, there are also some disadvantages, which are outlined below:<br><strong>Advantages:</strong></p>
+<ul>
+<li>➡ <em>Quick and convenient installation.</em></li>
+<li>➡ <em>Cross-platform, with each system having its corresponding installation method.</em></li>
+<li>➡ <em>Easy to configure and use thanks to the graphical interface.</em></li>
+</ul>
+<p><br><strong>Disadvantages:</strong></p>
+<ul>
+<li>➡ <em>Depending on your Linux system configuration, you will likely need to enter your Fortinet password each time you want to start the connection.</em></li>
+<li>➡ <em>Neglects the native VPN configuration of Linux and leaves an icon in the system tray (fortitray).</em></li>
+<li>➡ <em>Automation is difficult to configure.</em></li>
+</ul>
 <p> </p>
 <h3><strong>Linux Console</strong></h3>
 <p><strong>What would the penguin's operating system be without its console?</strong> The most “Linux” way to access the <em>Fortinet</em> VPN is through the system console, but it requires following a few steps. First, you need to install the <em>Fortinet</em> package, as it likely isn’t installed by default, so execute the following commands in the console:</p>
@@ -531,7 +570,19 @@ sudo apt install network-manager-fortisslvpn-gnome</code></pre><p>Next, to conne
 <pre><code class="language-bash">sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORD</code></pre><p>This should generate an error in the console output due to the absence of a trusted certificate. Look for a line similar to:</p>
 <p><span style="background-color:#0d0d0d;color:#e54c4c"><code>ERROR:      --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyz</code></span></p>
 <p>Each <em>Linux</em> machine has its own trusted certificate hash. To connect, simply repeat the previous command and add the trusted certificate parameter obtained from the error:</p>
-<pre><code class="language-bash">sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORD --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyz</code></pre><p>While there are many advantages to installing and using the <em>Fortinet</em> VPN via the <em>Linux</em> console, there are also some disadvantages, which are outlined below:<br><strong>Advantages:</strong><br>➡ <em>Quick installation via console.</em><br>➡ <em>Connection can be automated.</em><br>➡ <em>Does not require the system's graphical interface. (Advantage and disadvantage)</em><br><strong>Disadvantages:</strong><br>➡ <em>Requires using the Linux console.</em><br>➡ <em>Complex to use.</em><br>➡ <em>Does not require the system's graphical interface. (Advantage and disadvantage)</em></p>
+<pre><code class="language-bash">sudo openfortivpn IP_ADDRESS:NETWORK_PORT --username=YOUR_USERNAME --password=YOUR_PASSWORD --trusted-cert 0123456789abcdefghijklmnopqrstuvwxyz</code></pre><p> </p>
+<p>While there are many advantages to installing and using the <em>Fortinet</em> VPN via the <em>Linux</em> console, there are also some disadvantages, which are outlined below:<br><strong>Advantages:</strong></p>
+<ul>
+<li>➡ <em>Quick installation via console.</em></li>
+<li>➡ <em>Connection can be automated.</em></li>
+<li>➡ <em>Does not require the system's graphical interface. (Advantage and disadvantage)</em></li>
+</ul>
+<p><br><strong>Disadvantages:</strong></p>
+<ul>
+<li>➡ <em>Requires using the Linux console.</em></li>
+<li>➡ <em>Complex to use.</em></li>
+<li>➡ <em>Does not require the system's graphical interface. (Advantage and disadvantage)</em></li>
+</ul>
 <p> </p>
 <h3><strong>Linux Network Connections</strong></h3>
 <p><strong>Like any other network connection.</strong> Adding the <em>Fortinet</em> VPN to the list of <em>Linux</em> networks is probably the most convenient way to connect, as it is added as a VPN to your WiFi networks, and connecting is as simple as accessing a WiFi network.</p>
@@ -544,7 +595,19 @@ sudo apt install network-manager-fortisslvpn-gnome</code></pre><p>Next, to confi
 <p>Now, you need to create the VPN connection. You can access the network connection settings from system settings or by right-clicking on the WiFi icon in the taskbar. Once in the settings, look for the “<em>+</em>” button or “<em>Add new connection</em>” and a window with multiple connection options will open. Under the “<em>VPN Connections</em>” group or section, select a connection called “<em>Fortinet SSLVPN (fortisslvpn)</em>” and click “<em>Create</em>”. This will open the VPN network configuration window.</p>
 <p>For the connection name, you can choose any value you prefer; this will later appear in the network connections along with the VPN connection type icon. The gateway should be the VPN IP address, and if you have a port, it should be included after the IP address separated by “:”, resulting in “<code>IP_ADDRESS:NETWORK_PORT</code>”. The username and password should be the values of your <em>Fortinet</em> account. Depending on the <em>Linux</em> distribution, there will be sections, tabs, or buttons that open windows. After configuring “<em>Advanced</em>”, include the hash you copied from the console error in the trusted certificate field. After configuring “<em>IPv4</em>” <em>></em> “<em>Routes</em>”, you should check the “<em>Use only for resources on this connection</em>” option to prevent it from affecting your other network connections.</p>
 <p>After saving the VPN connection configuration, it should appear alongside the WiFi networks in its own section in settings, or with all connections if you click the network icon in the taskbar. To connect, simply click the “<em>Connect</em>” button.</p>
-<p>While there are many advantages to installing and using the <em>Fortinet</em> VPN through <em>Linux</em> networks, there are also some disadvantages, which are outlined below:<br><strong>Advantages:</strong><br>➡ <em>Once installed, its use is very straightforward.</em><br>➡ <em>Does not require open windows during connection.</em><br>➡ <em>The interface integrates with the Linux distribution.</em><br><strong>Disadvantages:</strong><br>➡ <em>Requires using the Linux console.</em><br>➡ <em>Complex to configure and varies depending on the Linux distribution.</em><br>➡ <em>Automation is difficult to configure.</em></p>
+<p>While there are many advantages to installing and using the <em>Fortinet</em> VPN through <em>Linux</em> networks, there are also some disadvantages, which are outlined below:<br><strong>Advantages:</strong></p>
+<ul>
+<li>➡ <em>Once installed, its use is very straightforward.</em></li>
+<li>➡ <em>Does not require open windows during connection.</em></li>
+<li>➡ <em>The interface integrates with the Linux distribution.</em></li>
+</ul>
+<p><br><strong>Disadvantages:</strong></p>
+<ul>
+<li>➡ <em>Requires using the Linux console.</em></li>
+<li>➡ <em>Complex to configure and varies depending on the Linux distribution.</em></li>
+<li>➡ <em>Automation is difficult to configure.</em></li>
+</ul>
+<p> </p>
 <p> </p>
 <p><strong>Conclusion.</strong> <em>Fortinet</em> offers various options for configuring and using its VPN on multiple platforms. Its installation is straightforward and quick, especially through the official <em>FortiClient</em> client, and is notable for its ease of use thanks to an intuitive graphical interface. However, <em>Linux</em> users have additional alternatives, such as using the console and integrating with the system’s network connections, each with its own advantages and disadvantages. Overall, it is a versatile tool that adapts to different user needs and preferences, with configuration methods that balance ease of use and technical flexibility.</p>
 <p> </p>
