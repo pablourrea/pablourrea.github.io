@@ -7,6 +7,22 @@
     <language>es</language>
     
     <item>
+  <title>Migrar Paragraphs de Contenidos con Migrate (Parte 2)</title>
+  <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-parte-2</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrar Paragraphs de Contenidos con Migrate (Parte 2)&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;En el artículo &lt;em&gt;Migrar Paragraphs de Contenidos con Migrate&lt;/em&gt; exploro las posibilidades para migrar &lt;em&gt;Paragraphs&lt;/em&gt; con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los &lt;em&gt;Paragraphs&lt;/em&gt; una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar &lt;em&gt;Paragraphs&lt;/em&gt; y casarlos con el padre dentro de la misma migración que este.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-10T14:32:17+00:00" title="Sábado, Agosto 10, 2024 - 14:32" class="datetime"&gt;Sáb, 10/08/2024 - 14:32&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Sat, 10 Aug 2024 14:32:17 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">34 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Configurar VPN de Fortinet en Linux</title>
   <link>https://pablourrea.github.io/es/articulos/configurar-vpn-de-fortinet-en-linux</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Configurar VPN de Fortinet en Linux&lt;/span&gt;
