@@ -227,9 +227,9 @@
       <div class="container">
         <div id="header-region">
             <div class="region region-header">
-    <nav aria-labelledby="pablo-urrea-logo-menu" class="block block-menu navigation menu--logo" role="navigation" id="pablo-urrea-logo">
+    <nav aria-labelledby="block-pablo-urrea-logo-menu" class="block block-menu navigation menu--logo" role="navigation" id="block-pablo-urrea-logo">
             
-  <h2 class="visually-hidden" id="pablo-urrea-logo-menu">Logo</h2>
+  <h2 class="visually-hidden" id="block-pablo-urrea-logo-menu">Logo</h2>
   
 
         
@@ -242,9 +242,9 @@
 
 
   </nav>
-<nav aria-labelledby="pablo-urrea-main-navigation-menu" class="block block-menu navigation menu--main" role="navigation" id="pablo-urrea-main-navigation">
+<nav aria-labelledby="block-pablo-urrea-main-navigation-menu" class="block block-menu navigation menu--main" role="navigation" id="block-pablo-urrea-main-navigation">
             
-  <h2 class="visually-hidden" id="pablo-urrea-main-navigation-menu">Main navigation</h2>
+  <h2 class="visually-hidden" id="block-pablo-urrea-main-navigation-menu">Main navigation</h2>
   
 
         
@@ -269,7 +269,7 @@
 
 
   </nav>
-<div class="block-language-switcher-langcode-block language-switcher-language-url pablo-urrea-language-switcher-langcode" id="pablo-urrea-language-switcher-langcode">
+<div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
   
     
       <ul class="links"><li data-drupal-link-system-path="node/19" hreflang="es"><a href="/es/articulos/migrar-paragraphs-de-contenidos-con-migrate" class="language-link" title="Español" data-drupal-link-system-path="node/19" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/19" hreflang="en"><a href="/en/articles/migrate-content-paragraphs-migrate" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/19" hreflang="en" aria-current="page">en</a></li></ul>
@@ -300,15 +300,14 @@
   <div class="content">
     
 <h1 class="content-title">
-      
+    
 
             <div class="clearfix text-formatted"><p>Migrate Content Paragraphs with Migrate</p>
 </div>
       
   </h1>
-
 <div class="border-top content-tags link-no-hover">
-      
+    
 
       <div>
               <div><a href="/en/articles/categories/drupal" hreflang="en">Drupal</a></div>
@@ -316,11 +315,10 @@
           </div>
   
   </div>
-
 <div class="content-image">
-      
+    
 <div class="polaroid">
-      
+    
 
             <div><article class="media media--type-image media--view-mode-landscape-full">
   
@@ -335,30 +333,27 @@
 </div>
       
 <div class="title title-right title-small">
-      
+    
 
             <div class="clearfix text-formatted"><p>How do birds know how to migrate? - The Daily Illini</p>
 </div>
       
   </div>
-
   </div>
-
   </div>
-
 <div class="border-bottom content-authorship">
-      
+    
 <div class="authorship-group-1 content-align-left content-align-top">
-      <article class="profile">
+    <article class="profile">
   
 <div class="image">
-      
+    
 
             <div><article class="media media--type-image media--view-mode-thumbnail">
   
       
 <div class="thumbnail">
-      
+    
 
             <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
 
@@ -366,22 +361,19 @@
 </div>
       
   </div>
-
   </article>
 </div>
       
   </div>
-
 <div class="name">
-      
+    
 
             <div class="clearfix text-formatted"><p>Pablo Urrea</p>
 </div>
       
   </div>
-
 <div class="contact">
-      
+    
 
             <div>
               <ul class="menu">
@@ -409,22 +401,19 @@
 
 </div>
       
-  </div>
-</article>
+  </div></article>
 
   </div>
-
 <div class="authorship-group-2 content-align-bottom content-align-right">
-      
+    
 <div class="reading-time">
-      
+    
 
             <div content="20">20 minutes reading</div>
       
   </div>
-
 <div class="authorship-dates">
-      
+    
 <div class="date">
   <div class="label">
     Published
@@ -446,13 +435,10 @@
 </div>
 
   </div>
-
   </div>
-
   </div>
-
 <div class="content-description">
-      
+    
 
             <div class="clearfix text-formatted"><p>The other day I was proposed to migrate content from a website on Drupal 7 to another on Drupal 10 simply because it was easier to renovate it than to update it. And I, being an expert in saying yes without knowing the swamp I was getting into, started analyzing how I could do it.</p>
 <p><br><strong>In search of enlightenment.</strong> In the meantime, the idea arose to build a view in Drupal 7 that provides absolutely all the fields of a content type in JSON format. So far, so simple, right? You configure a YML file for migration with the appropriate plugins, and there you go, the entities were copied from one system to another. It turns out that the data structure has changed in the last 10 years (What a surprise), and now certain content blocks that used to be stored in the entity itself are stored as Paragraph type entities. I thought, okay, I'll migrate the Paragraph entities, add the migration as a dependency of the main entity, and add the migration plugin, and nothing happened here. Then I encountered a wonderful bidirectionality here: The parent entity needed to have the Paragraph referenced, and the Paragraph needed to have the parent entity referenced (along with other parent data).</p>
@@ -718,14 +704,13 @@ if ($paragraph instanceof ParagraphInterface && $entity->hasField($field_name) &
 </div>
       
   </div>
-
   </div>
 
   
 </article>
 
   </div>
-<div class="block-system breadcrumbs content-breadcrumbs" id="content-breadcrumbs">
+<div class="block-system block-pablo-urrea-breadcrumbs-content breadcrumbs" id="block-pablo-urrea-breadcrumbs-content">
   
     
         <nav aria-labelledby="system-breadcrumb" class="breadcrumb" role="navigation">
@@ -786,7 +771,7 @@ if ($paragraph instanceof ParagraphInterface && $entity->hasField($field_name) &
   
       
 <div class="thumbnail">
-      
+    
 
             <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
 
@@ -794,7 +779,6 @@ if ($paragraph instanceof ParagraphInterface && $entity->hasField($field_name) &
 </div>
       
   </div>
-
   </article>
 </div>
       
