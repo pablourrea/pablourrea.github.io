@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-08-11T02:15:50+00:00</lastmod>
+  <lastmod>2024-08-13T13:38:41+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -676,7 +676,7 @@
   <loc>https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
-  <lastmod>2024-04-11T14:16:01+00:00</lastmod>
+  <lastmod>2024-08-13T13:36:47+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -689,7 +689,7 @@
   <loc>https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
-  <lastmod>2024-04-11T14:16:01+00:00</lastmod>
+  <lastmod>2024-08-13T13:36:47+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -780,7 +780,7 @@
   <loc>https://pablourrea.github.io/es/proyectos/museo-nacional-thyssen-bornemisza</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-thyssen-bornemisza"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-thyssen-bornemisza"/>
-  <lastmod>2024-06-08T19:53:15+00:00</lastmod>
+  <lastmod>2024-08-13T13:36:47+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -793,7 +793,7 @@
   <loc>https://pablourrea.github.io/en/projects/museo-nacional-thyssen-bornemisza</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-thyssen-bornemisza"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-thyssen-bornemisza"/>
-  <lastmod>2024-06-08T19:53:15+00:00</lastmod>
+  <lastmod>2024-08-13T13:36:47+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -1209,6 +1209,22 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/xampp"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/xampp"/>
   <lastmod>2024-06-27T16:02:05+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/categorias/proyecto-destacado</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/proyecto-destacado"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/featured-project"/>
+  <lastmod>2024-08-13T08:48:11+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/categories/featured-project</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/proyecto-destacado"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/featured-project"/>
+  <lastmod>2024-08-13T08:48:11+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
  </url>
