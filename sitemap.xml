@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-08-13T13:38:41+00:00</lastmod>
+  <lastmod>2024-08-13T19:51:49+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -1213,18 +1213,18 @@
   <priority>0.7</priority>
  </url>
  <url>
-  <loc>https://pablourrea.github.io/es/proyectos/categorias/proyecto-destacado</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/proyecto-destacado"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/featured-project"/>
-  <lastmod>2024-08-13T08:48:11+00:00</lastmod>
+  <loc>https://pablourrea.github.io/es/proyectos/categorias/proyectos-destacados</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/proyectos-destacados"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/featured-projects"/>
+  <lastmod>2024-08-13T19:33:59+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
  </url>
  <url>
-  <loc>https://pablourrea.github.io/en/projects/categories/featured-project</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/proyecto-destacado"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/featured-project"/>
-  <lastmod>2024-08-13T08:48:11+00:00</lastmod>
+  <loc>https://pablourrea.github.io/en/projects/categories/featured-projects</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/proyectos-destacados"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/featured-projects"/>
+  <lastmod>2024-08-13T19:33:59+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
  </url>
