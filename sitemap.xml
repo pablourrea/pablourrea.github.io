@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-08-22T13:41:30+00:00</lastmod>
+  <lastmod>2024-08-24T12:00:49+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -182,7 +182,7 @@
   <loc>https://pablourrea.github.io/es/articulos/prism-como-servidor-api-rest-de-pruebas</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-rest-de-pruebas"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/prism-rest-api-testing-server"/>
-  <lastmod>2024-04-18T19:43:59+00:00</lastmod>
+  <lastmod>2024-08-24T11:22:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -195,7 +195,7 @@
   <loc>https://pablourrea.github.io/en/articles/prism-rest-api-testing-server</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-rest-de-pruebas"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/prism-rest-api-testing-server"/>
-  <lastmod>2024-04-18T19:43:59+00:00</lastmod>
+  <lastmod>2024-08-24T11:22:16+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -309,10 +309,10 @@
   </image:image>
  </url>
  <url>
-  <loc>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-parte-2</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-parte-2"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-part-2"/>
-  <lastmod>2024-08-11T02:12:13+00:00</lastmod>
+  <loc>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version"/>
+  <lastmod>2024-08-24T11:27:26+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -322,10 +322,10 @@
   </image:image>
  </url>
  <url>
-  <loc>https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-part-2</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-parte-2"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-part-2"/>
-  <lastmod>2024-08-11T02:12:13+00:00</lastmod>
+  <loc>https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version"/>
+  <lastmod>2024-08-24T11:27:26+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -1065,6 +1065,22 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/linux"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/linux"/>
   <lastmod>2024-07-20T15:00:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/categorias/rest</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/rest"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/rest"/>
+  <lastmod>2024-08-24T11:22:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories/rest</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/rest"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/rest"/>
+  <lastmod>2024-08-24T11:22:16+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
  </url>

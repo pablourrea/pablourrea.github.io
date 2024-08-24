@@ -7,9 +7,9 @@
     <language>en</language>
     
     <item>
-  <title>Migrar Paragraphs de Contenidos con Migrate (Parte 2)</title>
-  <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-parte-2</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrate Paragraphs of Content with Migrate (Part 2)&lt;/span&gt;
+  <title>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</title>
+  <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrate Paragraphs of Content with Migrate (Enhanced version)&lt;/span&gt;
 
 
             &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;In the article &lt;em&gt;Migrating Paragraphs of Content with Migrate&lt;/em&gt;, I explore the possibilities of migrating &lt;em&gt;Paragraphs&lt;/em&gt; with migration configuration files independent of the parent node. However, it's true that, although &lt;em&gt;Paragraphs&lt;/em&gt; are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate &lt;em&gt;Paragraphs&lt;/em&gt; and link them to the parent within the same migration.&lt;/p&gt;

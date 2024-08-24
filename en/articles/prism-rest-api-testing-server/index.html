@@ -13,7 +13,7 @@
 </script>
 <meta content="Often in the world of development, it becomes a race between the hare and the tortoise, and spoiler alert: you're not the hare. That's the case with REST API development, where API integrations arrive long before the API itself, and you need to provide a testing environment for that hare who's watching you while overtaking you and sends you an email every week asking for a solution. This is where Prism comes into play (Prisma for friends who don't want to pronounce it with a clenched jaw), an invaluable tool to simplify and streamline the REST API development process.Prism is a REST API simulation server (Among its features) that allows you to define custom endpoints, simulate responses, and set up test scenarios for your applications using the YML interface of OpenAPI. With Prism, development teams can create a realistic and controlled testing environment without relying on external servers or production environments. Express REST API. Setting up Prism is simple and fast. Once installed, you can easily define endpoints, specify response formats, and simulate different API states such as successful responses, errors, or wait times. Prism offers an intuitive interface that efficiently manages &#34;fake&#34; APIs or test APIs. With Prism, it's possible to define complex test scenarios, simulate dynamic data, and validate application behavior in different situations. Installation like any other Node.js package. To start using Prism, you first need to install it in your development environment (Obviously). You can install Prism globally using NPM (Node Package Manager) with the following command:npm install -g @stoplight/prism-cliAlternatively, you can omit the -g parameter if you don't want Node packages to proliferate on your machine like rodents. If you need more installation options, you can check Prism's documentation. Definitions. Once Prism is installed, you can configure it to simulate your REST API. Suppose you have an API with a /users endpoint that returns a list of users in JSON format, the following example YAML configuration file shows how to set up the simulation of this endpoint:openapi: 3.0.0 info: title: Example REST API version: 1.0.0 paths: /users: get: summary: Gets the list of users responses: '200': description: Successful response content: application/json: schema: type: array items: type: object properties: id: type: integer username: type: string email: type: stringYou can configure this file manually if you feel comfortable with the OpenAPI configuration interface or with any API design tool, such as SwaggerHub, for example. Start your engines. To run Prism and simulate your REST API, you can do it with the following command (Remember to adjust openapi.yml to the path of the above configuration file):prism mock openapi.ymlThis will start the test server at the URL http://localhost:4010, although it accepts the following combinable parameters (The most useful ones):-h: Modifies the IP address to the provided one. For example:prism mock -h 0.0.0.0 openapi.yml-p: Modifies the network port to the provided one. For example:prism mock -p 9999 openapi.yml--dynamic: Generates dynamic responses that match the provided schema. For example:prism mock --dynamic openapi.ymlOnce the server is started, you can make requests to the service from your machine to the local IP (Or to the IP of the remote machine if installed on a remote server):curl http://localhost:4010/usersPrism accepts configurations for GET, POST, PUT, PATCH, and DELETE methods.Conclusion. Prism is an indispensable tool for any development team working with REST APIs. By simplifying the development and testing process, it enables teams to create high-quality applications more quickly and efficiently. With its features and ease of use, Prism has become the perfect companion for any developer looking to improve their API development workflow (Or if you simply don't want to fall behind like the tortoise). If you need more information about the package, you can check Prism's documentation." name="description">
 <meta content="Prism simplifies REST API development by providing a realistic and controlled testing environment, without relying on external servers. An essential tool for REST API developers." name="abstract">
-<meta content="Pablo Urrea,Prism as a REST API testing server,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,API" name="keywords">
+<meta content="Pablo Urrea,Prism as a REST API testing server,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,API,REST" name="keywords">
 <link href="https://pablourrea.github.io/en/articles/prism-rest-api-testing-server" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
@@ -51,7 +51,7 @@
 <meta content="https://pablourrea.github.io/sites/default/files/images/galaxy_sphere.png" property="og:image:url">
 <meta content="https://pablourrea.github.io/sites/default/files/images/galaxy_sphere.png" property="og:image:secure_url">
 <meta content="image/png" property="og:image:type">
-<meta content="Thu, 18/04/2024 - 19:43" property="og:updated_time">
+<meta content="Sat, 24/08/2024 - 11:22" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -63,7 +63,7 @@
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
 <meta content="Mon, 15/04/2024 - 16:09" property="article:published_time">
-<meta content="Thu, 18/04/2024 - 19:43" property="article:modified_time">
+<meta content="Sat, 24/08/2024 - 11:22" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
@@ -312,6 +312,7 @@
       <div>
               <div><a href="/en/articles/categories/nodejs" hreflang="en">NodeJS</a></div>
               <div><a href="/en/articles/categories/api" hreflang="en">API</a></div>
+              <div><a href="/en/articles/categories/rest" hreflang="en">REST</a></div>
           </div>
   
   </div>

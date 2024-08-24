@@ -7,9 +7,9 @@
     <language>es</language>
     
     <item>
-  <title>Migrar Paragraphs de Contenidos con Migrate (Parte 2)</title>
-  <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-parte-2</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrar Paragraphs de Contenidos con Migrate (Parte 2)&lt;/span&gt;
+  <title>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</title>
+  <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)&lt;/span&gt;
 
 
             &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;En el artículo &lt;em&gt;Migrar Paragraphs de Contenidos con Migrate&lt;/em&gt; exploro las posibilidades para migrar &lt;em&gt;Paragraphs&lt;/em&gt; con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los &lt;em&gt;Paragraphs&lt;/em&gt; una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar &lt;em&gt;Paragraphs&lt;/em&gt; y casarlos con el padre dentro de la misma migración que este.&lt;/p&gt;
