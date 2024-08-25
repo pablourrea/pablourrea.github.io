@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-08-24T19:25:17+00:00</lastmod>
+  <lastmod>2024-08-25T19:46:49+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -332,6 +332,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg</image:loc>
    <image:title>¿Cómo saben las aves cómo migrar? (2)</image:title>
    <image:caption>¿Cómo saben las aves cómo migrar? (2)</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/selective-entity-update-during-drupal-migrations"/>
+  <lastmod>2024-08-25T19:43:09+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png</image:loc>
+   <image:title>Atleta saltando vallas</image:title>
+   <image:caption>Atleta saltando vallas</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/selective-entity-update-during-drupal-migrations</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/selective-entity-update-during-drupal-migrations"/>
+  <lastmod>2024-08-25T19:43:09+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png</image:loc>
+   <image:title>Atleta saltando vallas</image:title>
+   <image:caption>Atleta saltando vallas</image:caption>
   </image:image>
  </url>
  <url>

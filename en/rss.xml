@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>Actualización selectiva de entidades durante migraciones de Drupal</title>
+  <link>https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Selective entity update during Drupal migrations&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;When performing migrations in a system, it is sometimes necessary to update existing entities instead of creating new ones. However, this process can be complicated if only specific entities need to be modified. This article presents different approaches to facilitate the management of migrations according to the specific needs of each case.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-25T19:19:39+00:00" title="Sunday, August 25, 2024 - 19:19" class="datetime"&gt;Sun, 25/08/2024 - 19:19&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Sun, 25 Aug 2024 19:19:39 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">35 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</title>
   <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrate Paragraphs of Content with Migrate (Enhanced version)&lt;/span&gt;

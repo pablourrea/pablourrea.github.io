@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="En el artículo Migrar Paragraphs de Contenidos con Migrate exploro las posibilidades para migrar Paragraphs con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los Paragraphs una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar Paragraphs y casarlos con el padre dentro de la misma migración que este." name="description">
-<meta content="En el artículo Migrar Paragraphs de Contenidos con Migrate exploro las posibilidades para migrar Paragraphs con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los Paragraphs una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar Paragraphs y casarlos con el padre dentro de la misma migración que este." name="abstract">
-<meta content="Pablo Urrea,Migrar Paragraphs de Contenidos con Migrate (Versión mejorada),Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Migrate" name="keywords">
-<link href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" rel="canonical">
+<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." name="description">
+<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." name="abstract">
+<meta content="Pablo Urrea,Actualización selectiva de entidades durante migraciones de Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Migrate" name="keywords">
+<link href="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" property="og:url">
-<meta content="Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)" property="og:title">
-<meta content="En el artículo Migrar Paragraphs de Contenidos con Migrate exploro las posibilidades para migrar Paragraphs con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los Paragraphs una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar Paragraphs y casarlos con el padre dentro de la misma migración que este." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="og:image:secure_url">
-<meta content="image/jpeg" property="og:image:type">
-<meta content="Sáb, 24/08/2024 - 11:27" property="og:updated_time">
+<meta content="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" property="og:url">
+<meta content="Actualización selectiva de entidades durante migraciones de Drupal" property="og:title">
+<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" property="og:image:secure_url">
+<meta content="image/png" property="og:image:type">
+<meta content="Dom, 25/08/2024 - 19:43" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,24 +62,24 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Sáb, 10/08/2024 - 14:32" property="article:published_time">
-<meta content="Sáb, 24/08/2024 - 11:27" property="article:modified_time">
+<meta content="Dom, 25/08/2024 - 19:19" property="article:published_time">
+<meta content="Dom, 25/08/2024 - 19:43" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content="Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)" property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" property="pin:url">
-<meta content="En el artículo Migrar Paragraphs de Contenidos con Migrate exploro las posibilidades para migrar Paragraphs con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los Paragraphs una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar Paragraphs y casarlos con el padre dentro de la misma migración que este." property="pin:description">
+<meta content="Actualización selectiva de entidades durante migraciones de Drupal" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" property="pin:url">
+<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="En el artículo Migrar Paragraphs de Contenidos con Migrate exploro las posibilidades para migrar Paragraphs con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los Paragraphs una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar Paragraphs y casarlos con el padre dentro de la misma migración que este." name="twitter:description">
-<meta content="Migrar Paragraphs de Contenidos con Migrate (Versión mejorada) | Pablo Urrea" name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" name="twitter:image">
+<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." name="twitter:description">
+<meta content="Actualización selectiva de entidades durante migraciones de Drupal | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/selective-entity-update-during-drupal-migrations" rel="alternate" hreflang="en">
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -88,7 +88,7 @@
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada",en:"/en/articles/migrate-paragraphs-content-migrate-enhanced-version",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal",en:"/en/articles/selective-entity-update-during-drupal-migrations",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -112,12 +112,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Migrar Paragraphs de Contenidos Con Migrate (Versión Mejorada)",
-                        "item": "https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada"
+                        "name": "Actualización Selectiva de Entidades Durante Migraciones de Drupal",
+                        "item": "https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal"
                     }
                 ]
             },
-            "description": "Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)",
+            "description": "Actualización selectiva de entidades durante migraciones de Drupal",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -160,7 +160,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-08-10T14:32:17+0000"
+                "datePublished": "2024-08-25T19:19:39+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -200,7 +200,7 @@
     ]
 }</script>
 
-    <title>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada) | Pablo Urrea</title>
+    <title>Actualización selectiva de entidades durante migraciones de Drupal | Pablo Urrea</title>
     <link href="/sites/default/files/css/css_vhKjLNnU_eQJzF4x1wT5aEwjOl8L1w5CniHtVCgdeNc.css?delta=0&language=es&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
@@ -211,7 +211,7 @@
     
   </head>
           
-      <body class="no-sidebar page-articulos-migrar-paragraphs-de-contenidos-con-migrate-version-mejorada role--anonymous section-articulos with-subnav">
+      <body class="no-sidebar page-articulos-actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal role--anonymous section-articulos with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -272,7 +272,7 @@
 <div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
   
     
-      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/34" hreflang="es"><a href="/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" class="is-active language-link" title="Español" data-drupal-link-system-path="node/34" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/34" hreflang="en"><a href="/en/articles/migrate-paragraphs-content-migrate-enhanced-version" class="language-link" title="Inglés" data-drupal-link-system-path="node/34" hreflang="en">en</a></li></ul>
+      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/35" hreflang="es"><a href="/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" class="is-active language-link" title="Español" data-drupal-link-system-path="node/35" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/35" hreflang="en"><a href="/en/articles/selective-entity-update-during-drupal-migrations" class="language-link" title="Inglés" data-drupal-link-system-path="node/35" hreflang="en">en</a></li></ul>
   </div>
 
   </div>
@@ -302,7 +302,7 @@
 <h1 class="content-title">
     
 
-            <div class="clearfix text-formatted"><p>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</p>
+            <div class="clearfix text-formatted"><p>Actualización selectiva de entidades durante migraciones de <em>Drupal</em></p>
 </div>
       
   </h1>
@@ -324,7 +324,7 @@
   
       
 
-            <div>  <img alt="¿Cómo saben las aves cómo migrar? (2)" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/birds-migrating-2.jpg?itok=ClSGJ0vE" height="540" loading="lazy" title="¿Cómo saben las aves cómo migrar? (2)" width="1072">
+            <div>  <img alt="Atleta saltando vallas" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/atleta_saltando_vallas.png?itok=ZHuSXLO3" height="540" loading="lazy" title="Atleta saltando vallas" width="1072">
 
 
 </div>
@@ -335,7 +335,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="clearfix text-formatted"><p>¿Cómo saben las aves cómo migrar?</p>
+            <div class="clearfix text-formatted"><p>Atleta saltando vallas</p>
 </div>
       
   </div>
@@ -419,8 +419,8 @@
     Publicado
   </div>
 
-  <time class="datetime" datetime="2024-08-10">
-    10/08/2024
+  <time class="datetime" datetime="2024-08-25">
+    25/08/2024
   </time>
 </div>
 
@@ -430,60 +430,184 @@
 <div class="content-description">
     
 
-            <div class="clearfix text-formatted"><p>En el artículo <a href="/articulos/migrar-paragraphs-de-contenidos-con-migrate"><em>Migrar Paragraphs de Contenidos con Migrate</em></a> exploro las posibilidades para migrar <em>Paragraphs</em> en <em>Drupal</em> con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los <em>Paragraphs</em> una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar <em>Paragraphs</em> y casarlos con el padre dentro de la misma migración que este, optimizando así el proceso de migración reduciendo el tiempo de ejecución, eliminando dependencias y fortaleciendo la relación padre e hijo entre las dos entidades, haciendo de este proceso un método más conveniente que el comentado en el anterior artículo.</p>
+            <div class="clearfix text-formatted"><p>Algunas veces las migraciones de <em>Drupal</em> deben actualizar entidades en lugar de crearlos con el parámetro de migración <code>--update</code>, durante este proceso se actualizarán todos las entidades de la migración previa, junto a la creación de posibles entidades nuevas. Para bien o para mal, los datos nuevos actualizarán todas las entidades disponibles en el sistema y la fuente de datos, pero, ¿Y si fuese necesaria una actualización de datos pero solo de algunas entidades?</p>
 <p> </p>
-<p><strong>Dependencias.</strong> Para utilizar este método, es necesaria la instalación del módulo para <em>Drupal</em>: <a href="https://www.drupal.org/project/migrate_child_entity_generate"><em>Migrate Child Entity Generate</em></a>, puedes instalarlo desde la sección “<em>Ampliar</em>” del administrador de <em>Drupal</em> o con <em>Composer</em>:</p>
-<pre><code class="language-bash">composer require drupal/migrate_child_entity_generate</code></pre><p>Y habilitarlo desde la sección “<em>Ampliar</em>” del administrador de <em>Drupal</em> o con <em>Drush</em>:</p>
-<pre><code class="language-bash">drush en migrate_child_entity_generate</code></pre><p> </p>
-<p><strong>Un plugin de </strong><em><strong>Migrate</strong></em><strong> para dominarlos a todos.</strong> Utilizar el plugin <code>child_entity_generate</code> del módulo <a href="https://www.drupal.org/project/migrate_child_entity_generate"><em>Migrate Child Entity Generate</em></a> es muy sencillo de usar. Debes definir el plugin, el tipo de entidad, el tipo del tipo de entidad y opcionalmente definir los valores variables y variables constantes por defecto como en el siguiente ejemplo:</p>
-<pre><code class="language-yaml">field_name:
-  plugin: child_entity_generate
-  entity_type: paragraph
-  bundle: paragraph_bundle
-  values:
-    field_1: value_1
-    field_2/value: value_2
-  default_values:
-    langcode: "es"
-    field_2/format: "text"</code></pre><p>La diferencia entre <code>values</code> y <code>default_values</code> es que en <code>values</code> se introducen valores variables para cada <em>Paragraph</em> distinto (Como por ejemplo, un texto, una fecha, etc.) y en <code>default_values</code> se introducen valores estáticos y comunes para todos los <em>Paragraph</em> (Como por ejemplo, el formato de un campo <em>WYSWYG</em> de <em>CKEditor</em>, un campo de selección de idioma, etc.).</p>
+<p><strong>El método unitario.</strong> Si requieres actualizar únicamente algunas entidades, pero no demasiadas, puedes agregar al comando de migración el parámetro <code>--idlist</code> seguido de los identificadores de migración correspondiente a cada grupo de datos, es decir, si por ejemplo tienes los siguientes datos en formato JSON:</p>
+<pre><code class="language-json">{
+  "elements": [
+    {
+      "element": {
+        "id": "1",
+        "name": "Nombre 1"
+      },
+      "element": {
+        "id": "2",
+        "name": "Nombre 2"
+      },
+      "element": {
+        "id": "3",
+        "name": "Nombre 3"
+      },
+      "element": {
+        "id": "4",
+        "name": "Nombre 4"
+      },
+    }
+  ]
+}</code></pre><p>Teniendo estos datos inyectados en una migración, si solamente necesitas migrar los elementos con id's 1, 2, y 3, el parámetro sería <code>--idlist=1,2,3</code>. Aplicado a un comando de migración completo con drush quedaría así:</p>
+<pre><code class="language-bash">drush migrate-import migrate_elements --idlist=1,2,3</code></pre><p>Si en lugar de crearlos, necesitas actualizarlos, el comando quedaría así con el parámetro <code>--update</code>:</p>
+<pre><code class="language-bash">drush migrate-import migrate_elements --update --idlist=1,2,3</code></pre><p>Esta forma de migrar entidades individualmente es muy sencillo y rápido, pero solamente es aplicable a un volumen reducido de identificadores (A menos que tengas ganas de introducir 1000 id’s en el parámetro del comando, que igual una IA generativa lo procesa bien, pero habría que ver como lo soporta el sistema)</p>
 <p> </p>
-<p><strong>Un plugin de </strong><em><strong>Migrate</strong></em><strong> para dominar todos los valores.</strong> A diferencia del plugin <code>entity_generate</code> del módulo <a href="https://www.drupal.org/project/migrate_plus"><em>Migrate Plus</em></a>, el plugin <code>child_entity_generate</code> sí que acepta como parámetro un <em>array</em> de valores, como por ejemplo:</p>
-<pre><code class="language-yaml">destination:
- plugin: "entity:node"
-source:
- fields:
-   -
-     faq_items:
-       -
-         question: "Some question"
-         answer: "Some answer"
-       -
-         question: "Another question"
-         answer: "Another answer"
-process:
- field_faqs:
-   plugin: child_entity_generate
-   source: faq_items
-   entity_type: field_collection
-   bundle: faq
-   values:
-     field_faq_question: question
-     field_faq_answer/value: answer
-   default_values:
-     field_faq_answer/format: "basic_html"</code></pre><p>El código anterior crearía una entidad <code>faq_items</code> del tipo <em>faq</em> por cada elemento del <em>array</em> <code>faq_items</code>, asignando al campo <code>field_faq_question</code> el valor de <em>question</em> y el valor de <em>answer</em> al valor del campo <code>field_faq_answer</code>, dejando el formato del campo <code>field_faq_answer</code> <em>basic_html</em> como valor por defecto general a todas las entidades. Y asignaría el <code>target_id</code> y el <code>target_revision_id</code> de cada entidad al campo <code>field_faqs</code>.</p>
 <p> </p>
-<table style="background-color:#4c98e5;border:.5rem solid #4c98e5">
-<tbody>
-<tr>
-<td style="background-color:#4c98e5;border:1px solid #4c98e5"><span style="color:#fafafa">ℹ️</span></td>
-</tr>
-<tr>
-<td style="background-color:#4c98e5;border:1px solid #4c98e5"><span style="color:#fdfdfd">En el momento de publicación de este artículo, el módulo </span><a href="https://www.drupal.org/project/migrate_child_entity_generate"><span style="color:#fdfdfd"><em>Migrate Child Entity Generate</em></span></a><span style="color:#fdfdfd"> en la versión estable <code>1.0.1</code> del 4 de junio del 2024 no acepta referencias de campos de la <em>Row</em> actual del proceso de migración (Como por ejemplo asignar a <code>field</code> el valor de <code>"@other_field"</code>). Para corregirlo </span><a href="https://www.drupal.org/files/issues/2024-08-07/3466235-6.patch"><span style="color:#fdfdfd">he creado un parche</span></a><span style="color:#fdfdfd"> que el mantenedor del modulo aceptó en la issue "</span><a href="https://www.drupal.org/project/migrate_child_entity_generate/issues/3466235"><span style="color:#fdfdfd"><em>Refine the process value filtering so that it gets values from the row</em></span></a><span style="color:#fdfdfd">". Si lo necesitas </span><a href="https://www.drupal.org/files/issues/2024-08-07/3466235-6.patch"><span style="color:#fdfdfd">puedes aplicar el siguiente parche</span></a><span style="color:#fdfdfd"> o instalar la versión de desarrollo <code>1.x-dev</code> del módulo.</span></td>
-</tr>
-</tbody>
-</table>
+<p><strong>El método colectivo.</strong> Tras proponer el siguiente caso: “<em>El editor necesita que realices la migración de muchas, muchísimas, demasiadas entidades, una barbaridad de entidades. Y este editor comprobará individualmente que todas las entidades se han migrado correctamente y quisiera “bloquear” de alguna forma las entidades que se hayan migrado correctamente y actualizar en la fuente los datos de entidades que no se hayan migrado bien.”</em> Y te planteas tú, si hay alguna forma de actualizar todas las entidades salvo las bloqueadas. Pues bien, lo primero sería crear un campo booleano (<code>TRUE</code> o <code>FALSE</code>) que decida si una entidad está bloqueada o no, y ahora, el siguiente plugin custom de <em>Migrate</em> comprobará en la base de datos si ya se ha migrado la entidad de la <em>Row</em> actual, y el valor proporcionado para el campo proporcionado en los parámetros <code>field</code> y <code>value</code> del plugin:</p>
+<pre><code class="language-php">/**
+ * Migrate plugin that returns NULL if it finds the field next to the provided value or TRUE.
+ * These return variables facilitate further processing such as skipping the row, for example.
+ * It does not need a source and generates its own return value.
+ *
+ * @MigrateProcessPlugin(
+ *   id = "check_entity_field_value"
+ * )
+ *
+ * Example usage:
+ * @code
+ * check_entity_field_value_example:
+ *   plugin: check_entity_field_value
+ *   field: field_to_check
+ *   value: value_to_check
+ * @endcode
+ */
+class CheckEntityFieldValue extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+
+  /**
+   * The migration.
+   *
+   * @var \Drupal\migrate\Plugin\MigrationInterface|null
+   */
+  protected $migration;
+
+  /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entity_type_manager;
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration = NULL) {
+    $instance = new static($configuration, $plugin_id, $plugin_definition);
+    $instance->entity_type_manager = $container->get('entity_type.manager');
+    $instance->migration = $migration;
+
+    return $instance;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property): bool|null {
+    /** @var \Drupal\Core\Entity\EntityTypeInterface|string $entity_type */
+    $entity_type = $this->getMigrationTargetEntityType($this->migration);
+    $field = (isset($this->configuration['field']) && is_string($this->configuration['field'])) ? $this->configuration['field'] : NULL;
+    if (isset($entity_type) && isset($field)) {
+      $destination_ids = $this->getEntityIdsFromRow($row);
+ 
+      if (!empty($destination_ids)) {
+        $value = (isset($this->configuration['value'])) ? $this->configuration['value'] : NULL;
+        foreach ($destination_ids as $entity_id) {
+          if (!$entity_id) {
+            continue;
+          }
+
+          /** @var \Drupal\Core\Entity\EntityInterface|null $entity */
+          $entity = $this->entity_type_manager->getStorage($entity_type)->load($entity_id);
+          if ($entity instanceof FieldableEntityInterface && $entity->hasField($field)) {
+            // Returns NULL if it finds the field with any value
+            // if the value is not specified, or if it is equal
+            // to the value if the value has been specified.
+            if ((isset($this->configuration['value']) && ((isset($entity->$field->value) && $entity->$field->value == $this->configuration['value']) || (isset($entity->$field->target_id) && $entity->$field->target_id == $this->configuration['value']))) || (!isset($this->configuration['value']) && (isset($entity->$field->value) || isset($entity->$field->target_id)))) {
+              return NULL;
+            }
+          }
+        }
+      }
+    }
+
+    return TRUE;
+  }
+
+  /**
+   * Retrieves the target entity type for a given migration.
+   *
+   * @param \Drupal\migrate\Plugin\MigrationInterface $migration
+   *   The migration object from which to retrieve the target entity type.
+   *
+   * @return string|null
+   *   The target entity type if it can be determined.
+   *
+   * @throws \Exception $e
+   */
+  protected function getMigrationTargetEntityType(MigrationInterface $migration): string|null {
+    try {
+      /** @var \Drupal\migrate\Plugin\MigrateDestinationInterface $migration_destination_plugin */
+      $migration_destination_plugin = $migration->getDestinationPlugin();
+      /** @var \Drupal\Component\Plugin\Definition\PluginDefinitionInterface|array $migration_destination_plugin_definition */
+      $migration_destination_plugin_definition = $migration_destination_plugin->getPluginDefinition();
+
+      // Gets from the plugin definition the id of the target entity,
+      // it will always be the first match or none.
+      preg_match('/:([^:]+)$/', $migration_destination_plugin_definition['id'], $entity_type);
+
+      return (isset($entity_type[1]) && is_string($entity_type[1])) ? $entity_type[1] : NULL;
+    }
+    catch (\Exception $e) {
+      return NULL;
+    }
+  }
+
+  /**
+   * Retrieves destination entity IDs from a migration row.
+   *
+   * @param \Drupal\migrate\Row $row
+   *   The migration row object from which to retrieve the entity IDs.
+   *
+   * @return array
+   *   An associative array of destination ID values.
+   */
+  protected function getEntityIdsFromRow(Row $row): array {
+    $destination_ids = [];
+
+    $mid_map = $row->getIdMap();
+    if (!empty($mid_map)) {
+      foreach ($mid_map as $mid_map_element => $mid_map_element_value) {
+        // Destination IDs are always added with the same ID
+        // and a counter (destid1, destid2, destid3, etc.).
+        if (str_contains($mid_map_element, 'destid')) {
+          $destination_ids[$mid_map_element] = $mid_map_element_value;
+        }
+      }
+    }
+
+    return $destination_ids;
+  }
+}</code></pre><p>Este plugin, por cada <em>Row</em>, primero obtiene el parámetro del campo y el tipo de entidad a comprobar mediante el método <code>getMigrationTargetEntityType()</code> con la migración actual del dato de destino con una expresión regular. Posteriormente, obtiene, si existe, la entidad destino con el método <code>getEntityIdsFromRow()</code> que necesitará la fila actual para obtener datos en crudo de la base de datos, este resultado solo contendrá valores de ser una actualización de migración. Una vez obtenidos estos datos, se puede cargar la entidad destino y comprobar si el campo, de tenerlo, tiene el valor especificado.</p>
 <p> </p>
-<p><strong>Conclusión.</strong> Migrar <em>Paragraphs</em> en <em>Drupal</em> de manera eficiente es un desafío, pero el uso del módulo <a href="https://www.drupal.org/project/migrate_child_entity_generate"><em>Migrate Child Entity Generate</em></a> presenta una solución poderosa. A través de este método, es posible integrar los <em>Paragraphs</em> directamente con sus nodos padres en una sola migración. Además, el plugin <code>child_entity_generate</code> ofrece un método robusto y eficaz para la migración de <em>Paragraphs</em> en <em>Drupal</em>.</p>
+<p>Ahora habría que añadir el plugin según el ejemplo a la migración, por ejemplo, si necesitamos que ignore la entidad cuando el campo booleano <code>field_migrate_skip</code> contenga el valor <code>TRUE</code>, el plugín se definirá de la siguiente forma:</p>
+<pre><code class="language-yaml">skip_row_on_field_migrate_skip_true:
+  -
+    plugin: check_entity_field_value
+    field: field_migrate_skip
+    value: TRUE
+  -
+    plugin: skip_on_empty
+    method: row
+    message: 'Ignored because field field_migrate_skip is TRUE.'</code></pre><p>Esto saltará la <em>Row</em> de la migración si el valor del campo <code>field_migrate_skip</code> es igual a <code>TRUE</code>, porque el plugin retornará <code>NULL</code> y el plugin <code>skip_on_empty</code> lo identificará como un valor vacío, de lo contrario recibirá <code>TRUE</code> y no saltará la <em>Row</em>, dejando intactas las entidades “bloqueadas” por el editor.</p>
+<p>Aunque este sea un caso ficticio, tiene multitud de aplicaciones, como por ejemplo una actualización masiva de entidades proporcionando un valor al campo si se cumplen una serie de condiciones.</p>
+<p> </p>
+<p> </p>
+<p><strong>Conclusión.</strong> Tanto si necesitas actualizar pocas entidades durante una migración, como si necesitas saltar unas pocas, existen distintos métodos para realizar esta actualización de datos. Solamente es necesario que tengas en cuenta que método es más conveniente para la necesidad de la migración.</p>
 <p> </p>
 </div>
       
@@ -503,7 +627,7 @@ process:
   
       
 
-            <div>  <img alt="Atleta saltando vallas" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/atleta_saltando_vallas.png?itok=St_i2bZS" height="270" loading="lazy" title="Atleta saltando vallas" width="423">
+            <div>  <img alt="¿Cómo saben las aves cómo migrar? (2)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating-2.jpg?itok=LosZK1pa" height="270" loading="lazy" title="¿Cómo saben las aves cómo migrar? (2)" width="423">
 
 
 </div>
@@ -515,17 +639,17 @@ process:
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Actualización selectiva de entidades durante migraciones de <em>Drupal</em></p>
+            <div class="clearfix text-formatted"><p>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso.</p>
+            <div class="clearfix text-formatted"><p>En el artículo <em>Migrar Paragraphs de Contenidos con Migrate</em> exploro las posibilidades para migrar <em>Paragraphs</em> con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los <em>Paragraphs</em> una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar <em>Paragraphs</em> y casarlos con el padre dentro de la misma migración que este.</p>
 </div>
       
-  </div><a href="/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" class="link-content" hreflang="es" aria-label="Actualización selectiva de entidades durante migraciones de Drupal"></a>
+  </div><a href="/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" class="link-content" hreflang="es" aria-label="Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)"></a>
   </div>
   </div>
 
@@ -636,7 +760,7 @@ process:
                   <a href="/es/articulos">Artículos</a>
               </li>
           <li>
-                  Migrar Paragraphs de Contenidos Con Migrate (Versión Mejorada)
+                  Actualización Selectiva de Entidades Durante Migraciones de Drupal
               </li>
         </ol>
   </nav>
@@ -900,7 +1024,7 @@ process:
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/34","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","yaml":"yaml"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/35","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"json":"json","bash":"bash","php":"php","yaml":"yaml"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
 <script src="/sites/default/files/js/js_C1D7A2ossSurI1kblBD_efsV8VsrMnd5OkTsrOMm298.js?scope=footer&delta=0&language=es&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 
