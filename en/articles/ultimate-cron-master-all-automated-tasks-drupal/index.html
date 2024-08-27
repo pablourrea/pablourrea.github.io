@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content='In the article Migrate Content Paragraphs with Migrate, I explore the possibilities of migrating Paragraphs in Drupal using migration configuration files that are independent of the parent node. However, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration, thus optimizing the migration process by reducing execution time, eliminating dependencies, and strengthening the parent-child relationship between the two entities, making this process a more convenient method than the one discussed in the previous article. Dependencies. To use this method, it is necessary to install the module for Drupal: Migrate Child Entity Generate. You can install it from the “Extend” section of the Drupal administrator or with Composer:composer require drupal/migrate_child_entity_generateAnd enable it from the “Extend” section of the Drupal administrator or with Drush:drush en migrate_child_entity_generate One Migrate plugin to rule them all. Using the child_entity_generate plugin from the Migrate Child Entity Generate module is very simple. You need to define the plugin, the entity type, the bundle type, and optionally define the variable and default constant values as in the following example:field_name: plugin: child_entity_generate entity_type: paragraph bundle: paragraph_bundle values: field_1: value_1 field_2/value: value_2 default_values: langcode: "en" field_2/format: "text"The difference between values and default_values is that in values, you introduce variable values for each different Paragraph (e.g., a text, a date, etc.), while in default_values, you introduce static and common values for all Paragraphs (e.g., the format of a CKEditor WYSIWYG field, a language selection field, etc.). One Migrate plugin to rule all values. Unlike the entity_generate plugin from the Migrate Plus module, the child_entity_generate plugin does accept an array of values as a parameter, for example:destination: plugin: "entity:node" source: fields: - faq_items: - question: "Some question" answer: "Some answer" - question: "Another question" answer: "Another answer" process: field_faqs: plugin: child_entity_generate source: faq_items entity_type: field_collection bundle: faq values: field_faq_question: question field_faq_answer/value: answer default_values: field_faq_answer/format: "basic_html"The above code would create a faq_items entity of type faq for each item in the array faq_items, assigning the value of question to the field_faq_question field and the value of answer to the field_faq_answer field, with the basic_html format as the default value for the field_faq_answer field for all entities. It would then assign the target_id and target_revision_id of each entity to the field_faqs field. ℹ️As of the publication of this article, the Migrate Child Entity Generate module in the stable version 1.0.1 from June 4, 2024, does not accept references to fields from the current Row in the migration process (e.g., assigning "@other_field" to a field). To fix this, I created a patch that the module maintainer accepted in the issue "Refine the process value filtering so that it gets values from the row". If you need it, you can apply the following patch or install the development version 1.x-dev of the module. Conclusion. Efficiently migrating Paragraphs in Drupal is a challenge, but using the Migrate Child Entity Generate module offers a powerful solution. Through this method, it is possible to integrate Paragraphs directly with their parent nodes in a single migration. Additionally, the child_entity_generate plugin provides a robust and effective method for migrating Paragraphs in Drupal. ' name="description">
-<meta content="In the article Migrating Paragraphs of Content with Migrate, I explore the possibilities of migrating Paragraphs with migration configuration files independent of the parent node. However, it's true that, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration." name="abstract">
-<meta content="Pablo Urrea,Migrate Paragraphs of Content with Migrate (Enhanced version),Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Migrate" name="keywords">
-<link href="https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version" rel="canonical">
+<meta content='The Drupal core includes its own integrated cron that allows you to schedule automated tasks, which provides the ability to add custom tasks that will run when cron is triggered in Drupal. The issue is that Drupal executes all tasks during cron execution, which can be inconvenient if you need one of them to run more or less frequently.This poses the dilemma of whether to run cron tasks less frequently, thus having a smaller impact on the server and leaving behind tasks that need to be run more often; or, on the other hand, to run tasks more frequently, thus overloading the server with less necessary tasks.It is also possible that a daily task that requires significant execution time, higher server power, or the server&#39;s full bandwidth should run during periods of low user activity (e.g., at night, unless it&#39;s a programming forum server 🌚).  The ultimate cron. To address this issue, there is a contributed project in Drupal called Ultimate Cron, which allows you to configure and schedule cron tasks individually. To install it, do so like any other module in Drupal with Composer by running the following command in the console:composer require drupal/ultimate_cronAnd enable it from the “Extend” administration section or via Drush in the console with the command:drush en ultimate_cronAfter enabling it, all cron tasks will appear at /admin/config/system/cron/jobs or Administration > Configuration > System > Cron > Cron Jobs:  You can now sort tasks, edit them, disable them, or view the reports they generate during execution. When editing a task from “Operations,” you can configure the scheduler to be Simple (Executes the task every 1 minute, 5 minutes, 15 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours, once a day, or once a week) or to be of type Crontab, which is a way to configure natural time periods programmatically (e.g., every Wednesday at 12:00 PM). Don’t worry if you don’t fully understand Crontab, there is a small help section on the same page that guides its use, and if not, you can use Crontab Guru. Additionally, you can configure execution times and reports, but my recommendation is to leave it as is by default unless you need something specific.  Creating a new cron task. What’s interesting about Ultimate Cron is the ability to configure custom tasks since generally, tasks from other contributed modules tend to be quite uniform. If the task, like those from contributed modules, is also quick and painless for the system, the best and fastest implementation is a hook_cron() in a custom module with the code you want to execute in the cron task:/** * Implements hook_cron(). */ function example_cron() { \Drupal::logger("example")->notice("Hey there, I’m using WhatsApp, I mean, Drupal."); }And now, for Ultimate Cron to detect the new cron task, you need to discover it using the “Discover Tasks” button at /admin/config/system/cron/jobs. And congratulations, you’ve created your first configurable Drupal cron task. Remember that, as with all configurations in Drupal, you must export it to consolidate it.    Problems, problems, and more problems. Implementing a cron task in a hook is great, but what if you want to create more than one cron task per module? Surely someone has created many custom modules just for this purpose. We don’t judge anyone here, but there’s a better solution: install cron configurations. For this, the easiest approach is to use the YML configuration file of another cron as a template, for example, the configuration file of the example task created earlier (ultimate_cron.job.example_cron.yml):uuid: 95f9d95c-3fb0-4a36-a20f-223b496272za langcode: en status: true dependencies: module: - example title: &#39;Default cron handler&#39; id: example_cron weight: 0 module: example callback: example_cron scheduler: id: simple launcher: id: serial logger: id: databaseStarting from the content of this file, copy its contents to your custom module inside config/cron/ultimate_cron.job.example_cron_two.yml and remove the uuid line (the first line), langcode, and weight, as these will be configured by the system. Also, change the id to some identifier representing the cron task, for example example_cron_two, and the title to something similar to the identifier, such as “Example cron 2” (Extremely descriptive, I know). Now, importantly, callback will be the response function of the cron task where its logic will be implemented. It’s best to give it a name that does not interfere with other functions, such as “_example_two_cron_job_”, and module is the module where the response function will be implemented (so it can be called primarily, acting as a dependency). After these adjustments, the file config/cron/ultimate_cron.job.example_cron_two.yml should look like this:status: true dependencies: module: - example title: &#39;Example cron 2&#39; id: example_cron_two module: example callback: _example_two_cron_job_ scheduler: id: simple launcher: id: serial logger: id: databaseAnd you should define the response function within the custom module:/** * Execute example_cron_two cron task. */ function _example_two_cron_job_() { \Drupal::logger("example")->notice("Hey there, I’m using WhatsApp, I mean, Drupal (Again)"); }This process can be repeated as many times as needed for cron tasks in a module, and finally, import all configurations with the command:drush config-import --source=modules/custom/example/config/cron --partial -yConfigure them for scheduling, and export the configuration to consolidate it along with the rest of the settings.  Conclusion. Properly managing cron tasks in Drupal is essential for optimizing system performance and ensuring that necessary processes run at the right time. The contributed module Ultimate Cron proves to be an effective solution, allowing detailed and customized configuration of each scheduled task. This not only prevents server overload but also ensures that each task runs with the ideal frequency. With Ultimate Cron, managing cron tasks in Drupal becomes a controlled and efficient process, enhancing both server performance and site functionality. ' name="description">
+<meta content="In Drupal, managing automated tasks is crucial, but the built-in cron can be limiting. Ultimate Cron offers a flexible solution that allows you to customize the frequency and scheduling of each task, thus optimizing site performance and preventing server overload. In this article, I show how to start making the most of this module and use it efficiently and effectively." name="abstract">
+<meta content="Pablo Urrea,Ultimate Cron to master all automated tasks in Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Cron" name="keywords">
+<link href="https://pablourrea.github.io/en/articles/ultimate-cron-master-all-automated-tasks-drupal" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" property="og:url">
-<meta content="Migrate Paragraphs of Content with Migrate (Enhanced version)" property="og:title">
-<meta content="In the article Migrating Paragraphs of Content with Migrate, I explore the possibilities of migrating Paragraphs with migration configuration files independent of the parent node. However, it's true that, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="og:image:secure_url">
-<meta content="image/jpeg" property="og:image:type">
-<meta content="Sat, 24/08/2024 - 11:27" property="og:updated_time">
+<meta content="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" property="og:url">
+<meta content="Ultimate Cron to master all automated tasks in Drupal" property="og:title">
+<meta content="In Drupal, managing automated tasks is crucial, but the built-in cron can be limiting. Ultimate Cron offers a flexible solution that allows you to customize the frequency and scheduling of each task, thus optimizing site performance and preventing server overload. In this article, I show how to start making the most of this module and use it efficiently and effectively." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" property="og:image:secure_url">
+<meta content="image/png" property="og:image:type">
+<meta content="Tue, 27/08/2024 - 18:19" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,24 +62,24 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Sat, 10/08/2024 - 14:32" property="article:published_time">
-<meta content="Sat, 24/08/2024 - 11:27" property="article:modified_time">
+<meta content="Tue, 27/08/2024 - 17:48" property="article:published_time">
+<meta content="Tue, 27/08/2024 - 18:19" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content="Migrate Paragraphs of Content with Migrate (Enhanced version)" property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" property="pin:url">
-<meta content="In the article Migrating Paragraphs of Content with Migrate, I explore the possibilities of migrating Paragraphs with migration configuration files independent of the parent node. However, it's true that, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration." property="pin:description">
+<meta content="Ultimate Cron to master all automated tasks in Drupal" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" property="pin:url">
+<meta content="In Drupal, managing automated tasks is crucial, but the built-in cron can be limiting. Ultimate Cron offers a flexible solution that allows you to customize the frequency and scheduling of each task, thus optimizing site performance and preventing server overload. In this article, I show how to start making the most of this module and use it efficiently and effectively." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="In the article Migrating Paragraphs of Content with Migrate, I explore the possibilities of migrating Paragraphs with migration configuration files independent of the parent node. However, it's true that, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration." name="twitter:description">
-<meta content="Migrate Paragraphs of Content with Migrate (Enhanced version) | Pablo Urrea" name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" name="twitter:image">
+<meta content="In Drupal, managing automated tasks is crucial, but the built-in cron can be limiting. Ultimate Cron offers a flexible solution that allows you to customize the frequency and scheduling of each task, thus optimizing site performance and preventing server overload. In this article, I show how to start making the most of this module and use it efficiently and effectively." name="twitter:description">
+<meta content="Ultimate Cron to master all automated tasks in Drupal | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/ultimate-cron-master-all-automated-tasks-drupal" rel="alternate" hreflang="en">
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -88,7 +88,7 @@
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada",en:"/en/articles/migrate-paragraphs-content-migrate-enhanced-version",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal",en:"/en/articles/ultimate-cron-master-all-automated-tasks-drupal",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -112,12 +112,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Migrate Paragraphs Of Content With Migrate (Enhanced Version)",
-                        "item": "https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version"
+                        "name": "Ultimate Cron To Master All Automated Tasks In Drupal",
+                        "item": "https://pablourrea.github.io/en/articles/ultimate-cron-master-all-automated-tasks-drupal"
                     }
                 ]
             },
-            "description": "Migrate Paragraphs of Content with Migrate (Enhanced version)",
+            "description": "Ultimate Cron to master all automated tasks in Drupal",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -160,7 +160,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-08-10T14:32:17+0000"
+                "datePublished": "2024-08-27T17:48:14+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -200,18 +200,18 @@
     ]
 }</script>
 
-    <title>Migrate Paragraphs of Content with Migrate (Enhanced version) | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_vhKjLNnU_eQJzF4x1wT5aEwjOl8L1w5CniHtVCgdeNc.css?delta=0&language=en&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
+    <title>Ultimate Cron to master all automated tasks in Drupal | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_P6fwjGXyaG6hW_ZaKCnBVYlb30tlKVy5bilQjj23u6Q.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_JizVFv4EORrEjW6t8q3-UJsAhJsOrZMjiUFVd2CZQtw.css?delta=3&language=en&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_P8geJkhOdZDgyVlydnGz4tpYm0lE3C9wE_MTOqWyvaI.css?delta=4&language=en&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="print">
-<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_JizVFv4EORrEjW6t8q3-UJsAhJsOrZMjiUFVd2CZQtw.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_P8geJkhOdZDgyVlydnGz4tpYm0lE3C9wE_MTOqWyvaI.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="no-sidebar page-articles-migrate-paragraphs-content-migrate-enhanced-version role--anonymous section-articles with-subnav">
+      <body class="no-sidebar page-articles-ultimate-cron-master-all-automated-tasks-drupal role--anonymous section-articles with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -272,7 +272,7 @@
 <div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
   
     
-      <ul class="links"><li data-drupal-link-system-path="node/34" hreflang="es"><a href="/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" class="language-link" title="Español" data-drupal-link-system-path="node/34" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/34" hreflang="en"><a href="/en/articles/migrate-paragraphs-content-migrate-enhanced-version" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/34" hreflang="en" aria-current="page">en</a></li></ul>
+      <ul class="links"><li data-drupal-link-system-path="node/36" hreflang="es"><a href="/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" class="language-link" title="Español" data-drupal-link-system-path="node/36" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/36" hreflang="en"><a href="/en/articles/ultimate-cron-master-all-automated-tasks-drupal" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/36" hreflang="en" aria-current="page">en</a></li></ul>
   </div>
 
   </div>
@@ -302,7 +302,7 @@
 <h1 class="content-title">
     
 
-            <div class="clearfix text-formatted"><p>Migrate Paragraphs of Content with Migrate (Enhanced version)</p>
+            <div class="clearfix text-formatted"><p><em>Ultimate Cron</em> to master all automated tasks in <em>Drupal</em></p>
 </div>
       
   </h1>
@@ -311,7 +311,7 @@
 
       <div>
               <div><a href="/en/articles/categories/drupal" hreflang="en">Drupal</a></div>
-              <div><a href="/en/articles/categories/migrate" hreflang="en">Migrate</a></div>
+              <div><a href="/en/articles/categories/cron" hreflang="en">Cron</a></div>
           </div>
   
   </div>
@@ -324,7 +324,7 @@
   
       
 
-            <div>  <img alt="How do birds know how to migrate? (2)" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/birds-migrating-2.jpg?itok=ClSGJ0vE" height="540" loading="lazy" title="How do birds know how to migrate? (2)" width="1072">
+            <div>  <img alt="Representation of Drupal's cron task manager as Salvador Dalí's “The Persistence of Memory”" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png?itok=d-yl_8lw" height="540" loading="lazy" title="Representation of Drupal's cron task manager as Salvador Dalí's “The Persistence of Memory”" width="1072">
 
 
 </div>
@@ -335,7 +335,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="clearfix text-formatted"><p>How do birds know how to migrate?</p>
+            <div class="clearfix text-formatted"><p>Representation of <em>Drupal's</em> cron task manager as Salvador Dalí's “<em>The Persistence of Memory</em>”</p>
 </div>
       
   </div>
@@ -409,7 +409,7 @@
 <div class="reading-time">
     
 
-            <div content="5">5 minutes reading</div>
+            <div content="12">12 minutes reading</div>
       
   </div>
 <div class="authorship-dates">
@@ -419,8 +419,8 @@
     Published
   </div>
 
-  <time class="datetime" datetime="2024-08-10">
-    10/08/2024
+  <time class="datetime" datetime="2024-08-27">
+    27/08/2024
   </time>
 </div>
 
@@ -430,60 +430,90 @@
 <div class="content-description">
     
 
-            <div class="clearfix text-formatted"><p>In the article <a href="/en/articles/migrate-content-paragraphs-migrate"><em>Migrate Content Paragraphs with Migrate</em></a>, I explore the possibilities of migrating <em>Paragraphs</em> in <em>Drupal</em> using migration configuration files that are independent of the parent node. However, although <em>Paragraphs</em> are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate <em>Paragraphs</em> and link them to the parent within the same migration, thus optimizing the migration process by reducing execution time, eliminating dependencies, and strengthening the parent-child relationship between the two entities, making this process a more convenient method than the one discussed in the previous article.</p>
+            <div class="clearfix text-formatted"><p>The <em>Drupal</em> core includes its own integrated cron that allows you to schedule automated tasks, which provides the ability to add custom tasks that will run when cron is triggered in <em>Drupal</em>. The issue is that <em>Drupal</em> executes all tasks during cron execution, which can be inconvenient if you need one of them to run more or less frequently.</p>
+<p>This poses the dilemma of whether to run cron tasks less frequently, thus having a smaller impact on the server and leaving behind tasks that need to be run more often; or, on the other hand, to run tasks more frequently, thus overloading the server with less necessary tasks.</p>
+<p>It is also possible that a daily task that requires significant execution time, higher server power, or the server's full bandwidth should run during periods of low user activity (e.g., at night, unless it's a programming forum server 🌚).</p>
 <p> </p>
-<p><strong>Dependencies.</strong> To use this method, it is necessary to install the module for <em>Drupal</em>: <a href="https://www.drupal.org/project/migrate_child_entity_generate"><em>Migrate Child Entity Generate</em></a>. You can install it from the “<em>Extend</em>” section of the <em>Drupal</em> administrator or with <em>Composer</em>:</p>
-<pre><code class="language-bash">composer require drupal/migrate_child_entity_generate</code></pre><p>And enable it from the “<em>Extend</em>” section of the <em>Drupal</em> administrator or with <em>Drush</em>:</p>
-<pre><code class="language-bash">drush en migrate_child_entity_generate</code></pre><p> </p>
-<p><strong>One </strong><em><strong>Migrate</strong></em><strong> plugin to rule them all.</strong> Using the <code>child_entity_generate</code> plugin from the <a href="https://www.drupal.org/project/migrate_child_entity_generate"><em>Migrate Child Entity Generate</em></a> module is very simple. You need to define the plugin, the entity type, the bundle type, and optionally define the variable and default constant values as in the following example:</p>
-<pre><code class="language-yaml">field_name:
-  plugin: child_entity_generate
-  entity_type: paragraph
-  bundle: paragraph_bundle
-  values:
-    field_1: value_1
-    field_2/value: value_2
-  default_values:
-    langcode: "en"
-    field_2/format: "text"</code></pre><p>The difference between <code>values</code> and <code>default_values</code> is that in <code>values</code>, you introduce variable values for each different <em>Paragraph</em> (e.g., a text, a date, etc.), while in <code>default_values</code>, you introduce static and common values for all <em>Paragraphs</em> (e.g., the format of a <em>CKEditor</em> <em>WYSIWYG</em> field, a language selection field, etc.).</p>
 <p> </p>
-<p><strong>One </strong><em><strong>Migrate</strong></em><strong> plugin to rule all values.</strong> Unlike the <code>entity_generate</code> plugin from the <a href="https://www.drupal.org/project/migrate_plus"><em>Migrate Plus</em></a> module, the <code>child_entity_generate</code> plugin does accept an <em>array</em> of values as a parameter, for example:</p>
-<pre><code class="language-yaml">destination:
- plugin: "entity:node"
-source:
- fields:
-   -
-     faq_items:
-       -
-         question: "Some question"
-         answer: "Some answer"
-       -
-         question: "Another question"
-         answer: "Another answer"
-process:
- field_faqs:
-   plugin: child_entity_generate
-   source: faq_items
-   entity_type: field_collection
-   bundle: faq
-   values:
-     field_faq_question: question
-     field_faq_answer/value: answer
-   default_values:
-     field_faq_answer/format: "basic_html"</code></pre><p>The above code would create a <code>faq_items</code> entity of type <em>faq</em> for each item in the <em>array</em> <code>faq_items</code>, assigning the value of <em>question</em> to the <code>field_faq_question</code> field and the value of <em>answer</em> to the <code>field_faq_answer</code> field, with the <em>basic_html</em> format as the default value for the <code>field_faq_answer</code> field for all entities. It would then assign the <code>target_id</code> and <code>target_revision_id</code> of each entity to the <code>field_faqs</code> field.</p>
+<p><strong>The ultimate cron.</strong> To address this issue, there is a contributed project in <em>Drupal</em> called <em>Ultimate Cron</em>, which allows you to configure and schedule cron tasks individually. To install it, do so like any other module in <em>Drupal</em> with <em>Composer</em> by running the following command in the console:</p>
+<pre><code class="language-bash">composer require drupal/ultimate_cron</code></pre><p>And enable it from the “<em>Extend</em>” administration section or via <em>Drush</em> in the console with the command:</p>
+<pre><code class="language-bash">drush en ultimate_cron</code></pre><p>After enabling it, all cron tasks will appear at <code><em>/admin/config/system/cron/jobs</em></code> or <em>Administration</em> > <em>Configuration</em> > <em>System</em> > <em>Cron</em> > <em>Cron Jobs</em>:</p>
+<article class="media media--type-image align-center media--view-mode-default">
+  
+      
+
+            <div>  <img alt='Drupal "Ultimate Cron" jobs' class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/drupal_ultimate_cron_cron_jobs_en.png?itok=Y68KU5Ln" height="911" loading="lazy" title='Drupal "Ultimate Cron" jobs' width="1920">
+
+
+</div>
+      
+  </article>
 <p> </p>
-<table style="background-color:#4c98e5;border:.5rem solid #4c98e5">
-<tbody>
-<tr>
-<td style="background-color:#4c98e5;border:1px solid #4c98e5"><span style="color:#fafafa">ℹ️</span></td>
-</tr>
-<tr>
-<td style="background-color:#4c98e5;border:1px solid #4c98e5"><span style="color:#fdfdfd">As of the publication of this article, the </span><a href="https://www.drupal.org/project/migrate_child_entity_generate"><span style="color:#fdfdfd"><em>Migrate Child Entity Generate</em></span></a><span style="color:#fdfdfd"> module in the stable version <code>1.0.1</code> from June 4, 2024, does not accept references to fields from the current <em>Row</em> in the migration process (e.g., assigning <code>"@other_field"</code> to a <code>field</code>). To fix this, </span><a href="https://www.drupal.org/files/issues/2024-08-07/3466235-6.patch"><span style="color:#fdfdfd">I created a patch</span></a><span style="color:#fdfdfd"> that the module maintainer accepted in the issue "</span><a href="https://www.drupal.org/project/migrate_child_entity_generate/issues/3466235"><span style="color:#fdfdfd"><em>Refine the process value filtering so that it gets values from the row</em></span></a><span style="color:#fdfdfd">". If you need it, </span><a href="https://www.drupal.org/files/issues/2024-08-07/3466235-6.patch"><span style="color:#fdfdfd">you can apply the following patch</span></a><span style="color:#fdfdfd"> or install the development version <code>1.x-dev</code> of the module.</span></td>
-</tr>
-</tbody>
-</table>
+<p>You can now sort tasks, edit them, disable them, or view the reports they generate during execution. When editing a task from “<em>Operations</em>,” you can configure the scheduler to be <em>Simple</em> (Executes the task every 1 minute, 5 minutes, 15 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours, once a day, or once a week) or to be of type <em>Crontab</em>, which is a way to configure natural time periods programmatically (e.g., every Wednesday at 12:00 PM). Don’t worry if you don’t fully understand <em>Crontab</em>, there is a small help section on the same page that guides its use, and if not, you can use <a href="https://crontab.guru/"><em>Crontab Guru</em></a>. Additionally, you can configure execution times and reports, but my recommendation is to leave it as is by default unless you need something specific.</p>
 <p> </p>
-<p><strong>Conclusion.</strong> Efficiently migrating <em>Paragraphs</em> in <em>Drupal</em> is a challenge, but using the <a href="https://www.drupal.org/project/migrate_child_entity_generate"><em>Migrate Child Entity Generate</em></a> module offers a powerful solution. Through this method, it is possible to integrate <em>Paragraphs</em> directly with their parent nodes in a single migration. Additionally, the <code>child_entity_generate</code> plugin provides a robust and effective method for migrating <em>Paragraphs</em> in <em>Drupal</em>.</p>
+<p> </p>
+<p><strong>Creating a new cron task.</strong> What’s interesting about <em>Ultimate Cron</em> is the ability to configure custom tasks since generally, tasks from other contributed modules tend to be quite uniform. If the task, like those from contributed modules, is also quick and painless for the system, the best and fastest implementation is a <code><em>hook_cron()</em></code> in a custom module with the code you want to execute in the cron task:</p>
+<pre><code class="language-php">/**
+ * Implements hook_cron().
+ */
+function example_cron() {
+  \Drupal::logger("example")->notice("Hey there, I’m using WhatsApp, I mean, Drupal.");
+}</code></pre><p>And now, for <em>Ultimate Cron</em> to detect the new cron task, you need to <em>discover</em> it using the “<em>Discover Tasks</em>” button at <code><em>/admin/config/system/cron/jobs</em></code>. And congratulations, you’ve created your first configurable <em>Drupal</em> cron task. Remember that, as with all configurations in <em>Drupal</em>, <strong>you must export it to consolidate it</strong>.</p>
+<article class="media media--type-image align-center media--view-mode-default">
+  
+      
+
+            <div>  <img alt='Drupal "Ultimate Cron" example job' class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/drupal_ultimate_cron_example_cron_job_en.png?itok=Y9gZDJ1Z" height="89" loading="lazy" title='Drupal "Ultimate Cron" example job' width="1920">
+
+
+</div>
+      
+  </article>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Problems, problems, and more problems.</strong> Implementing a cron task in a <em>hook</em> is great, but what if you want to create more than one cron task per module? Surely someone has created many custom modules just for this purpose. We don’t judge anyone here, but there’s a better solution: install cron configurations. For this, the easiest approach is to use the <em>YML</em> configuration file of another cron as a template, for example, the configuration file of the example task created earlier (<code><em>ultimate_cron.job.example_cron.yml</em></code>):</p>
+<pre><code class="language-yaml">uuid: 95f9d95c-3fb0-4a36-a20f-223b496272za
+langcode: en
+status: true
+dependencies:
+  module:
+    - example
+title: 'Default cron handler'
+id: example_cron
+weight: 0
+module: example
+callback: example_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database</code></pre><p>Starting from the content of this file, copy its contents to your custom module inside <code><em>config/cron/ultimate_cron.job.example_cron_two.yml</em></code> and remove the <em>uuid</em> line (the first line), <em>langcode</em>, and <em>weight</em>, as these will be configured by the system. Also, change the <em>id</em> to some identifier representing the cron task, for example <code>example_cron_two</code>, and the <em>title</em> to something similar to the identifier, such as “<code>Example cron 2</code>” (Extremely descriptive, I know). Now, importantly, <em>callback</em> will be the response function of the cron task where its logic will be implemented. It’s best to give it a name that does not interfere with other functions, such as “<code><em>_example_two_cron_job_</em></code>”, and module is the module where the response function will be implemented (so it can be called primarily, acting as a dependency). After these adjustments, the file <code><em>config/cron/ultimate_cron.job.example_cron_two.yml</em></code> should look like this:</p>
+<pre><code class="language-yaml">status: true
+dependencies:
+  module:
+    - example
+title: 'Example cron 2'
+id: example_cron_two
+module: example
+callback: _example_two_cron_job_
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database</code></pre><p>And you should define the response function within the custom module:</p>
+<pre><code class="language-php">/**
+ * Execute example_cron_two cron task.
+ */
+function _example_two_cron_job_() {
+  \Drupal::logger("example")->notice("Hey there, I’m using WhatsApp, I mean, Drupal (Again)");
+}</code></pre><p>This process can be repeated as many times as needed for cron tasks in a module, and finally, import all configurations with the command:</p>
+<pre><code class="language-bash">drush config-import --source=modules/custom/example/config/cron --partial -y</code></pre><p>Configure them for scheduling, and export the configuration to consolidate it along with the rest of the settings.</p>
+<p> </p>
+<p> </p>
+<p><strong>Conclusion.</strong> Properly managing cron tasks in <em>Drupal</em> is essential for optimizing system performance and ensuring that necessary processes run at the right time. The contributed module <em>Ultimate Cron</em> proves to be an effective solution, allowing detailed and customized configuration of each scheduled task. This not only prevents server overload but also ensures that each task runs with the ideal frequency. With <em>Ultimate Cron</em>, managing cron tasks in <em>Drupal</em> becomes a controlled and efficient process, enhancing both server performance and site functionality.</p>
 <p> </p>
 </div>
       
@@ -544,6 +574,47 @@ process:
   
       
 
+            <div>  <img alt="How do birds know how to migrate? (2)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating-2.jpg?itok=LosZK1pa" height="270" loading="lazy" title="How do birds know how to migrate? (2)" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p>Migrate Paragraphs of Content with Migrate (Enhanced version)</p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>In the article <em>Migrating Paragraphs of Content with Migrate</em>, I explore the possibilities of migrating <em>Paragraphs</em> with migration configuration files independent of the parent node. However, it's true that, although <em>Paragraphs</em> are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate <em>Paragraphs</em> and link them to the parent within the same migration.</p>
+</div>
+      
+  </div><a href="/en/articles/migrate-paragraphs-content-migrate-enhanced-version" class="link-content" hreflang="en" aria-label="Migrate Paragraphs of Content with Migrate (Enhanced version)"></a>
+  </div>
+  </div>
+
+  
+</article>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
             <div>  <img alt="How do birds know how to migrate? - The Daily Illini" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating.jpg?itok=_jBn5CxP" height="270" loading="lazy" title="How do birds know how to migrate? - The Daily Illini" width="423">
 
 
@@ -572,47 +643,6 @@ process:
 
   
 </article>
-
-<article class="node node--type-article">
-  <div class="content">
-    
-<div class="wrapper wrapper-article wrapper-related-entity">
-    
-<div class="polaroid main-media">
-    
-
-            <div><article class="media media--type-image media--view-mode-landscape-small">
-  
-      
-
-            <div>  <img alt="Representation of Drupal's cron task manager as Salvador Dalí's “The Persistence of Memory”" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png?itok=OGb0le56" height="270" loading="lazy" title="Representation of Drupal's cron task manager as Salvador Dalí's “The Persistence of Memory”" width="423">
-
-
-</div>
-      
-  </article>
-</div>
-      
-  </div>
-<h3 class="title">
-    
-
-            <div class="clearfix text-formatted"><p><em>Ultimate Cron</em> to master all automated tasks in <em>Drupal</em></p>
-</div>
-      
-  </h3>
-<div class="description-short">
-    
-
-            <div class="clearfix text-formatted"><p>In <em>Drupal</em>, managing automated tasks is crucial, but the built-in cron can be limiting. <em>Ultimate Cron</em> offers a flexible solution that allows you to customize the frequency and scheduling of each task, thus optimizing site performance and preventing server overload. In this article, I show how to start making the most of this module and use it efficiently and effectively.</p>
-</div>
-      
-  </div><a href="/en/articles/ultimate-cron-master-all-automated-tasks-drupal" class="link-content" hreflang="en" aria-label="Ultimate Cron to master all automated tasks in Drupal"></a>
-  </div>
-  </div>
-
-  
-</article>
 <h2 class="related-entities-align-left related-entities-subtitle"></h2>
 </div>
 
@@ -636,7 +666,7 @@ process:
                   <a href="/en/articles">Articles</a>
               </li>
           <li>
-                  Migrate Paragraphs Of Content With Migrate (Enhanced Version)
+                  Ultimate Cron To Master All Automated Tasks In Drupal
               </li>
         </ol>
   </nav>
@@ -900,7 +930,7 @@ process:
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/34","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","yaml":"yaml"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/36","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","php":"php","yaml":"yaml"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
 <script src="/sites/default/files/js/js_nI6YzKyOOnAD7uMAmXNkWO8PpweNgnfGgKWQtH5PQWQ.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 

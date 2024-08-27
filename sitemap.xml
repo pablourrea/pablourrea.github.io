@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-08-25T19:46:49+00:00</lastmod>
+  <lastmod>2024-08-27T18:22:42+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -358,6 +358,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png</image:loc>
    <image:title>Atleta saltando vallas</image:title>
    <image:caption>Atleta saltando vallas</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/ultimate-cron-master-all-automated-tasks-drupal"/>
+  <lastmod>2024-08-27T18:19:45+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png</image:loc>
+   <image:title>Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí</image:title>
+   <image:caption>Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/ultimate-cron-master-all-automated-tasks-drupal</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/ultimate-cron-master-all-automated-tasks-drupal"/>
+  <lastmod>2024-08-27T18:19:45+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png</image:loc>
+   <image:title>Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí</image:title>
+   <image:caption>Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí</image:caption>
   </image:image>
  </url>
  <url>
@@ -1107,6 +1133,22 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/rest"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/rest"/>
   <lastmod>2024-08-24T11:22:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/categorias/cron</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/cron"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/cron"/>
+  <lastmod>2024-08-27T18:09:40+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories/cron</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/cron"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/cron"/>
+  <lastmod>2024-08-27T18:09:40+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
  </url>

@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="Drupal, conocido por su robustez, se convierte en una opción destacada para sitios estáticos. Con Tome, transforma un sitio dinámico en estático, ideal para proyectos sin actualizaciones frecuentes. Drupal desacoplado y Tome ofrecen seguridad, rendimiento y facilidad de implementación, simplificando el proceso de configuración y despliegue. Uniendo fuerzas, brindan una solución potente y flexible para sitios web estáticos de alto rendimiento." name="description">
-<meta content="Drupal, conocido por su robustez, se convierte en una opción destacada para sitios estáticos. Con Tome, transforma un sitio dinámico en estático, ideal para proyectos sin actualizaciones frecuentes. Drupal desacoplado y Tome ofrecen seguridad, rendimiento y facilidad de implementación, simplificando el proceso de configuración y despliegue. Uniendo fuerzas, brindan una solución potente y flexible para sitios web estáticos de alto rendimiento." name="abstract">
-<meta content="Pablo Urrea,Montar y exportar un sitio web estático con Drupal desacoplado y Tome,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Drupal Desacoplado" name="keywords">
-<link href="https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome" rel="canonical">
+<meta content="En Drupal, la gestión de tareas automáticas es crucial, pero el cron integrado puede ser limitante. Ultimate Cron ofrece una solución flexible que permite personalizar la frecuencia y programación de cada tarea, optimizando así el rendimiento del sitio y evitando sobrecargas en el servidor. En este artículo muestro como empezar a exprimir este módulo y utilizarlo eficiente y eficazmente." name="description">
+<meta content="En Drupal, la gestión de tareas automáticas es crucial, pero el cron integrado puede ser limitante. Ultimate Cron ofrece una solución flexible que permite personalizar la frecuencia y programación de cada tarea, optimizando así el rendimiento del sitio y evitando sobrecargas en el servidor. En este artículo muestro como empezar a exprimir este módulo y utilizarlo eficiente y eficazmente." name="abstract">
+<meta content="Pablo Urrea,Ultimate Cron para dominar todas las tareas automáticas en Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Cron" name="keywords">
+<link href="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/tome.png" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome" property="og:url">
-<meta content="Montar y exportar un sitio web estático con Drupal desacoplado y Tome" property="og:title">
-<meta content="Drupal, conocido por su robustez, se convierte en una opción destacada para sitios estáticos. Con Tome, transforma un sitio dinámico en estático, ideal para proyectos sin actualizaciones frecuentes. Drupal desacoplado y Tome ofrecen seguridad, rendimiento y facilidad de implementación, simplificando el proceso de configuración y despliegue. Uniendo fuerzas, brindan una solución potente y flexible para sitios web estáticos de alto rendimiento." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/tome.png" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/tome.png" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/tome.png" property="og:image:secure_url">
+<meta content="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" property="og:url">
+<meta content="Ultimate Cron para dominar todas las tareas automáticas en Drupal" property="og:title">
+<meta content="En Drupal, la gestión de tareas automáticas es crucial, pero el cron integrado puede ser limitante. Ultimate Cron ofrece una solución flexible que permite personalizar la frecuencia y programación de cada tarea, optimizando así el rendimiento del sitio y evitando sobrecargas en el servidor. En este artículo muestro como empezar a exprimir este módulo y utilizarlo eficiente y eficazmente." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" property="og:image:secure_url">
 <meta content="image/png" property="og:image:type">
-<meta content="Jue, 18/04/2024 - 18:59" property="og:updated_time">
+<meta content="Mar, 27/08/2024 - 18:19" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,24 +62,24 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Mar, 05/03/2024 - 11:25" property="article:published_time">
-<meta content="Jue, 18/04/2024 - 18:59" property="article:modified_time">
+<meta content="Mar, 27/08/2024 - 17:48" property="article:published_time">
+<meta content="Mar, 27/08/2024 - 18:19" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content="Montar y exportar un sitio web estático con Drupal desacoplado y Tome" property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/tome.png" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome" property="pin:url">
-<meta content="Drupal, conocido por su robustez, se convierte en una opción destacada para sitios estáticos. Con Tome, transforma un sitio dinámico en estático, ideal para proyectos sin actualizaciones frecuentes. Drupal desacoplado y Tome ofrecen seguridad, rendimiento y facilidad de implementación, simplificando el proceso de configuración y despliegue. Uniendo fuerzas, brindan una solución potente y flexible para sitios web estáticos de alto rendimiento." property="pin:description">
+<meta content="Ultimate Cron para dominar todas las tareas automáticas en Drupal" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" property="pin:url">
+<meta content="En Drupal, la gestión de tareas automáticas es crucial, pero el cron integrado puede ser limitante. Ultimate Cron ofrece una solución flexible que permite personalizar la frecuencia y programación de cada tarea, optimizando así el rendimiento del sitio y evitando sobrecargas en el servidor. En este artículo muestro como empezar a exprimir este módulo y utilizarlo eficiente y eficazmente." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="Drupal, conocido por su robustez, se convierte en una opción destacada para sitios estáticos. Con Tome, transforma un sitio dinámico en estático, ideal para proyectos sin actualizaciones frecuentes. Drupal desacoplado y Tome ofrecen seguridad, rendimiento y facilidad de implementación, simplificando el proceso de configuración y despliegue. Uniendo fuerzas, brindan una solución potente y flexible para sitios web estáticos de alto rendimiento." name="twitter:description">
-<meta content="Montar y exportar un sitio web estático con Drupal desacoplado y Tome | Pablo Urrea" name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/tome.png" name="twitter:image">
+<meta content="En Drupal, la gestión de tareas automáticas es crucial, pero el cron integrado puede ser limitante. Ultimate Cron ofrece una solución flexible que permite personalizar la frecuencia y programación de cada tarea, optimizando así el rendimiento del sitio y evitando sobrecargas en el servidor. En este artículo muestro como empezar a exprimir este módulo y utilizarlo eficiente y eficazmente." name="twitter:description">
+<meta content="Ultimate Cron para dominar todas las tareas automáticas en Drupal | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/ultimate-cron-master-all-automated-tasks-drupal" rel="alternate" hreflang="en">
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -88,7 +88,7 @@
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome",en:"/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal",en:"/en/articles/ultimate-cron-master-all-automated-tasks-drupal",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"]}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -112,12 +112,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Montar y Exportar un Sitio Web Estático Con Drupal Desacoplado y Tome",
-                        "item": "https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome"
+                        "name": "Ultimate Cron Para Dominar Todas Las Tareas Automáticas En Drupal",
+                        "item": "https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal"
                     }
                 ]
             },
-            "description": "Montar y exportar un sitio web estático con Drupal desacoplado y Tome",
+            "description": "Ultimate Cron para dominar todas las tareas automáticas en Drupal",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -160,7 +160,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-03-05T11:25:26+0000"
+                "datePublished": "2024-08-27T17:48:14+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -200,18 +200,18 @@
     ]
 }</script>
 
-    <title>Montar y exportar un sitio web estático con Drupal desacoplado y Tome | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_vhKjLNnU_eQJzF4x1wT5aEwjOl8L1w5CniHtVCgdeNc.css?delta=0&language=es&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
+    <title>Ultimate Cron para dominar todas las tareas automáticas en Drupal | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_P6fwjGXyaG6hW_ZaKCnBVYlb30tlKVy5bilQjj23u6Q.css?delta=0&language=es&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_JizVFv4EORrEjW6t8q3-UJsAhJsOrZMjiUFVd2CZQtw.css?delta=3&language=es&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_P8geJkhOdZDgyVlydnGz4tpYm0lE3C9wE_MTOqWyvaI.css?delta=4&language=es&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="print">
-<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=es&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_JizVFv4EORrEjW6t8q3-UJsAhJsOrZMjiUFVd2CZQtw.css?delta=3&language=es&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_P8geJkhOdZDgyVlydnGz4tpYm0lE3C9wE_MTOqWyvaI.css?delta=4&language=es&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=es&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="no-sidebar page-articulos-montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome role--anonymous section-articulos with-subnav">
+      <body class="no-sidebar page-articulos-ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal role--anonymous section-articulos with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -272,7 +272,7 @@
 <div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
   
     
-      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/1" hreflang="es"><a href="/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome" class="is-active language-link" title="Español" data-drupal-link-system-path="node/1" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/1" hreflang="en"><a href="/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome" class="language-link" title="Inglés" data-drupal-link-system-path="node/1" hreflang="en">en</a></li></ul>
+      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/36" hreflang="es"><a href="/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" class="is-active language-link" title="Español" data-drupal-link-system-path="node/36" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/36" hreflang="en"><a href="/en/articles/ultimate-cron-master-all-automated-tasks-drupal" class="language-link" title="Inglés" data-drupal-link-system-path="node/36" hreflang="en">en</a></li></ul>
   </div>
 
   </div>
@@ -302,7 +302,7 @@
 <h1 class="content-title">
     
 
-            <div class="clearfix text-formatted"><p>Montar y exportar un sitio web estático con Drupal desacoplado y Tome</p>
+            <div class="clearfix text-formatted"><p><em>Ultimate Cron</em> para dominar todas las tareas automáticas en <em>Drupal</em></p>
 </div>
       
   </h1>
@@ -311,7 +311,7 @@
 
       <div>
               <div><a href="/es/articulos/categorias/drupal" hreflang="es">Drupal</a></div>
-              <div><a href="/es/articulos/categorias/drupal-desacoplado" hreflang="es">Drupal Desacoplado</a></div>
+              <div><a href="/es/articulos/categorias/cron" hreflang="es">Cron</a></div>
           </div>
   
   </div>
@@ -324,7 +324,7 @@
   
       
 
-            <div>  <img alt="Tome" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/tome.png?itok=6n0xsfsX" height="540" loading="lazy" title="Tome" width="1072">
+            <div>  <img alt="Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png?itok=d-yl_8lw" height="540" loading="lazy" title="Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí" width="1072">
 
 
 </div>
@@ -335,7 +335,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="clearfix text-formatted"><p>Logo de Tome</p>
+            <div class="clearfix text-formatted"><p>Representación del gestor de tareas del cron de <em>Drupal</em> como “<em>La persistencia de la memoria</em>” de Salvador Dalí</p>
 </div>
       
   </div>
@@ -409,7 +409,7 @@
 <div class="reading-time">
     
 
-            <div content="5">Lectura de 5 minutos</div>
+            <div content="12">Lectura de 12 minutos</div>
       
   </div>
 <div class="authorship-dates">
@@ -419,8 +419,8 @@
     Publicado
   </div>
 
-  <time class="datetime" datetime="2024-03-04">
-    04/03/2024
+  <time class="datetime" datetime="2024-08-27">
+    27/08/2024
   </time>
 </div>
 
@@ -430,64 +430,96 @@
 <div class="content-description">
     
 
-            <div class="clearfix text-formatted"><p>Puede que te preguntes, ¿por qué elegir Drupal para un sitio estático cuando hay otras opciones más específicas disponibles? Bueno, Drupal es conocido por su robustez y su capacidad para manejar proyectos complejos de manera efectiva. Con la ayuda de Tome, podemos transformar un sitio web dinámico de Drupal en una versión estática, fácilmente distribuible y rápidamente cargable. Esto es ideal para sitios web que no necesitan actualizaciones frecuentes y pueden beneficiarse de la velocidad y la seguridad de los sitios estáticos. En el mundo en constante evolución del desarrollo web, la creación de sitios estáticos se ha convertido en una opción popular debido a su rendimiento, seguridad y facilidad de implementación.</p>
-<p><br><strong>Drupal desacoplado y Tome.</strong> Drupal desacoplado es una arquitectura que separa la capa de presentación (front-end) de la lógica y los datos (back-end). Esto significa que Drupal se utiliza solo como un sistema de gestión de contenido y no está vinculado directamente a la interfaz de usuario. Por otro lado, Tome es una herramienta que permite exportar sitios web Drupal como archivos HTML estáticos, lo que los hace independientes de un servidor de back-end.</p>
-<p><br><strong>Configuración de un sitio web con Drupal desacoplado.</strong> Comienza instalando Drupal de la manera tradicional. Puedes hacerlo descargando los archivos de Drupal desde su sitio web oficial y siguiendo las instrucciones de instalación (A la antigua, vamos), aunque puedes instalarlo de la manera que te resulte más cómodo. Una vez que Drupal esté instalado, configura tu contenido y estructura de la manera que desees. Esto puede incluir la creación de contenido, la configuración de tipos de contenido y la construcción de vistas.</p>
-<p> </p>
-<p><strong>Implementación de Tome.</strong> Utiliza <em>Composer</em> para instalar la biblioteca <em>Tome</em> en tu proyecto de Drupal. Esto se puede hacer ejecutando el siguiente comando en la línea de comandos:</p>
-<pre><code class="language-bash">composer require drupal/tome</code></pre><p>Una vez instalada la biblioteca <em>Tome</em> y habilitado el módulo de Drupal, puedes generar los archivos estáticos de tu sitio web Drupal ejecutando el siguiente comando:</p>
-<pre><code class="language-bash">drush tome:export</code></pre><p>Este comando generará una versión estática de tu sitio Drupal en una carpeta especificada.</p>
-<p><br><strong>Implementación y despliegue.</strong> Configura un servidor web para servir los archivos estáticos generados por Tome. Puedes utilizar cualquier servidor web que admita archivos estáticos, como <em>Apache</em>, <em>Nginx</em> o incluso <em>GitHub Pages</em>. Copia los archivos estáticos generados por Tome en el directorio raíz de tu servidor web. Una vez hecho esto, tu sitio web Drupal desacoplado estará disponible en la dirección URL de tu servidor.</p>
-<p><br><strong>Beneficios de un sitio web estático con Drupal y Tome.</strong> Un sitio web estático creado con Drupal y Tome ofrece una serie de beneficios significativos. En primer lugar, mejora notablemente el rendimiento del sitio al cargar más rápidamente, ya que elimina la necesidad de procesamiento en el servidor. Además, proporciona una capa adicional de seguridad al reducir los puntos de vulnerabilidad potenciales al eliminar la lógica del servidor. Por último, simplifica el proceso de implementación al generar archivos estáticos con Tome, eliminando así la necesidad de depender de un servidor de back-end. Esta combinación ofrece una solución potente y flexible para la creación de sitios web estáticos de alto rendimiento.</p>
+            <div class="clearfix text-formatted"><p>El <em>núcleo de Drupal</em> incluye su propio cron integrado que permite programar tareas automáticas, lo que da la posibilidad de añadir tareas personalizadas que se ejecutarán cuando se active el cron en <em>Drupal</em>. El problema es que <em>Drupal</em> ejecuta todas las tareas durante la ejecución del cron, lo que puede ser un inconveniente si necesitas que una de ellas se ejecute con mayor o menor frecuencia.</p>
+<p>Esto tiene el inconveniente de decidir si ejecutar las tareas del cron menos frecuentemente, pero con un impacto menor sobre el servidor y dejando atrás tareas que requieren realizarse con mayor frecuencia; o si, por el contrario, se ejecutarán las tareas más frecuentemente, sobrecargando así el servidor con tareas menos necesarias.</p>
+<p>También es posible que una tarea diaria que requiera mucho tiempo de ejecución, mayor potencia de servidor, o el ancho de banda completo de este, por lo que debería de ejecutarse es un momento de baja actividad de usuarios (Por la noche, por ejemplo, a menos que sea el servidor de un foro de programación 🌚)</p>
 <p> </p>
 <p> </p>
-<p>Para más información puedes consultar la <a href="https://tome.fyi/docs"><strong>documentación de Tome</strong></a>.</p>
-</div>
-      
-  </div>
-<div class="content-footer">
-    <div class="related-entities-wrapper"><h2 class="related-entities-align-left related-entities-title">Artículos recomendados</h2>
-
-<article class="node node--type-article">
-  <div class="content">
-    
-<div class="wrapper wrapper-article wrapper-related-entity">
-    
-<div class="polaroid main-media">
-    
-
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+<p><strong>El cron definitivo.</strong> Para solucionar este problema, en <em>Drupal</em> existe un proyecto contribuido llamado <em>Ultimate Cron</em>, que permite configurar y programar las tareas del cron individualmente, para instalarlo se hace como cualquier otro módulo en <em>Drupal</em> con <em>Composer</em> ejecutando el siguiente comando en la consola:</p>
+<pre><code class="language-bash">composer require drupal/ultimate_cron</code></pre><p>Y habilitándolo desde la sección de administración “<em>Extender</em>” o mediante <em>Drush</em> en la consola con el comando:</p>
+<pre><code class="language-bash">drush en ultimate_cron</code></pre><p>Después de habilitarlo aparecerán todas las tareas de cron en <code><em>/admin/config/system/cron/jobs</em></code> o <em>Administración</em> > <em>Configuración</em> > <em>Sistema</em> > <em>Cron</em> > <em>Cron Jobs</em>:</p>
+<article class="media media--type-image align-center media--view-mode-default">
   
       
 
-            <div>  <img alt="Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png?itok=OGb0le56" height="270" loading="lazy" title="Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí" width="423">
+            <div>  <img alt='Tareas del cron de "Ultimate Cron" en Drupal' class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/drupal_ultimate_cron_cron_jobs_es.png?itok=Ppvkfeor" height="911" loading="lazy" title='Tareas del cron de "Ultimate Cron" en Drupal' width="1920">
 
 
 </div>
       
   </article>
-</div>
-      
-  </div>
-<h3 class="title">
-    
-
-            <div class="clearfix text-formatted"><p><em>Ultimate Cron</em> para dominar todas las tareas automáticas en <em>Drupal</em></p>
-</div>
-      
-  </h3>
-<div class="description-short">
-    
-
-            <div class="clearfix text-formatted"><p>En <em>Drupal</em>, la gestión de tareas automáticas es crucial, pero el cron integrado puede ser limitante. <em>Ultimate Cron</em> ofrece una solución flexible que permite personalizar la frecuencia y programación de cada tarea, optimizando así el rendimiento del sitio y evitando sobrecargas en el servidor. En este artículo muestro como empezar a exprimir este módulo y utilizarlo eficiente y eficazmente.</p>
-</div>
-      
-  </div><a href="/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" class="link-content" hreflang="es" aria-label="Ultimate Cron para dominar todas las tareas automáticas en Drupal"></a>
-  </div>
-  </div>
-
+<p> </p>
+<p>Ahora es posible ordenar las tareas, editarlas, des-habilitarlas o ver los informes que han ido generando durante su ejecución. Al entrar en la edición de una tarea desde “<em>Operaciones</em>”, se podrá configurar el planificador para que sea <em>Simple</em> (Ejecuta la tarea cada 1 minuto, 5 minutos, 15 minutos, 30 minutos, 1 hora, 3 horas, 6 horas, 12 horas, una vez al día o una vez por semana) o para que sea de tipo <em>Crontab</em>, que es una forma de configurar periodos naturales de tiempo de forma programática (Por ejemplo, cada miércoles a las 12:00 pm), no te preocupes si no terminas de entender <em>Crontab</em>, en la misma página viene una pequeña ayuda que intuye su uso, y si no, puedes usar <a href="https://crontab.guru/"><em>Crontab Guru</em></a>. Además, se pueden configurar tiempos e informes de ejecución, pero mi recomendación es que a menos que sea necesario para algo específico, se deje tal y como está por defecto.</p>
+<p> </p>
+<p> </p>
+<p><strong>Crear una nueva tarea del cron.</strong> Lo interesante de <em>Ultimate Cron</em> es poder configurar tareas personalizadas, ya que por lo general, las tareas de otros módulos contribuidos suelen ser bastante uniformes. Si la tarea, al igual que la de los módulos contribuidos, es también rápida e indolora para el sistema, lo mejor y más rápido de implementar es un <code><em>hook_cron()</em></code> en un módulo personalizado con el código que quieres ejecutar en la tarea del cron:</p>
+<pre><code class="language-php">/**
+ * Implements hook_cron().
+ */
+function example_cron() {
+  \Drupal::logger("example")->notice("Hola, estoy usando WhatsApp, digo, Drupal.");
+}</code></pre><p>Y ahora, para que <em>Ultimate Cron</em> detecte la nueva tarea del cron, debes <em>descubrirla</em> con el botón que indica “<em>Descubrir Tareas</em>” en <code><em>/admin/config/system/cron/jobs</em></code>. Y enhorabuena, has creado tu primera tarea del cron de <em>Drupal</em> configurable, recuerda que como toda configuración en <em>Drupal</em>, <strong>debes exportarla para consolidarla</strong>.</p>
+<article class="media media--type-image align-center media--view-mode-default">
   
-</article>
+      
+
+            <div>  <img alt='Tarea de ejemplo del cron de "Ultimate Cron" en Drupal' class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/drupal_ultimate_cron_example_cron_job_es.png?itok=IUN5xx5M" height="89" loading="lazy" title='Tarea de ejemplo del cron de "Ultimate Cron" en Drupal' width="1920">
+
+
+</div>
+      
+  </article>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Problemas, problemas y más problemas.</strong> Implementar la tarea del cron en un <em>hook</em> está muy bien, pero, ¿Qué sucede si se desea crear más de una tarea de cron por módulo? Seguro que alguien habrá creado muchos módulos personalizados solamente para esto, aquí no juzgamos a nadie, pero hay una solución mejor, instalar configuraciones de cron. Para ello, lo más cómodo es tomar como plantilla el archivo de configuración <em>YML</em> de otro cron, por ejemplo, el archivo de configuración de la tarea de ejemplo creada antes (<code><em>ultimate_cron.job.example_cron.yml</em></code>):</p>
+<pre><code class="language-yaml">uuid: 95f9d95c-3fb0-4a36-a20f-223b496272za
+langcode: en
+status: true
+dependencies:
+  module:
+    - example
+title: 'Default cron handler'
+id: example_cron
+weight: 0
+module: example
+callback: example_cron
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database</code></pre><p>Partiendo del contenido de este archivo, se copia su contenido al módulo personalizado dentro de <code><em>config/cron/ultimate_cron.job.example_cron_two.yml</em></code> y se elimina la línea de <em>uuid</em> (La primera línea), <em>langcode</em> y <em>weight</em>, ya que esto lo configurará el sistema. También se modifica el <em>id</em> a algún identificador que represente la tarea del cron, por ejemplo <code>example_cron_two</code> y el <em>title</em> a algo similar al identificador, por ejemplo “<code>Example cron 2</code>” (Extremadamente representativo, lo sé). Ahora lo importante, <em>callback</em> será la función de respuesta de la tarea del cron, dónde se implementará su lógica, lo mejor es darle un nombre que no interfiera con otras funciones, como por ejemplo “<code><em>_example_two_cron_job_</em></code>”, module es el módulo donde se implementará la función de respuesta (Para que pueda llamarlo principalmente, actúa como dependencia). Tras estos ajustes, el archivo <code><em>config/cron/ultimate_cron.job.example_cron_two.yml</em></code> debe de quedar así:</p>
+<pre><code class="language-yaml">status: true
+dependencies:
+  module:
+    - example
+title: 'Example cron 2'
+id: example_cron_two
+module: example
+callback: _example_two_cron_job_
+scheduler:
+  id: simple
+launcher:
+  id: serial
+logger:
+  id: database</code></pre><p>Y se debe definir la función de respuesta dentro del módulo personalizado:</p>
+<pre><code class="language-php">/**
+ * Execute example_cron_two cron task.
+ */
+function _example_two_cron_job_() {
+  \Drupal::logger("example")->notice("Hola, estoy usando WhatsApp, digo, Drupal (De nuevo)");
+}</code></pre><p>Este proceso se puede repetir tantas veces como tareas de cron se necesiten para un módulo, y finalmente, se importan todas las configuraciones con el comando:</p>
+<pre><code class="language-bash">drush config-import --source=modules/custom/example/config/cron --partial -y</code></pre><p>Se configuran para planificarlas, y se exporta la configuración para consolidarlas junto al resto de configuraciones.</p>
+<p> </p>
+<p> </p>
+<p><strong>Conclusión.</strong> Gestionar adecuadamente las tareas cron en <em>Drupal</em> es fundamental para optimizar el rendimiento del sistema y asegurar que los procesos necesarios se ejecuten en el momento oportuno. El módulo contribuido <em>Ultimate Cron</em> se presenta como una solución efectiva, permitiendo una configuración detallada y personalizada de cada tarea programada. Esto no solo previene la sobrecarga del servidor, sino que también garantiza que cada tarea se ejecute con la frecuencia ideal. Con <em>Ultimate Cron</em>, administrar las tareas cron en <em>Drupal</em> se convierte en un proceso controlado y eficiente, mejorando tanto el rendimiento del servidor como la funcionalidad del sitio.</p>
+<p> </p>
+</div>
+      
+  </div>
+<div class="content-footer">
+    <div class="related-entities-wrapper"><h2 class="related-entities-align-left related-entities-title">Artículos recomendados</h2>
 
 <article class="node node--type-article">
   <div class="content">
@@ -570,6 +602,47 @@
 
   
 </article>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="¿Cómo saben las aves cómo migrar? - The Daily Illini" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating.jpg?itok=_jBn5CxP" height="270" loading="lazy" title="¿Cómo saben las aves cómo migrar? - The Daily Illini" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p>Migrar Paragraphs de Contenidos con Migrate</p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>La migración de contenido entre diferentes versiones de Drupal puede ser una tarea desafiante, especialmente al enfrentarse a cambios en la estructura de datos como la introducción de Paragraphs. Este proceso requiere un enfoque meticuloso y profundo conocimiento de las relaciones entre entidades. Con una comprensión sólida y las herramientas adecuadas, las migraciones exitosas son alcanzables.</p>
+</div>
+      
+  </div><a href="/es/articulos/migrar-paragraphs-de-contenidos-con-migrate" class="link-content" hreflang="es" aria-label="Migrar Paragraphs de Contenidos con Migrate"></a>
+  </div>
+  </div>
+
+  
+</article>
 <h2 class="related-entities-align-left related-entities-subtitle"></h2>
 </div>
 
@@ -593,7 +666,7 @@
                   <a href="/es/articulos">Artículos</a>
               </li>
           <li>
-                  Montar y Exportar un Sitio Web Estático Con Drupal Desacoplado y Tome
+                  Ultimate Cron Para Dominar Todas Las Tareas Automáticas En Drupal
               </li>
         </ol>
   </nav>
@@ -857,7 +930,7 @@
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/1","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/36","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","php":"php","yaml":"yaml"},"user":{"uid":0,"permissionsHash":"c27941458e33ed7d3f966d9f7dfa5d1bd7bb4529bf925601f0e04a671b09c05d"}}</script>
 <script src="/sites/default/files/js/js_C1D7A2ossSurI1kblBD_efsV8VsrMnd5OkTsrOMm298.js?scope=footer&delta=0&language=es&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 
