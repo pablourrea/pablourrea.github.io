@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." name="description">
-<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." name="abstract">
-<meta content="Pablo Urrea,Actualización selectiva de entidades durante migraciones de Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Migrate" name="keywords">
-<link href="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" rel="canonical">
+<meta content="A veces, una pequeña línea de código puede desencadenar grandes problemas. En la última semana, un error 500 inesperado en un entorno local con Drupal 10 llevó a una larga búsqueda de soluciones." name="description">
+<meta content="A veces, una pequeña línea de código puede desencadenar grandes problemas. En la última semana, un error 500 inesperado en un entorno local con Drupal 10 llevó a una larga búsqueda de soluciones." name="abstract">
+<meta content="Pablo Urrea,Error 500 en la página de gestión de campos de entidad de Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Error" name="keywords">
+<link href="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/error_500_en_el_navegador_google_chrome.png" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" property="og:url">
-<meta content="Actualización selectiva de entidades durante migraciones de Drupal" property="og:title">
-<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" property="og:image:secure_url">
+<meta content="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" property="og:url">
+<meta content="Error 500 en la página de gestión de campos de entidad de Drupal" property="og:title">
+<meta content="A veces, una pequeña línea de código puede desencadenar grandes problemas. En la última semana, un error 500 inesperado en un entorno local con Drupal 10 llevó a una larga búsqueda de soluciones." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_en_el_navegador_google_chrome.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_en_el_navegador_google_chrome.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_en_el_navegador_google_chrome.png" property="og:image:secure_url">
 <meta content="image/png" property="og:image:type">
-<meta content="Dom, 25/08/2024 - 19:43" property="og:updated_time">
+<meta content="Dom, 08/09/2024 - 16:58" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,24 +62,24 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Dom, 25/08/2024 - 19:19" property="article:published_time">
-<meta content="Dom, 25/08/2024 - 19:43" property="article:modified_time">
+<meta content="Dom, 08/09/2024 - 16:29" property="article:published_time">
+<meta content="Dom, 08/09/2024 - 16:58" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content="Actualización selectiva de entidades durante migraciones de Drupal" property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" property="pin:url">
-<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." property="pin:description">
+<meta content="Error 500 en la página de gestión de campos de entidad de Drupal" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_en_el_navegador_google_chrome.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" property="pin:url">
+<meta content="A veces, una pequeña línea de código puede desencadenar grandes problemas. En la última semana, un error 500 inesperado en un entorno local con Drupal 10 llevó a una larga búsqueda de soluciones." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso." name="twitter:description">
-<meta content="Actualización selectiva de entidades durante migraciones de Drupal | Pablo Urrea" name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/atleta_saltando_vallas.png" name="twitter:image">
+<meta content="A veces, una pequeña línea de código puede desencadenar grandes problemas. En la última semana, un error 500 inesperado en un entorno local con Drupal 10 llevó a una larga búsqueda de soluciones." name="twitter:description">
+<meta content="Error 500 en la página de gestión de campos de entidad de Drupal | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_en_el_navegador_google_chrome.png" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/selective-entity-update-during-drupal-migrations" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/error-500-entity-fields-management-page-drupal" rel="alternate" hreflang="en">
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -88,7 +88,7 @@
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal",en:"/en/articles/selective-entity-update-during-drupal-migrations",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_es/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal",en:"/en/articles/error-500-entity-fields-management-page-drupal",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_es/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -112,12 +112,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Actualización Selectiva de Entidades Durante Migraciones de Drupal",
-                        "item": "https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal"
+                        "name": "Error 500 En La Página de Gestión de Campos de Entidad de Drupal",
+                        "item": "https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal"
                     }
                 ]
             },
-            "description": "Actualización selectiva de entidades durante migraciones de Drupal",
+            "description": "Error 500 en la página de gestión de campos de entidad de Drupal",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -160,7 +160,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-08-25T19:19:39+0000"
+                "datePublished": "2024-09-08T16:29:30+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -200,18 +200,18 @@
     ]
 }</script>
 
-    <title>Actualización selectiva de entidades durante migraciones de Drupal | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_79EMBKCmob_KLuxje3AF34RpVP950uDUCOEKV9ODDak.css?delta=0&language=es&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
+    <title>Error 500 en la página de gestión de campos de entidad de Drupal | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_gqJ9DNt7ebXUjlV9ohzRH_BvJ8EW4em78BZaTkLQSSc.css?delta=0&language=es&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_DcA9f_MgngedjzNeVhF5nz-eeBUmlZgNOPRNhG-_D8M.css?delta=3&language=es&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_pp6Tbg-Ss13MjKjHXVwYTtsj29UsqD3HfxxW95oI9QE.css?delta=4&language=es&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="print">
-<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=es&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_DcA9f_MgngedjzNeVhF5nz-eeBUmlZgNOPRNhG-_D8M.css?delta=3&language=es&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_pp6Tbg-Ss13MjKjHXVwYTtsj29UsqD3HfxxW95oI9QE.css?delta=4&language=es&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=es&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="no-sidebar page-articulos-actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal role--anonymous section-articulos with-subnav">
+      <body class="no-sidebar page-articulos-error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal role--anonymous section-articulos with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -255,7 +255,7 @@
                 <li class="menu-item">
         <a href="/es" class="stroke" target="_self" data-drupal-link-system-path="<front>">Portada</a>
               </li>
-                <li class="menu-item">
+                <li class="menu-item menu-item--active-trail">
         <a href="/es/articulos" data-drupal-link-system-path="node/9">Artículos</a>
               </li>
                 <li class="menu-item">
@@ -272,7 +272,7 @@
 <div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
   
     
-      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/35" hreflang="es"><a href="/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" class="is-active language-link" title="Español" data-drupal-link-system-path="node/35" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/35" hreflang="en"><a href="/en/articles/selective-entity-update-during-drupal-migrations" class="language-link" title="Inglés" data-drupal-link-system-path="node/35" hreflang="en">en</a></li></ul>
+      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/37" hreflang="es"><a href="/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" class="is-active language-link" title="Español" data-drupal-link-system-path="node/37" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/37" hreflang="en"><a href="/en/articles/error-500-entity-fields-management-page-drupal" class="language-link" title="Inglés" data-drupal-link-system-path="node/37" hreflang="en">en</a></li></ul>
   </div>
 
   </div>
@@ -302,7 +302,7 @@
 <h1 class="content-title">
     
 
-            <div class="clearfix text-formatted"><p>Actualización selectiva de entidades durante migraciones de <em>Drupal</em></p>
+            <div class="clearfix text-formatted"><p>Error 500 en la página de gestión de campos de entidad de <em>Drupal</em></p>
 </div>
       
   </h1>
@@ -311,7 +311,7 @@
 
       <div>
               <div><a href="/es/articulos/categorias/drupal" hreflang="es">Drupal</a></div>
-              <div><a href="/es/articulos/categorias/migrate" hreflang="es">Migrate</a></div>
+              <div><a href="/es/articulos/categorias/error" hreflang="es">Error</a></div>
           </div>
   
   </div>
@@ -324,7 +324,7 @@
   
       
 
-            <div>  <img alt="Atleta saltando vallas" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/atleta_saltando_vallas.png?itok=ZHuSXLO3" height="540" loading="lazy" title="Atleta saltando vallas" width="1072">
+            <div>  <img alt="Error 500 en el navegador Google Chrome" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/error_500_en_el_navegador_google_chrome.png?itok=P4brpC9U" height="540" loading="lazy" title="Error 500 en el navegador Google Chrome" width="1072">
 
 
 </div>
@@ -335,7 +335,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="clearfix text-formatted"><p>Atleta saltando vallas</p>
+            <div class="clearfix text-formatted"><p>Error 500 en el navegador <em>Google Chrome</em></p>
 </div>
       
   </div>
@@ -419,8 +419,8 @@
     Publicado
   </div>
 
-  <time class="datetime" datetime="2024-08-25">
-    25/08/2024
+  <time class="datetime" datetime="2024-09-08">
+    08/09/2024
   </time>
 </div>
 
@@ -430,190 +430,153 @@
 <div class="content-description">
     
 
-            <div class="clearfix text-formatted"><p>Algunas veces las migraciones de <em>Drupal</em> deben actualizar entidades en lugar de crearlos con el parámetro de migración <code>--update</code>, durante este proceso se actualizarán todos las entidades de la migración previa, junto a la creación de posibles entidades nuevas. Para bien o para mal, los datos nuevos actualizarán todas las entidades disponibles en el sistema y la fuente de datos, pero, ¿Y si fuese necesaria una actualización de datos pero solo de algunas entidades?</p>
-<p> </p>
-<p><strong>El método unitario.</strong> Si requieres actualizar únicamente algunas entidades, pero no demasiadas, puedes agregar al comando de migración el parámetro <code>--idlist</code> seguido de los identificadores de migración correspondiente a cada grupo de datos, es decir, si por ejemplo tienes los siguientes datos en formato JSON:</p>
-<pre><code class="language-json">{
-  "elements": [
-    {
-      "element": {
-        "id": "1",
-        "name": "Nombre 1"
-      },
-      "element": {
-        "id": "2",
-        "name": "Nombre 2"
-      },
-      "element": {
-        "id": "3",
-        "name": "Nombre 3"
-      },
-      "element": {
-        "id": "4",
-        "name": "Nombre 4"
-      },
-    }
-  ]
-}</code></pre><p>Teniendo estos datos inyectados en una migración, si solamente necesitas migrar los elementos con id's 1, 2, y 3, el parámetro sería <code>--idlist=1,2,3</code>. Aplicado a un comando de migración completo con drush quedaría así:</p>
-<pre><code class="language-bash">drush migrate-import migrate_elements --idlist=1,2,3</code></pre><p>Si en lugar de crearlos, necesitas actualizarlos, el comando quedaría así con el parámetro <code>--update</code>:</p>
-<pre><code class="language-bash">drush migrate-import migrate_elements --update --idlist=1,2,3</code></pre><p>Esta forma de migrar entidades individualmente es muy sencillo y rápido, pero solamente es aplicable a un volumen reducido de identificadores (A menos que tengas ganas de introducir 1000 id’s en el parámetro del comando, que igual una IA generativa lo procesa bien, pero habría que ver como lo soporta el sistema)</p>
+            <div class="clearfix text-formatted"><p>La última semana escribí una sola línea de código. Parece poco, dicen que los mejores programadores son los que menos escriben, lo malo es que se trata de una línea de código en un archivo <em>YML</em>. Esta historia es digna de <a href="https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino"><em>Dj Marmota</em> con el velador y el vendedor de la tienda</a> (Pero menos agresivo):</p>
+<p><a href="https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino"></a></p>
+<figure class="align-center caption caption-drupal-media" role="group">
+<article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="Dj Marmota - Ignacio Francolino - Miniatura de YouTube: https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/dj_marmota-youtube_thumbnail.jpeg?itok=s7jrZM8N" height="1075" loading="lazy" title="Dj Marmota - Ignacio Francolino - Miniatura de YouTube: https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino" width="1920">
+
+
+</div>
+      
+  </article>
+
+<figcaption>- Prendo el velador ¡Pum! ¡Cortocircuito! Caso la moto, tranqui, ¡pum! ¡pum! ¡pum! pum! me voy a la ferretería, y le digo: <br>- Me das uno de esos cosos que hace ticky ticky para el velador, pi, el tipo me la da. <br>- ¿Como lo cambio? le digo. <br>+ Es facil, me dice, es sacar la perilla, tuc, poner el repuesto, pi. <br>- ¿Tenes tarjeta?, <br>+ No!, taca taca! <br>- Le doy cuarenta, el tipo pingui, me da 20. <br>- Me tenes que dar $30 le digo, y el tipo empieza con el IVA que papa que papa, que ehh te doy $20. <br>- $20 pss ¿De donde? <br>+ Bueno si no te gusta jui jui, te vas! <br>-¿Si?, ahí nomás yo pin!, el tipo ¡Pum! y empezamos que pin, que pam pam! le doy en la napia, lo cazo de la nuca, empiezo pum! pum! pum! pum! pum! contra el mostrador, agarre el vuelto y me las tome!</figcaption>
+</figure>
+<p>
+</p><p> </p>
 <p> </p>
 <p> </p>
-<p><strong>El método colectivo.</strong> Tras proponer el siguiente caso: “<em>El editor necesita que realices la migración de muchas, muchísimas, demasiadas entidades, una barbaridad de entidades. Y este editor comprobará individualmente que todas las entidades se han migrado correctamente y quisiera “bloquear” de alguna forma las entidades que se hayan migrado correctamente y actualizar en la fuente los datos de entidades que no se hayan migrado bien.”</em> Y te planteas tú, si hay alguna forma de actualizar todas las entidades salvo las bloqueadas. Pues bien, lo primero sería crear un campo booleano (<code>TRUE</code> o <code>FALSE</code>) que decida si una entidad está bloqueada o no, y ahora, el siguiente plugin custom de <em>Migrate</em> comprobará en la base de datos si ya se ha migrado la entidad de la <em>Row</em> actual, y el valor proporcionado para el campo proporcionado en los parámetros <code>field</code> y <code>value</code> del plugin:</p>
-<pre><code class="language-php">/**
- * Migrate plugin that returns NULL if it finds the field next to the provided value or TRUE.
- * These return variables facilitate further processing such as skipping the row, for example.
- * It does not need a source and generates its own return value.
- *
- * @MigrateProcessPlugin(
- *   id = "check_entity_field_value"
- * )
- *
- * Example usage:
- * @code
- * check_entity_field_value_example:
- *   plugin: check_entity_field_value
- *   field: field_to_check
- *   value: value_to_check
- * @endcode
- */
-class CheckEntityFieldValue extends ProcessPluginBase implements ContainerFactoryPluginInterface {
+<p><strong>Un error 500 oculto.</strong> Mi historia comienza cuando en el entorno local de un proyecto con <em>DDEV</em> y <em>Drupal</em> <em>10</em> comienzo a crear un tipo de contenido y le agrego campos, hasta que después de diez o quince campos mezclados entre reutilizaciones y nuevos, al crear dos campos concretos (<em>Texto (largo con formato)</em> y <em>Referencia a entidad: Paragraph</em>), como dirían en el vídeo anterior “<em>¡Pum! ¡Cortocircuito!</em>”, y la pantalla me muestra el siguiente error 500 en todas las páginas de gestión de campos del tipo de entidad nodo <code><em>/admin/structure/types/manage/*/fields</em></code>:</p>
+<article class="media media--type-image media--view-mode-default align-center">
+  
+      
 
-  /**
-   * The migration.
-   *
-   * @var \Drupal\migrate\Plugin\MigrationInterface|null
-   */
-  protected $migration;
+            <div>  <img alt="Error 500 en el navegador Google Chrome" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/error_500_en_el_navegador_google_chrome.png?itok=nZDuyxu_" height="1004" loading="lazy" title="Error 500 en el navegador Google Chrome" width="1920">
 
-  /**
-   * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-   */
-  protected $entity_type_manager;
 
-  /**
-   * {@inheritdoc}
-   */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration = NULL) {
-    $instance = new static($configuration, $plugin_id, $plugin_definition);
-    $instance->entity_type_manager = $container->get('entity_type.manager');
-    $instance->migration = $migration;
-
-    return $instance;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function transform($value, MigrateExecutableInterface $migrate_executable, Row $row, $destination_property): bool|null {
-    /** @var \Drupal\Core\Entity\EntityTypeInterface|string $entity_type */
-    $entity_type = $this->getMigrationTargetEntityType($this->migration);
-    $field = (isset($this->configuration['field']) && is_string($this->configuration['field'])) ? $this->configuration['field'] : NULL;
-    if (isset($entity_type) && isset($field)) {
-      $destination_ids = $this->getEntityIdsFromRow($row);
- 
-      if (!empty($destination_ids)) {
-        $value = (isset($this->configuration['value'])) ? $this->configuration['value'] : NULL;
-        foreach ($destination_ids as $entity_id) {
-          if (!$entity_id) {
-            continue;
-          }
-
-          /** @var \Drupal\Core\Entity\EntityInterface|null $entity */
-          $entity = $this->entity_type_manager->getStorage($entity_type)->load($entity_id);
-          if ($entity instanceof FieldableEntityInterface && $entity->hasField($field)) {
-            // Returns NULL if it finds the field with any value
-            // if the value is not specified, or if it is equal
-            // to the value if the value has been specified.
-            if ((isset($this->configuration['value']) && ((isset($entity->$field->value) && $entity->$field->value == $this->configuration['value']) || (isset($entity->$field->target_id) && $entity->$field->target_id == $this->configuration['value']))) || (!isset($this->configuration['value']) && (isset($entity->$field->value) || isset($entity->$field->target_id)))) {
-              return NULL;
-            }
-          }
-        }
-      }
-    }
-
-    return TRUE;
-  }
-
-  /**
-   * Retrieves the target entity type for a given migration.
-   *
-   * @param \Drupal\migrate\Plugin\MigrationInterface $migration
-   *   The migration object from which to retrieve the target entity type.
-   *
-   * @return string|null
-   *   The target entity type if it can be determined.
-   *
-   * @throws \Exception $e
-   */
-  protected function getMigrationTargetEntityType(MigrationInterface $migration): string|null {
-    try {
-      /** @var \Drupal\migrate\Plugin\MigrateDestinationInterface $migration_destination_plugin */
-      $migration_destination_plugin = $migration->getDestinationPlugin();
-      /** @var \Drupal\Component\Plugin\Definition\PluginDefinitionInterface|array $migration_destination_plugin_definition */
-      $migration_destination_plugin_definition = $migration_destination_plugin->getPluginDefinition();
-
-      // Gets from the plugin definition the id of the target entity,
-      // it will always be the first match or none.
-      preg_match('/:([^:]+)$/', $migration_destination_plugin_definition['id'], $entity_type);
-
-      return (isset($entity_type[1]) && is_string($entity_type[1])) ? $entity_type[1] : NULL;
-    }
-    catch (\Exception $e) {
-      return NULL;
-    }
-  }
-
-  /**
-   * Retrieves destination entity IDs from a migration row.
-   *
-   * @param \Drupal\migrate\Row $row
-   *   The migration row object from which to retrieve the entity IDs.
-   *
-   * @return array
-   *   An associative array of destination ID values.
-   */
-  protected function getEntityIdsFromRow(Row $row): array {
-    $destination_ids = [];
-
-    $mid_map = $row->getIdMap();
-    if (!empty($mid_map)) {
-      foreach ($mid_map as $mid_map_element => $mid_map_element_value) {
-        // Destination IDs are always added with the same ID
-        // and a counter (destid1, destid2, destid3, etc.).
-        if (str_contains($mid_map_element, 'destid')) {
-          $destination_ids[$mid_map_element] = $mid_map_element_value;
-        }
-      }
-    }
-
-    return $destination_ids;
-  }
-}</code></pre><p>Este plugin, por cada <em>Row</em>, primero obtiene el parámetro del campo y el tipo de entidad a comprobar mediante el método <code>getMigrationTargetEntityType()</code> con la migración actual del dato de destino con una expresión regular. Posteriormente, obtiene, si existe, la entidad destino con el método <code>getEntityIdsFromRow()</code> que necesitará la fila actual para obtener datos en crudo de la base de datos, este resultado solo contendrá valores de ser una actualización de migración. Una vez obtenidos estos datos, se puede cargar la entidad destino y comprobar si el campo, de tenerlo, tiene el valor especificado.</p>
+</div>
+      
+  </article>
 <p> </p>
-<p>Ahora habría que añadir el plugin según el ejemplo a la migración, por ejemplo, si necesitamos que ignore la entidad cuando el campo booleano <code>field_migrate_skip</code> contenga el valor <code>TRUE</code>, el plugín se definirá de la siguiente forma:</p>
-<pre><code class="language-yaml">skip_row_on_field_migrate_skip_true:
-  -
-    plugin: check_entity_field_value
-    field: field_migrate_skip
-    value: TRUE
-  -
-    plugin: skip_on_empty
-    method: row
-    message: 'Ignored because field field_migrate_skip is TRUE.'</code></pre><p>Esto saltará la <em>Row</em> de la migración si el valor del campo <code>field_migrate_skip</code> es igual a <code>TRUE</code>, porque el plugin retornará <code>NULL</code> y el plugin <code>skip_on_empty</code> lo identificará como un valor vacío, de lo contrario recibirá <code>TRUE</code> y no saltará la <em>Row</em>, dejando intactas las entidades “bloqueadas” por el editor.</p>
-<p>Aunque este sea un caso ficticio, tiene multitud de aplicaciones, como por ejemplo una actualización masiva de entidades proporcionando un valor al campo si se cumplen una serie de condiciones.</p>
+<p>Este error únicamente ocurre en las páginas de gestión de campos del tipo de entidad nodo, y al añadir esos dos campos específicos, lo que me hace sospechar que esto es un error local, porque, aunque he de reconocer mi miedo a subir la configuración a los entornos, este tipo de errores suelen darse por errores de comunicación o procesamiento entre las diferentes tecnologías de la web, por lo que primero hago una búsqueda rápida en Google sin resultados satisfactorios y posteriormente hablo con un compañero del equipo, ahora somos dos con las manos en la cabeza por culpa de este problema y no me siento tan estresado 🤕🤕. Tras veinte mil pruebas de campos diferentes (Cambiando el nombre de máquina o la etiqueta, el formato o la referencia, deshabilitando las traducciones en el caso del texto) y pudiendo agregar otro tipo de campos, la lucha parece perdida.</p>
 <p> </p>
 <p> </p>
-<p><strong>Conclusión.</strong> Tanto si necesitas actualizar pocas entidades durante una migración, como si necesitas saltar unas pocas, existen distintos métodos para realizar esta actualización de datos. Solamente es necesario que tengas en cuenta que método es más conveniente para la necesidad de la migración.</p>
+<p><strong>La búsqueda en Google ocultaba grandes cosas.</strong> Efectivamente, la búsqueda inicial con este problema debería de haberme dado una solución rápida de <em>drupal.org</em> o <em>StackOverflow</em>, pero en su lugar ignoré la entrada con más texto, a la cual le doy otra oportunidad desesperada por arreglar este error 500. Y acabo en <a href="https://www.drupal.org/project/paragraphs/issues/3197720"><em>500 Internal Server Error</em></a>, en concreto el comentario glorioso que busco es el <a href="https://www.drupal.org/project/paragraphs/issues/3197720#comment-15481180">#12</a>, que indica que en los archivos <code>.services.yml</code> del sitio web hay que establecer la variable <code>http.response.debug_cacheability_headers</code> a <code>FALSE</code> o eliminar la línea directamente.</p>
+<p> </p>
+<p><strong>Al ajo.</strong> Buscando en el código del proyecto, encuentro el archivo <code>sites/development.services.yml</code> con el siguiente contenido:</p>
+<pre><code class="language-yaml"># Local development services.
+#
+# To activate this feature, follow the instructions at the top of the
+# 'example.settings.local.php' file, which sits next to this file.
+parameters:
+ http.response.debug_cacheability_headers: true
+services:
+ cache.backend.null:
+   class: Drupal\Core\Cache\NullBackendFactory</code></pre><p>Se me queda una cara de póker, pero a la vez de felicidad al ver la variable que indica el comentario con el valor opuesto al que recomiendan tener para resolver este bug, por lo que reemplazo el valor de la variable por <code>FALSE</code> dejando así el contenido del archivo:</p>
+<pre><code class="language-yaml"># Local development services.
+#
+# To activate this feature, follow the instructions at the top of the
+# 'example.settings.local.php' file, which sits next to this file.
+parameters:
+ http.response.debug_cacheability_headers: false
+services:
+ cache.backend.null:
+   class: Drupal\Core\Cache\NullBackendFactory</code></pre><p>Y… redoble de tambores… ¡Funciona! Terminando así una semana de angustia y estrés con este problema en una rama local. Que por cierto, efectivamente se trata de un error que afecta únicamente al entorno local, ya que en el resto de entornos remotos, esta variable estaba bien configurada, aún así, el problema era importante porque los campos siempre se suelen crear en local. Aún así, bien empieza lo que bien acaba.</p>
+<p> </p>
+<p> </p>
+<p><strong>Conclusión.</strong> Lo que parecía un pequeño detalle técnico desencadenó una serie de desafíos inesperados, reflejando lo impredecible que puede ser el desarrollo web. La experiencia subraya que, en ocasiones, la solución a un problema complejo puede depender de una línea de código, en este caso dentro de un archivo de configuración <em>YML</em>, algo que puede pasarse por alto fácilmente. Este tipo de situaciones nos recuerdan la importancia de la paciencia para resolver errores sin tirar el ordenador por la ventana. Aunque la experiencia sea frustrante, al final, resolver estos problemas es lo que hace que la programación sea tan gratificante.</p>
 <p> </p>
 </div>
       
   </div>
 <div class="content-footer">
     <div class="related-entities-wrapper"><h2 class="related-entities-align-left related-entities-title">Artículos recomendados</h2>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png?itok=OGb0le56" height="270" loading="lazy" title="Representación del gestor de tareas del cron de Drupal como “La persistencia de la memoria” de Salvador Dalí" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p><em>Ultimate Cron</em> para dominar todas las tareas automáticas en <em>Drupal</em></p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>En <em>Drupal</em>, la gestión de tareas automáticas es crucial, pero el cron integrado puede ser limitante. <em>Ultimate Cron</em> ofrece una solución flexible que permite personalizar la frecuencia y programación de cada tarea, optimizando así el rendimiento del sitio y evitando sobrecargas en el servidor. En este artículo muestro como empezar a exprimir este módulo y utilizarlo eficiente y eficazmente.</p>
+</div>
+      
+  </div><a href="/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal" class="link-content" hreflang="es" aria-label="Ultimate Cron para dominar todas las tareas automáticas en Drupal"></a>
+  </div>
+  </div>
+
+  
+</article>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="Atleta saltando vallas" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/atleta_saltando_vallas.png?itok=St_i2bZS" height="270" loading="lazy" title="Atleta saltando vallas" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p>Actualización selectiva de entidades durante migraciones de <em>Drupal</em></p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso.</p>
+</div>
+      
+  </div><a href="/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal" class="link-content" hreflang="es" aria-label="Actualización selectiva de entidades durante migraciones de Drupal"></a>
+  </div>
+  </div>
+
+  
+</article>
 
 <article class="node node--type-article">
   <div class="content">
@@ -655,88 +618,6 @@ class CheckEntityFieldValue extends ProcessPluginBase implements ContainerFactor
 
   
 </article>
-
-<article class="node node--type-article">
-  <div class="content">
-    
-<div class="wrapper wrapper-article wrapper-related-entity">
-    
-<div class="polaroid main-media">
-    
-
-            <div><article class="media media--type-image media--view-mode-landscape-small">
-  
-      
-
-            <div>  <img alt="¿Cómo saben las aves cómo migrar? - The Daily Illini" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating.jpg?itok=_jBn5CxP" height="270" loading="lazy" title="¿Cómo saben las aves cómo migrar? - The Daily Illini" width="423">
-
-
-</div>
-      
-  </article>
-</div>
-      
-  </div>
-<h3 class="title">
-    
-
-            <div class="clearfix text-formatted"><p>Migrar Paragraphs de Contenidos con Migrate</p>
-</div>
-      
-  </h3>
-<div class="description-short">
-    
-
-            <div class="clearfix text-formatted"><p>La migración de contenido entre diferentes versiones de Drupal puede ser una tarea desafiante, especialmente al enfrentarse a cambios en la estructura de datos como la introducción de Paragraphs. Este proceso requiere un enfoque meticuloso y profundo conocimiento de las relaciones entre entidades. Con una comprensión sólida y las herramientas adecuadas, las migraciones exitosas son alcanzables.</p>
-</div>
-      
-  </div><a href="/es/articulos/migrar-paragraphs-de-contenidos-con-migrate" class="link-content" hreflang="es" aria-label="Migrar Paragraphs de Contenidos con Migrate"></a>
-  </div>
-  </div>
-
-  
-</article>
-
-<article class="node node--type-article">
-  <div class="content">
-    
-<div class="wrapper wrapper-article wrapper-related-entity">
-    
-<div class="polaroid main-media">
-    
-
-            <div><article class="media media--type-image media--view-mode-landscape-small">
-  
-      
-
-            <div>  <img alt="Error 500 en el navegador Google Chrome" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/error_500_en_el_navegador_google_chrome.png?itok=TgLKcUsz" height="270" loading="lazy" title="Error 500 en el navegador Google Chrome" width="423">
-
-
-</div>
-      
-  </article>
-</div>
-      
-  </div>
-<h3 class="title">
-    
-
-            <div class="clearfix text-formatted"><p>Error 500 en la página de gestión de campos de entidad de <em>Drupal</em></p>
-</div>
-      
-  </h3>
-<div class="description-short">
-    
-
-            <div class="clearfix text-formatted"><p>A veces, una pequeña línea de código puede desencadenar grandes problemas. En la última semana, un error 500 inesperado en un entorno local con <em>Drupal</em> <em>10</em> llevó a una larga búsqueda de soluciones.</p>
-</div>
-      
-  </div><a href="/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" class="link-content" hreflang="es" aria-label="Error 500 en la página de gestión de campos de entidad de Drupal"></a>
-  </div>
-  </div>
-
-  
-</article>
 <h2 class="related-entities-align-left related-entities-subtitle"></h2>
 </div>
 
@@ -760,7 +641,7 @@ class CheckEntityFieldValue extends ProcessPluginBase implements ContainerFactor
                   <a href="/es/articulos">Artículos</a>
               </li>
           <li>
-                  Actualización Selectiva de Entidades Durante Migraciones de Drupal
+                  Error 500 En La Página de Gestión de Campos de Entidad de Drupal
               </li>
         </ol>
   </nav>
@@ -858,7 +739,7 @@ class CheckEntityFieldValue extends ProcessPluginBase implements ContainerFactor
 
                   </li>
                       
-        <li class="menu-item menu-item--expanded">
+        <li class="menu-item menu-item--active-trail menu-item--expanded">
           <span>Páginas</span>
                                 
   
@@ -878,7 +759,7 @@ class CheckEntityFieldValue extends ProcessPluginBase implements ContainerFactor
 
                   </li>
                       
-        <li class="menu-item">
+        <li class="menu-item menu-item--active-trail">
           <a href="/es/articulos" target="_self" data-drupal-link-system-path="node/9">Todos los artículos 🗞️</a>
                                 
   
@@ -1024,7 +905,7 @@ class CheckEntityFieldValue extends ProcessPluginBase implements ContainerFactor
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/35","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"json":"json","bash":"bash","php":"php","yaml":"yaml"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/37","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"yaml":"yaml"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
 <script src="/sites/default/files/js/js_5vNxjLYaS6rpGPStPIcSkP2vtPa0fryLE5h7rsg6r5c.js?scope=footer&delta=0&language=es&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 

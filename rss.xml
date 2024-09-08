@@ -7,6 +7,22 @@
     <language>es</language>
     
     <item>
+  <title>Error 500 en la página de gestión de campos de entidad de Drupal</title>
+  <link>https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Error 500 en la página de gestión de campos de entidad de Drupal&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;A veces, una pequeña línea de código puede desencadenar grandes problemas. En la última semana, un error 500 inesperado en un entorno local con &lt;em&gt;Drupal&lt;/em&gt; &lt;em&gt;10&lt;/em&gt; llevó a una larga búsqueda de soluciones.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-09-08T16:29:30+00:00" title="Domingo, Septiembre 8, 2024 - 16:29" class="datetime"&gt;Dom, 08/09/2024 - 16:29&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Sun, 08 Sep 2024 16:29:30 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">37 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Ultimate Cron para dominar todas las tareas automáticas en Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Ultimate Cron para dominar todas las tareas automáticas en Drupal&lt;/span&gt;
@@ -149,22 +165,6 @@
   <pubDate>Mon, 18 Mar 2024 22:13:27 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">19 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Extensiones de Visual Studio Code para desarrollo PHP y Drupal</title>
-  <link>https://pablourrea.github.io/es/articulos/extensiones-de-visual-studio-code-para-desarrollo-php-y-drupal</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Extensiones de Visual Studio Code para desarrollo PHP y Drupal&lt;/span&gt;
-
-
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Las extensiones de &lt;em&gt;Visual Studio Code&lt;/em&gt; que han transformando la experiencia de desarrollo en &lt;em&gt;PHP&lt;/em&gt; y &lt;em&gt;Drupal&lt;/em&gt;. Desde resaltado de sintaxis hasta completado inteligente de código, estas herramientas esenciales optimizan el flujo de trabajo y garantizan una codificación más eficiente y libre de errores.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-03-18T20:00:31+00:00" title="Lunes, Marzo 18, 2024 - 20:00" class="datetime"&gt;Lun, 18/03/2024 - 20:00&lt;/time&gt;
-&lt;/span&gt;
-</description>
-  <pubDate>Mon, 18 Mar 2024 20:00:31 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">18 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>

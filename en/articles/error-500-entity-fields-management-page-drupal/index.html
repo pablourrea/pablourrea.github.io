@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content='In the article Migrate Content Paragraphs with Migrate, I explore the possibilities of migrating Paragraphs in Drupal using migration configuration files that are independent of the parent node. However, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration, thus optimizing the migration process by reducing execution time, eliminating dependencies, and strengthening the parent-child relationship between the two entities, making this process a more convenient method than the one discussed in the previous article. Dependencies. To use this method, it is necessary to install the module for Drupal: Migrate Child Entity Generate. You can install it from the “Extend” section of the Drupal administrator or with Composer:composer require drupal/migrate_child_entity_generateAnd enable it from the “Extend” section of the Drupal administrator or with Drush:drush en migrate_child_entity_generate One Migrate plugin to rule them all. Using the child_entity_generate plugin from the Migrate Child Entity Generate module is very simple. You need to define the plugin, the entity type, the bundle type, and optionally define the variable and default constant values as in the following example:field_name: plugin: child_entity_generate entity_type: paragraph bundle: paragraph_bundle values: field_1: value_1 field_2/value: value_2 default_values: langcode: "en" field_2/format: "text"The difference between values and default_values is that in values, you introduce variable values for each different Paragraph (e.g., a text, a date, etc.), while in default_values, you introduce static and common values for all Paragraphs (e.g., the format of a CKEditor WYSIWYG field, a language selection field, etc.). One Migrate plugin to rule all values. Unlike the entity_generate plugin from the Migrate Plus module, the child_entity_generate plugin does accept an array of values as a parameter, for example:destination: plugin: "entity:node" source: fields: - faq_items: - question: "Some question" answer: "Some answer" - question: "Another question" answer: "Another answer" process: field_faqs: plugin: child_entity_generate source: faq_items entity_type: field_collection bundle: faq values: field_faq_question: question field_faq_answer/value: answer default_values: field_faq_answer/format: "basic_html"The above code would create a faq_items entity of type faq for each item in the array faq_items, assigning the value of question to the field_faq_question field and the value of answer to the field_faq_answer field, with the basic_html format as the default value for the field_faq_answer field for all entities. It would then assign the target_id and target_revision_id of each entity to the field_faqs field. ℹ️As of the publication of this article, the Migrate Child Entity Generate module in the stable version 1.0.1 from June 4, 2024, does not accept references to fields from the current Row in the migration process (e.g., assigning "@other_field" to a field). To fix this, I created a patch that the module maintainer accepted in the issue "Refine the process value filtering so that it gets values from the row". If you need it, you can apply the following patch or install the development version 1.x-dev of the module. Conclusion. Efficiently migrating Paragraphs in Drupal is a challenge, but using the Migrate Child Entity Generate module offers a powerful solution. Through this method, it is possible to integrate Paragraphs directly with their parent nodes in a single migration. Additionally, the child_entity_generate plugin provides a robust and effective method for migrating Paragraphs in Drupal. ' name="description">
-<meta content="In the article Migrating Paragraphs of Content with Migrate, I explore the possibilities of migrating Paragraphs with migration configuration files independent of the parent node. However, it's true that, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration." name="abstract">
-<meta content="Pablo Urrea,Migrate Paragraphs of Content with Migrate (Enhanced version),Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Migrate" name="keywords">
-<link href="https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version" rel="canonical">
+<meta content="Last week I wrote a single line of code. It doesn't seem like much—some say the best programmers write the least—but the downside is that it was a line of code in a YML file. This story is worthy of Dj Marmota with the lamp and the store clerk (But less aggressive):    A hidden 500 error. My story begins when, in the local environment of a project using DDEV and Drupal 10, I started creating a content type and adding fields to it. After adding ten or fifteen fields, a mix of reused and new ones, I created two specific fields (Text (long with format) and Entity Reference: Paragraph), and as they say in the video above: &#34;Boom! Short circuit!&#34;—the screen showed a 500 error on all field management pages of the node entity type /admin/structure/types/manage/*/fields:  This error only happens on the field management pages of the node entity type, and only when adding those two specific fields, which led me to suspect it was a local issue. Although I was hesitant to push the configuration to other environments, this type of error often stems from communication or processing issues between different web technologies. So, I made a quick Google search, which yielded no helpful results, and then talked to a team member. Now, there were two of us pulling our hair out over this issue, and I didn’t feel as stressed anymore 🤕🤕. After about twenty thousand attempts with different fields (changing the machine name, label, format, or reference, disabling translations in the case of the text), and being able to add other types of fields, it seemed like the battle was lost.  Google search uncovered great things. Indeed, the initial search for this problem should have led me to a quick solution on drupal.org or StackOverflow. Instead, I ignored the most text-heavy result, only to later give it another chance out of desperation to fix this 500 error. And I ended up at 500 Internal Server Error, specifically the glorious comment I was looking for: #12, which indicates that in the site's .services.yml files, you need to set the variable http.response.debug_cacheability_headers to FALSE or remove the line altogether. To the point. Searching through the project's code, I found the file sites/development.services.yml with the following content:# Local development services. # # To activate this feature, follow the instructions at the top of the # 'example.settings.local.php' file, which sits next to this file. parameters: http.response.debug_cacheability_headers: true services: cache.backend.null: class: Drupal\Core\Cache\NullBackendFactoryI had a poker face but was also relieved when I saw the variable mentioned in the comment with the opposite value to what was recommended to fix this bug. So, I replaced the variable's value with FALSE, leaving the file content as follows:# Local development services. # # To activate this feature, follow the instructions at the top of the # 'example.settings.local.php' file, which sits next to this file. parameters: http.response.debug_cacheability_headers: false services: cache.backend.null: class: Drupal\Core\Cache\NullBackendFactoryAnd… drum roll… it works! Thus ending a week of stress and anxiety with this problem on a local branch. Indeed, this issue only affects the local environment because in all other remote environments, this variable was correctly configured. However, the problem was still significant since fields are usually created locally. In any case, all's well that ends well.  Conclusion. What seemed like a small technical detail triggered a series of unexpected challenges, reflecting how unpredictable web development can be. This experience highlights that sometimes the solution to a complex problem may depend on a single line of code, in this case within a YML configuration file—something easily overlooked. Situations like these remind us of the importance of patience in solving errors without tossing the computer out the window. Although the experience can be frustrating, in the end, solving these issues is what makes programming so rewarding. " name="description">
+<meta content="Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with Drupal 10 led to a lengthy search for solutions." name="abstract">
+<meta content="Pablo Urrea,Error 500 on the entity fields management page in Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Error" name="keywords">
+<link href="https://pablourrea.github.io/en/articles/error-500-entity-fields-management-page-drupal" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/error_500_in_google_chrome_browser.png" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" property="og:url">
-<meta content="Migrate Paragraphs of Content with Migrate (Enhanced version)" property="og:title">
-<meta content="In the article Migrating Paragraphs of Content with Migrate, I explore the possibilities of migrating Paragraphs with migration configuration files independent of the parent node. However, it's true that, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="og:image:secure_url">
-<meta content="image/jpeg" property="og:image:type">
-<meta content="Sat, 24/08/2024 - 11:27" property="og:updated_time">
+<meta content="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" property="og:url">
+<meta content="Error 500 on the entity fields management page in Drupal" property="og:title">
+<meta content="Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with Drupal 10 led to a lengthy search for solutions." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_in_google_chrome_browser.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_in_google_chrome_browser.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_in_google_chrome_browser.png" property="og:image:secure_url">
+<meta content="image/png" property="og:image:type">
+<meta content="Sun, 08/09/2024 - 16:58" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,24 +62,24 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Sat, 10/08/2024 - 14:32" property="article:published_time">
-<meta content="Sat, 24/08/2024 - 11:27" property="article:modified_time">
+<meta content="Sun, 08/09/2024 - 16:29" property="article:published_time">
+<meta content="Sun, 08/09/2024 - 16:58" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content="Migrate Paragraphs of Content with Migrate (Enhanced version)" property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" property="pin:url">
-<meta content="In the article Migrating Paragraphs of Content with Migrate, I explore the possibilities of migrating Paragraphs with migration configuration files independent of the parent node. However, it's true that, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration." property="pin:description">
+<meta content="Error 500 on the entity fields management page in Drupal" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_in_google_chrome_browser.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" property="pin:url">
+<meta content="Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with Drupal 10 led to a lengthy search for solutions." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="In the article Migrating Paragraphs of Content with Migrate, I explore the possibilities of migrating Paragraphs with migration configuration files independent of the parent node. However, it's true that, although Paragraphs are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate Paragraphs and link them to the parent within the same migration." name="twitter:description">
-<meta content="Migrate Paragraphs of Content with Migrate (Enhanced version) | Pablo Urrea" name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/birds-migrating-2.jpg" name="twitter:image">
+<meta content="Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with Drupal 10 led to a lengthy search for solutions." name="twitter:description">
+<meta content="Error 500 on the entity fields management page in Drupal | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/error_500_in_google_chrome_browser.png" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/error-500-entity-fields-management-page-drupal" rel="alternate" hreflang="en">
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -88,7 +88,7 @@
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada",en:"/en/articles/migrate-paragraphs-content-migrate-enhanced-version",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_en/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal",en:"/en/articles/error-500-entity-fields-management-page-drupal",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_en/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -112,12 +112,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Migrate Paragraphs Of Content With Migrate (Enhanced Version)",
-                        "item": "https://pablourrea.github.io/en/articles/migrate-paragraphs-content-migrate-enhanced-version"
+                        "name": "Error 500 On The Entity Fields Management Page In Drupal",
+                        "item": "https://pablourrea.github.io/en/articles/error-500-entity-fields-management-page-drupal"
                     }
                 ]
             },
-            "description": "Migrate Paragraphs of Content with Migrate (Enhanced version)",
+            "description": "Error 500 on the entity fields management page in Drupal",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -160,7 +160,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-08-10T14:32:17+0000"
+                "datePublished": "2024-09-08T16:29:30+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -200,18 +200,18 @@
     ]
 }</script>
 
-    <title>Migrate Paragraphs of Content with Migrate (Enhanced version) | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_79EMBKCmob_KLuxje3AF34RpVP950uDUCOEKV9ODDak.css?delta=0&language=en&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
+    <title>Error 500 on the entity fields management page in Drupal | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_gqJ9DNt7ebXUjlV9ohzRH_BvJ8EW4em78BZaTkLQSSc.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_DcA9f_MgngedjzNeVhF5nz-eeBUmlZgNOPRNhG-_D8M.css?delta=3&language=en&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_pp6Tbg-Ss13MjKjHXVwYTtsj29UsqD3HfxxW95oI9QE.css?delta=4&language=en&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="print">
-<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNTUkOwyAM_BAtp74HGeISB7MImwN9fZGaSL1U6sEjj2YLCTfS2h-u8YhUXIOQHJUNizrPNST7TYxMUczWg6BZQOHzhtrRltozML0uJXL1wCfJKAIRxTRYTW70jnA5doo7r9ND1nQb6p7Eit3-Eu6ik1fXP8FbqG2egTeKL14S" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_DcA9f_MgngedjzNeVhF5nz-eeBUmlZgNOPRNhG-_D8M.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_pp6Tbg-Ss13MjKjHXVwYTtsj29UsqD3HfxxW95oI9QE.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="no-sidebar page-articles-migrate-paragraphs-content-migrate-enhanced-version role--anonymous section-articles with-subnav">
+      <body class="no-sidebar page-articles-error-500-entity-fields-management-page-drupal role--anonymous section-articles with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -272,7 +272,7 @@
 <div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
   
     
-      <ul class="links"><li data-drupal-link-system-path="node/34" hreflang="es"><a href="/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada" class="language-link" title="Español" data-drupal-link-system-path="node/34" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/34" hreflang="en"><a href="/en/articles/migrate-paragraphs-content-migrate-enhanced-version" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/34" hreflang="en" aria-current="page">en</a></li></ul>
+      <ul class="links"><li data-drupal-link-system-path="node/37" hreflang="es"><a href="/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" class="language-link" title="Español" data-drupal-link-system-path="node/37" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/37" hreflang="en"><a href="/en/articles/error-500-entity-fields-management-page-drupal" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/37" hreflang="en" aria-current="page">en</a></li></ul>
   </div>
 
   </div>
@@ -302,7 +302,7 @@
 <h1 class="content-title">
     
 
-            <div class="clearfix text-formatted"><p>Migrate Paragraphs of Content with Migrate (Enhanced version)</p>
+            <div class="clearfix text-formatted"><p>Error 500 on the entity fields management page in <em>Drupal</em></p>
 </div>
       
   </h1>
@@ -311,7 +311,7 @@
 
       <div>
               <div><a href="/en/articles/categories/drupal" hreflang="en">Drupal</a></div>
-              <div><a href="/en/articles/categories/migrate" hreflang="en">Migrate</a></div>
+              <div><a href="/en/articles/categories/error" hreflang="en">Error</a></div>
           </div>
   
   </div>
@@ -324,7 +324,7 @@
   
       
 
-            <div>  <img alt="How do birds know how to migrate? (2)" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/birds-migrating-2.jpg?itok=ClSGJ0vE" height="540" loading="lazy" title="How do birds know how to migrate? (2)" width="1072">
+            <div>  <img alt="Error 500 in Google Chrome browser" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/error_500_in_google_chrome_browser.png?itok=DjyU56yj" height="540" loading="lazy" title="Error 500 in Google Chrome browser" width="1072">
 
 
 </div>
@@ -335,7 +335,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="clearfix text-formatted"><p>How do birds know how to migrate?</p>
+            <div class="clearfix text-formatted"><p>500 error in the <em>Google Chrome</em> browser</p>
 </div>
       
   </div>
@@ -419,8 +419,8 @@
     Published
   </div>
 
-  <time class="datetime" datetime="2024-08-10">
-    10/08/2024
+  <time class="datetime" datetime="2024-09-08">
+    08/09/2024
   </time>
 </div>
 
@@ -430,66 +430,112 @@
 <div class="content-description">
     
 
-            <div class="clearfix text-formatted"><p>In the article <a href="/en/articles/migrate-content-paragraphs-migrate"><em>Migrate Content Paragraphs with Migrate</em></a>, I explore the possibilities of migrating <em>Paragraphs</em> in <em>Drupal</em> using migration configuration files that are independent of the parent node. However, although <em>Paragraphs</em> are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate <em>Paragraphs</em> and link them to the parent within the same migration, thus optimizing the migration process by reducing execution time, eliminating dependencies, and strengthening the parent-child relationship between the two entities, making this process a more convenient method than the one discussed in the previous article.</p>
+            <div class="clearfix text-formatted"><p>Last week I wrote a single line of code. It doesn't seem like much—some say the best programmers write the least—but the downside is that it was a line of code in a <em>YML</em> file. This story is worthy of <a href="https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino"><em>Dj Marmota</em> with the lamp and the store clerk</a> (But less aggressive):</p>
+<p><a href="https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino"></a></p>
+<figure class="align-center caption caption-drupal-media" role="group">
+<article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="Dj Marmota - Ignacio Francolino - YouTube thumbnail: https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/dj_marmota-youtube_thumbnail.jpeg?itok=s7jrZM8N" height="1075" loading="lazy" title="Dj Marmota - Ignacio Francolino - YouTube thumbnail: https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino" width="1920">
+
+
+</div>
+      
+  </article>
+
+<figcaption>- I turn on the lamp, boom! Short circuit! I grab the bike, easy, boom! boom! boom! boom! I head to the hardware store, and I say:<br>- Give me one of those things that goes ticky-ticky for the lamp, pi, the guy gives it to me.<br>- How do I replace it? I ask.<br>+ It’s easy, he says, take off the knob, click, put in the replacement, pi.<br>- Do you take cards?<br>+ No!, click-click!<br>- I give him forty, the guy, ping!, gives me 20.<br>- You owe me $30, I say, and the guy starts with the taxes, blah blah, I’ll give you 20.<br>- $20, pssh! From where?<br>+ Well, if you don’t like it, get lost!<br>- Oh yeah? Right then I go smack!, the guy, boom!, and we start, smack smack! I hit him on the nose, grab him by the neck, start boom! boom! boom! boom! boom! against the counter, grab the change, and I'm out!</figcaption>
+</figure>
+<p>
+</p><p> </p>
 <p> </p>
-<p><strong>Dependencies.</strong> To use this method, it is necessary to install the module for <em>Drupal</em>: <a href="https://www.drupal.org/project/migrate_child_entity_generate"><em>Migrate Child Entity Generate</em></a>. You can install it from the “<em>Extend</em>” section of the <em>Drupal</em> administrator or with <em>Composer</em>:</p>
-<pre><code class="language-bash">composer require drupal/migrate_child_entity_generate</code></pre><p>And enable it from the “<em>Extend</em>” section of the <em>Drupal</em> administrator or with <em>Drush</em>:</p>
-<pre><code class="language-bash">drush en migrate_child_entity_generate</code></pre><p> </p>
-<p><strong>One </strong><em><strong>Migrate</strong></em><strong> plugin to rule them all.</strong> Using the <code>child_entity_generate</code> plugin from the <a href="https://www.drupal.org/project/migrate_child_entity_generate"><em>Migrate Child Entity Generate</em></a> module is very simple. You need to define the plugin, the entity type, the bundle type, and optionally define the variable and default constant values as in the following example:</p>
-<pre><code class="language-yaml">field_name:
-  plugin: child_entity_generate
-  entity_type: paragraph
-  bundle: paragraph_bundle
-  values:
-    field_1: value_1
-    field_2/value: value_2
-  default_values:
-    langcode: "en"
-    field_2/format: "text"</code></pre><p>The difference between <code>values</code> and <code>default_values</code> is that in <code>values</code>, you introduce variable values for each different <em>Paragraph</em> (e.g., a text, a date, etc.), while in <code>default_values</code>, you introduce static and common values for all <em>Paragraphs</em> (e.g., the format of a <em>CKEditor</em> <em>WYSIWYG</em> field, a language selection field, etc.).</p>
 <p> </p>
-<p><strong>One </strong><em><strong>Migrate</strong></em><strong> plugin to rule all values.</strong> Unlike the <code>entity_generate</code> plugin from the <a href="https://www.drupal.org/project/migrate_plus"><em>Migrate Plus</em></a> module, the <code>child_entity_generate</code> plugin does accept an <em>array</em> of values as a parameter, for example:</p>
-<pre><code class="language-yaml">destination:
- plugin: "entity:node"
-source:
- fields:
-   -
-     faq_items:
-       -
-         question: "Some question"
-         answer: "Some answer"
-       -
-         question: "Another question"
-         answer: "Another answer"
-process:
- field_faqs:
-   plugin: child_entity_generate
-   source: faq_items
-   entity_type: field_collection
-   bundle: faq
-   values:
-     field_faq_question: question
-     field_faq_answer/value: answer
-   default_values:
-     field_faq_answer/format: "basic_html"</code></pre><p>The above code would create a <code>faq_items</code> entity of type <em>faq</em> for each item in the <em>array</em> <code>faq_items</code>, assigning the value of <em>question</em> to the <code>field_faq_question</code> field and the value of <em>answer</em> to the <code>field_faq_answer</code> field, with the <em>basic_html</em> format as the default value for the <code>field_faq_answer</code> field for all entities. It would then assign the <code>target_id</code> and <code>target_revision_id</code> of each entity to the <code>field_faqs</code> field.</p>
+<p><strong>A hidden 500 error.</strong> My story begins when, in the local environment of a project using <em>DDEV</em> and <em>Drupal</em> <em>10</em>, I started creating a content type and adding fields to it. After adding ten or fifteen fields, a mix of reused and new ones, I created two specific fields (<em>Text (long with format)</em> and <em>Entity Reference: Paragraph</em>), and as they say in the video above: "<em>Boom! Short circuit!</em>"—the screen showed a 500 error on all field management pages of the node entity type <code><em>/admin/structure/types/manage/*/fields</em></code>:</p>
+<article class="media media--type-image media--view-mode-default align-center">
+  
+      
+
+            <div>  <img alt="Error 500 in Google Chrome browser" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/error_500_in_google_chrome_browser.png?itok=TvxBXaLv" height="909" loading="lazy" title="Error 500 in Google Chrome browser" width="1920">
+
+
+</div>
+      
+  </article>
 <p> </p>
-<table style="background-color:#4c98e5;border:.5rem solid #4c98e5">
-<tbody>
-<tr>
-<td style="background-color:#4c98e5;border:1px solid #4c98e5"><span style="color:#fafafa">ℹ️</span></td>
-</tr>
-<tr>
-<td style="background-color:#4c98e5;border:1px solid #4c98e5"><span style="color:#fdfdfd">As of the publication of this article, the </span><a href="https://www.drupal.org/project/migrate_child_entity_generate"><span style="color:#fdfdfd"><em>Migrate Child Entity Generate</em></span></a><span style="color:#fdfdfd"> module in the stable version <code>1.0.1</code> from June 4, 2024, does not accept references to fields from the current <em>Row</em> in the migration process (e.g., assigning <code>"@other_field"</code> to a <code>field</code>). To fix this, </span><a href="https://www.drupal.org/files/issues/2024-08-07/3466235-6.patch"><span style="color:#fdfdfd">I created a patch</span></a><span style="color:#fdfdfd"> that the module maintainer accepted in the issue "</span><a href="https://www.drupal.org/project/migrate_child_entity_generate/issues/3466235"><span style="color:#fdfdfd"><em>Refine the process value filtering so that it gets values from the row</em></span></a><span style="color:#fdfdfd">". If you need it, </span><a href="https://www.drupal.org/files/issues/2024-08-07/3466235-6.patch"><span style="color:#fdfdfd">you can apply the following patch</span></a><span style="color:#fdfdfd"> or install the development version <code>1.x-dev</code> of the module.</span></td>
-</tr>
-</tbody>
-</table>
+<p>This error only happens on the field management pages of the node entity type, and only when adding those two specific fields, which led me to suspect it was a local issue. Although I was hesitant to push the configuration to other environments, this type of error often stems from communication or processing issues between different web technologies. So, I made a quick Google search, which yielded no helpful results, and then talked to a team member. Now, there were two of us pulling our hair out over this issue, and I didn’t feel as stressed anymore 🤕🤕. After about twenty thousand attempts with different fields (changing the machine name, label, format, or reference, disabling translations in the case of the text), and being able to add other types of fields, it seemed like the battle was lost.</p>
 <p> </p>
-<p><strong>Conclusion.</strong> Efficiently migrating <em>Paragraphs</em> in <em>Drupal</em> is a challenge, but using the <a href="https://www.drupal.org/project/migrate_child_entity_generate"><em>Migrate Child Entity Generate</em></a> module offers a powerful solution. Through this method, it is possible to integrate <em>Paragraphs</em> directly with their parent nodes in a single migration. Additionally, the <code>child_entity_generate</code> plugin provides a robust and effective method for migrating <em>Paragraphs</em> in <em>Drupal</em>.</p>
+<p> </p>
+<p><strong>Google search uncovered great things.</strong> Indeed, the initial search for this problem should have led me to a quick solution on <em>drupal.org</em> or <em>StackOverflow</em>. Instead, I ignored the most text-heavy result, only to later give it another chance out of desperation to fix this 500 error. And I ended up at <a href="https://www.drupal.org/project/paragraphs/issues/3197720"><em>500 Internal Server Error</em></a>, specifically the glorious comment I was looking for: <a href="https://www.drupal.org/project/paragraphs/issues/3197720#comment-15481180">#12</a>, which indicates that in the site's <code>.services.yml</code> files, you need to set the variable <code>http.response.debug_cacheability_headers</code> to <code>FALSE</code> or remove the line altogether.</p>
+<p> </p>
+<p><strong>To the point.</strong> Searching through the project's code, I found the file <code>sites/development.services.yml</code> with the following content:</p>
+<pre><code class="language-yaml"># Local development services.
+#
+# To activate this feature, follow the instructions at the top of the
+# 'example.settings.local.php' file, which sits next to this file.
+parameters:
+ http.response.debug_cacheability_headers: true
+services:
+ cache.backend.null:
+   class: Drupal\Core\Cache\NullBackendFactory</code></pre><p>I had a poker face but was also relieved when I saw the variable mentioned in the comment with the opposite value to what was recommended to fix this bug. So, I replaced the variable's value with <code>FALSE</code>, leaving the file content as follows:</p>
+<pre><code class="language-yaml"># Local development services.
+#
+# To activate this feature, follow the instructions at the top of the
+# 'example.settings.local.php' file, which sits next to this file.
+parameters:
+ http.response.debug_cacheability_headers: false
+services:
+ cache.backend.null:
+   class: Drupal\Core\Cache\NullBackendFactory</code></pre><p>And… drum roll… it works! Thus ending a week of stress and anxiety with this problem on a local branch. Indeed, this issue only affects the local environment because in all other remote environments, this variable was correctly configured. However, the problem was still significant since fields are usually created locally. In any case, all's well that ends well.</p>
+<p> </p>
+<p> </p>
+<p><strong>Conclusion.</strong> What seemed like a small technical detail triggered a series of unexpected challenges, reflecting how unpredictable web development can be. This experience highlights that sometimes the solution to a complex problem may depend on a single line of code, in this case within a <em>YML</em> configuration file—something easily overlooked. Situations like these remind us of the importance of patience in solving errors without tossing the computer out the window. Although the experience can be frustrating, in the end, solving these issues is what makes programming so rewarding.</p>
 <p> </p>
 </div>
       
   </div>
 <div class="content-footer">
     <div class="related-entities-wrapper"><h2 class="related-entities-align-left related-entities-title">Recommended articles</h2>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="Representation of Drupal's cron task manager as Salvador Dalí's “The Persistence of Memory”" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/representacion_del_gestor_de_tareas_del_cron_de_drupal_como_la_persistencia_de_la_memoria_de_salvador_dali.png?itok=OGb0le56" height="270" loading="lazy" title="Representation of Drupal's cron task manager as Salvador Dalí's “The Persistence of Memory”" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p><em>Ultimate Cron</em> to master all automated tasks in <em>Drupal</em></p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>In <em>Drupal</em>, managing automated tasks is crucial, but the built-in cron can be limiting. <em>Ultimate Cron</em> offers a flexible solution that allows you to customize the frequency and scheduling of each task, thus optimizing site performance and preventing server overload. In this article, I show how to start making the most of this module and use it efficiently and effectively.</p>
+</div>
+      
+  </div><a href="/en/articles/ultimate-cron-master-all-automated-tasks-drupal" class="link-content" hreflang="en" aria-label="Ultimate Cron to master all automated tasks in Drupal"></a>
+  </div>
+  </div>
+
+  
+</article>
 
 <article class="node node--type-article">
   <div class="content">
@@ -544,7 +590,7 @@ process:
   
       
 
-            <div>  <img alt="How do birds know how to migrate? - The Daily Illini" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating.jpg?itok=_jBn5CxP" height="270" loading="lazy" title="How do birds know how to migrate? - The Daily Illini" width="423">
+            <div>  <img alt="How do birds know how to migrate? (2)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating-2.jpg?itok=LosZK1pa" height="270" loading="lazy" title="How do birds know how to migrate? (2)" width="423">
 
 
 </div>
@@ -556,58 +602,17 @@ process:
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Migrate Content Paragraphs with Migrate</p>
+            <div class="clearfix text-formatted"><p>Migrate Paragraphs of Content with Migrate (Enhanced version)</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>Content migration between different versions of Drupal can be a challenging task, especially when facing changes in data structure such as the introduction of Paragraphs. This process requires a meticulous approach and deep understanding of entity relationships. With a solid understanding and the right tools, successful migrations are achievable.</p>
+            <div class="clearfix text-formatted"><p>In the article <em>Migrating Paragraphs of Content with Migrate</em>, I explore the possibilities of migrating <em>Paragraphs</em> with migration configuration files independent of the parent node. However, it's true that, although <em>Paragraphs</em> are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate <em>Paragraphs</em> and link them to the parent within the same migration.</p>
 </div>
       
-  </div><a href="/en/articles/migrate-content-paragraphs-migrate" class="link-content" hreflang="en" aria-label="Migrate Content Paragraphs with Migrate"></a>
-  </div>
-  </div>
-
-  
-</article>
-
-<article class="node node--type-article">
-  <div class="content">
-    
-<div class="wrapper wrapper-article wrapper-related-entity">
-    
-<div class="polaroid main-media">
-    
-
-            <div><article class="media media--type-image media--view-mode-landscape-small">
-  
-      
-
-            <div>  <img alt="Error 500 in Google Chrome browser" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/error_500_in_google_chrome_browser.png?itok=zQjbYOyg" height="270" loading="lazy" title="Error 500 in Google Chrome browser" width="423">
-
-
-</div>
-      
-  </article>
-</div>
-      
-  </div>
-<h3 class="title">
-    
-
-            <div class="clearfix text-formatted"><p>Error 500 on the entity fields management page in <em>Drupal</em></p>
-</div>
-      
-  </h3>
-<div class="description-short">
-    
-
-            <div class="clearfix text-formatted"><p>Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with <em>Drupal</em> <em>10</em> led to a lengthy search for solutions.</p>
-</div>
-      
-  </div><a href="/en/articles/error-500-entity-fields-management-page-drupal" class="link-content" hreflang="en" aria-label="Error 500 on the entity fields management page in Drupal"></a>
+  </div><a href="/en/articles/migrate-paragraphs-content-migrate-enhanced-version" class="link-content" hreflang="en" aria-label="Migrate Paragraphs of Content with Migrate (Enhanced version)"></a>
   </div>
   </div>
 
@@ -636,7 +641,7 @@ process:
                   <a href="/en/articles">Articles</a>
               </li>
           <li>
-                  Migrate Paragraphs Of Content With Migrate (Enhanced Version)
+                  Error 500 On The Entity Fields Management Page In Drupal
               </li>
         </ol>
   </nav>
@@ -900,7 +905,7 @@ process:
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/34","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","yaml":"yaml"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/37","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"yaml":"yaml"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
 <script src="/sites/default/files/js/js_bJ7s6zBKNABLNHCP6GuxHhA3FNTmzY7ufPLxuH11mKE.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 
