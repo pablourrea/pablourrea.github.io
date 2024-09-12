@@ -151,20 +151,20 @@
     <guid isPermaLink="false">26 at https://pablourrea.github.io</guid>
     </item>
 <item>
-  <title>Migrar Paragraphs de Contenidos con Migrate</title>
-  <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrate Content Paragraphs with Migrate&lt;/span&gt;
+  <title>Extensiones de Visual Studio Code para desarrollo PHP y Drupal</title>
+  <link>https://pablourrea.github.io/es/articulos/extensiones-de-visual-studio-code-para-desarrollo-php-y-drupal</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Visual Studio Code extensions for PHP and Drupal development&lt;/span&gt;
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Content migration between different versions of Drupal can be a challenging task, especially when facing changes in data structure such as the introduction of Paragraphs. This process requires a meticulous approach and deep understanding of entity relationships. With a solid understanding and the right tools, successful migrations are achievable.&lt;/p&gt;
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;&lt;em&gt;Visual Studio Code&lt;/em&gt; extensions that have transformed the development experience in &lt;em&gt;PHP&lt;/em&gt; and &lt;em&gt;Drupal&lt;/em&gt;. From syntax highlighting to intelligent code completion, these essential tools streamline workflow and ensure more efficient, error-free coding.&lt;/p&gt;
 &lt;/div&gt;
       &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-03-18T22:13:27+00:00" title="Monday, March 18, 2024 - 22:13" class="datetime"&gt;Mon, 18/03/2024 - 22:13&lt;/time&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-03-18T20:00:31+00:00" title="Monday, March 18, 2024 - 20:00" class="datetime"&gt;Mon, 18/03/2024 - 20:00&lt;/time&gt;
 &lt;/span&gt;
 </description>
-  <pubDate>Mon, 18 Mar 2024 22:13:27 +0000</pubDate>
+  <pubDate>Mon, 18 Mar 2024 20:00:31 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">19 at https://pablourrea.github.io</guid>
+    <guid isPermaLink="false">18 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>

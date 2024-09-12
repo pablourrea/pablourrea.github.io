@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-09-12T15:44:52+00:00</lastmod>
+  <lastmod>2024-09-12T19:46:53+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -702,7 +702,7 @@
   <loc>https://pablourrea.github.io/es/proyectos/self-bank</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/self-bank"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/self-bank"/>
-  <lastmod>2024-04-02T15:57:59+00:00</lastmod>
+  <lastmod>2024-09-12T19:26:58+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -715,7 +715,7 @@
   <loc>https://pablourrea.github.io/en/projects/self-bank</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/self-bank"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/self-bank"/>
-  <lastmod>2024-04-02T15:57:59+00:00</lastmod>
+  <lastmod>2024-09-12T19:26:58+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -728,7 +728,7 @@
   <loc>https://pablourrea.github.io/es/proyectos/mancomunidad-de-la-comarca-de-pamplona</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/mancomunidad-de-la-comarca-de-pamplona"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/commonwealth-pamplona-region"/>
-  <lastmod>2024-04-02T15:57:50+00:00</lastmod>
+  <lastmod>2024-09-12T19:26:51+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -741,7 +741,7 @@
   <loc>https://pablourrea.github.io/en/projects/commonwealth-pamplona-region</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/mancomunidad-de-la-comarca-de-pamplona"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/commonwealth-pamplona-region"/>
-  <lastmod>2024-04-02T15:57:50+00:00</lastmod>
+  <lastmod>2024-09-12T19:26:51+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
@@ -753,27 +753,27 @@
  <url>
   <loc>https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
-  <lastmod>2024-08-13T13:36:47+00:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/reina-sofia-national-museum-and-art-center"/>
+  <lastmod>2024-09-12T19:24:52+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
-   <image:loc>https://pablourrea.github.io/sites/default/files/images/mncars.png</image:loc>
-   <image:title>Museo Nacional Centro de Arte Reina Sofía</image:title>
-   <image:caption>Museo Nacional Centro de Arte Reina Sofía</image:caption>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/mncars_2024.png</image:loc>
+   <image:title>Museo Nacional Centro de Arte Reina Sofía (2024)</image:title>
+   <image:caption>Museo Nacional Centro de Arte Reina Sofía (2024)</image:caption>
   </image:image>
  </url>
  <url>
-  <loc>https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia</loc>
+  <loc>https://pablourrea.github.io/en/projects/reina-sofia-national-museum-and-art-center</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/museo-nacional-centro-de-arte-reina-sofia"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/museo-nacional-centro-de-arte-reina-sofia"/>
-  <lastmod>2024-08-13T13:36:47+00:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/reina-sofia-national-museum-and-art-center"/>
+  <lastmod>2024-09-12T19:24:52+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.5</priority>
   <image:image>
-   <image:loc>https://pablourrea.github.io/sites/default/files/images/mncars.png</image:loc>
-   <image:title>Museo Nacional Centro de Arte Reina Sofía</image:title>
-   <image:caption>Museo Nacional Centro de Arte Reina Sofía</image:caption>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/mncars_2024.png</image:loc>
+   <image:title>Museo Nacional Centro de Arte Reina Sofía (2024)</image:title>
+   <image:caption>Museo Nacional Centro de Arte Reina Sofía (2024)</image:caption>
   </image:image>
  </url>
  <url>
@@ -904,6 +904,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/rosazulado.png</image:loc>
    <image:title>RosaZulado</image:title>
    <image:caption>RosaZulado</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/marca-navarra-nafarroa-marka</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/marca-navarra-nafarroa-marka"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/navarra-brand-nafarroa-marka"/>
+  <lastmod>2024-09-12T19:43:34+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/sne-marca-navarra.png</image:loc>
+   <image:title>Marca Navarra</image:title>
+   <image:caption>Marca Navarra</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/navarra-brand-nafarroa-marka</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/marca-navarra-nafarroa-marka"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/navarra-brand-nafarroa-marka"/>
+  <lastmod>2024-09-12T19:43:34+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/sne-marca-navarra.png</image:loc>
+   <image:title>Marca Navarra</image:title>
+   <image:caption>Marca Navarra</image:caption>
   </image:image>
  </url>
  <url>
