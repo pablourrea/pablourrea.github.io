@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="In the article Prism As A REST API Testing Server I delve into the installation and basic configuration of Prism, so in this article, I will skip the installation and validation process that Prism uses with OpenAPI definitions. Using Prism as a REST API proxy has the main advantage of validating requests against the port, but it is also important to note that this functionality redirects all requests to a single REST API port, which can be challenging if you have more than one port in your functionality. This concept is easier to understand with the following diagrams:      Intercepting requests with Prism's network. With this clear, setting up the proxy is as simple as running the following command:prism proxy openapi.yaml https://www.example.com/api/v1/port/ Although Prism allows configuring some proxy settings via parameters, below are the most useful ones:--errors: Recommended parameter. The response to the request generates an error if it does not validate with the definitions. For example:prism proxy openapi.yaml https://www.example.com/api/v1/port/ --errors-h: Changes the IP address to the one provided. For example:prism proxy -h 0.0.0.0 openapi.yaml https://www.example.com/api/v1/port/-p: Changes the network port to the one provided. For example:prism proxy -p 9999 openapi.yaml https://www.example.com/api/v1/port/-m: Enables multiprocessing. Recommended parameter if the proxy is going to receive many requests. For example:prism proxy -m openapi.yaml https://www.example.com/api/v1/port/ Once the server is started, you can make requests to the service from your machine to the local IP (or to the IP of the remote machine if installed on a remote server):curl http://localhost:4010/usersPrism accepts configurations for GET, POST, PUT, PATCH, and DELETE methods.  What happens at the real REST API port? Debugging the request at the real REST API port, you can verify that the proxy has made the request against the port, sending the query parameter “q” with the URL of the port to interact with. For example, if you have a REST API port /users/delete that performs an action with the DELETE method on a user ID in the body {id: 1}, when making the request against the Prism proxy, it validates the request and forwards it to the real REST API port /api/v1/port as /api/v1/port?q=/users/delete with the DELETE method and the request body {id: 1}. The port returns a status code and a message in the body that is transferred to the proxy, and then the proxy returns to the client:    Conclusion. Prism emerges as a valuable tool for validating and redirecting REST API requests, functioning as an effective proxy that ensures requests comply with OpenAPI definitions before being processed by the real REST API port. This not only simplifies the workflow by intercepting and validating requests but also enhances the robustness of applications through strict adherence to the REST API specifications, resulting in a more secure and efficient development process. If you need more information about the package, you can check Prism's documentation. " name="description">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." name="abstract">
-<meta content="Pablo Urrea,Prism as a validation proxy API Server,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,API,Proxy" name="keywords">
-<link href="https://pablourrea.github.io/en/articles/prism-validation-proxy-api-server" rel="canonical">
+<meta content="The other day I installed a completely lawful and paid game on my Steam Deck, in another article I will talk about which methods are the best or most comfortable to install depending on the origin and the size that occupy the games, on this occasion, going one step ahead, when running/opening/running the game I found the following error:  To facilitate the installation of these add-ons used by most video games, Steam provides them with the “Steamworks Common Redistributables” package, but how do you install them manually on the Steam Deck or Linux with Proton and/or Wine?  Installing the Swiss army knife. Assuming that the game is installed and added to Steam, the first thing to do is to install the program “Protontricks”, to do this go to Discover or the application store of your Linux distribution and search for this application:    Microsoft Windows outside Microsoft Windows. Protontricks allows to make many adjustments to Proton environments, but in this occasion select the options “Select the default wineprefix” > “OK” > “Install a Windows DLL or component” > “OK”. This will display a huge alphabetical list of Microsoft components for Windows applications, you will need to search for the component you need, although for Microsoft Visual C++ Runtime there are many similar ones, the correct component is the following (You must substitute XX for the year closest to the current year):PackageTitlePublishervcrun20XXVisual C++ 2015-20XX libraries (concrt140.dll,mfc140.dll,mfc140chs.dll,mfc140cht.dll,mfc140deu. ...MicrosoftYou can select as many components as you need or want to install and continue with “OK”. This will start the installation process of all the selected components (Some like Microsoft Visual C++ Runtime will require two component installation processes) launching the necessary installation windows. In this example Microsoft Visual C++ Runtime will require you to accept the terms and conditions (Optional reading) and click “Install”, wait for it to install and then click “Close” to continue to the next component installer or end the process.Once the process is finished it will return to the initial screen, which you can close if you do not need anything else from Protontricks. And that's it, now when you run the game it will not show the Microsoft component error.  Also in Heroic Games Launcher. If you experience the Microsoft components error in a game installed via Heroic Games Launcher, you can perform the above process in the settings by simply looking for “Winetricks” in the game settings within the launcher.        Credits and Acknowledgements. Thanks to Steam Deck Gaming for the video Fix C++ Runtime Error on Steam Deck Steam OS - Steam and Heroic Games Launcher that inspired and guided this article. " name="description">
+<meta content="If you've ever had trouble running games on your Steam Deck LCD / OLED or Linux with Proton and/or Wine due to missing Microsoft components, this article will guide you step by step on how to easily fix it." name="abstract">
+<meta content='Pablo Urrea,"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Linux,Steam Deck,Proton,Wine' name="keywords">
+<link href="https://pablourrea.github.io/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-andor" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/steam_deck.png" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" property="og:url">
-<meta content="Prism as a validation proxy API Server" property="og:title">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="og:image:secure_url">
-<meta content="image/jpeg" property="og:image:type">
-<meta content="Sat, 25/05/2024 - 16:16" property="og:updated_time">
+<meta content="https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-yo-wine" property="og:url">
+<meta content='"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine' property="og:title">
+<meta content="If you've ever had trouble running games on your Steam Deck LCD / OLED or Linux with Proton and/or Wine due to missing Microsoft components, this article will guide you step by step on how to easily fix it." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck.png" property="og:image:secure_url">
+<meta content="image/png" property="og:image:type">
+<meta content="Wed, 02/10/2024 - 17:34" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,24 +62,24 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Sat, 25/05/2024 - 14:18" property="article:published_time">
-<meta content="Sat, 25/05/2024 - 16:16" property="article:modified_time">
+<meta content="Wed, 02/10/2024 - 16:44" property="article:published_time">
+<meta content="Wed, 02/10/2024 - 17:34" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content="Prism as a validation proxy API Server" property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" property="pin:url">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." property="pin:description">
+<meta content='"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine' property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-yo-wine" property="pin:url">
+<meta content="If you've ever had trouble running games on your Steam Deck LCD / OLED or Linux with Proton and/or Wine due to missing Microsoft components, this article will guide you step by step on how to easily fix it." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="Use Prism as a proxy for REST APIs, a tool that not only validates requests according to OpenAPI definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications." name="twitter:description">
-<meta content="Prism as a validation proxy API Server | Pablo Urrea" name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/network_pixabay.jpg" name="twitter:image">
+<meta content="If you've ever had trouble running games on your Steam Deck LCD / OLED or Linux with Proton and/or Wine due to missing Microsoft components, this article will guide you step by step on how to easily fix it." name="twitter:description">
+<meta content='"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine | Pablo Urrea' name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck.png" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/prism-validation-proxy-api-server" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-yo-wine" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-yo-wine" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-andor" rel="alternate" hreflang="en">
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -88,7 +88,7 @@
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/prism-como-servidor-api-proxy-de-validacion",en:"/en/articles/prism-validation-proxy-api-server",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_en/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-yo-wine",en:"/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-andor",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_en/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -112,12 +112,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "Prism As A Validation Proxy API Server",
-                        "item": "https://pablourrea.github.io/en/articles/prism-validation-proxy-api-server"
+                        "name": "\u0022The Following Component(s) Are Required To Run This Program:\u0022 On Steam Deck LCD / OLED Or Linux With Proton And/or Wine",
+                        "item": "https://pablourrea.github.io/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-andor"
                     }
                 ]
             },
-            "description": "Prism as a validation proxy API Server",
+            "description": "\u0022The following component(s) are required to run this program:\u0022 on Steam Deck LCD / OLED or Linux with Proton and/or Wine",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -160,7 +160,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-05-25T14:18:30+0000"
+                "datePublished": "2024-10-02T16:44:48+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -200,18 +200,16 @@
     ]
 }</script>
 
-    <title>Prism as a validation proxy API Server | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_JFXrhxIUHAC2FC_w2GzSu6PZrJBeJ6rboc8NOTbzSck.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
-<link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
-<link href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_9MEiSo3SeP573SdIp6q9CwDlzlJkMrTGvAVAjbWWHjs.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_qxLiqpy6tCxOsyQ_wpi3tVD4YHOEYohg2odwrfbXEk0.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="print">
-<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj0EOwzAIBD-U1qe-xyKEOiTYWIYc0tfXUmOpl0o9gFgtOwjcaWHX9ohVjsQlVsA9clmoeJxFcQ_fYrLTnHKYwWjqjfEzojYKRVsG4ddwkugMcolMZpDIpgqdFI_WCMbGymmVXr5ZP10Pj08WpxZ-GXfzUzrrn-ANtZ4jkPu3EC4IQnXW8gaWbWYP" rel="stylesheet" media="all">
+    <title>"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_JFXrhxIUHAC2FC_w2GzSu6PZrJBeJ6rboc8NOTbzSck.css?delta=0&language=en&theme=pablo_urrea&include=eJxNjkEKAzEMAz8UmtO-JzheN5g4drCzh_b1DbQLvQgNEkLY6eRlfpQpV2MtE7AX1pN0lSqGPf9DilcsGrlCUNrC-LVoTlnNBwi_76SJVZAfDIqARpEm7KVyuRPcjbE_QH6yLPIHwlxs-gHr_zsd" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_9MEiSo3SeP573SdIp6q9CwDlzlJkMrTGvAVAjbWWHjs.css?delta=1&language=en&theme=pablo_urrea&include=eJxNjkEKAzEMAz8UmtO-JzheN5g4drCzh_b1DbQLvQgNEkLY6eRlfpQpV2MtE7AX1pN0lSqGPf9DilcsGrlCUNrC-LVoTlnNBwi_76SJVZAfDIqARpEm7KVyuRPcjbE_QH6yLPIHwlxs-gHr_zsd" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_qxLiqpy6tCxOsyQ_wpi3tVD4YHOEYohg2odwrfbXEk0.css?delta=2&language=en&theme=pablo_urrea&include=eJxNjkEKAzEMAz8UmtO-JzheN5g4drCzh_b1DbQLvQgNEkLY6eRlfpQpV2MtE7AX1pN0lSqGPf9DilcsGrlCUNrC-LVoTlnNBwi_76SJVZAfDIqARpEm7KVyuRPcjbE_QH6yLPIHwlxs-gHr_zsd" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=3&language=en&theme=pablo_urrea&include=eJxNjkEKAzEMAz8UmtO-JzheN5g4drCzh_b1DbQLvQgNEkLY6eRlfpQpV2MtE7AX1pN0lSqGPf9DilcsGrlCUNrC-LVoTlnNBwi_76SJVZAfDIqARpEm7KVyuRPcjbE_QH6yLPIHwlxs-gHr_zsd" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="no-sidebar page-articles-prism-validation-proxy-api-server role--anonymous section-articles with-subnav">
+      <body class="no-sidebar page-articles-following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-andor role--anonymous section-articles with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -272,7 +270,7 @@
 <div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
   
     
-      <ul class="links"><li data-drupal-link-system-path="node/28" hreflang="es"><a href="/es/articulos/prism-como-servidor-api-proxy-de-validacion" class="language-link" title="Español" data-drupal-link-system-path="node/28" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/28" hreflang="en"><a href="/en/articles/prism-validation-proxy-api-server" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/28" hreflang="en" aria-current="page">en</a></li></ul>
+      <ul class="links"><li data-drupal-link-system-path="node/39" hreflang="es"><a href="/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-yo-wine" class="language-link" title="Español" data-drupal-link-system-path="node/39" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/39" hreflang="en"><a href="/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-andor" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/39" hreflang="en" aria-current="page">en</a></li></ul>
   </div>
 
   </div>
@@ -302,7 +300,7 @@
 <h1 class="content-title">
     
 
-            <div class="clearfix text-formatted"><p>Prism as a validation proxy API Server</p>
+            <div class="clearfix text-formatted"><p>"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine</p>
 </div>
       
   </h1>
@@ -310,9 +308,10 @@
     
 
       <div>
-              <div><a href="/en/articles/categories/nodejs" hreflang="en">NodeJS</a></div>
-              <div><a href="/en/articles/categories/api" hreflang="en">API</a></div>
-              <div><a href="/en/articles/categories/proxy" hreflang="en">Proxy</a></div>
+              <div><a href="/en/articles/categories/linux" hreflang="en">Linux</a></div>
+              <div><a href="/en/articles/categories/steam-deck" hreflang="en">Steam Deck</a></div>
+              <div><a href="/en/articles/categories/proton" hreflang="en">Proton</a></div>
+              <div><a href="/en/articles/categories/wine" hreflang="en">Wine</a></div>
           </div>
   
   </div>
@@ -325,7 +324,7 @@
   
       
 
-            <div>  <img alt="Network - Pixabay" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/network_pixabay.jpg?itok=1MMEELD_" height="540" loading="lazy" title="Network - Pixabay" width="1072">
+            <div>  <img alt="Steam: Steam Deck" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/steam_deck.png?itok=glWNnzvn" height="540" loading="lazy" title="Steam: Steam Deck" width="1072">
 
 
 </div>
@@ -336,7 +335,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="clearfix text-formatted"><p>Network - Pixabay</p>
+            <div class="clearfix text-formatted"><p><em>Steam Deck</em> - <em>Steam</em></p>
 </div>
       
   </div>
@@ -410,7 +409,7 @@
 <div class="reading-time">
     
 
-            <div content="5">5 minutes reading</div>
+            <div content="7">7 minutes reading</div>
       
   </div>
 <div class="authorship-dates">
@@ -420,8 +419,8 @@
     Published
   </div>
 
-  <time class="datetime" datetime="2024-05-25">
-    25/05/2024
+  <time class="datetime" datetime="2024-10-02">
+    02/10/2024
   </time>
 </div>
 
@@ -431,73 +430,69 @@
 <div class="content-description">
     
 
-            <div class="clearfix text-formatted"><p>In the article <a href="https://pablourrea.github.io/en/articles/prism-rest-api-testing-server/"><em>Prism As A REST API Testing Server</em></a> I delve into the installation and basic configuration of <em>Prism</em>, so in this article, I will skip the installation and validation process that <em>Prism</em> uses with <em>OpenAPI</em> definitions.</p>
-<p> </p>
-<p>Using <em>Prism</em> as a <em>REST API proxy</em> has the main advantage of validating requests against the port, but it is also important to note that this functionality redirects all requests to a single REST API port, which can be challenging if you have more than one port in your functionality. This concept is easier to understand with the following diagrams:</p>
-<p> </p>
+            <div class="clearfix text-formatted"><p>The other day I installed a completely lawful and paid game on my <em>Steam Deck</em>, in another article I will talk about which methods are the best or most comfortable to install depending on the origin and the size that occupy the games, on this occasion, going one step ahead, when running/opening/running the game I found the following error:</p>
 <figure class="caption caption-drupal-media" role="group">
 <article class="media media--type-image media--view-mode-default">
   
       
 
-            <div>  <img alt="Prism As A Validation Proxy API Server - The proxy receives requests to multiple REST API ports and redirects them to a single real port" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/prism_as_a_validation_proxy_api_server-the_proxy_receives_requests_to_multiple_rest_api_ports_and_redirects_them_to_a_single_real_port.png?itok=ml7iFBzA" height="563" loading="lazy" title="Prism As A Validation Proxy API Server - The proxy receives requests to multiple REST API ports and redirects them to a single real port" width="1920">
+            <div>  <img alt="The following component(s) are required to run this program: Microsoft Visual C++ Runtime" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.jpg?itok=buN6yxmw" height="691" loading="lazy" title="The following component(s) are required to run this program: Microsoft Visual C++ Runtime" width="1920">
 
 
 </div>
       
   </article>
 
-<figcaption><em>The proxy receives requests to multiple REST API ports and redirects them to a single real port.</em></figcaption>
+<figcaption>The following component(s) are required to run this program: Microsoft Visual C++ Runtime</figcaption>
 </figure>
 <p> </p>
-<figure class="caption caption-drupal-media" role="group">
+<p>To facilitate the installation of these add-ons used by most video games, <em>Steam</em> provides them with the “<em>Steamworks Common Redistributables</em>” package, but how do you install them manually on the <em>Steam Deck</em> or <em>Linux</em> with <em>Proton</em> and/or <em>Wine</em>?</p>
+<p> </p>
+<p> </p>
+<p><strong>Installing the Swiss army knife.</strong> Assuming that the game is installed and added to <em>Steam</em>, the first thing to do is to install the program “<em>Protontricks</em>”, to do this go to <em>Discover</em> or the application store of your <em>Linux</em> distribution and search for this application:</p>
 <article class="media media--type-image media--view-mode-default">
   
       
 
-            <div>  <img alt="Prism As A Validation Proxy API Server - The proxy receives requests to a single REST API port and redirects them to the real port, facilitating development" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/prism_as_a_validation_proxy_api_server-the_proxy_receives_requests_to_a_single_rest_api_port_and_redirects_them_to_the_real_port_facilitating_development.png?itok=AIPMytTW" height="116" loading="lazy" title="Prism As A Validation Proxy API Server - The proxy receives requests to a single REST API port and redirects them to the real port, facilitating development" width="1920">
+            <div>  <img alt="Discover: Protontricks" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/discover_protontricks_en.png?itok=EtWb_Ptr" height="346" loading="lazy" title="Discover: Protontricks" width="1920">
 
 
 </div>
       
   </article>
-
-<figcaption><em>The proxy receives requests to a single REST API port and redirects them to the real port, facilitating development.</em></figcaption>
-</figure>
 <p> </p>
 <p> </p>
-<p><strong>Intercepting requests with Prism's network.</strong> With this clear, setting up the proxy is as simple as running the following command:</p>
-<pre><code class="language-bash">prism proxy openapi.yaml https://www.example.com/api/v1/port/</code></pre><p> </p>
-<p>Although Prism allows configuring some proxy settings via parameters, below are the most useful ones:<br><strong>--errors:</strong> Recommended parameter. The response to the request generates an error if it does not validate with the definitions. For example:</p>
-<pre><code class="language-bash">prism proxy openapi.yaml https://www.example.com/api/v1/port/ --errors</code></pre><p><strong>-h:</strong> Changes the IP address to the one provided. For example:</p>
-<pre><code class="language-bash">prism proxy -h 0.0.0.0 openapi.yaml https://www.example.com/api/v1/port/</code></pre><p><strong>-p:</strong> Changes the network port to the one provided. For example:</p>
-<pre><code class="language-bash">prism proxy -p 9999 openapi.yaml https://www.example.com/api/v1/port/</code></pre><p><strong>-m:</strong> Enables multiprocessing. Recommended parameter if the proxy is going to receive many requests. For example:</p>
-<pre><code class="language-bash">prism proxy -m openapi.yaml https://www.example.com/api/v1/port/</code></pre><p> </p>
-<p>Once the server is started, you can make requests to the service from your machine to the local IP (or to the IP of the remote machine if installed on a remote server):</p>
-<pre><code class="language-bash">curl http://localhost:4010/users</code></pre><p><em>Prism</em> accepts configurations for <em>GET</em>, <em>POST</em>, <em>PUT</em>, <em>PATCH</em>, and <em>DELETE</em> methods.</p>
+<p> </p>
+<p><em><strong>Microsoft Windows</strong></em><strong> outside </strong><em><strong>Microsoft Windows</strong></em><strong>.</strong> <em>Protontricks</em> allows to make many adjustments to <em>Proton</em> environments, but in this occasion select the options “<em>Select the default wineprefix</em>” > “<em>OK</em>” > “<em>Install a Windows DLL or component</em>” > “<em>OK</em>”. This will display a huge alphabetical list of <em>Microsoft</em> components for <em>Windows</em> applications, you will need to search for the component you need, although for <em>Microsoft Visual C++ Runtime</em> there are many similar ones, the correct component is the following (You must substitute XX for the year closest to the current year):</p>
+<table style="border:1px solid #4c4c4c">
+<tbody>
+<tr>
+<td style="background-color:#e5e5e5;border:1px solid #4c4c4c;text-align:center"><span style="color:#545454"><strong>Package</strong></span></td>
+<td style="background-color:#e5e5e5;border:1px solid #4c4c4c;text-align:center"><span style="color:#545454"><strong>Title</strong></span></td>
+<td style="background-color:#e5e5e5;border:1px solid #4c4c4c;text-align:center"><span style="color:#545454"><strong>Publisher</strong></span></td>
+</tr>
+<tr>
+<td style="border:1px solid #4c4c4c;text-align:center">vcrun20XX</td>
+<td style="border:1px solid #4c4c4c;text-align:center">Visual C++ 2015-20XX libraries (concrt140.dll,mfc140.dll,mfc140chs.dll,mfc140cht.dll,mfc140deu. ...</td>
+<td style="border:1px solid #4c4c4c;text-align:center"><em>Microsoft</em></td>
+</tr>
+</tbody>
+</table>
+<p>You can select as many components as you need or want to install and continue with “<em>OK</em>”. This will start the installation process of all the selected components (Some like <em>Microsoft Visual C++ Runtime</em> will require two component installation processes) launching the necessary installation windows. In this example <em>Microsoft Visual C++ Runtime</em> will require you to accept the terms and conditions (Optional reading) and click “<em>Install</em>”, wait for it to install and then click “<em>Close</em>” to continue to the next component installer or end the process.</p>
+<p>Once the process is finished it will return to the initial screen, which you can close if you do not need anything else from <em>Protontricks</em>. And that's it, now when you run the game it will not show the <em>Microsoft</em> component error.</p>
 <p> </p>
 <p> </p>
-<p><strong>What happens at the real REST API port?</strong> Debugging the request at the real REST API port, you can verify that the proxy has made the request against the port, sending the query parameter “q” with the URL of the port to interact with. For example, if you have a REST API port <code>/users/delete</code> that performs an action with the <em>DELETE</em> method on a user ID in the body <code>{id: 1}</code>, when making the request against the Prism proxy, it validates the request and forwards it to the real REST API port <code>/api/v1/port</code> as <code>/api/v1/port?q=/users/delete</code> with the <em>DELETE</em> method and the request body <code>{id: 1}</code>. The port returns a <em>status code</em> and a <em>message in the body</em> that is transferred to the proxy, and then the proxy returns to the client:</p>
-<p> </p>
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-  
-      
-
-            <div>  <img alt="Prism As A Validation Proxy API Server - The proxy returns the requests from the real port, or a validation error according to the OpenAPI definitions." class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/prism_as_a_validation_proxy_api_server-the_proxy_returns_the_requests_from_the_real_port_or_a_validation_error_according_to_the_openapi_definitions.png?itok=UJDYSO3W" height="116" loading="lazy" title="Prism As A Validation Proxy API Server - The proxy returns the requests from the real port, or a validation error according to the OpenAPI definitions." width="1920">
-
-
-</div>
-      
-  </article>
-
-<figcaption><em>The proxy returns the requests from the real port, or a validation error according to the OpenAPI definitions.</em></figcaption>
-</figure>
+<p><strong>Also in </strong><em><strong>Heroic Games Launcher</strong></em><strong>.</strong> If you experience the <em>Microsoft</em> components error in a game installed via <em>Heroic Games Launcher</em>, you can perform the above process in the settings by simply looking for “<em>Winetricks</em>” in the game settings within the launcher.</p>
 <p> </p>
 <p> </p>
-<p><strong>Conclusion.</strong> <em>Prism</em> emerges as a valuable tool for validating and redirecting REST API requests, functioning as an effective proxy that ensures requests comply with <em>OpenAPI</em> definitions before being processed by the real REST API port. This not only simplifies the workflow by intercepting and validating requests but also enhances the robustness of applications through strict adherence to the REST API specifications, resulting in a more secure and efficient development process.</p>
-<p><br> </p>
-<p><span style='background-color:#fafafa;color:#0c0c0c;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif'><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:.48px;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:normal;widows:2;word-spacing:0">If you need more information about the package, you can check </span></span><a href="https://docs.stoplight.io/docs/prism" style='-webkit-text-stroke-width:0;background-color:#fafafa;box-sizing:inherit;color:#545454;display:inline-block;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;letter-spacing:.48px;orphans:2;text-align:start;text-decoration:none;text-indent:0;text-transform:none;transition:all .5s ease 0s;white-space:normal;widows:2;word-spacing:0'><em><strong>Prism's</strong></em><strong> documentation</strong></a><span style='background-color:#fafafa;color:#0c0c0c;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif'><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-size:16px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:.48px;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:normal;widows:2;word-spacing:0">.</span></span><br> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Credits and Acknowledgements.</strong> Thanks to <a href="https://www.youtube.com/@SteamDeckGaming"><em>Steam Deck Gaming</em></a> for the video <a href="https://www.youtube.com/watch?v=a0PiPf775h4"><em>Fix C++ Runtime Error on Steam Deck Steam OS - Steam and Heroic Games Launcher</em></a> that inspired and guided this article.</p>
+<p> </p>
 </div>
       
   </div>
@@ -516,7 +511,7 @@
   
       
 
-            <div>  <img alt="Galaxy Sphere - Craiyon" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/galaxy_sphere.png?itok=bxJ3ul6V" height="270" loading="lazy" title="Galaxy Sphere - Craiyon" width="423">
+            <div>  <img alt="Graphic representation of a VPN" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/vpn.png?itok=1KGTnHTK" height="270" loading="lazy" title="Graphic representation of a VPN" width="423">
 
 
 </div>
@@ -528,17 +523,17 @@
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Prism as a REST API testing server</p>
+            <div class="clearfix text-formatted"><p>Configure <em>Fortinet</em> VPN on <em>Linux</em></p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>Prism simplifies REST API development by providing a realistic and controlled testing environment, without relying on external servers. An essential tool for REST API developers.</p>
+            <div class="clearfix text-formatted"><p>On <em>Linux</em>, the <em>Fortinet</em> VPN can be configured through the graphical interface, the console, or the system's network connections, each method having its own advantages and disadvantages. It combines ease of use and technical flexibility, catering to various user needs.</p>
 </div>
       
-  </div><a href="/en/articles/prism-rest-api-testing-server" class="link-content" hreflang="en" aria-label="Prism as a REST API testing server"></a>
+  </div><a href="/en/articles/configure-fortinet-vpn-linux" class="link-content" hreflang="en" aria-label="Configure Fortinet VPN on Linux"></a>
   </div>
   </div>
 
@@ -557,7 +552,7 @@
   
       
 
-            <div>  <img alt="The Tower of Babel represented together with the logos of JavaScript and different browsers" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/la_torre_de_babel_con_javascript_y_navegadores.jpg?itok=MUt0NZul" height="270" loading="lazy" title="The Tower of Babel represented together with the logos of JavaScript and different browsers" width="423">
+            <div>  <img alt="How do birds know how to migrate? (2)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating-2.jpg?itok=LosZK1pa" height="270" loading="lazy" title="How do birds know how to migrate? (2)" width="423">
 
 
 </div>
@@ -569,17 +564,17 @@
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Compile, compress, and improve the compatibility of JavaScript files with <em>Babel</em></p>
+            <div class="clearfix text-formatted"><p>Migrate Paragraphs of Content with Migrate (Enhanced version)</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>The automatic compilation, compression, and optimization of <em>JavaScript</em> is an essential practice for improving web page performance.</p>
+            <div class="clearfix text-formatted"><p>In the article <em>Migrating Paragraphs of Content with Migrate</em>, I explore the possibilities of migrating <em>Paragraphs</em> with migration configuration files independent of the parent node. However, it's true that, although <em>Paragraphs</em> are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate <em>Paragraphs</em> and link them to the parent within the same migration.</p>
 </div>
       
-  </div><a href="/en/articles/compile-compress-and-improve-compatibility-javascript-files-babel" class="link-content" hreflang="en" aria-label="Compile, compress, and improve the compatibility of JavaScript files with Babel"></a>
+  </div><a href="/en/articles/migrate-paragraphs-content-migrate-enhanced-version" class="link-content" hreflang="en" aria-label="Migrate Paragraphs of Content with Migrate (Enhanced version)"></a>
   </div>
   </div>
 
@@ -598,7 +593,7 @@
   
       
 
-            <div>  <img alt="SASS logo" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/sass_logo.jpg?itok=jF8H5t5v" height="270" loading="lazy" title="SASS logo" width="423">
+            <div>  <img alt="A close-up of a street sign surrounded by leaves - Photo by Justin Little on Unsplash" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/un_primer_plano_de_un_letrero_de_la_calle_rodeado_de_hojas-justin_little-unsplash.jpg?itok=rpaOfIp4" height="270" loading="lazy" title="A close-up of a street sign surrounded by leaves - Photo by Justin Little on Unsplash" width="423">
 
 
 </div>
@@ -610,17 +605,17 @@
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Optimization and automatic compilation of web styles with <em>SASS</em></p>
+            <div class="clearfix text-formatted"><p>Error 500 on the entity fields management page in <em>Drupal</em></p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>Discover how <em>SASS</em> (<em>Super CSS</em> for friends) can improve the performance and organization of <em>CSS</em> stylesheets. I will show you how to install and use it efficiently in your projects.</p>
+            <div class="clearfix text-formatted"><p>Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with <em>Drupal</em> <em>10</em> led to a lengthy search for solutions.</p>
 </div>
       
-  </div><a href="/en/articles/optimization-and-automatic-compilation-web-styles-sass" class="link-content" hreflang="en" aria-label="Optimization and automatic compilation of web styles with SASS"></a>
+  </div><a href="/en/articles/error-500-entity-fields-management-page-drupal" class="link-content" hreflang="en" aria-label="Error 500 on the entity fields management page in Drupal"></a>
   </div>
   </div>
 
@@ -649,7 +644,7 @@
                   <a href="/en/articles">Articles</a>
               </li>
           <li>
-                  Prism As A Validation Proxy API Server
+                  "The Following Component(s) Are Required To Run This Program:" On Steam Deck LCD / OLED Or Linux With Proton And/or Wine
               </li>
         </ol>
   </nav>
@@ -747,7 +742,7 @@
 
                   </li>
                       
-        <li class="menu-item menu-item--active-trail menu-item--expanded">
+        <li class="menu-item menu-item--expanded">
           <span>Pages</span>
                                 
   
@@ -803,7 +798,7 @@
 
                   </li>
                       
-        <li class="menu-item menu-item--active-trail">
+        <li class="menu-item">
           <a href="/en/projects/categories" target="_self" data-drupal-link-system-path="node/22">Project categories 📊</a>
                                 
   
@@ -913,9 +908,7 @@
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/28","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
-<script src="/sites/default/files/js/js_6PkY_hBlIVFJe6JMa2j9zc09Q40KQsvcagMDPGWiY4w.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSszRychMz8gB4pKs4vjMvILSkvi0zJyS1CJ9JAkAZ1wWJg"></script>
-<script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
+    <script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSswBAEUGBy0"></script>
 
       </body>
 </html>

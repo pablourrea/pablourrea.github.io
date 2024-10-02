@@ -7,6 +7,22 @@
     <language>es</language>
     
     <item>
+  <title>"The following component(s) are required to run this program:" en Steam Deck LCD / OLED o Linux con Proton y/o Wine</title>
+  <link>https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-yo-wine</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;"The following component(s) are required to run this program:" en Steam Deck LCD / OLED o Linux con Proton y/o Wine&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Si alguna vez has tenido problemas para ejecutar juegos en tu &lt;em&gt;Steam Deck LCD / OLED&lt;/em&gt; o &lt;em&gt;Linux&lt;/em&gt; con &lt;em&gt;Proton&lt;/em&gt; y/o &lt;em&gt;Wine&lt;/em&gt; debido a componentes de &lt;em&gt;Microsoft&lt;/em&gt; faltantes, este artículo te guiará paso a paso en cómo solucionarlo fácilmente.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-10-02T16:44:48+00:00" title="Miércoles, Octubre 2, 2024 - 16:44" class="datetime"&gt;Mié, 02/10/2024 - 16:44&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Wed, 02 Oct 2024 16:44:48 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">39 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Error 500 en la página de gestión de campos de entidad de Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Error 500 en la página de gestión de campos de entidad de Drupal&lt;/span&gt;
@@ -149,22 +165,6 @@
   <pubDate>Mon, 15 Apr 2024 16:09:49 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">26 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Extensiones de Visual Studio Code para desarrollo PHP y Drupal</title>
-  <link>https://pablourrea.github.io/es/articulos/extensiones-de-visual-studio-code-para-desarrollo-php-y-drupal</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Extensiones de Visual Studio Code para desarrollo PHP y Drupal&lt;/span&gt;
-
-
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Las extensiones de &lt;em&gt;Visual Studio Code&lt;/em&gt; que han transformando la experiencia de desarrollo en &lt;em&gt;PHP&lt;/em&gt; y &lt;em&gt;Drupal&lt;/em&gt;. Desde resaltado de sintaxis hasta completado inteligente de código, estas herramientas esenciales optimizan el flujo de trabajo y garantizan una codificación más eficiente y libre de errores.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-03-18T20:00:31+00:00" title="Lunes, Marzo 18, 2024 - 20:00" class="datetime"&gt;Lun, 18/03/2024 - 20:00&lt;/time&gt;
-&lt;/span&gt;
-</description>
-  <pubDate>Mon, 18 Mar 2024 20:00:31 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">18 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>
