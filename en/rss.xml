@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>DrupalCamp 2024: Benidorm</title>
+  <link>https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;DrupalCamp 2024: Benidorm&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Last October, Benidorm hosted grandparents, British visitors, and attendees of the &lt;em&gt;DrupalCamp 2024&lt;/em&gt;, the annual regional event that brings together &lt;em&gt;Drupal&lt;/em&gt; developers in Spain.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-11-15T22:04:10+00:00" title="Friday, November 15, 2024 - 22:04" class="datetime"&gt;Fri, 15/11/2024 - 22:04&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Fri, 15 Nov 2024 22:04:10 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">40 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>"The following component(s) are required to run this program:" en Steam Deck LCD / OLED o Linux con Proton y/o Wine</title>
   <link>https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-o-wine</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine&lt;/span&gt;
@@ -149,22 +165,6 @@
   <pubDate>Sat, 25 May 2024 14:18:30 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">28 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Prism como servidor API REST de pruebas</title>
-  <link>https://pablourrea.github.io/es/articulos/prism-como-servidor-api-rest-de-pruebas</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Prism as a REST API testing server&lt;/span&gt;
-
-
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Prism simplifies REST API development by providing a realistic and controlled testing environment, without relying on external servers. An essential tool for REST API developers.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-04-15T16:09:49+00:00" title="Monday, April 15, 2024 - 16:09" class="datetime"&gt;Mon, 15/04/2024 - 16:09&lt;/time&gt;
-&lt;/span&gt;
-</description>
-  <pubDate>Mon, 15 Apr 2024 16:09:49 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">26 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>
