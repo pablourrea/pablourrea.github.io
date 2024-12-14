@@ -20,7 +20,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-11-15T22:42:37+00:00</lastmod>
+  <lastmod>2024-12-14T01:26:23+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -442,7 +442,7 @@
   <loc>https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/drupalcamp-2024-benidorm"/>
-  <lastmod>2024-11-15T22:22:56+00:00</lastmod>
+  <lastmod>2024-12-14T00:57:47+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -455,7 +455,7 @@
   <loc>https://pablourrea.github.io/en/articles/drupalcamp-2024-benidorm</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/drupalcamp-2024-benidorm"/>
-  <lastmod>2024-11-15T22:22:56+00:00</lastmod>
+  <lastmod>2024-12-14T00:57:47+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -985,6 +985,32 @@
   </image:image>
  </url>
  <url>
+  <loc>https://pablourrea.github.io/es/proyectos/national-geographic</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/national-geographic"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/national-geographic"/>
+  <lastmod>2024-12-14T01:15:53+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/nationalgeographic.png</image:loc>
+   <image:title>National Geographic España</image:title>
+   <image:caption>National Geographic España</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/national-geographic</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/national-geographic"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/national-geographic"/>
+  <lastmod>2024-12-14T01:15:53+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/nationalgeographic.png</image:loc>
+   <image:title>National Geographic España</image:title>
+   <image:caption>National Geographic España</image:caption>
+  </image:image>
+ </url>
+ <url>
   <loc>https://pablourrea.github.io/es/articulos/categorias/drupal-desacoplado</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/drupal-desacoplado"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/decoupled-drupal"/>
@@ -1324,7 +1350,7 @@
   <loc>https://pablourrea.github.io/es/articulos/categorias/eventos</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/eventos"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/events"/>
-  <lastmod>2024-11-15T22:06:29+00:00</lastmod>
+  <lastmod>2024-12-14T00:31:20+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
  </url>
@@ -1332,7 +1358,7 @@
   <loc>https://pablourrea.github.io/en/articles/categories/events</loc>
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/eventos"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/events"/>
-  <lastmod>2024-11-15T22:06:29+00:00</lastmod>
+  <lastmod>2024-12-14T00:31:20+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
  </url>
@@ -1493,6 +1519,22 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/proyectos-destacados"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/featured-projects"/>
   <lastmod>2024-08-13T19:33:59+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/proyectos/categorias/react</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/react"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/react"/>
+  <lastmod>2024-12-14T01:19:18+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/projects/categories/react</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/proyectos/categorias/react"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/projects/categories/react"/>
+  <lastmod>2024-12-14T01:19:18+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
  </url>
