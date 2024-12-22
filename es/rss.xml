@@ -9,15 +9,15 @@
     <item>
   <title>DrupalCamp 2024: Benidorm</title>
   <link>https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;DrupalCamp 2024: Benidorm&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">DrupalCamp 2024: Benidorm</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;El pasado octubre Benidorm acogió a abuelos, británicos y asistentes a la &lt;em&gt;DrupalCamp 2024&lt;/em&gt;, el evento regional anual que reúne a los desarrolladores de &lt;em&gt;Drupal&lt;/em&gt; en España.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-12-14T00:20:49+00:00" title="Sábado, Diciembre 14, 2024 - 00:20" class="datetime"&gt;Sáb, 14/12/2024 - 00:20&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>El pasado octubre Benidorm acogió a abuelos, británicos y asistentes a la <em>DrupalCamp 2024</em>, el evento regional anual que reúne a los desarrolladores de <em>Drupal</em> en España.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Sáb, 14/12/2024 - 00:20
+</span>
+]]></description>
   <pubDate>Sat, 14 Dec 2024 00:20:49 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">40 at https://pablourrea.github.io</guid>
@@ -25,15 +25,15 @@
 <item>
   <title>"The following component(s) are required to run this program:" en Steam Deck LCD / OLED o Linux con Proton y/o Wine</title>
   <link>https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-o-wine</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;"The following component(s) are required to run this program:" en Steam Deck LCD / OLED o Linux con Proton y/o Wine&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">"The following component(s) are required to run this program:" en Steam Deck LCD / OLED o Linux con Proton y/o Wine</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Si alguna vez has tenido problemas para ejecutar juegos en tu &lt;em&gt;Steam Deck LCD / OLED&lt;/em&gt; o &lt;em&gt;Linux&lt;/em&gt; con &lt;em&gt;Proton&lt;/em&gt; y/o &lt;em&gt;Wine&lt;/em&gt; debido a componentes de &lt;em&gt;Microsoft&lt;/em&gt; faltantes, este artículo te guiará paso a paso en cómo solucionarlo fácilmente.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-10-02T16:44:48+00:00" title="Miércoles, Octubre 2, 2024 - 16:44" class="datetime"&gt;Mié, 02/10/2024 - 16:44&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>Si alguna vez has tenido problemas para ejecutar juegos en tu <em>Steam Deck LCD / OLED</em> o <em>Linux</em> con <em>Proton</em> y/o <em>Wine</em> debido a componentes de <em>Microsoft</em> faltantes, este artículo te guiará paso a paso en cómo solucionarlo fácilmente.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Mié, 02/10/2024 - 16:44
+</span>
+]]></description>
   <pubDate>Wed, 02 Oct 2024 16:44:48 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">39 at https://pablourrea.github.io</guid>
@@ -41,15 +41,15 @@
 <item>
   <title>Error 500 en la página de gestión de campos de entidad de Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Error 500 en la página de gestión de campos de entidad de Drupal&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Error 500 en la página de gestión de campos de entidad de Drupal</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;A veces, una pequeña línea de código puede desencadenar grandes problemas. En la última semana, un error 500 inesperado en un entorno local con &lt;em&gt;Drupal&lt;/em&gt; &lt;em&gt;10&lt;/em&gt; llevó a una larga búsqueda de soluciones.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-09-08T16:29:30+00:00" title="Domingo, Septiembre 8, 2024 - 16:29" class="datetime"&gt;Dom, 08/09/2024 - 16:29&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>A veces, una pequeña línea de código puede desencadenar grandes problemas. En la última semana, un error 500 inesperado en un entorno local con <em>Drupal</em> <em>10</em> llevó a una larga búsqueda de soluciones.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Dom, 08/09/2024 - 16:29
+</span>
+]]></description>
   <pubDate>Sun, 08 Sep 2024 16:29:30 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">37 at https://pablourrea.github.io</guid>
@@ -57,15 +57,15 @@
 <item>
   <title>Ultimate Cron para dominar todas las tareas automáticas en Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Ultimate Cron para dominar todas las tareas automáticas en Drupal&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Ultimate Cron para dominar todas las tareas automáticas en Drupal</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;En &lt;em&gt;Drupal&lt;/em&gt;, la gestión de tareas automáticas es crucial, pero el cron integrado puede ser limitante. &lt;em&gt;Ultimate Cron&lt;/em&gt; ofrece una solución flexible que permite personalizar la frecuencia y programación de cada tarea, optimizando así el rendimiento del sitio y evitando sobrecargas en el servidor. En este artículo muestro como empezar a exprimir este módulo y utilizarlo eficiente y eficazmente.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-27T17:48:14+00:00" title="Martes, Agosto 27, 2024 - 17:48" class="datetime"&gt;Mar, 27/08/2024 - 17:48&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>En <em>Drupal</em>, la gestión de tareas automáticas es crucial, pero el cron integrado puede ser limitante. <em>Ultimate Cron</em> ofrece una solución flexible que permite personalizar la frecuencia y programación de cada tarea, optimizando así el rendimiento del sitio y evitando sobrecargas en el servidor. En este artículo muestro como empezar a exprimir este módulo y utilizarlo eficiente y eficazmente.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Mar, 27/08/2024 - 17:48
+</span>
+]]></description>
   <pubDate>Tue, 27 Aug 2024 17:48:14 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">36 at https://pablourrea.github.io</guid>
@@ -73,15 +73,15 @@
 <item>
   <title>Actualización selectiva de entidades durante migraciones de Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Actualización selectiva de entidades durante migraciones de Drupal&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Actualización selectiva de entidades durante migraciones de Drupal</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-25T19:19:39+00:00" title="Domingo, Agosto 25, 2024 - 19:19" class="datetime"&gt;Dom, 25/08/2024 - 19:19&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>Cuando se realizan migraciones en un sistema, a veces es necesario actualizar entidades existentes en lugar de crear nuevas. Sin embargo, este proceso puede ser complicado si solo se deben modificar algunas entidades específicas. Este artículo presenta distintos enfoques para facilitar la gestión de migraciones según las necesidades específicas de cada caso.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Dom, 25/08/2024 - 19:19
+</span>
+]]></description>
   <pubDate>Sun, 25 Aug 2024 19:19:39 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">35 at https://pablourrea.github.io</guid>
@@ -89,15 +89,15 @@
 <item>
   <title>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</title>
   <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;En el artículo &lt;em&gt;Migrar Paragraphs de Contenidos con Migrate&lt;/em&gt; exploro las posibilidades para migrar &lt;em&gt;Paragraphs&lt;/em&gt; con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los &lt;em&gt;Paragraphs&lt;/em&gt; una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar &lt;em&gt;Paragraphs&lt;/em&gt; y casarlos con el padre dentro de la misma migración que este.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-10T14:32:17+00:00" title="Sábado, Agosto 10, 2024 - 14:32" class="datetime"&gt;Sáb, 10/08/2024 - 14:32&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>En el artículo <em>Migrar Paragraphs de Contenidos con Migrate</em> exploro las posibilidades para migrar <em>Paragraphs</em> con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los <em>Paragraphs</em> una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar <em>Paragraphs</em> y casarlos con el padre dentro de la misma migración que este.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Sáb, 10/08/2024 - 14:32
+</span>
+]]></description>
   <pubDate>Sat, 10 Aug 2024 14:32:17 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">34 at https://pablourrea.github.io</guid>
@@ -105,15 +105,15 @@
 <item>
   <title>Configurar VPN de Fortinet en Linux</title>
   <link>https://pablourrea.github.io/es/articulos/configurar-vpn-de-fortinet-en-linux</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Configurar VPN de Fortinet en Linux&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Configurar VPN de Fortinet en Linux</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;En &lt;em&gt;Linux&lt;/em&gt;, la VPN de &lt;em&gt;Fortinet&lt;/em&gt; se puede configurar a través de la interfaz gráfica, la consola o las conexiones de red del sistema, cada método con sus ventajas y desventajas. Combina facilidad de uso y flexibilidad técnica, adaptándose a diversas necesidades de los usuarios.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-07-20T14:51:48+00:00" title="Sábado, Julio 20, 2024 - 14:51" class="datetime"&gt;Sáb, 20/07/2024 - 14:51&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>En <em>Linux</em>, la VPN de <em>Fortinet</em> se puede configurar a través de la interfaz gráfica, la consola o las conexiones de red del sistema, cada método con sus ventajas y desventajas. Combina facilidad de uso y flexibilidad técnica, adaptándose a diversas necesidades de los usuarios.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Sáb, 20/07/2024 - 14:51
+</span>
+]]></description>
   <pubDate>Sat, 20 Jul 2024 14:51:48 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">33 at https://pablourrea.github.io</guid>
@@ -121,15 +121,15 @@
 <item>
   <title>Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel</title>
   <link>https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;La compilación, compresión y optimización automática de &lt;em&gt;JavaScript&lt;/em&gt; es una práctica esencial para mejorar el rendimiento de las páginas web.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-07-02T18:37:12+00:00" title="Martes, Julio 2, 2024 - 18:37" class="datetime"&gt;Mar, 02/07/2024 - 18:37&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>La compilación, compresión y optimización automática de <em>JavaScript</em> es una práctica esencial para mejorar el rendimiento de las páginas web.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Mar, 02/07/2024 - 18:37
+</span>
+]]></description>
   <pubDate>Tue, 02 Jul 2024 18:37:12 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">32 at https://pablourrea.github.io</guid>
@@ -137,15 +137,15 @@
 <item>
   <title>Optimización y compilación automática de estilos web con SASS</title>
   <link>https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Optimización y compilación automática de estilos web con SASS&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Optimización y compilación automática de estilos web con SASS</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Descubre cómo &lt;em&gt;SASS&lt;/em&gt; (&lt;em&gt;Super CSS&lt;/em&gt; para los amigos), puede mejorar el rendimiento y la organización de las hojas de estilos &lt;em&gt;CSS&lt;/em&gt;. Te enseño como instalarlo y utilizarlo eficientemente en tus proyectos.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-06-30T14:36:38+00:00" title="Domingo, Junio 30, 2024 - 14:36" class="datetime"&gt;Dom, 30/06/2024 - 14:36&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>Descubre cómo <em>SASS</em> (<em>Super CSS</em> para los amigos), puede mejorar el rendimiento y la organización de las hojas de estilos <em>CSS</em>. Te enseño como instalarlo y utilizarlo eficientemente en tus proyectos.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Dom, 30/06/2024 - 14:36
+</span>
+]]></description>
   <pubDate>Sun, 30 Jun 2024 14:36:38 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">31 at https://pablourrea.github.io</guid>
@@ -153,15 +153,15 @@
 <item>
   <title>Prism Como Servidor API proxy de validación</title>
   <link>https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Prism Como Servidor API proxy de validación&lt;/span&gt;
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Prism Como Servidor API proxy de validación</span>
 
 
-            &lt;div class="clearfix text-formatted"&gt;&lt;p&gt;Utilizar &lt;em&gt;Prism&lt;/em&gt; como proxy para APIs REST, una herramienta que no solo valida las peticiones según las definiciones de &lt;em&gt;OpenAPI&lt;/em&gt;, sino que también facilita la redirección de estas a un puerto único, mejorando así el flujo de trabajo y la robustez de las aplicaciones.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-05-25T14:18:30+00:00" title="Sábado, Mayo 25, 2024 - 14:18" class="datetime"&gt;Sáb, 25/05/2024 - 14:18&lt;/time&gt;
-&lt;/span&gt;
-</description>
+            <p>Utilizar <em>Prism</em> como proxy para APIs REST, una herramienta que no solo valida las peticiones según las definiciones de <em>OpenAPI</em>, sino que también facilita la redirección de estas a un puerto único, mejorando así el flujo de trabajo y la robustez de las aplicaciones.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Sáb, 25/05/2024 - 14:18
+</span>
+]]></description>
   <pubDate>Sat, 25 May 2024 14:18:30 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">28 at https://pablourrea.github.io</guid>
