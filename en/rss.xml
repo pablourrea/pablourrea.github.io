@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>La mejor tarjeta gráfica en relación potencia-precio de la serie 50 de NVIDIA</title>
+  <link>https://pablourrea.github.io/es/articulos/mejor-tarjeta-grafica-relacion-potencia-precio-serie-50-nvidia</link>
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">The best price-to-performance graphics card in the NVIDIA 50 series</span>
+
+
+            <p>In January 2025, <em>NVIDIA</em> unveiled the new <em>GeForce RTX 50</em> graphics card series, promising significant advances in both power and performance without a doubt. But is it really worth making the jump to this generation?</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Sun, 19/01/2025 - 17:32
+</span>
+]]></description>
+  <pubDate>Sun, 19 Jan 2025 17:32:47 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">42 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>DrupalCamp 2024: Benidorm</title>
   <link>https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm</link>
   <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">DrupalCamp 2024: Benidorm</span>
@@ -149,22 +165,6 @@
   <pubDate>Sun, 30 Jun 2024 14:36:38 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">31 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Prism Como Servidor API proxy de validación</title>
-  <link>https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Prism as a validation proxy API Server</span>
-
-
-            <p>Use <em>Prism</em> as a proxy for REST APIs, a tool that not only validates requests according to <em>OpenAPI</em> definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sat, 25/05/2024 - 14:18
-</span>
-]]></description>
-  <pubDate>Sat, 25 May 2024 14:18:30 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">28 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>

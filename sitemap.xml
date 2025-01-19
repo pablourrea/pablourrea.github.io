@@ -30,7 +30,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2024-12-22T12:47:57+00:00</lastmod>
+  <lastmod>2025-01-19T18:19:13+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -472,6 +472,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/drupal_camp_2024-banner.jpg</image:loc>
    <image:title>DrupalCamp 2024 - Banner - Asociación Española de Drupal (Escalado)</image:title>
    <image:caption>DrupalCamp 2024 - Banner - Asociación Española de Drupal (Escalado)</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/mejor-tarjeta-grafica-relacion-potencia-precio-serie-50-nvidia</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/mejor-tarjeta-grafica-relacion-potencia-precio-serie-50-nvidia"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/best-price-performance-graphics-card-nvidia-50-series"/>
+  <lastmod>2025-01-19T18:10:15+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/geforce_rtx_serie_50.jpg</image:loc>
+   <image:title>GeForce RTX serie 50 (Fuente: https://www.nvidia.com/es-es/geforce/graphics-cards/50-series)</image:title>
+   <image:caption>GeForce RTX serie 50 (Fuente: https://www.nvidia.com/es-es/geforce/graphics-cards/50-series)</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/best-price-performance-graphics-card-nvidia-50-series</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/mejor-tarjeta-grafica-relacion-potencia-precio-serie-50-nvidia"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/best-price-performance-graphics-card-nvidia-50-series"/>
+  <lastmod>2025-01-19T18:10:15+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/geforce_rtx_serie_50.jpg</image:loc>
+   <image:title>GeForce RTX serie 50 (Fuente: https://www.nvidia.com/es-es/geforce/graphics-cards/50-series)</image:title>
+   <image:caption>GeForce RTX serie 50 (Fuente: https://www.nvidia.com/es-es/geforce/graphics-cards/50-series)</image:caption>
   </image:image>
  </url>
  <url>
@@ -1369,6 +1395,38 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/eventos"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/events"/>
   <lastmod>2024-12-14T00:31:20+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/categorias/hardware</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/hardware"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/hardware"/>
+  <lastmod>2025-01-19T17:35:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories/hardware</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/hardware"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/hardware"/>
+  <lastmod>2025-01-19T17:35:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/categorias/tarjetas-graficas</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/tarjetas-graficas"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/graphics-cards"/>
+  <lastmod>2025-01-19T17:35:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories/graphics-cards</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/tarjetas-graficas"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/graphics-cards"/>
+  <lastmod>2025-01-19T17:35:22+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
  </url>

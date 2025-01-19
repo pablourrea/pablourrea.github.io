@@ -7,6 +7,22 @@
     <language>es</language>
     
     <item>
+  <title>La mejor tarjeta gráfica en relación potencia-precio de la serie 50 de NVIDIA</title>
+  <link>https://pablourrea.github.io/es/articulos/mejor-tarjeta-grafica-relacion-potencia-precio-serie-50-nvidia</link>
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">La mejor tarjeta gráfica en relación potencia-precio de la serie 50 de NVIDIA</span>
+
+
+            <p>En enero de 2025, <em>NVIDIA</em> presentó la nueva serie de tarjetas gráficas <em>GeForce RTX 50</em>, prometiendo avances tanto en lo que respecta a potencia como a rendimiento sin ninguna duda. Pero, ¿realmente vale la pena dar el salto a esta generación?</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Dom, 19/01/2025 - 17:32
+</span>
+]]></description>
+  <pubDate>Sun, 19 Jan 2025 17:32:47 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">42 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>DrupalCamp 2024: Benidorm</title>
   <link>https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm</link>
   <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">DrupalCamp 2024: Benidorm</span>
@@ -149,22 +165,6 @@
   <pubDate>Sun, 30 Jun 2024 14:36:38 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">31 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Prism Como Servidor API proxy de validación</title>
-  <link>https://pablourrea.github.io/es/articulos/prism-como-servidor-api-proxy-de-validacion</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Prism Como Servidor API proxy de validación</span>
-
-
-            <p>Utilizar <em>Prism</em> como proxy para APIs REST, una herramienta que no solo valida las peticiones según las definiciones de <em>OpenAPI</em>, sino que también facilita la redirección de estas a un puerto único, mejorando así el flujo de trabajo y la robustez de las aplicaciones.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sáb, 25/05/2024 - 14:18
-</span>
-]]></description>
-  <pubDate>Sat, 25 May 2024 14:18:30 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">28 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>
