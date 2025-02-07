@@ -30,7 +30,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2025-02-03T16:24:14+00:00</lastmod>
+  <lastmod>2025-02-07T17:41:43+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -498,6 +498,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/geforce_rtx_serie_50.jpg</image:loc>
    <image:title>NVIDIA GeForce RTX serie 50 (Fuente: https://www.nvidia.com/es-es/geforce/graphics-cards/50-series)</image:title>
    <image:caption>NVIDIA GeForce RTX serie 50 (Fuente: https://www.nvidia.com/es-es/geforce/graphics-cards/50-series)</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/how-install-all-pending-updates-single-command-windows"/>
+  <lastmod>2025-02-07T17:37:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/windows_package_manager_logo-wikipedia.png</image:loc>
+   <image:title>Windows Package Manager (WinGet) (Fuente: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)</image:title>
+   <image:caption>Windows Package Manager (WinGet) (Fuente: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/how-install-all-pending-updates-single-command-windows</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/how-install-all-pending-updates-single-command-windows"/>
+  <lastmod>2025-02-07T17:37:38+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/windows_package_manager_logo-wikipedia.png</image:loc>
+   <image:title>Windows Package Manager (WinGet) (Fuente: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)</image:title>
+   <image:caption>Windows Package Manager (WinGet) (Fuente: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)</image:caption>
   </image:image>
  </url>
  <url>
@@ -1453,6 +1479,38 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/tarjetas-graficas"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/graphics-cards"/>
   <lastmod>2025-01-19T17:35:22+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/categorias/windows</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/windows"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/windows"/>
+  <lastmod>2025-02-07T17:31:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories/windows</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/windows"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/windows"/>
+  <lastmod>2025-02-07T17:31:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/categorias/actualizaciones</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/actualizaciones"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/updates"/>
+  <lastmod>2025-02-07T17:31:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories/updates</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/actualizaciones"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/updates"/>
+  <lastmod>2025-02-07T17:31:16+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
  </url>

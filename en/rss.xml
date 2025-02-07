@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>¿Cómo instalar todas las actualizaciones pendientes con un solo comando en Windows?</title>
+  <link>https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows</link>
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">How to install all pending updates with a single command in Windows?</span>
+
+
+            <p>A Windows command allows updating all programs with pending updates automatically after its execution.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Fri, 07/02/2025 - 17:23
+</span>
+]]></description>
+  <pubDate>Fri, 07 Feb 2025 17:23:54 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">44 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>La mejor tarjeta gráfica en relación potencia-precio de la serie 50 de NVIDIA</title>
   <link>https://pablourrea.github.io/es/articulos/mejor-tarjeta-grafica-relacion-potencia-precio-serie-50-nvidia</link>
   <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">The best price-to-performance graphics card in the NVIDIA 50 series</span>
@@ -149,22 +165,6 @@
   <pubDate>Tue, 02 Jul 2024 18:37:12 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">32 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Optimización y compilación automática de estilos web con SASS</title>
-  <link>https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Optimization and automatic compilation of web styles with SASS</span>
-
-
-            <p>Discover how <em>SASS</em> (<em>Super CSS</em> for friends) can improve the performance and organization of <em>CSS</em> stylesheets. I will show you how to install and use it efficiently in your projects.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sun, 30/06/2024 - 14:36
-</span>
-]]></description>
-  <pubDate>Sun, 30 Jun 2024 14:36:38 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">31 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>

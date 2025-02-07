@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+
+
+<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-QPJMYH8NQN"></script>
+<script type="text/plain" data-category="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QPJMYH8NQN');
+</script>
+<meta content="Since computers appeared in my daily life, I have to admit that I have polarized pending updates to either black or white, meaning I either checked and installed pending updates almost daily or I did it almost never. It's true that on mobile devices, it's more convenient to update all apps from the update view in the App Store or Play Store; in Linux, you can update with an apt-get command; but in Windows, I’ve always opened each third-party application one by one to check for updates. But, what if I told you that there is a command in Windows to install all pending updates for installed programs on the system? CMD, Windows' greatest ally. First, you need to access the system's CMD console as an administrator. To do so, press the “Windows 🪟” and type “CMD”. The Command Prompt will appear. To run it as an administrator, simply right-click and select “Run as administrator”. After confirming its execution as an administrator, the CMD console will open in a new window.  WinGet to control them all. To check which programs have a pending update to download and install, you need to run the Windows Package Manager (WinGet for friends):winget upgradeThis command will return a table with information about the pending updates.  To update a single package from this list, simply run the same command followed by the ID of the program you want to update:winget upgrade   There is also an option to update the entire list with the --all parameter after the command:winget upgrade --allThis will take a moment depending on the number of updates available to download and install, and will open update windows depending on each program.   If a program has an unchecked update, meaning the system is not yet aware of the pending update, you can search for updates for a program with the search command followed by the ID:winget search   It is important to note that WinGet supports the following direct installer formats; any other format or additional steps will require manual actions:.exe.zip.inno.nsi.msi.wixproj.appx.msix  Conclusion. Although some updates may still require your attention and you may need to open the programs, most of them are downloaded and installed automatically without any issues, so in the end, WinGet is a very useful tool for automating this maintenance task in Windows. If you need more information about WinGet, you can run winget --help in the console or visit Use the WinGet tool to install and manage applications. " name="description">
+<meta content="A Windows command allows updating all programs with pending updates automatically after its execution." name="abstract">
+<meta content="Pablo Urrea,How to install all pending updates with a single command in Windows?,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Windows,Updates" name="keywords">
+<link href="https://pablourrea.github.io/en/articles/how-install-all-pending-updates-single-command-windows" rel="canonical">
+<meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
+<meta content="Drupal" name="generator">
+<meta content="Pablo Urrea" name="author">
+<meta content="https://pablourrea.github.io" name="original-source">
+<link href="https://pablourrea.github.io/sites/default/files/images/windows_package_manager_logo-wikipedia.png" rel="image_src">
+<meta content="origin" name="referrer">
+<link href="/sites/default/files/logo.png" rel="icon">
+<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
+<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32">
+<link href="/sites/default/files/favicons/android-chrome-192x192.png" rel="icon" sizes="96x96">
+<link href="/sites/default/files/favicons/android-chrome-192x192.png" rel="icon" sizes="192x192">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="72x72">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="114x114">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="120x120">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="144x144">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="152x152">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="76x76">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="120x120">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="152x152">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
+<meta content="Pablo Urrea" property="og:site_name">
+<meta content="article" property="og:type">
+<meta content="https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows" property="og:url">
+<meta content="How to install all pending updates with a single command in Windows?" property="og:title">
+<meta content="A Windows command allows updating all programs with pending updates automatically after its execution." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/windows_package_manager_logo-wikipedia.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/windows_package_manager_logo-wikipedia.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/windows_package_manager_logo-wikipedia.png" property="og:image:secure_url">
+<meta content="image/png" property="og:image:type">
+<meta content="Fri, 07/02/2025 - 17:37" property="og:updated_time">
+<meta content="https://pablourrea.github.io" property="og:see_also">
+<meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
+<meta content="es_ES" property="og:locale:alternate">
+<meta content="en_AU" property="og:locale:alternate">
+<meta content="en_BE" property="og:locale:alternate">
+<meta content="en_GB" property="og:locale:alternate">
+<meta content="en_JP" property="og:locale:alternate">
+<meta content="en_US" property="og:locale:alternate">
+<meta content="en_ZA" property="og:locale:alternate">
+<meta content="Pablo Urrea" property="article:section">
+<meta content="Fri, 07/02/2025 - 17:23" property="article:published_time">
+<meta content="Fri, 07/02/2025 - 17:37" property="article:modified_time">
+<meta content="Pablo" property="profile:first_name">
+<meta content="Urrea" property="profile:last_name">
+<meta content="male" property="profile:gender">
+<meta content="purrea" property="profile:username">
+<meta content="How to install all pending updates with a single command in Windows?" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/windows_package_manager_logo-wikipedia.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows" property="pin:url">
+<meta content="A Windows command allows updating all programs with pending updates automatically after its execution." property="pin:description">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="A Windows command allows updating all programs with pending updates automatically after its execution." name="twitter:description">
+<meta content="How to install all pending updates with a single command in Windows? | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/windows_package_manager_logo-wikipedia.png" name="twitter:image">
+<meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
+<link href="https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/how-install-all-pending-updates-single-command-windows" rel="alternate" hreflang="en">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<meta content="Drupal responsive_favicons + realfavicongenerator.net" name="favicon-generator">
+<meta content="Drupal 10 (https://www.drupal.org)" name="Generator">
+<meta content="width" name="MobileOptimized">
+<meta content="true" name="HandheldFriendly">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows",en:"/en/articles/how-install-all-pending-updates-single-command-windows",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_en/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://pablourrea.github.io",
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://pablourrea.github.io/en"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Articles",
+                        "item": "https://pablourrea.github.io/en/articles"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "How To Install All Pending Updates With A Single Command In Windows?",
+                        "item": "https://pablourrea.github.io/en/articles/how-install-all-pending-updates-single-command-windows"
+                    }
+                ]
+            },
+            "description": "How to install all pending updates with a single command in Windows?",
+            "author": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.iohttps://pablourrea.github.io/en/user/1",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ]
+            },
+            "publisher": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.iohttps://pablourrea.github.io/en/user/1",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "representativeOfPage": "True",
+                    "url": "/asset/es/image/logopng",
+                    "width": "600",
+                    "height": "600"
+                }
+            },
+            "isAccessibleForFree": "True",
+            "hasPart": {
+                "@type": "SiteNavigationElement",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.io",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "datePublished": "2025-02-07T17:23:54+0000"
+            },
+            "inLanguage": "Español",
+            "workTranslation": [
+                "Inglés",
+                "English"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "pablourrea.github.io",
+            "name": "Pablo Urrea",
+            "url": "https://pablourrea.github.io",
+            "publisher": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "representativeOfPage": "True",
+                    "url": "/asset/es/image/logopng",
+                    "width": "600",
+                    "height": "600"
+                }
+            },
+            "inLanguage": "Español",
+            "workTranslation": [
+                "Inglés",
+                "English"
+            ]
+        }
+    ]
+}</script>
+
+    <title>How to install all pending updates with a single command in Windows? | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_eD7RH66L0JYHU78FWDoxh2-iXoOu0D588pRUO0M3q4U.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+<link href="https://unpkg.com/highlightjs-copy@1.0.5/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
+<link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_L4zzsPTGU8wGSYrN-vK3rvCwwheLLHiVVhQr1OM_1ME.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_THD0pPGqF3Q0WGkrmfKNXtmI8u4kxdozSrNWydvfsTQ.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+
+    
+  </head>
+          
+      <body class="no-sidebar page-articles-how-install-all-pending-updates-single-command-windows role--anonymous section-articles with-subnav">
+    <div id="skip">
+      <a href="#main-menu" class="visually-hidden focusable skip-link">
+        Skip to main navigation
+      </a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="layout-container">
+
+  
+
+      <header id="header">
+      <div class="container">
+        <div id="header-region">
+            <div class="region region-header">
+    <nav aria-labelledby="block-pablo-urrea-logo-menu" class="block block-menu navigation menu--logo" role="navigation" id="block-pablo-urrea-logo">
+            
+  <h2 class="visually-hidden" id="block-pablo-urrea-logo-menu">Logo</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/en" class="logo" target="_self" data-drupal-link-system-path="<front>"><img alt="Pablo Urrea's logo" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav aria-labelledby="block-pablo-urrea-main-navigation-menu" class="block block-menu navigation block-pablo-urrea-main-navigation menu--main" role="navigation" id="block-pablo-urrea-main-navigation">
+            
+  <h2 class="visually-hidden" id="block-pablo-urrea-main-navigation-menu">Main navigation</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <button class="hamburger hamburger--spring" type="button">Menu</button>
+              </li>
+                <li class="menu-item">
+        <a href="/en" class="stroke" target="_self" title="Home page" data-drupal-link-system-path="<front>">Home</a>
+              </li>
+                <li class="menu-item">
+        <a href="/en/articles" data-drupal-link-system-path="node/9">Articles</a>
+              </li>
+                <li class="menu-item">
+        <a href="/en/projects" data-drupal-link-system-path="node/10">Projects</a>
+              </li>
+                <li class="menu-item">
+        <a href="/en/about" data-drupal-link-system-path="node/11">About</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
+  
+    
+      <ul class="links"><li data-drupal-link-system-path="node/44" hreflang="es"><a href="/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows" class="language-link" title="Español" data-drupal-link-system-path="node/44" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/44" hreflang="en"><a href="/en/articles/how-install-all-pending-updates-single-command-windows" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/44" hreflang="en" aria-current="page">en</a></li></ul>
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </header>
+  
+  
+  
+
+  <div id="main">
+    <div class="container">
+      <div id="content-wrapper">
+        <section id="content">
+
+          
+          <div id="content-area">
+              <div class="region region-content">
+    <div class="hidden" data-drupal-messages-fallback></div><div class="block-system block-pablo-urrea-content" id="block-pablo-urrea-content">
+  
+    
+      
+<article class="node node--type-article">
+  <div class="content">
+    
+<h1 class="content-title">
+    
+
+            <div class="clearfix text-formatted"><p>How to install all pending updates with a single command in Windows?</p>
+</div>
+      
+  </h1>
+<div class="border-top content-tags link-no-hover">
+    
+
+      <div>
+              <div><a href="/en/articles/categories/windows" hreflang="en">Windows</a></div>
+              <div><a href="/en/articles/categories/updates" hreflang="en">Updates</a></div>
+          </div>
+  
+  </div>
+<div class="content-image">
+    
+<div class="polaroid">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-full">
+  
+      
+
+            <div>  <img alt="Windows Package Manager (WinGet) (Source: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/windows_package_manager_logo-wikipedia.png?itok=SWnV3V_0" height="540" loading="lazy" title="Windows Package Manager (WinGet) (Source: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)" width="1072">
+
+
+</div>
+      
+  </article>
+</div>
+      
+<div class="title title-right title-small">
+    
+
+            <div class="clearfix text-formatted"><p>Windows Package Manager (WinGet) (Source: <a href="https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg">Wikipedia</a>)</p>
+</div>
+      
+  </div>
+  </div>
+  </div>
+<div class="border-bottom content-authorship">
+    
+<div class="authorship-group-1 content-align-left content-align-top">
+    <article class="profile">
+  
+<div class="image">
+    
+
+            <div><article class="media media--type-image media--view-mode-thumbnail">
+  
+      
+<div class="thumbnail">
+    
+
+            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+
+
+</div>
+      
+  </div>
+  </article>
+</div>
+      
+  </div>
+<div class="name">
+    
+
+            <div class="clearfix text-formatted"><p>Pablo Urrea</p>
+</div>
+      
+  </div>
+<div class="contact">
+    
+
+            <div>
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.linkedin.com/in/pablourrea" class="icon" target="_blank" title="LinkedIn"><img alt="LinkedIn" class="icon" src="/sites/default/files/icons/linkedin.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/u/enchufe" class="icon" target="_blank" title="Drupal"><img alt="Drupal" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://github.com/pablourrea" class="icon" target="_blank" title="GitHub"><img alt="GitHub" class="icon" src="/sites/default/files/icons/github.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://git.drupalcode.org/Enchufe" class="icon" target="_blank" title="DrupalCode"><img alt="DrupalCode" class="icon" src="/sites/default/files/icons/drupalcode.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/user/3685606/contact" class="icon" target="_blank" title="Drupal Contact Form"><img alt="Drupal Contact Form" class="icon" src="/sites/default/files/icons/drupal_contact_form.svg"></a>
+              </li>
+        </ul>
+  
+
+
+</div>
+      
+  </div></article>
+
+  </div>
+<div class="authorship-group-2 content-align-bottom content-align-right">
+    
+<div class="reading-time">
+    
+
+            <div content="4">4 minutes reading</div>
+      
+  </div>
+<div class="authorship-dates">
+    
+<div class="date">
+  <div class="label">
+    Published
+  </div>
+
+  <time class="datetime" datetime="2025-02-07">
+    07/02/2025
+  </time>
+</div>
+
+  </div>
+  </div>
+  </div>
+<div class="content-description">
+    
+
+            <div class="clearfix text-formatted"><p>Since computers appeared in my daily life, I have to admit that I have polarized pending updates to either black or white, meaning I either checked and installed pending updates almost daily or I did it almost never. It's true that on mobile devices, it's more convenient to update all apps from the update view in the <em>App Store</em> or <em>Play Store</em>; in <em>Linux</em>, you can update with an <code>apt-get</code> command; but in Windows, I’ve always opened each third-party application one by one to check for updates. But, what if I told you that there is a command in Windows to install all pending updates for installed programs on the system?</p>
+<p> </p>
+<p><strong>CMD, Windows' greatest ally.</strong> First, you need to access the system's CMD console as an administrator. To do so, press the <span style="color:#000"><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-family:Tahoma,-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;font-size:18px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:pre-wrap;widows:2;word-spacing:0">“</span></span><em>Windows 🪟</em><span style="color:#000"><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-family:Tahoma,-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;font-size:18px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:pre-wrap;widows:2;word-spacing:0">”</span></span> and type <span style="color:#000"><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-family:Tahoma,-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;font-size:18px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:pre-wrap;widows:2;word-spacing:0">“</span></span><em>CMD</em><span style="color:#000"><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-family:Tahoma,-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;font-size:18px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:pre-wrap;widows:2;word-spacing:0">”</span></span>. The <em>Command Prompt</em> will appear. To run it as an administrator, simply right-click and select <span style="color:#000"><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-family:Tahoma,-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;font-size:18px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:pre-wrap;widows:2;word-spacing:0">“</span></span><em>Run as administrator</em><span style="color:#000"><span style="-webkit-text-stroke-width:0;display:inline!important;float:none;font-family:Tahoma,-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;font-size:18px;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:left;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0;text-transform:none;white-space:pre-wrap;widows:2;word-spacing:0">”</span></span>. After <em>confirming its execution as an administrator</em>, the CMD console will open in a new window.</p>
+<figure class="caption caption-drupal-media" role="group">
+<article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="CMD de Windows: Ejecutar como administrador" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/windows_cmd_search_execute_as_administrator.png?itok=wnrCbfWM" height="780" loading="lazy" title="CMD de Windows: Ejecutar como administrador" width="1920">
+
+
+</div>
+      
+  </article>
+
+<figcaption>Run the Command Prompt as administrator (In Spanish)</figcaption>
+</figure>
+<p> </p>
+<p><em><strong>WinGet</strong></em><strong> to control them all.</strong> To check which programs have a pending update to download and install, you need to run the <em>Windows Package Manager</em> (<em>WinGet</em> for friends):</p>
+<pre><code class="language-powershell">winget upgrade</code></pre><p>This command will return a table with information about the pending updates.</p>
+<article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="CMD de Windows: winget upgrade" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/winget_upgrade.png?itok=84rVKr3C" height="641" loading="lazy" title="CMD de Windows: winget upgrade" width="1920">
+
+
+</div>
+      
+  </article>
+<p> </p>
+<p>To update a single package from this list, simply run the same command followed by the ID of the program you want to update:</p>
+<pre><code class="language-powershell">winget upgrade &lt;id></code></pre><article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="CMD de Windows: winget upgrade id" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/winget_upgrade_package.png?itok=FKthKQ4j" height="344" loading="lazy" title="CMD de Windows: winget upgrade id" width="1920">
+
+
+</div>
+      
+  </article>
+<p> </p>
+<p>There is also an option to update the entire list with the <code>--all</code> parameter after the command:</p>
+<pre><code class="language-powershell">winget upgrade --all</code></pre><p>This will take a moment depending on the number of updates available to download and install, and will open update windows depending on each program.</p>
+<article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="CMD de Windows: winget upgrade --all (Parte 1)" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/winget_upgrade_all-1.png?itok=PnO_yZqd" height="1012" loading="lazy" title="CMD de Windows: winget upgrade --all (Parte 1)" width="1920">
+
+
+</div>
+      
+  </article>
+<article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="CMD de Windows: winget upgrade --all (Parte 2)" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/winget_upgrade_all-2.png?itok=P98xf0Rw" height="939" loading="lazy" title="CMD de Windows: winget upgrade --all (Parte 2)" width="1920">
+
+
+</div>
+      
+  </article>
+<p> </p>
+<p>If a program has an unchecked update, meaning the system is not yet aware of the pending update, you can search for updates for a program with the <code>search</code> command followed by the ID:</p>
+<pre><code class="language-powershell">winget search &lt;id></code></pre><figure class="caption caption-drupal-media" role="group">
+<article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="Windows CMD: winget search id (Source: https://learn.microsoft.com)" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/winget_search_package.png?itok=p8XooG57" height="1061" loading="lazy" title="Windows CMD: winget search id (Source: https://learn.microsoft.com)" width="1920">
+
+
+</div>
+      
+  </article>
+
+<figcaption>Source: <a href="https://learn.microsoft.com/">https://learn.microsoft.com</a></figcaption>
+</figure>
+<p> </p>
+<p>It is important to note that <em>WinGet</em> supports the following direct installer formats; any other format or additional steps will require manual actions:</p>
+<table style="border-style:none;width:100%">
+<tbody>
+<tr>
+<td style="border-style:double;text-align:center"><strong>.exe</strong></td>
+<td style="border-style:double;text-align:center"><strong>.zip</strong></td>
+<td style="border-style:double;text-align:center"><strong>.inno</strong></td>
+<td style="border-style:double;text-align:center"><strong>.nsi</strong></td>
+<td style="border-style:double;text-align:center"><strong>.msi</strong></td>
+<td style="border-style:double;text-align:center"><strong>.wixproj</strong></td>
+<td style="border-style:double;text-align:center"><strong>.appx</strong></td>
+<td style="border-style:double;text-align:center"><strong>.msix</strong></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<p><strong>Conclusion.</strong> Although some updates may still require your attention and you may need to open the programs, most of them are downloaded and installed automatically without any issues, so in the end, <em>WinGet</em> is a very useful tool for automating this maintenance task in Windows. If you need more information about <em>WinGet</em>, you can run <code>winget --help</code> in the console or visit <a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/"><em>Use the WinGet tool to install and manage applications</em></a>.</p>
+<p> </p>
+</div>
+      
+  </div>
+<div class="content-footer">
+    <div class="related-entities-wrapper"><h2 class="related-entities-align-left related-entities-title">Recommended articles</h2>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="NVIDIA GeForce RTX 50 Series (Source: https://www.nvidia.com/en-us/geforce/graphics-cards/50-series)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/geforce_rtx_serie_50.jpg?itok=9z2hGP5A" height="270" loading="lazy" title="NVIDIA GeForce RTX 50 Series (Source: https://www.nvidia.com/en-us/geforce/graphics-cards/50-series)" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p>The best price-to-performance graphics card in the <em>NVIDIA</em> 50 series</p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>In January 2025, <em>NVIDIA</em> unveiled the new <em>GeForce RTX 50</em> graphics card series, promising significant advances in both power and performance without a doubt. But is it really worth making the jump to this generation?</p>
+</div>
+      
+  </div><a href="/en/articles/best-price-performance-graphics-card-nvidia-50-series" class="link-content" hreflang="en" aria-label="The best price-to-performance graphics card in the NVIDIA 50 series"></a>
+  </div>
+  </div>
+
+  
+</article>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="DrupalCamp 2024 - Banner - Spanish Drupal Association (Scaled)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/drupal_camp_2024-banner.jpg?itok=PEydqW0F" height="270" loading="lazy" title="DrupalCamp 2024 - Banner - Spanish Drupal Association (Scaled)" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p>DrupalCamp 2024: Benidorm</p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>Last October, Benidorm hosted grandparents, British visitors, and attendees of the <em>DrupalCamp 2024</em>, the annual regional event that brings together <em>Drupal</em> developers in Spain.</p>
+</div>
+      
+  </div><a href="/en/articles/drupalcamp-2024-benidorm" class="link-content" hreflang="en" aria-label="DrupalCamp 2024: Benidorm"></a>
+  </div>
+  </div>
+
+  
+</article>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="Steam: Steam Deck" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/steam_deck-the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.png?itok=hklw9yJH" height="270" loading="lazy" title="Steam: Steam Deck" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p>"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux </p></div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>If you've ever had trouble running games on your <em>Steam Deck LCD / OLED</em> or <em>Linux</em> with <em>Proton</em> and/or <em>Wine</em> due to missing <em>Microsoft</em> components, this article will guide you step by step on how to easily fix it.</p>
+</div>
+      
+  </div><a href="/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-and-or-wine" class="link-content" hreflang="en" aria-label='"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine'></a>
+  </div>
+  </div>
+
+  
+</article>
+<h2 class="related-entities-align-left related-entities-subtitle"></h2>
+</div>
+
+  </div>
+  </div>
+
+  
+</article>
+
+  </div>
+<div class="block-system breadcrumbs content-breadcrumbs" id="content-breadcrumbs">
+  
+    
+        <nav aria-labelledby="system-breadcrumb" class="breadcrumb" role="navigation">
+    <h2 class="visually-hidden" id="system-breadcrumb">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/en">Home</a>
+              </li>
+          <li>
+                  <a href="/en/articles">Articles</a>
+              </li>
+          <li>
+                  How To Install All Pending Updates With A Single Command In Windows?
+              </li>
+        </ol>
+  </nav>
+
+  </div>
+
+  </div>
+
+          </div>
+
+        </section>
+
+        
+        
+      </div>
+    </div>
+  </div>
+
+  
+
+      <footer id="footer">
+      <div class="container">
+        <div id="footer-region">
+            <div class="region region-footer">
+    <nav aria-labelledby="block-pablo-urrea-footer-menu" class="block block-menu navigation menu--footer" role="navigation" id="block-pablo-urrea-footer">
+            
+  <h2 class="visually-hidden" id="block-pablo-urrea-footer-menu">Footer</h2>
+  
+
+        
+
+  <ul class="menu menu-level-0" data-region="footer">
+                  
+        <li class="menu-item">
+          <span class="hidden-title">About</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-dropdown-0 menu-type-user view-mode-user">
+              
+
+            <div><article class="profile">
+  
+
+            <div><article class="media media--type-image media--view-mode-thumbnail">
+  
+      
+<div class="thumbnail">
+    
+
+            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+
+
+</div>
+      
+  </div>
+  </article>
+</div>
+      
+
+            <div class="clearfix text-formatted"><p>Born and raised in the metropolitan area of Madrid, he showed a fervent interest in the world of computers and programming from an early age. This blog project gives him the opportunity to document and share the technological challenges he faces.</p>
+</div>
+      
+
+            <div>
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.linkedin.com/in/pablourrea" class="icon" target="_blank" title="LinkedIn"><img alt="LinkedIn" class="icon" src="/sites/default/files/icons/linkedin.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/u/enchufe" class="icon" target="_blank" title="Drupal"><img alt="Drupal" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://github.com/pablourrea" class="icon" target="_blank" title="GitHub"><img alt="GitHub" class="icon" src="/sites/default/files/icons/github.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://git.drupalcode.org/Enchufe" class="icon" target="_blank" title="DrupalCode"><img alt="DrupalCode" class="icon" src="/sites/default/files/icons/drupalcode.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/user/3685606/contact" class="icon" target="_blank" title="Drupal Contact Form"><img alt="Drupal Contact Form" class="icon" src="/sites/default/files/icons/drupal_contact_form.svg"></a>
+              </li>
+        </ul>
+  
+
+
+</div>
+      </article>
+</div>
+      
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <span>Pages</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-0">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/en" target="_self" data-drupal-link-system-path="<front>">Home 📰</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/articles" target="_self" data-drupal-link-system-path="node/9">All articles 🗞️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/articles/categories" target="_self" data-drupal-link-system-path="node/23">Article categories 🗂️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/projects" target="_self" data-drupal-link-system-path="node/10">Pablo Urrea's projects 🏗️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/projects/categories" target="_self" data-drupal-link-system-path="node/22">Project categories 📊</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <span>About</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-0">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/en/about" class="stroke" target="_self" data-drupal-link-system-path="node/11">About Pablo Urrea 👤</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/cookie-policy" target="_self" data-drupal-link-system-path="node/21">Cookie Policy 🍪</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/data-protection-policy" data-drupal-link-system-path="node/25">Data Protection Policy 🔒</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/legal-notice" data-drupal-link-system-path="node/24">Legal Notice ⚖️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+  </nav>
+<div class="block-block-content block-pablo-urrea-footer-license footer footer-license" id="block-pablo-urrea-footer-license">
+  
+    
+      
+
+            <div class="clearfix text-formatted"><p><a href="/en/license">Pablo Urrea <strong>©</strong> All rights reserved</a></p>
+</div>
+      
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </footer>
+  
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/44","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"powershell":"powershell"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
+<script src="/sites/default/files/js/js_8mshl2MsBT1eWgp6ushZmp66RYbMasliFlMgQbvxIGc.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+<script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
+<script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=2&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+
+      </body>
+</html>
