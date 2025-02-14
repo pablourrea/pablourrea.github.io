@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+
+
+<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-QPJMYH8NQN"></script>
+<script type="text/plain" data-category="analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QPJMYH8NQN');
+</script>
+<meta content="When trying to install or update an application or program on Linux, this process must be done using a .deb package if you have a Debian, Ubuntu, etc. system, or using an .rpm package for Red Hat, Fedora, etc. systems, either by preference or developer decision. Normally, this installation does not cause headaches; you simply follow the installer's steps, and the program is ready to use. However, sometimes, at the first step, it shows the error &#34;Package error: Dependencies are not met.&#34;   What does this error mean? To fix it, it is not necessary but recommended to understand the origin of the error. This occurs because the package being installed requires certain dependencies that are either unavailable, incompatible, or conflicting with other versions already installed on the system. Some specific possible causes include: the package requires other packages that are not installed; the required dependencies have specific versions, but the system has different versions installed; if the package comes from an external source, there may be incompatibilities with the packages in your distribution's official repositories; the package version may not be compatible with your operating system version; or if you are installing a package manually without resolving dependencies, the system may not be able to install it correctly. In any case, this error has several possible solutions. For these, I will use the VSC or Visual Studio Code package as an example. Solution 1: Force package installation with dpkg. Through the console, it is possible to force the package installation quickly with administrator privileges. To do this, you need to run the dpkg command as a superuser, using the -i parameter and specifying the installation file path (it is easiest to do this from the directory where the file is located). The command looks like this:sudo dpkg -i file.deb   Solution 2: Try to fix dependencies. There is an option to add dependencies using apt in the console as an administrator. To do this, run:sudo apt --fix-broken install sudo apt install -fThen, reinstall the package. Solution 3: Combine solutions 1 (Force installation) and 2 (Fix dependencies). If the error persists through new updates, the best approach is to force installation and then install system dependencies. First, run the dpkg command as a superuser, using the -i parameter and specifying the installation file path (it is easiest to do this from the directory where the file is located). The command looks like this:sudo dpkg -i file.deb  Then, add the dependencies using apt with the following command:sudo apt --fix-broken install Solution 4: Check the specific reason. It is possible to examine the exact cause of the error, though this solution is more tedious and slow since each specific reason must be reviewed. To do this, run the following command as an administrator:sudo apt show codeOr check the report log file directly:cat /var/log/apt/term.log " name="description">
+<meta content='The error "Cannot satisfy dependencies" (or "No se cumplen las dependencias" in Spanish) when trying to install a package in Linux means that it requires certain dependencies that are unavailable, incompatible, or conflict with other versions already installed on the system.' name="abstract">
+<meta content="Pablo Urrea,Linux Package Error: Cannot satisfy dependencies,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Linux,Updates,Error" name="keywords">
+<link href="https://pablourrea.github.io/en/articles/linux-package-error-cannot-satisfy-dependencies" rel="canonical">
+<meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
+<meta content="Drupal" name="generator">
+<meta content="Pablo Urrea" name="author">
+<meta content="https://pablourrea.github.io" name="original-source">
+<link href="https://pablourrea.github.io/sites/default/files/images/linux_package_code-cannot_satisfy_dependencies.png" rel="image_src">
+<meta content="origin" name="referrer">
+<link href="/sites/default/files/logo.png" rel="icon">
+<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
+<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32">
+<link href="/sites/default/files/favicons/android-chrome-192x192.png" rel="icon" sizes="96x96">
+<link href="/sites/default/files/favicons/android-chrome-192x192.png" rel="icon" sizes="192x192">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="72x72">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="76x76">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="114x114">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="120x120">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="144x144">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="152x152">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="76x76">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="120x120">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="152x152">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
+<meta content="Pablo Urrea" property="og:site_name">
+<meta content="article" property="og:type">
+<meta content="https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias" property="og:url">
+<meta content="Linux Package Error: Cannot satisfy dependencies" property="og:title">
+<meta content='The error "Cannot satisfy dependencies" (or "No se cumplen las dependencias" in Spanish) when trying to install a package in Linux means that it requires certain dependencies that are unavailable, incompatible, or conflict with other versions already installed on the system.' property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/linux_package_code-cannot_satisfy_dependencies.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/linux_package_code-cannot_satisfy_dependencies.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/linux_package_code-cannot_satisfy_dependencies.png" property="og:image:secure_url">
+<meta content="image/png" property="og:image:type">
+<meta content="Fri, 14/02/2025 - 12:47" property="og:updated_time">
+<meta content="https://pablourrea.github.io" property="og:see_also">
+<meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
+<meta content="es_ES" property="og:locale:alternate">
+<meta content="en_AU" property="og:locale:alternate">
+<meta content="en_BE" property="og:locale:alternate">
+<meta content="en_GB" property="og:locale:alternate">
+<meta content="en_JP" property="og:locale:alternate">
+<meta content="en_US" property="og:locale:alternate">
+<meta content="en_ZA" property="og:locale:alternate">
+<meta content="Pablo Urrea" property="article:section">
+<meta content="Fri, 14/02/2025 - 12:04" property="article:published_time">
+<meta content="Fri, 14/02/2025 - 12:47" property="article:modified_time">
+<meta content="Pablo" property="profile:first_name">
+<meta content="Urrea" property="profile:last_name">
+<meta content="male" property="profile:gender">
+<meta content="purrea" property="profile:username">
+<meta content="Linux Package Error: Cannot satisfy dependencies" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/linux_package_code-cannot_satisfy_dependencies.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias" property="pin:url">
+<meta content='The error "Cannot satisfy dependencies" (or "No se cumplen las dependencias" in Spanish) when trying to install a package in Linux means that it requires certain dependencies that are unavailable, incompatible, or conflict with other versions already installed on the system.' property="pin:description">
+<meta content="summary_large_image" name="twitter:card">
+<meta content='The error "Cannot satisfy dependencies" (or "No se cumplen las dependencias" in Spanish) when trying to install a package in Linux means that it requires certain dependencies that are unavailable, incompatible, or conflict with other versions already installed on the system.' name="twitter:description">
+<meta content="Linux Package Error: Cannot satisfy dependencies | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/linux_package_code-cannot_satisfy_dependencies.png" name="twitter:image">
+<meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
+<link href="https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/linux-package-error-cannot-satisfy-dependencies" rel="alternate" hreflang="en">
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+<meta content="Drupal responsive_favicons + realfavicongenerator.net" name="favicon-generator">
+<meta content="Drupal 10 (https://www.drupal.org)" name="Generator">
+<meta content="width" name="MobileOptimized">
+<meta content="true" name="HandheldFriendly">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/error-paquete-linux-no-cumplen-dependencias",en:"/en/articles/linux-package-error-cannot-satisfy-dependencies",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_en/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "https://pablourrea.github.io",
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://pablourrea.github.io/en"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Articles",
+                        "item": "https://pablourrea.github.io/en/articles"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Linux Package Error: Cannot Satisfy Dependencies",
+                        "item": "https://pablourrea.github.io/en/articles/linux-package-error-cannot-satisfy-dependencies"
+                    }
+                ]
+            },
+            "description": "Linux Package Error: Cannot satisfy dependencies",
+            "author": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.iohttps://pablourrea.github.io/en/user/1",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ]
+            },
+            "publisher": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.iohttps://pablourrea.github.io/en/user/1",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "representativeOfPage": "True",
+                    "url": "/asset/es/image/logopng",
+                    "width": "600",
+                    "height": "600"
+                }
+            },
+            "isAccessibleForFree": "True",
+            "hasPart": {
+                "@type": "SiteNavigationElement",
+                "name": "Pablo Urrea",
+                "url": "https://pablourrea.github.io",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "datePublished": "2025-02-14T12:04:47+0000"
+            },
+            "inLanguage": "Español",
+            "workTranslation": [
+                "Inglés",
+                "English"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "pablourrea.github.io",
+            "name": "Pablo Urrea",
+            "url": "https://pablourrea.github.io",
+            "publisher": {
+                "@type": "Person",
+                "@id": "pablourrea.github.io",
+                "name": "Pablo Urrea",
+                "sameAs": [
+                    "https://www.drupal.org/user",
+                    "https://www.linkedin.com/in/pablourrea",
+                    "https://github.com/pablourrea",
+                    "https://stackoverflow.com/users/19547744/enchufe"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "representativeOfPage": "True",
+                    "url": "/asset/es/image/logopng",
+                    "width": "600",
+                    "height": "600"
+                }
+            },
+            "inLanguage": "Español",
+            "workTranslation": [
+                "Inglés",
+                "English"
+            ]
+        }
+    ]
+}</script>
+
+    <title>Linux Package Error: Cannot satisfy dependencies | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css__MalHGeWHmXLQt0U0hn9TWgmJMN9AHimkLxEMi4eCsg.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+<link href="https://unpkg.com/highlightjs-copy@1.0.5/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
+<link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_04qgOWTp8cxMNGCiNW0azJGmRc_9WDUnmWQwMljH7Q4.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_SwtPfDmJ7TeqhlxdAq1U98GdpYthVTkfzb3c_oFRdvw.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+
+    
+  </head>
+          
+      <body class="no-sidebar page-articles-linux-package-error-cannot-satisfy-dependencies role--anonymous section-articles with-subnav">
+    <div id="skip">
+      <a href="#main-menu" class="visually-hidden focusable skip-link">
+        Skip to main navigation
+      </a>
+    </div>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div class="layout-container">
+
+  
+
+      <header id="header">
+      <div class="container">
+        <div id="header-region">
+            <div class="region region-header">
+    <nav aria-labelledby="block-pablo-urrea-logo-menu" class="block block-menu navigation menu--logo" role="navigation" id="block-pablo-urrea-logo">
+            
+  <h2 class="visually-hidden" id="block-pablo-urrea-logo-menu">Logo</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="/en" class="logo" target="_self" data-drupal-link-system-path="<front>"><img alt="Pablo Urrea's logo" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav aria-labelledby="block-pablo-urrea-main-navigation-menu" class="block block-menu navigation block-pablo-urrea-main-navigation menu--main" role="navigation" id="block-pablo-urrea-main-navigation">
+            
+  <h2 class="visually-hidden" id="block-pablo-urrea-main-navigation-menu">Main navigation</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <button class="hamburger hamburger--spring" type="button">Menu</button>
+              </li>
+                <li class="menu-item">
+        <a href="/en" class="stroke" target="_self" title="Home page" data-drupal-link-system-path="<front>">Home</a>
+              </li>
+                <li class="menu-item">
+        <a href="/en/articles" data-drupal-link-system-path="node/9">Articles</a>
+              </li>
+                <li class="menu-item">
+        <a href="/en/projects" data-drupal-link-system-path="node/10">Projects</a>
+              </li>
+                <li class="menu-item">
+        <a href="/en/about" data-drupal-link-system-path="node/11">About</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
+  
+    
+      <ul class="links"><li data-drupal-link-system-path="node/45" hreflang="es"><a href="/es/articulos/error-paquete-linux-no-cumplen-dependencias" class="language-link" title="Español" data-drupal-link-system-path="node/45" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/45" hreflang="en"><a href="/en/articles/linux-package-error-cannot-satisfy-dependencies" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/45" hreflang="en" aria-current="page">en</a></li></ul>
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </header>
+  
+  
+  
+
+  <div id="main">
+    <div class="container">
+      <div id="content-wrapper">
+        <section id="content">
+
+          
+          <div id="content-area">
+              <div class="region region-content">
+    <div class="hidden" data-drupal-messages-fallback></div><div class="block-system block-pablo-urrea-content" id="block-pablo-urrea-content">
+  
+    
+      
+<article class="node node--type-article">
+  <div class="content">
+    
+<h1 class="content-title">
+    
+
+            <div class="clearfix text-formatted"><p><em>Linux</em> Package Error: Cannot satisfy dependencies</p>
+</div>
+      
+  </h1>
+<div class="border-top content-tags link-no-hover">
+    
+
+      <div>
+              <div><a href="/en/articles/categories/linux" hreflang="en">Linux</a></div>
+              <div><a href="/en/articles/categories/updates" hreflang="en">Updates</a></div>
+              <div><a href="/en/articles/categories/error" hreflang="en">Error</a></div>
+          </div>
+  
+  </div>
+<div class="content-image">
+    
+<div class="polaroid">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-full">
+  
+      
+
+            <div>  <img alt="Linux Package Error: Cannot satisfy dependencies" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/linux_package_code-cannot_satisfy_dependencies.png?itok=CeUy5FvE" height="540" loading="lazy" title="Linux Package Error: Cannot satisfy dependencies" width="1072">
+
+
+</div>
+      
+  </article>
+</div>
+      
+<div class="title title-right title-small">
+    
+
+            <div class="clearfix text-formatted"><p>Package Error: Cannot satisfy dependencies</p>
+</div>
+      
+  </div>
+  </div>
+  </div>
+<div class="border-bottom content-authorship">
+    
+<div class="authorship-group-1 content-align-left content-align-top">
+    <article class="profile">
+  
+<div class="image">
+    
+
+            <div><article class="media media--type-image media--view-mode-thumbnail">
+  
+      
+<div class="thumbnail">
+    
+
+            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+
+
+</div>
+      
+  </div>
+  </article>
+</div>
+      
+  </div>
+<div class="name">
+    
+
+            <div class="clearfix text-formatted"><p>Pablo Urrea</p>
+</div>
+      
+  </div>
+<div class="contact">
+    
+
+            <div>
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.linkedin.com/in/pablourrea" class="icon" target="_blank" title="LinkedIn"><img alt="LinkedIn" class="icon" src="/sites/default/files/icons/linkedin.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/u/enchufe" class="icon" target="_blank" title="Drupal"><img alt="Drupal" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://github.com/pablourrea" class="icon" target="_blank" title="GitHub"><img alt="GitHub" class="icon" src="/sites/default/files/icons/github.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://git.drupalcode.org/Enchufe" class="icon" target="_blank" title="DrupalCode"><img alt="DrupalCode" class="icon" src="/sites/default/files/icons/drupalcode.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/user/3685606/contact" class="icon" target="_blank" title="Drupal Contact Form"><img alt="Drupal Contact Form" class="icon" src="/sites/default/files/icons/drupal_contact_form.svg"></a>
+              </li>
+        </ul>
+  
+
+
+</div>
+      
+  </div></article>
+
+  </div>
+<div class="authorship-group-2 content-align-bottom content-align-right">
+    
+<div class="reading-time">
+    
+
+            <div content="5">5 minutes reading</div>
+      
+  </div>
+<div class="authorship-dates">
+    
+<div class="date">
+  <div class="label">
+    Published
+  </div>
+
+  <time class="datetime" datetime="2025-02-14">
+    14/02/2025
+  </time>
+</div>
+
+  </div>
+  </div>
+  </div>
+<div class="content-description">
+    
+
+            <div class="clearfix text-formatted"><p>When trying to install or update an application or program on <em>Linux</em>, this process must be done using a <code>.deb</code> package if you have a <em>Debian</em>, <em>Ubuntu</em>, etc. system, or using an <code>.rpm</code> package for <em>Red Hat</em>, <em>Fedora</em>, etc. systems, either by preference or developer decision. Normally, this installation does not cause headaches; you simply follow the installer's steps, and the program is ready to use. However, sometimes, at the first step, it shows the error "<em><strong>Package error: Dependencies are not met</strong></em>."</p>
+<article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="Linux Package Error: Cannot satisfy dependencies" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/linux_package_code-cannot_satisfy_dependencies.png?itok=SATx1G1A" height="1080" loading="lazy" title="Linux Package Error: Cannot satisfy dependencies" width="1655">
+
+
+</div>
+      
+  </article>
+<p> </p>
+<p> </p>
+<p><strong>What does this error mean?</strong> To fix it, it is not necessary but recommended to understand the origin of the error. This occurs because the package being installed requires certain dependencies that are either unavailable, incompatible, or conflicting with other versions already installed on the system. Some specific possible causes include: the package requires other packages that are not installed; the required dependencies have specific versions, but the system has different versions installed; if the package comes from an external source, there may be incompatibilities with the packages in your distribution's official repositories; the package version may not be compatible with your operating system version; or if you are installing a package manually without resolving dependencies, the system may not be able to install it correctly. In any case, this error has several possible solutions. For these, I will use the <em>VSC</em> or <em>Visual Studio Code</em> package as an example.</p>
+<p> </p>
+<p><strong>Solution 1: Force package installation with </strong><em><strong>dpkg</strong></em><strong>.</strong> Through the console, it is possible to force the package installation quickly with administrator privileges. To do this, you need to run the <em>dpkg</em> command as a superuser, using the <code>-i</code> parameter and specifying the installation file path (it is easiest to do this from the directory where the file is located). The command looks like this:</p>
+<pre><code class="language-bash">sudo dpkg -i file.deb</code></pre><article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="Package installation on Linux using DPKG" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/linux_dpkg_package_install.png?itok=f8nS3lyg" height="407" loading="lazy" title="Package installation on Linux using DPKG" width="1920">
+
+
+</div>
+      
+  </article>
+<p> </p>
+<p> </p>
+<p><strong>Solution 2: Try to fix dependencies.</strong> There is an option to add dependencies using <em>apt</em> in the console as an administrator. To do this, run:</p>
+<pre><code class="language-bash">sudo apt --fix-broken install
+sudo apt install -f</code></pre><p>Then, reinstall the package.</p>
+<p> </p>
+<p><strong>Solution 3: Combine solutions 1 (</strong><em><strong>Force installation</strong></em><strong>) and 2 (</strong><em><strong>Fix dependencies</strong></em><strong>).</strong> If the error persists through new updates, the best approach is to force installation and then install system dependencies. First, run the <em>dpkg</em> command as a superuser, using the <code>-i</code> parameter and specifying the installation file path (it is easiest to do this from the directory where the file is located). The command looks like this:</p>
+<pre><code class="language-bash">sudo dpkg -i file.deb</code></pre><article class="media media--type-image media--view-mode-default">
+  
+      
+
+            <div>  <img alt="Package installation on Linux using DPKG" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/linux_dpkg_package_install.png?itok=f8nS3lyg" height="407" loading="lazy" title="Package installation on Linux using DPKG" width="1920">
+
+
+</div>
+      
+  </article>
+<p> </p>
+<p>Then, add the dependencies using <em>apt</em> with the following command:</p>
+<pre><code class="language-bash">sudo apt --fix-broken install</code></pre><p> </p>
+<p><strong>Solution 4: Check the specific reason.</strong> It is possible to examine the exact cause of the error, though this solution is more tedious and slow since each specific reason must be reviewed. To do this, run the following command as an administrator:</p>
+<pre><code class="language-bash">sudo apt show code</code></pre><p>Or check the report log file directly:</p>
+<pre><code class="language-bash">cat /var/log/apt/term.log</code></pre><p> </p>
+</div>
+      
+  </div>
+<div class="content-footer">
+    <div class="related-entities-wrapper"><h2 class="related-entities-align-left related-entities-title">Recommended articles</h2>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="A close-up of a street sign surrounded by leaves - Photo by Justin Little on Unsplash" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/un_primer_plano_de_un_letrero_de_la_calle_rodeado_de_hojas-justin_little-unsplash.jpg?itok=rpaOfIp4" height="270" loading="lazy" title="A close-up of a street sign surrounded by leaves - Photo by Justin Little on Unsplash" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p>Error 500 on the entity fields management page in <em>Drupal</em></p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with <em>Drupal</em> <em>10</em> led to a lengthy search for solutions.</p>
+</div>
+      
+  </div><a href="/en/articles/error-500-entity-fields-management-page-drupal" class="link-content" hreflang="en" aria-label="Error 500 on the entity fields management page in Drupal"></a>
+  </div>
+  </div>
+
+  
+</article>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="Windows Package Manager (WinGet) (Source: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/windows_package_manager_logo-wikipedia.png?itok=XyI5bhIr" height="270" loading="lazy" title="Windows Package Manager (WinGet) (Source: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p>How to install all pending updates with a single command in Windows?</p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>A Windows command allows updating all programs with pending updates automatically after its execution.</p>
+</div>
+      
+  </div><a href="/en/articles/how-install-all-pending-updates-single-command-windows" class="link-content" hreflang="en" aria-label="How to install all pending updates with a single command in Windows?"></a>
+  </div>
+  </div>
+
+  
+</article>
+
+<article class="node node--type-article">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div>  <img alt="Steam: Steam Deck" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/steam_deck-the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.png?itok=hklw9yJH" height="270" loading="lazy" title="Steam: Steam Deck" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="clearfix text-formatted"><p>"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine</p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="clearfix text-formatted"><p>If you've ever had trouble running games on your <em>Steam Deck LCD / OLED</em> or <em>Linux</em> with <em>Proton</em> and/or <em>Wine</em> due to missing <em>Microsoft</em> components, this article will guide you step by step on how to easily fix it.</p>
+</div>
+      
+  </div><a href="/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-and-or-wine" class="link-content" hreflang="en" aria-label='"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine'></a>
+  </div>
+  </div>
+
+  
+</article>
+<h2 class="related-entities-align-left related-entities-subtitle"></h2>
+</div>
+
+  </div>
+  </div>
+
+  
+</article>
+
+  </div>
+<div class="block-system breadcrumbs content-breadcrumbs" id="content-breadcrumbs">
+  
+    
+        <nav aria-labelledby="system-breadcrumb" class="breadcrumb" role="navigation">
+    <h2 class="visually-hidden" id="system-breadcrumb">Breadcrumb</h2>
+    <ol>
+          <li>
+                  <a href="/en">Home</a>
+              </li>
+          <li>
+                  <a href="/en/articles">Articles</a>
+              </li>
+          <li>
+                  Linux Package Error: Cannot Satisfy Dependencies
+              </li>
+        </ol>
+  </nav>
+
+  </div>
+
+  </div>
+
+          </div>
+
+        </section>
+
+        
+        
+      </div>
+    </div>
+  </div>
+
+  
+
+      <footer id="footer">
+      <div class="container">
+        <div id="footer-region">
+            <div class="region region-footer">
+    <nav aria-labelledby="block-pablo-urrea-footer--2-menu" class="block block-menu navigation menu--footer" role="navigation" id="block-pablo-urrea-footer--2">
+            
+  <h2 class="visually-hidden" id="block-pablo-urrea-footer--2-menu">Footer</h2>
+  
+
+        
+
+  <ul class="menu menu-level-0" data-region="footer">
+                  
+        <li class="menu-item">
+          <span class="hidden-title">About</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-dropdown-0 menu-type-user view-mode-user">
+              
+
+            <div><article class="profile">
+  
+
+            <div><article class="media media--type-image media--view-mode-thumbnail">
+  
+      
+<div class="thumbnail">
+    
+
+            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+
+
+</div>
+      
+  </div>
+  </article>
+</div>
+      
+
+            <div class="clearfix text-formatted"><p>Born and raised in the metropolitan area of Madrid, he showed a fervent interest in the world of computers and programming from an early age. This blog project gives him the opportunity to document and share the technological challenges he faces.</p>
+</div>
+      
+
+            <div>
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.linkedin.com/in/pablourrea" class="icon" target="_blank" title="LinkedIn"><img alt="LinkedIn" class="icon" src="/sites/default/files/icons/linkedin.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/u/enchufe" class="icon" target="_blank" title="Drupal"><img alt="Drupal" class="icon" src="/sites/default/files/icons/logo.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://github.com/pablourrea" class="icon" target="_blank" title="GitHub"><img alt="GitHub" class="icon" src="/sites/default/files/icons/github.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://git.drupalcode.org/Enchufe" class="icon" target="_blank" title="DrupalCode"><img alt="DrupalCode" class="icon" src="/sites/default/files/icons/drupalcode.svg"></a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.drupal.org/user/3685606/contact" class="icon" target="_blank" title="Drupal Contact Form"><img alt="Drupal Contact Form" class="icon" src="/sites/default/files/icons/drupal_contact_form.svg"></a>
+              </li>
+        </ul>
+  
+
+
+</div>
+      </article>
+</div>
+      
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <span>Pages</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-0">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/en" target="_self" data-drupal-link-system-path="<front>">Home 📰</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/articles" target="_self" data-drupal-link-system-path="node/9">All articles 🗞️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/articles/categories" target="_self" data-drupal-link-system-path="node/23">Article categories 🗂️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/projects" target="_self" data-drupal-link-system-path="node/10">Pablo Urrea's projects 🏗️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/projects/categories" target="_self" data-drupal-link-system-path="node/22">Project categories 📊</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--expanded">
+          <span>About</span>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-0">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/en/about" class="stroke" target="_self" data-drupal-link-system-path="node/11">About Pablo Urrea 👤</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/cookie-policy" target="_self" data-drupal-link-system-path="node/21">Cookie Policy 🍪</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/data-protection-policy" data-drupal-link-system-path="node/25">Data Protection Policy 🔒</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/en/legal-notice" data-drupal-link-system-path="node/24">Legal Notice ⚖️</a>
+                                
+  
+  <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-type-default view-mode-default menu-dropdown-1">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+  </nav>
+<div class="block-block-content block-pablo-urrea-footer-license footer footer-license" id="block-pablo-urrea-footer-license">
+  
+    
+      
+
+            <div class="clearfix text-formatted"><p><a href="/en/license">Pablo Urrea <strong>©</strong> All rights reserved</a></p>
+</div>
+      
+  </div>
+
+  </div>
+
+        </div>
+      </div>
+    </footer>
+  
+</div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/45","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
+<script src="/sites/default/files/js/js_75_LqeMu93GcOssB4x9skAC__sxIs834F_eArXrOgY4.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+<script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
+<script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=2&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+
+      </body>
+</html>

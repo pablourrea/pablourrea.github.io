@@ -30,7 +30,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2025-02-07T18:49:38+00:00</lastmod>
+  <lastmod>2025-02-14T12:50:32+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -524,6 +524,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/windows_package_manager_logo-wikipedia.png</image:loc>
    <image:title>Windows Package Manager (WinGet) (Fuente: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)</image:title>
    <image:caption>Windows Package Manager (WinGet) (Fuente: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/linux-package-error-cannot-satisfy-dependencies"/>
+  <lastmod>2025-02-14T12:47:57+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/linux_package_code-cannot_satisfy_dependencies.png</image:loc>
+   <image:title>Error en el paquete en Linux: No se cumplen las dependencias</image:title>
+   <image:caption>Error en el paquete en Linux: No se cumplen las dependencias</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/linux-package-error-cannot-satisfy-dependencies</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/linux-package-error-cannot-satisfy-dependencies"/>
+  <lastmod>2025-02-14T12:47:57+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/linux_package_code-cannot_satisfy_dependencies.png</image:loc>
+   <image:title>Error en el paquete en Linux: No se cumplen las dependencias</image:title>
+   <image:caption>Error en el paquete en Linux: No se cumplen las dependencias</image:caption>
   </image:image>
  </url>
  <url>

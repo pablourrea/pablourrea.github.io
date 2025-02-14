@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>Error en el paquete de Linux: No se cumplen las dependencias</title>
+  <link>https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias</link>
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Linux Package Error: Cannot satisfy dependencies</span>
+
+
+            <p>The error "<em>Cannot satisfy dependencies</em>" (or "<em>No se cumplen las dependencias</em>" in Spanish) when trying to install a package in <em>Linux</em> means that it requires certain dependencies that are unavailable, incompatible, or conflict with other versions already installed on the system.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Fri, 14/02/2025 - 12:04
+</span>
+]]></description>
+  <pubDate>Fri, 14 Feb 2025 12:04:47 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">45 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>¿Cómo instalar todas las actualizaciones pendientes con un solo comando en Windows?</title>
   <link>https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows</link>
   <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">How to install all pending updates with a single command in Windows?</span>
@@ -149,22 +165,6 @@
   <pubDate>Sat, 20 Jul 2024 14:51:48 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">33 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Compilar, comprimir y mejorar la compatibilidad de los archivos JavaScript con Babel</title>
-  <link>https://pablourrea.github.io/es/articulos/compilar-comprimir-y-mejorar-la-compatibilidad-de-los-archivos-javascript-con-babel</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Compile, compress, and improve the compatibility of JavaScript files with Babel</span>
-
-
-            <p>The automatic compilation, compression, and optimization of <em>JavaScript</em> is an essential practice for improving web page performance.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Tue, 02/07/2024 - 18:37
-</span>
-]]></description>
-  <pubDate>Tue, 02 Jul 2024 18:37:12 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">32 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>
