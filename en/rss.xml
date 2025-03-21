@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>La caché back-end personalizada de Drupal</title>
+  <link>https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal</link>
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">The Drupal custom back-end cache</span>
+
+
+            <p>In <em>Drupal</em>, efficient use of cache is key to improving system performance, especially when handling large volumes of data. The back-end cache allows for efficient data management and reduces server load.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Fri, 21/03/2025 - 14:28
+</span>
+]]></description>
+  <pubDate>Fri, 21 Mar 2025 14:28:03 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">46 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Error en el paquete de Linux: No se cumplen las dependencias</title>
   <link>https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias</link>
   <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Linux Package Error: Cannot satisfy dependencies</span>
@@ -149,22 +165,6 @@
   <pubDate>Sat, 10 Aug 2024 14:32:17 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">34 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Configurar VPN de Fortinet en Linux</title>
-  <link>https://pablourrea.github.io/es/articulos/configurar-vpn-de-fortinet-en-linux</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Configure Fortinet VPN on Linux</span>
-
-
-            <p>On <em>Linux</em>, the <em>Fortinet</em> VPN can be configured through the graphical interface, the console, or the system's network connections, each method having its own advantages and disadvantages. It combines ease of use and technical flexibility, catering to various user needs.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sat, 20/07/2024 - 14:51
-</span>
-]]></description>
-  <pubDate>Sat, 20 Jul 2024 14:51:48 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">33 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>

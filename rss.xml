@@ -7,6 +7,22 @@
     <language>es</language>
     
     <item>
+  <title>La caché back-end personalizada de Drupal</title>
+  <link>https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal</link>
+  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">La caché back-end personalizada de Drupal</span>
+
+
+            <p>En <em>Drupal</em>, el uso eficiente de la caché es clave para mejorar el rendimiento del sistema, especialmente cuando se manejan grandes volúmenes de datos. La caché de back-end permite gestionar datos de manera eficiente y reducir la carga del servidor.</p>
+
+      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
+<span class="field field--name-created field--type-created field--label-hidden">Vie, 21/03/2025 - 14:28
+</span>
+]]></description>
+  <pubDate>Fri, 21 Mar 2025 14:28:03 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">46 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>Error en el paquete de Linux: No se cumplen las dependencias</title>
   <link>https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias</link>
   <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Error en el paquete de Linux: No se cumplen las dependencias</span>
@@ -149,22 +165,6 @@
   <pubDate>Sat, 10 Aug 2024 14:32:17 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">34 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Configurar VPN de Fortinet en Linux</title>
-  <link>https://pablourrea.github.io/es/articulos/configurar-vpn-de-fortinet-en-linux</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Configurar VPN de Fortinet en Linux</span>
-
-
-            <p>En <em>Linux</em>, la VPN de <em>Fortinet</em> se puede configurar a través de la interfaz gráfica, la consola o las conexiones de red del sistema, cada método con sus ventajas y desventajas. Combina facilidad de uso y flexibilidad técnica, adaptándose a diversas necesidades de los usuarios.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sáb, 20/07/2024 - 14:51
-</span>
-]]></description>
-  <pubDate>Sat, 20 Jul 2024 14:51:48 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">33 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>

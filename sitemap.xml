@@ -30,7 +30,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2025-02-14T12:50:32+00:00</lastmod>
+  <lastmod>2025-03-21T15:17:56+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -111,10 +111,10 @@
   </image:image>
  </url>
  <url>
-  <loc>https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome"/>
+  <loc>https://pablourrea.github.io/es/articulos/montar-exportar-sitio-web-estatico-drupal-desacoplado-tome</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/montar-exportar-sitio-web-estatico-drupal-desacoplado-tome"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome"/>
-  <lastmod>2024-04-18T18:59:37+00:00</lastmod>
+  <lastmod>2025-03-21T09:17:51+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -125,9 +125,9 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome</loc>
-  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/montar-y-exportar-un-sitio-web-estatico-con-drupal-desacoplado-y-tome"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/montar-exportar-sitio-web-estatico-drupal-desacoplado-tome"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome"/>
-  <lastmod>2024-04-18T18:59:37+00:00</lastmod>
+  <lastmod>2025-03-21T09:17:51+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
   <image:image>
@@ -550,6 +550,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/linux_package_code-cannot_satisfy_dependencies.png</image:loc>
    <image:title>Error en el paquete en Linux: No se cumplen las dependencias</image:title>
    <image:caption>Error en el paquete en Linux: No se cumplen las dependencias</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/drupal-custom-back-end-cache"/>
+  <lastmod>2025-03-21T15:16:11+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/cloud_technology_web_internet_business_developer-from_pxhere_com.jpg</image:loc>
+   <image:title>Nube, tecnología, web, Internet, negocio, desarrollador, etc. de PxHere</image:title>
+   <image:caption>Nube, tecnología, web, Internet, negocio, desarrollador, etc. de PxHere</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/drupal-custom-back-end-cache</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/drupal-custom-back-end-cache"/>
+  <lastmod>2025-03-21T15:16:11+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/cloud_technology_web_internet_business_developer-from_pxhere_com.jpg</image:loc>
+   <image:title>Nube, tecnología, web, Internet, negocio, desarrollador, etc. de PxHere</image:title>
+   <image:caption>Nube, tecnología, web, Internet, negocio, desarrollador, etc. de PxHere</image:caption>
   </image:image>
  </url>
  <url>
@@ -1537,6 +1563,22 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/actualizaciones"/>
   <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/updates"/>
   <lastmod>2025-02-07T17:31:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/categorias/cache</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/cache"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/cache"/>
+  <lastmod>2025-03-21T14:40:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/categories/cache</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/categorias/cache"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/categories/cache"/>
+  <lastmod>2025-03-21T14:40:44+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
  </url>
