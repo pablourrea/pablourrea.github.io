@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
+  <html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
 
@@ -11,7 +11,7 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="In Drupal, the most commonly used cache is the one that affects the front-end, so that pages are cached or temporarily stored until a dynamic element changes, affecting the rendering of the page. However, this can also be replicated in the back-end thanks to back-end caching. This is useful, for example, when entity data is updated and needs to be re-requested when rendering a page. But what happens when the process does not have a direct connection to the front-end or requires individualized cache processing?  Back-end caching interface. Let’s take a simple example: a page contains a block that calls a custom service to request the states of a node of type “Request” and ultimately displays the total count of requests that are in a field of “Draft”, “Submitted”, “In progress”, “Accepted” or “Denied”. The service obtains all the processes in the system and adds values to each state to show the total count—easy so far. The system also finds it easy if it only has to check 100 requests, but what happens if there are 10,000 requests in the system? The system takes too long to respond, and the final page crashes because the service took too long to fetch and check the status of each request. What’s the solution? First, perform a query to the database to get the corresponding nodes by each state directly. Secondly, cache the response until one of these nodes changes. To do this, the back-end caching interface or CacheBackendInterface needs to be implemented. This can be directly integrated with/** @var \Drupal\Core\Cache\CacheBackendInterface $cache */ $cache = \Drupal::cache();Or it can also be injected as a dependency with the argument “@cache.default”.  Let’s cache the results! Once the back-end caching interface is implemented, the variable should be cached. This can be of any type, as Drupal will serialize it behind the scenes to store it. First, you need to define a cache ID. It is recommended to follow the pattern MODULE:FUNCTIONALITY/SERVICE/CLASS:FINAL_USE/METHOD:ENTITY_ID/ENTITY_UUID:LANGUAGE_IF_APPLICABLE. For example, a clear and concise ID would be my_site_tramites:summary_block:total_count:999:en, referring to the custom module my_site_tramites where the functionality is located, the block summary_block where the functionality resides, the functionality total_count, the parent page ID 999 where this block is located, and the applicable language en for the page.Next, you need to check if there is any cached element with this cache ID. If it exists, its value will be stored in $cache_item in the following example to return or slightly process it:if ($cache_item = $cache->get($cid)) {If it doesn’t exist, after this if, the data processing will take place, and its calculation will be cached with$cache->set($cid, $data, Cache::PERMANENT, $cache_tags);But let’s break down the provided parameters to better understand how to obtain them correctly and provide them to the set method. Cache ID. The unique cache ID to be stored. Its value in string can be anything, but to maintain order, it’s better to follow a pattern similar to the one mentioned earlier. Data to cache. It can be of any type, string, integer, float, array, object (Be careful with very large objects that may exceed the database memory limit when serialized). Everything stored here will be retrieved when requesting the cache with the same ID. Expiration. This value can be any integer between -1 and infinity, where -1 means that the cache never expires unless the cache tags expire, which I will discuss in the next point; 0 means that the cache is never stored because it expires immediately; and any other number is the timestamp when the cache will become invalid, for example, the timestamp for March 21, 2025, at 2:00 PM GMT is 1742565600. As a guide, the most commonly used constants are:\Drupal\Core\Cache\Cache::PERMANENTand\Drupal\Core\Cache\CacheBackendInterface::CACHE_PERMANENTBoth have a value of -1. Cache tags. These are tags by which the system identifies elements like entities and other resources to relate them to other items that depend on their cache. For example, the cache of a node with ID 25 would be node:25, when that node breaks its cache because it is updated, all items with the cache tag node:25 should be reloaded (along with the rest of the page). The set method of the back-end cache accepts a list of string tags as the last parameter. This list is usually initialized as array at the beginning of processing, and in each interaction with, for example, a node, the entity method getCacheTags() is called to obtain an array with the cache tags of this entity, along with the auxiliary class method \Drupal\Core\Cache\Cache::mergeTags() to which you can pass any number of cache tags arrays, and it will merge them into one, like this:$cache_tags = \Drupal\Core\Cache\Cache::mergeTags($cache_tags, $node->getCacheTags());Finally, provide $cache_tags to the back-end cache.  Conclusion. The proper and strategic use of back-end caching in Drupal is crucial for optimizing system performance, especially when handling large volumes of data. Implementing CacheBackendInterface allows efficient storage and retrieval of data, reducing processing load and improving page response times. By following best practices such as using well-structured cache identifiers, proper expiration management, and utilizing cache tags, it’s possible to ensure that the stored data is accurate and up to date when necessary. With a well-implemented caching strategy, the user experience and system stability can be significantly improved without compromising the integrity of the information. " name="description">
+<meta content="In Drupal, the most commonly used cache is the one that affects the front-end, so that pages are cached or temporarily stored until a dynamic element changes, affecting the rendering of the page. However, this can also be replicated in the back-end thanks to back-end caching. This is useful, for example, when entity data is updated and needs to be re-requested when rendering a page. But what happens when the process does not have a direct connection to the front-end or requires individualized cache processing? Back-end caching interface. Let’s take a simple example: a page contains a block that calls a custom service to request the states of a node of type “Request” and ultimately displays the total count of requests that are in a field of “Draft”, “Submitted”, “In progress”, “Accepted” or “Denied”. The service obtains all the processes in the system and adds values to each state to show the total count—easy so far. The system also finds it easy if it only has to check 100 requests, but what happens if there are 10,000 requests in the system? The system takes too long to respond, and the final page crashes because the service took too long to fetch and check the status of each request. What’s the solution? First, perform a query to the database to get the corresponding nodes by each state directly. Secondly, cache the response until one of these nodes changes. To do this, the back-end caching interface or CacheBackendInterface needs to be implemented. This can be directly integrated with/** @var \Drupal\Core\Cache\CacheBackendInterface $cache */ $cache = \Drupal::cache();Or it can also be injected as a dependency with the argument “@cache.default”. Let’s cache the results! Once the back-end caching interface is implemented, the variable should be cached. This can be of any type, as Drupal will serialize it behind the scenes to store it. First, you need to define a cache ID. It is recommended to follow the pattern MODULE:FUNCTIONALITY/SERVICE/CLASS:FINAL_USE/METHOD:ENTITY_ID/ENTITY_UUID:LANGUAGE_IF_APPLICABLE. For example, a clear and concise ID would be my_site_tramites:summary_block:total_count:999:en, referring to the custom module my_site_tramites where the functionality is located, the block summary_block where the functionality resides, the functionality total_count, the parent page ID 999 where this block is located, and the applicable language en for the page.Next, you need to check if there is any cached element with this cache ID. If it exists, its value will be stored in $cache_item in the following example to return or slightly process it:if ($cache_item = $cache->get($cid)) {If it doesn’t exist, after this if, the data processing will take place, and its calculation will be cached with$cache->set($cid, $data, Cache::PERMANENT, $cache_tags);But let’s break down the provided parameters to better understand how to obtain them correctly and provide them to the set method. Cache ID. The unique cache ID to be stored. Its value in string can be anything, but to maintain order, it’s better to follow a pattern similar to the one mentioned earlier. Data to cache. It can be of any type, string, integer, float, array, object (Be careful with very large objects that may exceed the database memory limit when serialized). Everything stored here will be retrieved when requesting the cache with the same ID. Expiration. This value can be any integer between -1 and infinity, where -1 means that the cache never expires unless the cache tags expire, which I will discuss in the next point; 0 means that the cache is never stored because it expires immediately; and any other number is the timestamp when the cache will become invalid, for example, the timestamp for March 21, 2025, at 2:00 PM GMT is 1742565600. As a guide, the most commonly used constants are:\Drupal\Core\Cache\Cache::PERMANENTand\Drupal\Core\Cache\CacheBackendInterface::CACHE_PERMANENTBoth have a value of -1. Cache tags. These are tags by which the system identifies elements like entities and other resources to relate them to other items that depend on their cache. For example, the cache of a node with ID 25 would be node:25, when that node breaks its cache because it is updated, all items with the cache tag node:25 should be reloaded (along with the rest of the page). The set method of the back-end cache accepts a list of string tags as the last parameter. This list is usually initialized as array at the beginning of processing, and in each interaction with, for example, a node, the entity method getCacheTags() is called to obtain an array with the cache tags of this entity, along with the auxiliary class method \Drupal\Core\Cache\Cache::mergeTags() to which you can pass any number of cache tags arrays, and it will merge them into one, like this:$cache_tags = \Drupal\Core\Cache\Cache::mergeTags($cache_tags, $node->getCacheTags());Finally, provide $cache_tags to the back-end cache. Conclusion. The proper and strategic use of back-end caching in Drupal is crucial for optimizing system performance, especially when handling large volumes of data. Implementing CacheBackendInterface allows efficient storage and retrieval of data, reducing processing load and improving page response times. By following best practices such as using well-structured cache identifiers, proper expiration management, and utilizing cache tags, it’s possible to ensure that the stored data is accurate and up to date when necessary. With a well-implemented caching strategy, the user experience and system stability can be significantly improved without compromising the integrity of the information." name="description">
 <meta content="In Drupal, efficient use of cache is key to improving system performance, especially when handling large volumes of data. The back-end cache allows for efficient data management and reduces server load." name="abstract">
 <meta content="Pablo Urrea,The Drupal custom back-end cache,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Cache" name="keywords">
 <link href="https://pablourrea.github.io/en/articles/drupal-custom-back-end-cache" rel="canonical">
@@ -80,10 +80,6 @@
 <link href="https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal" rel="alternate" hreflang="x-default">
 <link href="https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal" rel="alternate" hreflang="es">
 <link href="https://pablourrea.github.io/en/articles/drupal-custom-back-end-cache" rel="alternate" hreflang="en">
-<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-<meta content="Drupal responsive_favicons + realfavicongenerator.net" name="favicon-generator">
 <meta content="Drupal 10 (https://www.drupal.org)" name="Generator">
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
@@ -199,19 +195,20 @@
         }
     ]
 }</script>
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
     <title>The Drupal custom back-end cache | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_rpem4TxYlULEXpasCfr40VThRRFfZMJUojnyLptWTuM.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+    <link href="/sites/default/files/css/css_m0lQ5p9gf76LgmtDOfzEoQe4MI_RIysAMOIFWpSGvoA.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy@1.0.5/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_04qgOWTp8cxMNGCiNW0azJGmRc_9WDUnmWQwMljH7Q4.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_SwtPfDmJ7TeqhlxdAq1U98GdpYthVTkfzb3c_oFRdvw.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_IRKhJkX-TrsJJAlPj3SGO5Jgnb4V95etU6B1J2urzNQ.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_KpN7rqTun5RZjgxaCNCATtn8gm0q7Jo9zCW7PYNMD4k.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="print">
 <link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="no-sidebar page-articles-drupal-custom-back-end-cache role--anonymous section-articles with-subnav">
+      <body class="node--type-article no-sidebar page-articles-drupal-custom-back-end-cache path-node role--anonymous section-articles with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -296,22 +293,22 @@
   
     
       
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <h1 class="content-title">
     
 
-            <div class="clearfix text-formatted"><p>The <em>Drupal</em> custom back-end cache</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>The <em>Drupal</em> custom back-end cache</p>
 </div>
       
   </h1>
 <div class="border-top content-tags link-no-hover">
     
 
-      <div>
-              <div><a href="/en/articles/categories/drupal" hreflang="en">Drupal</a></div>
-              <div><a href="/en/articles/categories/cache" hreflang="en">Cache</a></div>
+      <div class="field field--label-hidden field--name-field-tags field__items">
+              <div class="field__item"><a href="/en/articles/categories/drupal" hreflang="en">Drupal</a></div>
+              <div class="field__item"><a href="/en/articles/categories/cache" hreflang="en">Cache</a></div>
           </div>
   
   </div>
@@ -320,11 +317,11 @@
 <div class="polaroid">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-full">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-full">
   
       
 
-            <div>  <img alt="Cloud, technology, web, Internet, business, developer, etc. from PxHere" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/cloud_technology_web_internet_business_developer-from_pxhere_com.jpg?itok=IxjH4xtI" height="540" loading="lazy" title="Cloud, technology, web, Internet, business, developer, etc. from PxHere" width="1072">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Cloud, technology, web, Internet, business, developer, etc. from PxHere" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/cloud_technology_web_internet_business_developer-from_pxhere_com.jpg?itok=IxjH4xtI" height="540" loading="lazy" title="Cloud, technology, web, Internet, business, developer, etc. from PxHere" width="1072">
 
 
 </div>
@@ -335,7 +332,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="clearfix text-formatted"><p>Cloud, technology, web, Internet, business, developer, etc., from <a href="https://pxhere.com/es/photo/646713?utm_content=clipUser&utm_medium=referral&utm_source=pxhere"><strong>PxHere</strong></a>.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-image-html"><p>Cloud, technology, web, Internet, business, developer, etc., from <a href="https://pxhere.com/es/photo/646713?utm_content=clipUser&utm_medium=referral&utm_source=pxhere"><strong>PxHere</strong></a>.</p>
 </div>
       
   </div>
@@ -349,13 +346,13 @@
 <div class="image">
     
 
-            <div><article class="media media--type-image media--view-mode-thumbnail">
+            <div class="field__item field field--label-hidden field--name-field-profile-picture"><article class="media media--type-image media--view-mode-thumbnail">
   
       
 <div class="thumbnail">
     
 
-            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
 
 
 </div>
@@ -368,14 +365,14 @@
 <div class="name">
     
 
-            <div class="clearfix text-formatted"><p>Pablo Urrea</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-name-html"><p>Pablo Urrea</p>
 </div>
       
   </div>
 <div class="contact">
     
 
-            <div>
+            <div class="field__item field field--label-hidden field--name-field-contact">
               <ul class="menu">
                     <li class="menu-item">
         <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
@@ -409,7 +406,7 @@
 <div class="reading-time">
     
 
-            <div content="15">15 minutes reading</div>
+            <div class="field__item field field--label-hidden field--name-field-reading-time" content="15">15 minutes reading</div>
       
   </div>
 <div class="authorship-dates">
@@ -430,7 +427,7 @@
 <div class="content-description">
     
 
-            <div class="clearfix text-formatted"><p><span>In </span><em><span>Drupal</span></em><span>, the most commonly used cache is the one that affects the front-end, so that pages are cached or temporarily stored until a dynamic element changes, affecting the rendering of the page. However, this can also be replicated in the back-end thanks to back-end caching. This is useful, for example, when entity data is updated and needs to be re-requested when rendering a page. But what happens when the process does not have a direct connection to the front-end or requires individualized cache processing?</span></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-html"><p><span>In </span><em><span>Drupal</span></em><span>, the most commonly used cache is the one that affects the front-end, so that pages are cached or temporarily stored until a dynamic element changes, affecting the rendering of the page. However, this can also be replicated in the back-end thanks to back-end caching. This is useful, for example, when entity data is updated and needs to be re-requested when rendering a page. But what happens when the process does not have a direct connection to the front-end or requires individualized cache processing?</span></p>
 <p> </p>
 <p> </p>
 <p><span><strong>Back-end caching interface.</strong> Let’s take a simple example: a page contains a block that calls a custom service to request the states of a node of type “</span><em><span>Request</span></em><span>” and ultimately displays the total count of requests that are in a field of “</span><em><span>Draft</span></em><span>”, “</span><em><span>Submitted</span></em><span>”, “</span><em><span>In progress</span></em><span>”, “</span><em><span>Accepted</span></em><span>” or “</span><em><span>Denied</span></em><span>”. The service obtains all the processes in the system and adds values to each state to show the total count—easy so far. The system also finds it easy if it only has to check 100 requests, but what happens if there are 10,000 requests in the system? The system takes too long to respond, and the final page crashes because the service took too long to fetch and check the status of each request. What’s the solution? First, perform a query to the database to get the corresponding nodes by each state directly. Secondly, cache the response until one of these nodes changes. To do this, the back-end caching interface or </span><code><em><span>CacheBackendInterface</span></em></code><span> needs to be implemented. This can be directly integrated with</span></p>
@@ -462,7 +459,7 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
 <div class="content-footer">
     <div class="related-entities-wrapper"><h2 class="related-entities-align-left related-entities-title">Recommended articles</h2>
 
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <div class="wrapper wrapper-article wrapper-related-entity">
@@ -470,11 +467,11 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
 <div class="polaroid main-media">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
   
       
 
-            <div>  <img alt="Tome" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/tome.png?itok=8mTelvki" height="270" loading="lazy" title="Tome" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Tome" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/tome.png?itok=8mTelvki" height="270" loading="lazy" title="Tome" width="423">
 
 
 </div>
@@ -486,14 +483,14 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Building and exporting a static website with decoupled Drupal and Tome</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Building and exporting a static website with decoupled Drupal and Tome</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>Drupal, known for its robustness, becomes a standout choice for static sites. With Tome, it transforms a dynamic site into static, ideal for projects without frequent updates. Decoupled Drupal and Tome offer security, performance, and ease of implementation, simplifying the setup and deployment process. Joining forces, they provide a powerful and flexible solution for high-performance static websites.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>Drupal, known for its robustness, becomes a standout choice for static sites. With Tome, it transforms a dynamic site into static, ideal for projects without frequent updates. Decoupled Drupal and Tome offer security, performance, and ease of implementation, simplifying the setup and deployment process. Joining forces, they provide a powerful and flexible solution for high-performance static websites.</p>
 </div>
       
   </div><a href="/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome" class="link-content" hreflang="en" aria-label="Building and exporting a static website with decoupled Drupal and Tome"></a>
@@ -503,7 +500,7 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
   
 </article>
 
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <div class="wrapper wrapper-article wrapper-related-entity">
@@ -511,11 +508,11 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
 <div class="polaroid main-media">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
   
       
 
-            <div>  <img alt="DrupalCamp 2024 - Banner - Spanish Drupal Association (Scaled)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/drupal_camp_2024-banner.jpg?itok=PEydqW0F" height="270" loading="lazy" title="DrupalCamp 2024 - Banner - Spanish Drupal Association (Scaled)" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="DrupalCamp 2024 - Banner - Spanish Drupal Association (Scaled)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/drupal_camp_2024-banner.jpg?itok=PEydqW0F" height="270" loading="lazy" title="DrupalCamp 2024 - Banner - Spanish Drupal Association (Scaled)" width="423">
 
 
 </div>
@@ -527,14 +524,14 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>DrupalCamp 2024: Benidorm</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>DrupalCamp 2024: Benidorm</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>Last October, Benidorm hosted grandparents, British visitors, and attendees of the <em>DrupalCamp 2024</em>, the annual regional event that brings together <em>Drupal</em> developers in Spain.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>Last October, Benidorm hosted grandparents, British visitors, and attendees of the <em>DrupalCamp 2024</em>, the annual regional event that brings together <em>Drupal</em> developers in Spain.</p>
 </div>
       
   </div><a href="/en/articles/drupalcamp-2024-benidorm" class="link-content" hreflang="en" aria-label="DrupalCamp 2024: Benidorm"></a>
@@ -544,7 +541,7 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
   
 </article>
 
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <div class="wrapper wrapper-article wrapper-related-entity">
@@ -552,11 +549,11 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
 <div class="polaroid main-media">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
   
       
 
-            <div>  <img alt="How do birds know how to migrate? (2)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating-2.jpg?itok=LosZK1pa" height="270" loading="lazy" title="How do birds know how to migrate? (2)" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="How do birds know how to migrate? (2)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/birds-migrating-2.jpg?itok=LosZK1pa" height="270" loading="lazy" title="How do birds know how to migrate? (2)" width="423">
 
 
 </div>
@@ -568,14 +565,14 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Migrate Paragraphs of Content with Migrate (Enhanced version)</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Migrate Paragraphs of Content with Migrate (Enhanced version)</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>In the article <em>Migrating Paragraphs of Content with Migrate</em>, I explore the possibilities of migrating <em>Paragraphs</em> with migration configuration files independent of the parent node. However, it's true that, although <em>Paragraphs</em> are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate <em>Paragraphs</em> and link them to the parent within the same migration.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>In the article <em>Migrating Paragraphs of Content with Migrate</em>, I explore the possibilities of migrating <em>Paragraphs</em> with migration configuration files independent of the parent node. However, it's true that, although <em>Paragraphs</em> are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate <em>Paragraphs</em> and link them to the parent within the same migration.</p>
 </div>
       
   </div><a href="/en/articles/migrate-paragraphs-content-migrate-enhanced-version" class="link-content" hreflang="en" aria-label="Migrate Paragraphs of Content with Migrate (Enhanced version)"></a>
@@ -648,16 +645,16 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
   <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-dropdown-0 menu-type-user view-mode-user">
               
 
-            <div><article class="profile">
+            <div class="field__item field field--label-hidden field--name-field-user"><article class="profile">
   
 
-            <div><article class="media media--type-image media--view-mode-thumbnail">
+            <div class="field__item field field--label-hidden field--name-field-profile-picture"><article class="media media--type-image media--view-mode-thumbnail">
   
       
 <div class="thumbnail">
     
 
-            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
 
 
 </div>
@@ -667,11 +664,11 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
 </div>
       
 
-            <div class="clearfix text-formatted"><p>Born and raised in the metropolitan area of Madrid, he showed a fervent interest in the world of computers and programming from an early age. This blog project gives him the opportunity to document and share the technological challenges he faces.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-biography-html"><p>Born and raised in the metropolitan area of Madrid, he showed a fervent interest in the world of computers and programming from an early age. This blog project gives him the opportunity to document and share the technological challenges he faces.</p>
 </div>
       
 
-            <div>
+            <div class="field__item field field--label-hidden field--name-field-contact">
               <ul class="menu">
                     <li class="menu-item">
         <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
@@ -855,7 +852,7 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
     
       
 
-            <div class="clearfix text-formatted"><p><a href="/en/license">Pablo Urrea <strong>©</strong> All rights reserved</a></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-wyswyg"><p><a href="/en/license">Pablo Urrea <strong>©</strong> All rights reserved</a></p>
 </div>
       
   </div>
@@ -872,7 +869,7 @@ $cache = \Drupal::cache();</code></pre><p><span>Or it can also be injected as a 
 
     
     <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/46","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"php":"php"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
-<script src="/sites/default/files/js/js_75_LqeMu93GcOssB4x9skAC__sxIs834F_eArXrOgY4.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+<script src="/sites/default/files/js/js_8RYbW2UfMct-KnU8JKkwXBwbMWUmmeGtTwSAGCWU5U4.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 <script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=2&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 

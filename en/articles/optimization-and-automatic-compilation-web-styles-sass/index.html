@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
+  <html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
 
@@ -11,7 +11,7 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="SASS (Syntactically Awesome Style Sheets) or Super CSS for friends (SIUUUUUUUSS in Portuguese), allows for automatic compilation of component-based styles for web theme creation. This system is quite useful for unifying the CSS file of a web page to reduce file transfer and improve performance (One step closer to getting a 100/100 score from Google Lighthouse). Quick, easy, and for the whole family. The first thing to do is to install Node, the main executor of SASS. It's best to follow the steps on the official Node page for the environment you need: https://nodejs.org/en/download/package-manager.Now that Node is working correctly on your machine (or should be), it's time to install SASS. You can install it globally on the whole machine (recommended for testing) as recommended in the official SASS documentation:npm install -g sassOr you can install SASS in the project where you will use the package from the root folder of the package (don't forget to run the Node project initiation command npm init first):npm install sass Execution time is shorter than expected. Compiling the file is quite simple; the sass command accepts various parameters, but the most useful ones (probably) are the input path SCSS, the output path CSS, the style parameter for compiling expanded or compressed styles (expanded (default) or compressed), and the watch parameter to automatically compile whenever it detects a saved change in the SCSS files. An example of how the command looks with these parameters applied is:npx sass --watch --style=compressed path/to/file.scss:path/to/file.cssIn this example, SASS is instructed to compile the main SCSS file in a compressed format (the one that usually contains all the dependencies) and to compile the compressed result into the CSS file at the specified path. If you need more configurations, here is the output of sass --help: Compile Sass to CSS. Usage: sass [output.css] sass : : ━━━ Input and Output ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --[no-]stdin Read the stylesheet from stdin. --[no-]indented Use the indented syntax for input from stdin. -I, --load-path= A path to use when resolving imports. May be passed multiple times. -p, --pkg-importer= Built-in importer(s) to use for pkg: URLs. [node] Load files like Node.js package resolution. -s, --style= Output style. [expanded (default), compressed] --[no-]charset Emit a @charset or BOM for CSS with non-ASCII characters. (defaults to on) --[no-]error-css When an error occurs, emit a stylesheet describing it. Defaults to true when compiling to a file. --update Only compile out-of-date stylesheets. ━━━ Source Maps ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --[no-]source-map Whether to generate source maps. (defaults to on) --source-map-urls How to link from source maps to source files. [relative (default), absolute] --[no-]embed-sources Embed source file contents in source maps. --[no-]embed-source-map Embed source map contents in CSS. ━━━ Warnings ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -q, --[no-]quiet Don't print warnings. --[no-]quiet-deps Don't print compiler warnings from dependencies. Stylesheets imported through load paths count as dependencies. --[no-]verbose Print all deprecation warnings even when they're repetitive. --fatal-deprecation Deprecations to treat as errors. You may also pass a Sass version to include any behavior deprecated in or before it. See https://sass-lang.com/documentation/breaking-changes for a complete list. --silence-deprecation Deprecations to ignore. --future-deprecation Opt in to a deprecation early. ━━━ Other ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -w, --watch Watch stylesheets and recompile when they change. --[no-]poll Manually check for changes rather than using a native watcher. Only valid with --watch. --[no-]stop-on-error Don't compile more files once an error is encountered. -i, --interactive Run an interactive SassScript shell. -c, --[no-]color Whether to use terminal colors for messages. --[no-]unicode Whether to use Unicode characters for messages. --[no-]trace Print full Dart stack traces for exceptions. -h, --help Print this usage information. --version Print the version of Dart Sass.  In a real example, let's consider the following unoptimized CSS file without SASS:body { font: Helvetica, sans-serif; color: #333; }This file takes up 54 bytes, and if more styles with the same color or font need to be added, a copy of the same style would be required, which is cumbersome for the developer.Now, I convert this CSS file to SCSS:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: $font-stack; color: $primary-color; }And upon compiling it with compression, this is the result:body{font:Helvetica,sans-serif;color:#333}It takes up 43 bytes, and the developer does not need to bother decompressing it to edit it, as the styles are configured from the SCSS file. In the previous examples, the size difference may not seem significant, but when scaled to larger projects, the difference becomes considerable, and the convenience of using variables becomes more necessary.Another example of the advantages of SASS is element nesting. Multiple child elements can be nested under the same parent umbrella. The following CSS file has many nestings that, during development, can be confusing and lead to errors, causing styles to not function correctly because the element to be selected is not properly recognized:body element.class__one#id-element .class__one__two { font: $font-stack; color: $primary-color; }When converted to SASS, it is evident that the nestings improve the readability of the styles:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { element { &.class { &__one { &#id-element { .class { &__two { font: $font-stack; color: $primary-color; } } } } } } }  Conclusion. These examples are just the tip of the iceberg that makes SASS improve style development. It is best to read the official SASS documentation to see all the tool's possibilities. They also have an online compiler so you can test the CSS code before migrating your project. " name="description">
+<meta content="SASS (Syntactically Awesome Style Sheets) or Super CSS for friends (SIUUUUUUUSS in Portuguese), allows for automatic compilation of component-based styles for web theme creation. This system is quite useful for unifying the CSS file of a web page to reduce file transfer and improve performance (One step closer to getting a 100/100 score from Google Lighthouse). Quick, easy, and for the whole family. The first thing to do is to install Node, the main executor of SASS. It's best to follow the steps on the official Node page for the environment you need: https://nodejs.org/en/download/package-manager.Now that Node is working correctly on your machine (or should be), it's time to install SASS. You can install it globally on the whole machine (recommended for testing) as recommended in the official SASS documentation:npm install -g sassOr you can install SASS in the project where you will use the package from the root folder of the package (don't forget to run the Node project initiation command npm init first):npm install sass Execution time is shorter than expected. Compiling the file is quite simple; the sass command accepts various parameters, but the most useful ones (probably) are the input path SCSS, the output path CSS, the style parameter for compiling expanded or compressed styles (expanded (default) or compressed), and the watch parameter to automatically compile whenever it detects a saved change in the SCSS files. An example of how the command looks with these parameters applied is:npx sass --watch --style=compressed path/to/file.scss:path/to/file.cssIn this example, SASS is instructed to compile the main SCSS file in a compressed format (the one that usually contains all the dependencies) and to compile the compressed result into the CSS file at the specified path. If you need more configurations, here is the output of sass --help: Compile Sass to CSS. Usage: sass [output.css] sass : : ━━━ Input and Output ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --[no-]stdin Read the stylesheet from stdin. --[no-]indented Use the indented syntax for input from stdin. -I, --load-path= A path to use when resolving imports. May be passed multiple times. -p, --pkg-importer= Built-in importer(s) to use for pkg: URLs. [node] Load files like Node.js package resolution. -s, --style= Output style. [expanded (default), compressed] --[no-]charset Emit a @charset or BOM for CSS with non-ASCII characters. (defaults to on) --[no-]error-css When an error occurs, emit a stylesheet describing it. Defaults to true when compiling to a file. --update Only compile out-of-date stylesheets. ━━━ Source Maps ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ --[no-]source-map Whether to generate source maps. (defaults to on) --source-map-urls How to link from source maps to source files. [relative (default), absolute] --[no-]embed-sources Embed source file contents in source maps. --[no-]embed-source-map Embed source map contents in CSS. ━━━ Warnings ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -q, --[no-]quiet Don't print warnings. --[no-]quiet-deps Don't print compiler warnings from dependencies. Stylesheets imported through load paths count as dependencies. --[no-]verbose Print all deprecation warnings even when they're repetitive. --fatal-deprecation Deprecations to treat as errors. You may also pass a Sass version to include any behavior deprecated in or before it. See https://sass-lang.com/documentation/breaking-changes for a complete list. --silence-deprecation Deprecations to ignore. --future-deprecation Opt in to a deprecation early. ━━━ Other ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -w, --watch Watch stylesheets and recompile when they change. --[no-]poll Manually check for changes rather than using a native watcher. Only valid with --watch. --[no-]stop-on-error Don't compile more files once an error is encountered. -i, --interactive Run an interactive SassScript shell. -c, --[no-]color Whether to use terminal colors for messages. --[no-]unicode Whether to use Unicode characters for messages. --[no-]trace Print full Dart stack traces for exceptions. -h, --help Print this usage information. --version Print the version of Dart Sass. In a real example, let's consider the following unoptimized CSS file without SASS:body { font: Helvetica, sans-serif; color: #333; }This file takes up 54 bytes, and if more styles with the same color or font need to be added, a copy of the same style would be required, which is cumbersome for the developer.Now, I convert this CSS file to SCSS:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { font: $font-stack; color: $primary-color; }And upon compiling it with compression, this is the result:body{font:Helvetica,sans-serif;color:#333}It takes up 43 bytes, and the developer does not need to bother decompressing it to edit it, as the styles are configured from the SCSS file. In the previous examples, the size difference may not seem significant, but when scaled to larger projects, the difference becomes considerable, and the convenience of using variables becomes more necessary.Another example of the advantages of SASS is element nesting. Multiple child elements can be nested under the same parent umbrella. The following CSS file has many nestings that, during development, can be confusing and lead to errors, causing styles to not function correctly because the element to be selected is not properly recognized:body element.class__one#id-element .class__one__two { font: $font-stack; color: $primary-color; }When converted to SASS, it is evident that the nestings improve the readability of the styles:$font-stack: Helvetica, sans-serif; $primary-color: #333; body { element { &.class { &__one { &#id-element { .class { &__two { font: $font-stack; color: $primary-color; } } } } } } } Conclusion. These examples are just the tip of the iceberg that makes SASS improve style development. It is best to read the official SASS documentation to see all the tool's possibilities. They also have an online compiler so you can test the CSS code before migrating your project." name="description">
 <meta content="Discover how SASS (Super CSS for friends) can improve the performance and organization of CSS stylesheets. I will show you how to install and use it efficiently in your projects." name="abstract">
 <meta content="Pablo Urrea,Optimization and automatic compilation of web styles with SASS,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,NodeJS,SASS,CSS" name="keywords">
 <link href="https://pablourrea.github.io/en/articles/optimization-and-automatic-compilation-web-styles-sass" rel="canonical">
@@ -80,10 +80,6 @@
 <link href="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" rel="alternate" hreflang="x-default">
 <link href="https://pablourrea.github.io/es/articulos/optimizacion-y-compilacion-automatica-de-estilos-web-con-sass" rel="alternate" hreflang="es">
 <link href="https://pablourrea.github.io/en/articles/optimization-and-automatic-compilation-web-styles-sass" rel="alternate" hreflang="en">
-<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-<meta content="Drupal responsive_favicons + realfavicongenerator.net" name="favicon-generator">
 <meta content="Drupal 10 (https://www.drupal.org)" name="Generator">
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
@@ -199,19 +195,20 @@
         }
     ]
 }</script>
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
     <title>Optimization and automatic compilation of web styles with SASS | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_rpem4TxYlULEXpasCfr40VThRRFfZMJUojnyLptWTuM.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+    <link href="/sites/default/files/css/css_m0lQ5p9gf76LgmtDOfzEoQe4MI_RIysAMOIFWpSGvoA.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy@1.0.5/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_04qgOWTp8cxMNGCiNW0azJGmRc_9WDUnmWQwMljH7Q4.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_SwtPfDmJ7TeqhlxdAq1U98GdpYthVTkfzb3c_oFRdvw.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_IRKhJkX-TrsJJAlPj3SGO5Jgnb4V95etU6B1J2urzNQ.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_KpN7rqTun5RZjgxaCNCATtn8gm0q7Jo9zCW7PYNMD4k.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="print">
 <link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="no-sidebar page-articles-optimization-and-automatic-compilation-web-styles-sass role--anonymous section-articles with-subnav">
+      <body class="node--type-article no-sidebar page-articles-optimization-and-automatic-compilation-web-styles-sass path-node role--anonymous section-articles with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -296,23 +293,23 @@
   
     
       
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <h1 class="content-title">
     
 
-            <div class="clearfix text-formatted"><p>Optimization and automatic compilation of web styles with <em>SASS</em></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Optimization and automatic compilation of web styles with <em>SASS</em></p>
 </div>
       
   </h1>
 <div class="border-top content-tags link-no-hover">
     
 
-      <div>
-              <div><a href="/en/articles/categories/nodejs" hreflang="en">NodeJS</a></div>
-              <div><a href="/en/articles/categories/sass" hreflang="en">SASS</a></div>
-              <div><a href="/en/articles/categories/css" hreflang="en">CSS</a></div>
+      <div class="field field--label-hidden field--name-field-tags field__items">
+              <div class="field__item"><a href="/en/articles/categories/nodejs" hreflang="en">NodeJS</a></div>
+              <div class="field__item"><a href="/en/articles/categories/sass" hreflang="en">SASS</a></div>
+              <div class="field__item"><a href="/en/articles/categories/css" hreflang="en">CSS</a></div>
           </div>
   
   </div>
@@ -321,11 +318,11 @@
 <div class="polaroid">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-full">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-full">
   
       
 
-            <div>  <img alt="SASS logo" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/sass_logo.jpg?itok=022OdC9E" height="540" loading="lazy" title="SASS logo" width="1072">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="SASS logo" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/sass_logo.jpg?itok=022OdC9E" height="540" loading="lazy" title="SASS logo" width="1072">
 
 
 </div>
@@ -336,7 +333,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="clearfix text-formatted"><p><em>SASS</em> logo</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-image-html"><p><em>SASS</em> logo</p>
 </div>
       
   </div>
@@ -350,13 +347,13 @@
 <div class="image">
     
 
-            <div><article class="media media--type-image media--view-mode-thumbnail">
+            <div class="field__item field field--label-hidden field--name-field-profile-picture"><article class="media media--type-image media--view-mode-thumbnail">
   
       
 <div class="thumbnail">
     
 
-            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
 
 
 </div>
@@ -369,14 +366,14 @@
 <div class="name">
     
 
-            <div class="clearfix text-formatted"><p>Pablo Urrea</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-name-html"><p>Pablo Urrea</p>
 </div>
       
   </div>
 <div class="contact">
     
 
-            <div>
+            <div class="field__item field field--label-hidden field--name-field-contact">
               <ul class="menu">
                     <li class="menu-item">
         <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
@@ -410,7 +407,7 @@
 <div class="reading-time">
     
 
-            <div content="10">10 minutes reading</div>
+            <div class="field__item field field--label-hidden field--name-field-reading-time" content="10">10 minutes reading</div>
       
   </div>
 <div class="authorship-dates">
@@ -431,7 +428,7 @@
 <div class="content-description">
     
 
-            <div class="clearfix text-formatted"><p><em>SASS</em> (<em>Syntactically Awesome Style Sheets</em>) or <em>Super CSS</em> for friends (<em>SIUUUUUUUSS</em> in Portuguese), allows for automatic compilation of component-based styles for web theme creation. This system is quite useful for unifying the CSS file of a web page to reduce file transfer and improve performance (One step closer to getting a <em>100/100</em> score from <em>Google Lighthouse</em>).</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-html"><p><em>SASS</em> (<em>Syntactically Awesome Style Sheets</em>) or <em>Super CSS</em> for friends (<em>SIUUUUUUUSS</em> in Portuguese), allows for automatic compilation of component-based styles for web theme creation. This system is quite useful for unifying the CSS file of a web page to reduce file transfer and improve performance (One step closer to getting a <em>100/100</em> score from <em>Google Lighthouse</em>).</p>
 <p> </p>
 <p><strong>Quick, easy, and for the whole family.</strong> The first thing to do is to install <a href="https://nodejs.org/en/download/package-manager"><em>Node</em></a>, the main executor of <em>SASS</em>. It's best to follow the steps on the official <a href="https://nodejs.org/en/download/package-manager"><em>Node</em></a> page for the environment you need: <a href="https://nodejs.org/en/download/package-manager">https://nodejs.org/en/download/package-manager</a>.</p>
 <p>Now that <em>Node</em> is working correctly on your machine (or should be), it's time to install <em>SASS</em>. You can install it globally on the whole machine (recommended for testing) <a href="https://sass-lang.com/install/">as recommended in the official <em>SASS</em> documentation</a>:</p>
@@ -528,7 +525,7 @@ body {
 <div class="content-footer">
     <div class="related-entities-wrapper"><h2 class="related-entities-align-left related-entities-title">Recommended articles</h2>
 
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <div class="wrapper wrapper-article wrapper-related-entity">
@@ -536,11 +533,11 @@ body {
 <div class="polaroid main-media">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
   
       
 
-            <div>  <img alt="Galaxy Sphere - Craiyon" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/galaxy_sphere.png?itok=bxJ3ul6V" height="270" loading="lazy" title="Galaxy Sphere - Craiyon" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Galaxy Sphere - Craiyon" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/galaxy_sphere.png?itok=bxJ3ul6V" height="270" loading="lazy" title="Galaxy Sphere - Craiyon" width="423">
 
 
 </div>
@@ -552,14 +549,14 @@ body {
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Prism as a REST API testing server</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Prism as a REST API testing server</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>Prism simplifies REST API development by providing a realistic and controlled testing environment, without relying on external servers. An essential tool for REST API developers.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>Prism simplifies REST API development by providing a realistic and controlled testing environment, without relying on external servers. An essential tool for REST API developers.</p>
 </div>
       
   </div><a href="/en/articles/prism-rest-api-testing-server" class="link-content" hreflang="en" aria-label="Prism as a REST API testing server"></a>
@@ -569,7 +566,7 @@ body {
   
 </article>
 
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <div class="wrapper wrapper-article wrapper-related-entity">
@@ -577,11 +574,11 @@ body {
 <div class="polaroid main-media">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
   
       
 
-            <div>  <img alt="The Tower of Babel represented together with the logos of JavaScript and different browsers" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/la_torre_de_babel_con_javascript_y_navegadores.jpg?itok=MUt0NZul" height="270" loading="lazy" title="The Tower of Babel represented together with the logos of JavaScript and different browsers" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="The Tower of Babel represented together with the logos of JavaScript and different browsers" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/la_torre_de_babel_con_javascript_y_navegadores.jpg?itok=MUt0NZul" height="270" loading="lazy" title="The Tower of Babel represented together with the logos of JavaScript and different browsers" width="423">
 
 
 </div>
@@ -593,14 +590,14 @@ body {
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Compile, compress, and improve the compatibility of JavaScript files with <em>Babel</em></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Compile, compress, and improve the compatibility of JavaScript files with <em>Babel</em></p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>The automatic compilation, compression, and optimization of <em>JavaScript</em> is an essential practice for improving web page performance.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>The automatic compilation, compression, and optimization of <em>JavaScript</em> is an essential practice for improving web page performance.</p>
 </div>
       
   </div><a href="/en/articles/compile-compress-and-improve-compatibility-javascript-files-babel" class="link-content" hreflang="en" aria-label="Compile, compress, and improve the compatibility of JavaScript files with Babel"></a>
@@ -610,7 +607,7 @@ body {
   
 </article>
 
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <div class="wrapper wrapper-article wrapper-related-entity">
@@ -618,11 +615,11 @@ body {
 <div class="polaroid main-media">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
   
       
 
-            <div>  <img alt="Network - Pixabay" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/network_pixabay.jpg?itok=eQzznBAa" height="270" loading="lazy" title="Network - Pixabay" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Network - Pixabay" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/network_pixabay.jpg?itok=eQzznBAa" height="270" loading="lazy" title="Network - Pixabay" width="423">
 
 
 </div>
@@ -634,14 +631,14 @@ body {
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Prism as a validation proxy API Server</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Prism as a validation proxy API Server</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>Use <em>Prism</em> as a proxy for REST APIs, a tool that not only validates requests according to <em>OpenAPI</em> definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>Use <em>Prism</em> as a proxy for REST APIs, a tool that not only validates requests according to <em>OpenAPI</em> definitions but also facilitates redirecting them to a single port, thereby improving the workflow and robustness of applications.</p>
 </div>
       
   </div><a href="/en/articles/prism-validation-proxy-api-server" class="link-content" hreflang="en" aria-label="Prism as a validation proxy API Server"></a>
@@ -714,16 +711,16 @@ body {
   <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-dropdown-0 menu-type-user view-mode-user">
               
 
-            <div><article class="profile">
+            <div class="field__item field field--label-hidden field--name-field-user"><article class="profile">
   
 
-            <div><article class="media media--type-image media--view-mode-thumbnail">
+            <div class="field__item field field--label-hidden field--name-field-profile-picture"><article class="media media--type-image media--view-mode-thumbnail">
   
       
 <div class="thumbnail">
     
 
-            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
 
 
 </div>
@@ -733,11 +730,11 @@ body {
 </div>
       
 
-            <div class="clearfix text-formatted"><p>Born and raised in the metropolitan area of Madrid, he showed a fervent interest in the world of computers and programming from an early age. This blog project gives him the opportunity to document and share the technological challenges he faces.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-biography-html"><p>Born and raised in the metropolitan area of Madrid, he showed a fervent interest in the world of computers and programming from an early age. This blog project gives him the opportunity to document and share the technological challenges he faces.</p>
 </div>
       
 
-            <div>
+            <div class="field__item field field--label-hidden field--name-field-contact">
               <ul class="menu">
                     <li class="menu-item">
         <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
@@ -771,7 +768,7 @@ body {
 
                   </li>
                       
-        <li class="menu-item menu-item--expanded">
+        <li class="menu-item menu-item--active-trail menu-item--expanded">
           <span>Pages</span>
                                 
   
@@ -803,7 +800,7 @@ body {
 
                   </li>
                       
-        <li class="menu-item">
+        <li class="menu-item menu-item--active-trail">
           <a href="/en/articles/categories" target="_self" data-drupal-link-system-path="node/23">Article categories 🗂️</a>
                                 
   
@@ -921,7 +918,7 @@ body {
     
       
 
-            <div class="clearfix text-formatted"><p><a href="/en/license">Pablo Urrea <strong>©</strong> All rights reserved</a></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-wyswyg"><p><a href="/en/license">Pablo Urrea <strong>©</strong> All rights reserved</a></p>
 </div>
       
   </div>
@@ -938,7 +935,7 @@ body {
 
     
     <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/31","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","css":"css","scss":"scss"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
-<script src="/sites/default/files/js/js_75_LqeMu93GcOssB4x9skAC__sxIs834F_eArXrOgY4.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+<script src="/sites/default/files/js/js_8RYbW2UfMct-KnU8JKkwXBwbMWUmmeGtTwSAGCWU5U4.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 <script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=2&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
+  <html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="utf-8">
 
@@ -11,7 +11,7 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="Last week I wrote a single line of code. It doesn't seem like much—some say the best programmers write the least—but the downside is that it was a line of code in a YML file. This story is worthy of Dj Marmota with the lamp and the store clerk (But less aggressive):    A hidden 500 error. My story begins when, in the local environment of a project using DDEV and Drupal 10, I started creating a content type and adding fields to it. After adding ten or fifteen fields, a mix of reused and new ones, I created two specific fields (Text (long with format) and Entity Reference: Paragraph), and as they say in the video above: &#34;Boom! Short circuit!&#34;—the screen showed a 500 error on all field management pages of the node entity type /admin/structure/types/manage/*/fields:  This error only happens on the field management pages of the node entity type, and only when adding those two specific fields, which led me to suspect it was a local issue. Although I was hesitant to push the configuration to other environments, this type of error often stems from communication or processing issues between different web technologies. So, I made a quick Google search, which yielded no helpful results. After about twenty thousand attempts with different fields (changing the machine name, label, format, or reference, disabling translations in the case of the text), and being able to add other types of fields, it seemed like the battle was lost.  Google search uncovered great things. Indeed, the initial search for this problem should have led me to a quick solution on drupal.org or StackOverflow. Instead, I ignored the most text-heavy result, only to later give it another chance out of desperation to fix this 500 error. And I ended up at 500 Internal Server Error, specifically the glorious comment I was looking for: #12, which indicates that in the site's .services.yml files, you need to set the parameter http.response.debug_cacheability_headers to FALSE or remove the line altogether. To the point. Searching through the project's code, I found the file sites/development.services.yml with the following content:# Local development services. # # To activate this feature, follow the instructions at the top of the # 'example.settings.local.php' file, which sits next to this file. parameters: http.response.debug_cacheability_headers: true services: cache.backend.null: class: Drupal\Core\Cache\NullBackendFactoryI had a poker face but was also relieved when I saw the parameter mentioned in the comment with the opposite value to what was recommended to fix this bug. So, I replaced the parameter value with FALSE, leaving the file content as follows:# Local development services. # # To activate this feature, follow the instructions at the top of the # 'example.settings.local.php' file, which sits next to this file. parameters: http.response.debug_cacheability_headers: false services: cache.backend.null: class: Drupal\Core\Cache\NullBackendFactoryAnd… drum roll… it works! Thus ending a week of stress and anxiety with this problem on a local branch. Indeed, this issue only affects the local environment because in all other remote environments, this parameter was correctly configured. However, the problem was still significant since fields are usually created locally. In any case, all's well that ends well.  What is the parameter for? The http.response.debug_cacheability_headers parameter in Drupal enables the inclusion of additional headers in HTTP responses to display information about how page cacheability is managed. When enabled, Drupal adds headers such as X-Drupal-Cache-Tags, X-Drupal-Cache-Contexts, and X-Drupal-Cache-Max-Age, which indicate what elements affect the cache, under what contexts it varies (e.g., language or user), and how long a response can be cached. This feature is useful in development or debugging environments to optimize cache usage, as it allows developers to visualize how contexts, cache tags, and the lifetime of a page are managed, making it easier to identify performance issues or cache invalidation errors. However, it should be disabled in production because it generates additional headers that are unnecessary and may impact performance.  Conclusion. What seemed like a small technical detail triggered a series of unexpected challenges, reflecting how unpredictable web development can be. This experience highlights that sometimes the solution to a complex problem may depend on a single line of code, in this case within a YML configuration file—something easily overlooked. Situations like these remind us of the importance of patience in solving errors without tossing the computer out the window. Although the experience can be frustrating, in the end, solving these issues is what makes programming so rewarding. " name="description">
+<meta content="Last week I wrote a single line of code. It doesn't seem like much—some say the best programmers write the least—but the downside is that it was a line of code in a YML file. This story is worthy of Dj Marmota with the lamp and the store clerk (But less aggressive): A hidden 500 error. My story begins when, in the local environment of a project using DDEV and Drupal 10, I started creating a content type and adding fields to it. After adding ten or fifteen fields, a mix of reused and new ones, I created two specific fields (Text (long with format) and Entity Reference: Paragraph), and as they say in the video above: &#34;Boom! Short circuit!&#34;—the screen showed a 500 error on all field management pages of the node entity type /admin/structure/types/manage/*/fields: This error only happens on the field management pages of the node entity type, and only when adding those two specific fields, which led me to suspect it was a local issue. Although I was hesitant to push the configuration to other environments, this type of error often stems from communication or processing issues between different web technologies. So, I made a quick Google search, which yielded no helpful results. After about twenty thousand attempts with different fields (changing the machine name, label, format, or reference, disabling translations in the case of the text), and being able to add other types of fields, it seemed like the battle was lost. Google search uncovered great things. Indeed, the initial search for this problem should have led me to a quick solution on drupal.org or StackOverflow. Instead, I ignored the most text-heavy result, only to later give it another chance out of desperation to fix this 500 error. And I ended up at 500 Internal Server Error, specifically the glorious comment I was looking for: #12, which indicates that in the site's .services.yml files, you need to set the parameter http.response.debug_cacheability_headers to FALSE or remove the line altogether. To the point. Searching through the project's code, I found the file sites/development.services.yml with the following content:# Local development services. # # To activate this feature, follow the instructions at the top of the # 'example.settings.local.php' file, which sits next to this file. parameters: http.response.debug_cacheability_headers: true services: cache.backend.null: class: Drupal\Core\Cache\NullBackendFactoryI had a poker face but was also relieved when I saw the parameter mentioned in the comment with the opposite value to what was recommended to fix this bug. So, I replaced the parameter value with FALSE, leaving the file content as follows:# Local development services. # # To activate this feature, follow the instructions at the top of the # 'example.settings.local.php' file, which sits next to this file. parameters: http.response.debug_cacheability_headers: false services: cache.backend.null: class: Drupal\Core\Cache\NullBackendFactoryAnd… drum roll… it works! Thus ending a week of stress and anxiety with this problem on a local branch. Indeed, this issue only affects the local environment because in all other remote environments, this parameter was correctly configured. However, the problem was still significant since fields are usually created locally. In any case, all's well that ends well. What is the parameter for? The http.response.debug_cacheability_headers parameter in Drupal enables the inclusion of additional headers in HTTP responses to display information about how page cacheability is managed. When enabled, Drupal adds headers such as X-Drupal-Cache-Tags, X-Drupal-Cache-Contexts, and X-Drupal-Cache-Max-Age, which indicate what elements affect the cache, under what contexts it varies (e.g., language or user), and how long a response can be cached. This feature is useful in development or debugging environments to optimize cache usage, as it allows developers to visualize how contexts, cache tags, and the lifetime of a page are managed, making it easier to identify performance issues or cache invalidation errors. However, it should be disabled in production because it generates additional headers that are unnecessary and may impact performance. Conclusion. What seemed like a small technical detail triggered a series of unexpected challenges, reflecting how unpredictable web development can be. This experience highlights that sometimes the solution to a complex problem may depend on a single line of code, in this case within a YML configuration file—something easily overlooked. Situations like these remind us of the importance of patience in solving errors without tossing the computer out the window. Although the experience can be frustrating, in the end, solving these issues is what makes programming so rewarding." name="description">
 <meta content="Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with Drupal 10 led to a lengthy search for solutions." name="abstract">
 <meta content="Pablo Urrea,Error 500 on the entity fields management page in Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Error" name="keywords">
 <link href="https://pablourrea.github.io/en/articles/error-500-entity-fields-management-page-drupal" rel="canonical">
@@ -80,10 +80,6 @@
 <link href="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" rel="alternate" hreflang="x-default">
 <link href="https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal" rel="alternate" hreflang="es">
 <link href="https://pablourrea.github.io/en/articles/error-500-entity-fields-management-page-drupal" rel="alternate" hreflang="en">
-<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-<meta content="Drupal responsive_favicons + realfavicongenerator.net" name="favicon-generator">
 <meta content="Drupal 10 (https://www.drupal.org)" name="Generator">
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
@@ -199,19 +195,20 @@
         }
     ]
 }</script>
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
     <title>Error 500 on the entity fields management page in Drupal | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css__MalHGeWHmXLQt0U0hn9TWgmJMN9AHimkLxEMi4eCsg.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+    <link href="/sites/default/files/css/css_cncR8yiBqbM0514vEpBVHafCsiZWQb8abfl9ghZFiT4.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy@1.0.5/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_04qgOWTp8cxMNGCiNW0azJGmRc_9WDUnmWQwMljH7Q4.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_SwtPfDmJ7TeqhlxdAq1U98GdpYthVTkfzb3c_oFRdvw.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_IRKhJkX-TrsJJAlPj3SGO5Jgnb4V95etU6B1J2urzNQ.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_KpN7rqTun5RZjgxaCNCATtn8gm0q7Jo9zCW7PYNMD4k.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="print">
 <link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="no-sidebar page-articles-error-500-entity-fields-management-page-drupal role--anonymous section-articles with-subnav">
+      <body class="node--type-article no-sidebar page-articles-error-500-entity-fields-management-page-drupal path-node role--anonymous section-articles with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -255,7 +252,7 @@
                 <li class="menu-item">
         <a href="/en" class="stroke" target="_self" title="Home page" data-drupal-link-system-path="<front>">Home</a>
               </li>
-                <li class="menu-item">
+                <li class="menu-item menu-item--active-trail">
         <a href="/en/articles" data-drupal-link-system-path="node/9">Articles</a>
               </li>
                 <li class="menu-item">
@@ -296,22 +293,22 @@
   
     
       
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <h1 class="content-title">
     
 
-            <div class="clearfix text-formatted"><p>Error 500 on the entity fields management page in <em>Drupal</em></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Error 500 on the entity fields management page in <em>Drupal</em></p>
 </div>
       
   </h1>
 <div class="border-top content-tags link-no-hover">
     
 
-      <div>
-              <div><a href="/en/articles/categories/drupal" hreflang="en">Drupal</a></div>
-              <div><a href="/en/articles/categories/error" hreflang="en">Error</a></div>
+      <div class="field field--label-hidden field--name-field-tags field__items">
+              <div class="field__item"><a href="/en/articles/categories/drupal" hreflang="en">Drupal</a></div>
+              <div class="field__item"><a href="/en/articles/categories/error" hreflang="en">Error</a></div>
           </div>
   
   </div>
@@ -320,11 +317,11 @@
 <div class="polaroid">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-full">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-full">
   
       
 
-            <div>  <img alt="A close-up of a street sign surrounded by leaves - Photo by Justin Little on Unsplash" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/un_primer_plano_de_un_letrero_de_la_calle_rodeado_de_hojas-justin_little-unsplash.jpg?itok=uV8jvxon" height="540" loading="lazy" title="A close-up of a street sign surrounded by leaves - Photo by Justin Little on Unsplash" width="1072">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="A close-up of a street sign surrounded by leaves - Photo by Justin Little on Unsplash" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/un_primer_plano_de_un_letrero_de_la_calle_rodeado_de_hojas-justin_little-unsplash.jpg?itok=uV8jvxon" height="540" loading="lazy" title="A close-up of a street sign surrounded by leaves - Photo by Justin Little on Unsplash" width="1072">
 
 
 </div>
@@ -335,7 +332,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="clearfix text-formatted"><p>A close-up of a street sign surrounded by leaves - Photo by <a href="https://unsplash.com/es/@bsm_justin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Justin Little</a> on <a href="https://unsplash.com/es/fotos/un-primer-plano-de-un-letrero-de-la-calle-rodeado-de-hojas-hxUnNtWIjso?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-image-html"><p>A close-up of a street sign surrounded by leaves - Photo by <a href="https://unsplash.com/es/@bsm_justin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Justin Little</a> on <a href="https://unsplash.com/es/fotos/un-primer-plano-de-un-letrero-de-la-calle-rodeado-de-hojas-hxUnNtWIjso?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></p>
 </div>
       
   </div>
@@ -349,13 +346,13 @@
 <div class="image">
     
 
-            <div><article class="media media--type-image media--view-mode-thumbnail">
+            <div class="field__item field field--label-hidden field--name-field-profile-picture"><article class="media media--type-image media--view-mode-thumbnail">
   
       
 <div class="thumbnail">
     
 
-            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
 
 
 </div>
@@ -368,14 +365,14 @@
 <div class="name">
     
 
-            <div class="clearfix text-formatted"><p>Pablo Urrea</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-name-html"><p>Pablo Urrea</p>
 </div>
       
   </div>
 <div class="contact">
     
 
-            <div>
+            <div class="field__item field field--label-hidden field--name-field-contact">
               <ul class="menu">
                     <li class="menu-item">
         <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
@@ -409,7 +406,7 @@
 <div class="reading-time">
     
 
-            <div content="5">5 minutes reading</div>
+            <div class="field__item field field--label-hidden field--name-field-reading-time" content="5">5 minutes reading</div>
       
   </div>
 <div class="authorship-dates">
@@ -430,14 +427,14 @@
 <div class="content-description">
     
 
-            <div class="clearfix text-formatted"><p>Last week I wrote a single line of code. It doesn't seem like much—some say the best programmers write the least—but the downside is that it was a line of code in a <em>YML</em> file. This story is worthy of <a href="https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino"><em>Dj Marmota</em> with the lamp and the store clerk</a> (But less aggressive):</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-html"><p>Last week I wrote a single line of code. It doesn't seem like much—some say the best programmers write the least—but the downside is that it was a line of code in a <em>YML</em> file. This story is worthy of <a href="https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino"><em>Dj Marmota</em> with the lamp and the store clerk</a> (But less aggressive):</p>
 <p><a href="https://www.youtube.com/watch?v=xcXFExflgrI&ab_channel=IgnacioFrancolino"></a></p>
 <figure class="align-center caption caption-drupal-media" role="group">
 <article class="media media--type-image media--view-mode-default">
   
       
 
-            <div>  <img alt="Dj Marmota - Ignacio Francolino - YouTube thumbnail" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/dj_marmota-youtube_thumbnail.jpeg?itok=s7jrZM8N" height="1075" loading="lazy" title="Dj Marmota - Ignacio Francolino - YouTube thumbnail" width="1920">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Dj Marmota - Ignacio Francolino - YouTube thumbnail" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/dj_marmota-youtube_thumbnail.jpeg?itok=s7jrZM8N" height="1075" loading="lazy" title="Dj Marmota - Ignacio Francolino - YouTube thumbnail" width="1920">
 
 
 </div>
@@ -455,7 +452,7 @@
   
       
 
-            <div>  <img alt="Error 500 in Google Chrome browser" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/error_500_in_google_chrome_browser.png?itok=TvxBXaLv" height="909" loading="lazy" title="Error 500 in Google Chrome browser" width="1920">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Error 500 in Google Chrome browser" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/error_500_in_google_chrome_browser.png?itok=TvxBXaLv" height="909" loading="lazy" title="Error 500 in Google Chrome browser" width="1920">
 
 
 </div>
@@ -499,7 +496,7 @@ services:
 <div class="content-footer">
     <div class="related-entities-wrapper"><h2 class="related-entities-align-left related-entities-title">Recommended articles</h2>
 
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <div class="wrapper wrapper-article wrapper-related-entity">
@@ -507,11 +504,11 @@ services:
 <div class="polaroid main-media">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
   
       
 
-            <div>  <img alt="Linux Package Error: Cannot satisfy dependencies" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/linux_package_code-cannot_satisfy_dependencies.png?itok=xjnKIfOI" height="270" loading="lazy" title="Linux Package Error: Cannot satisfy dependencies" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Linux Package Error: Cannot satisfy dependencies" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/linux_package_code-cannot_satisfy_dependencies.png?itok=xjnKIfOI" height="270" loading="lazy" title="Linux Package Error: Cannot satisfy dependencies" width="423">
 
 
 </div>
@@ -523,14 +520,14 @@ services:
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p><em>Linux</em> Package Error: Cannot satisfy dependencies</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p><em>Linux</em> Package Error: Cannot satisfy dependencies</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>The error "<em>Cannot satisfy dependencies</em>" (or "<em>No se cumplen las dependencias</em>" in Spanish) when trying to install a package in <em>Linux</em> means that it requires certain dependencies that are unavailable, incompatible, or conflict with other versions already installed on the system.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>The error "<em>Cannot satisfy dependencies</em>" (or "<em>No se cumplen las dependencias</em>" in Spanish) when trying to install a package in <em>Linux</em> means that it requires certain dependencies that are unavailable, incompatible, or conflict with other versions already installed on the system.</p>
 </div>
       
   </div><a href="/en/articles/linux-package-error-cannot-satisfy-dependencies" class="link-content" hreflang="en" aria-label="Linux Package Error: Cannot satisfy dependencies"></a>
@@ -540,7 +537,7 @@ services:
   
 </article>
 
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <div class="wrapper wrapper-article wrapper-related-entity">
@@ -548,11 +545,11 @@ services:
 <div class="polaroid main-media">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
   
       
 
-            <div>  <img alt="Tome" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/tome.png?itok=8mTelvki" height="270" loading="lazy" title="Tome" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Tome" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/tome.png?itok=8mTelvki" height="270" loading="lazy" title="Tome" width="423">
 
 
 </div>
@@ -564,14 +561,14 @@ services:
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>Building and exporting a static website with decoupled Drupal and Tome</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Building and exporting a static website with decoupled Drupal and Tome</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>Drupal, known for its robustness, becomes a standout choice for static sites. With Tome, it transforms a dynamic site into static, ideal for projects without frequent updates. Decoupled Drupal and Tome offer security, performance, and ease of implementation, simplifying the setup and deployment process. Joining forces, they provide a powerful and flexible solution for high-performance static websites.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>Drupal, known for its robustness, becomes a standout choice for static sites. With Tome, it transforms a dynamic site into static, ideal for projects without frequent updates. Decoupled Drupal and Tome offer security, performance, and ease of implementation, simplifying the setup and deployment process. Joining forces, they provide a powerful and flexible solution for high-performance static websites.</p>
 </div>
       
   </div><a href="/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome" class="link-content" hreflang="en" aria-label="Building and exporting a static website with decoupled Drupal and Tome"></a>
@@ -581,7 +578,7 @@ services:
   
 </article>
 
-<article class="node node--type-article">
+<article class="node--type-article node">
   <div class="content">
     
 <div class="wrapper wrapper-article wrapper-related-entity">
@@ -589,11 +586,11 @@ services:
 <div class="polaroid main-media">
     
 
-            <div><article class="media media--type-image media--view-mode-landscape-small">
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
   
       
 
-            <div>  <img alt="Cloud, technology, web, Internet, business, developer, etc. from PxHere" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/cloud_technology_web_internet_business_developer-from_pxhere_com.jpg?itok=q1eYnG3v" height="270" loading="lazy" title="Cloud, technology, web, Internet, business, developer, etc. from PxHere" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Cloud, technology, web, Internet, business, developer, etc. from PxHere" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/cloud_technology_web_internet_business_developer-from_pxhere_com.jpg?itok=q1eYnG3v" height="270" loading="lazy" title="Cloud, technology, web, Internet, business, developer, etc. from PxHere" width="423">
 
 
 </div>
@@ -605,14 +602,14 @@ services:
 <h3 class="title">
     
 
-            <div class="clearfix text-formatted"><p>The <em>Drupal</em> custom back-end cache</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>The <em>Drupal</em> custom back-end cache</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="clearfix text-formatted"><p>In <em>Drupal</em>, efficient use of cache is key to improving system performance, especially when handling large volumes of data. The back-end cache allows for efficient data management and reduces server load.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>In <em>Drupal</em>, efficient use of cache is key to improving system performance, especially when handling large volumes of data. The back-end cache allows for efficient data management and reduces server load.</p>
 </div>
       
   </div><a href="/en/articles/drupal-custom-back-end-cache" class="link-content" hreflang="en" aria-label="The Drupal custom back-end cache"></a>
@@ -685,16 +682,16 @@ services:
   <div class="menu-dropdown menu-link-contentfooter menu_link_content menu-dropdown-0 menu-type-user view-mode-user">
               
 
-            <div><article class="profile">
+            <div class="field__item field field--label-hidden field--name-field-user"><article class="profile">
   
 
-            <div><article class="media media--type-image media--view-mode-thumbnail">
+            <div class="field__item field field--label-hidden field--name-field-profile-picture"><article class="media media--type-image media--view-mode-thumbnail">
   
       
 <div class="thumbnail">
     
 
-            <div>  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Pablo Urrea" class="image-style-_-1-100x100" src="/sites/default/files/styles/1_1_100x100/public/images/pablo-urrea-profile.png?itok=YL9pC5Bz" height="100" loading="lazy" title="Pablo Urrea" width="100">
 
 
 </div>
@@ -704,11 +701,11 @@ services:
 </div>
       
 
-            <div class="clearfix text-formatted"><p>Born and raised in the metropolitan area of Madrid, he showed a fervent interest in the world of computers and programming from an early age. This blog project gives him the opportunity to document and share the technological challenges he faces.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-biography-html"><p>Born and raised in the metropolitan area of Madrid, he showed a fervent interest in the world of computers and programming from an early age. This blog project gives him the opportunity to document and share the technological challenges he faces.</p>
 </div>
       
 
-            <div>
+            <div class="field__item field field--label-hidden field--name-field-contact">
               <ul class="menu">
                     <li class="menu-item">
         <a href="mailto:paurca@gmail.com?subject=Pablo%20Urrea" class="icon" target="_blank" title="paurca@gmail.com"><img alt="paurca@gmail.com" class="icon" src="/sites/default/files/icons/mail.svg"></a>
@@ -742,7 +739,7 @@ services:
 
                   </li>
                       
-        <li class="menu-item menu-item--expanded">
+        <li class="menu-item menu-item--active-trail menu-item--expanded">
           <span>Pages</span>
                                 
   
@@ -762,7 +759,7 @@ services:
 
                   </li>
                       
-        <li class="menu-item">
+        <li class="menu-item menu-item--active-trail">
           <a href="/en/articles" target="_self" data-drupal-link-system-path="node/9">All articles 🗞️</a>
                                 
   
@@ -892,7 +889,7 @@ services:
     
       
 
-            <div class="clearfix text-formatted"><p><a href="/en/license">Pablo Urrea <strong>©</strong> All rights reserved</a></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-wyswyg"><p><a href="/en/license">Pablo Urrea <strong>©</strong> All rights reserved</a></p>
 </div>
       
   </div>
@@ -909,7 +906,7 @@ services:
 
     
     <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/37","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"yaml":"yaml"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
-<script src="/sites/default/files/js/js_75_LqeMu93GcOssB4x9skAC__sxIs834F_eArXrOgY4.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+<script src="/sites/default/files/js/js_8RYbW2UfMct-KnU8JKkwXBwbMWUmmeGtTwSAGCWU5U4.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 <script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
 <script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=2&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 

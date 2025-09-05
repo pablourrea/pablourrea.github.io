@@ -9,15 +9,15 @@
     <item>
   <title>La caché back-end personalizada de Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">The Drupal custom back-end cache</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;The Drupal custom back-end cache&lt;/span&gt;
 
 
-            <p>In <em>Drupal</em>, efficient use of cache is key to improving system performance, especially when handling large volumes of data. The back-end cache allows for efficient data management and reduces server load.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Fri, 21/03/2025 - 14:28
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;In &lt;em&gt;Drupal&lt;/em&gt;, efficient use of cache is key to improving system performance, especially when handling large volumes of data. The back-end cache allows for efficient data management and reduces server load.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2025-03-21T14:28:03+00:00" title="Friday, March 21, 2025 - 14:28" class="datetime"&gt;Fri, 21/03/2025 - 14:28&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Fri, 21 Mar 2025 14:28:03 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">46 at https://pablourrea.github.io</guid>
@@ -25,15 +25,15 @@
 <item>
   <title>Error en el paquete de Linux: No se cumplen las dependencias</title>
   <link>https://pablourrea.github.io/es/articulos/error-paquete-linux-no-cumplen-dependencias</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Linux Package Error: Cannot satisfy dependencies</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Linux Package Error: Cannot satisfy dependencies&lt;/span&gt;
 
 
-            <p>The error "<em>Cannot satisfy dependencies</em>" (or "<em>No se cumplen las dependencias</em>" in Spanish) when trying to install a package in <em>Linux</em> means that it requires certain dependencies that are unavailable, incompatible, or conflict with other versions already installed on the system.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Fri, 14/02/2025 - 12:04
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;The error "&lt;em&gt;Cannot satisfy dependencies&lt;/em&gt;" (or "&lt;em&gt;No se cumplen las dependencias&lt;/em&gt;" in Spanish) when trying to install a package in &lt;em&gt;Linux&lt;/em&gt; means that it requires certain dependencies that are unavailable, incompatible, or conflict with other versions already installed on the system.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2025-02-14T12:04:47+00:00" title="Friday, February 14, 2025 - 12:04" class="datetime"&gt;Fri, 14/02/2025 - 12:04&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Fri, 14 Feb 2025 12:04:47 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">45 at https://pablourrea.github.io</guid>
@@ -41,15 +41,15 @@
 <item>
   <title>¿Cómo instalar todas las actualizaciones pendientes con un solo comando en Windows?</title>
   <link>https://pablourrea.github.io/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">How to install all pending updates with a single command in Windows?</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;How to install all pending updates with a single command in Windows?&lt;/span&gt;
 
 
-            <p>A Windows command allows updating all programs with pending updates automatically after its execution.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Fri, 07/02/2025 - 17:23
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;A Windows command allows updating all programs with pending updates automatically after its execution.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2025-02-07T17:23:54+00:00" title="Friday, February 7, 2025 - 17:23" class="datetime"&gt;Fri, 07/02/2025 - 17:23&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Fri, 07 Feb 2025 17:23:54 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">44 at https://pablourrea.github.io</guid>
@@ -57,15 +57,15 @@
 <item>
   <title>La mejor tarjeta gráfica en relación potencia-precio de la serie 50 de NVIDIA</title>
   <link>https://pablourrea.github.io/es/articulos/mejor-tarjeta-grafica-relacion-potencia-precio-serie-50-nvidia</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">The best price-to-performance graphics card in the NVIDIA 50 series</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;The best price-to-performance graphics card in the NVIDIA 50 series&lt;/span&gt;
 
 
-            <p>In January 2025, <em>NVIDIA</em> unveiled the new <em>GeForce RTX 50</em> graphics card series, promising significant advances in both power and performance without a doubt. But is it really worth making the jump to this generation?</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sun, 19/01/2025 - 17:32
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;In January 2025, &lt;em&gt;NVIDIA&lt;/em&gt; unveiled the new &lt;em&gt;GeForce RTX 50&lt;/em&gt; graphics card series, promising significant advances in both power and performance without a doubt. But is it really worth making the jump to this generation?&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2025-01-19T17:32:47+00:00" title="Sunday, January 19, 2025 - 17:32" class="datetime"&gt;Sun, 19/01/2025 - 17:32&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Sun, 19 Jan 2025 17:32:47 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">42 at https://pablourrea.github.io</guid>
@@ -73,15 +73,15 @@
 <item>
   <title>DrupalCamp 2024: Benidorm</title>
   <link>https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">DrupalCamp 2024: Benidorm</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;DrupalCamp 2024: Benidorm&lt;/span&gt;
 
 
-            <p>Last October, Benidorm hosted grandparents, British visitors, and attendees of the <em>DrupalCamp 2024</em>, the annual regional event that brings together <em>Drupal</em> developers in Spain.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sat, 14/12/2024 - 00:20
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;Last October, Benidorm hosted grandparents, British visitors, and attendees of the &lt;em&gt;DrupalCamp 2024&lt;/em&gt;, the annual regional event that brings together &lt;em&gt;Drupal&lt;/em&gt; developers in Spain.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-12-14T00:20:49+00:00" title="Saturday, December 14, 2024 - 00:20" class="datetime"&gt;Sat, 14/12/2024 - 00:20&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Sat, 14 Dec 2024 00:20:49 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">40 at https://pablourrea.github.io</guid>
@@ -89,15 +89,15 @@
 <item>
   <title>"The following component(s) are required to run this program:" en Steam Deck LCD / OLED o Linux con Proton y/o Wine</title>
   <link>https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-o-wine</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine&lt;/span&gt;
 
 
-            <p>If you've ever had trouble running games on your <em>Steam Deck LCD / OLED</em> or <em>Linux</em> with <em>Proton</em> and/or <em>Wine</em> due to missing <em>Microsoft</em> components, this article will guide you step by step on how to easily fix it.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Wed, 02/10/2024 - 16:44
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;If you've ever had trouble running games on your &lt;em&gt;Steam Deck LCD / OLED&lt;/em&gt; or &lt;em&gt;Linux&lt;/em&gt; with &lt;em&gt;Proton&lt;/em&gt; and/or &lt;em&gt;Wine&lt;/em&gt; due to missing &lt;em&gt;Microsoft&lt;/em&gt; components, this article will guide you step by step on how to easily fix it.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-10-02T16:44:48+00:00" title="Wednesday, October 2, 2024 - 16:44" class="datetime"&gt;Wed, 02/10/2024 - 16:44&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Wed, 02 Oct 2024 16:44:48 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">39 at https://pablourrea.github.io</guid>
@@ -105,15 +105,15 @@
 <item>
   <title>Error 500 en la página de gestión de campos de entidad de Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/error-500-en-la-pagina-de-gestion-de-campos-de-entidad-de-drupal</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Error 500 on the entity fields management page in Drupal</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Error 500 on the entity fields management page in Drupal&lt;/span&gt;
 
 
-            <p>Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with <em>Drupal</em> <em>10</em> led to a lengthy search for solutions.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sun, 08/09/2024 - 16:29
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;Sometimes, a small line of code can trigger major issues. In the past week, an unexpected 500 error in a local environment with &lt;em&gt;Drupal&lt;/em&gt; &lt;em&gt;10&lt;/em&gt; led to a lengthy search for solutions.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-09-08T16:29:30+00:00" title="Sunday, September 8, 2024 - 16:29" class="datetime"&gt;Sun, 08/09/2024 - 16:29&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Sun, 08 Sep 2024 16:29:30 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">37 at https://pablourrea.github.io</guid>
@@ -121,15 +121,15 @@
 <item>
   <title>Ultimate Cron para dominar todas las tareas automáticas en Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/ultimate-cron-para-dominar-todas-las-tareas-automaticas-en-drupal</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Ultimate Cron to master all automated tasks in Drupal</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Ultimate Cron to master all automated tasks in Drupal&lt;/span&gt;
 
 
-            <p>In <em>Drupal</em>, managing automated tasks is crucial, but the built-in cron can be limiting. <em>Ultimate Cron</em> offers a flexible solution that allows you to customize the frequency and scheduling of each task, thus optimizing site performance and preventing server overload. In this article, I show how to start making the most of this module and use it efficiently and effectively.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Tue, 27/08/2024 - 17:48
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;In &lt;em&gt;Drupal&lt;/em&gt;, managing automated tasks is crucial, but the built-in cron can be limiting. &lt;em&gt;Ultimate Cron&lt;/em&gt; offers a flexible solution that allows you to customize the frequency and scheduling of each task, thus optimizing site performance and preventing server overload. In this article, I show how to start making the most of this module and use it efficiently and effectively.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-27T17:48:14+00:00" title="Tuesday, August 27, 2024 - 17:48" class="datetime"&gt;Tue, 27/08/2024 - 17:48&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Tue, 27 Aug 2024 17:48:14 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">36 at https://pablourrea.github.io</guid>
@@ -137,15 +137,15 @@
 <item>
   <title>Actualización selectiva de entidades durante migraciones de Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/actualizacion-selectiva-de-entidades-durante-migraciones-de-drupal</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Selective entity update during Drupal migrations</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Selective entity update during Drupal migrations&lt;/span&gt;
 
 
-            <p>When performing migrations in a system, it is sometimes necessary to update existing entities instead of creating new ones. However, this process can be complicated if only specific entities need to be modified. This article presents different approaches to facilitate the management of migrations according to the specific needs of each case.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sun, 25/08/2024 - 19:19
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;When performing migrations in a system, it is sometimes necessary to update existing entities instead of creating new ones. However, this process can be complicated if only specific entities need to be modified. This article presents different approaches to facilitate the management of migrations according to the specific needs of each case.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-25T19:19:39+00:00" title="Sunday, August 25, 2024 - 19:19" class="datetime"&gt;Sun, 25/08/2024 - 19:19&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Sun, 25 Aug 2024 19:19:39 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">35 at https://pablourrea.github.io</guid>
@@ -153,15 +153,15 @@
 <item>
   <title>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</title>
   <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada</link>
-  <description><![CDATA[<span class="field field--name-title field--type-string field--label-hidden">Migrate Paragraphs of Content with Migrate (Enhanced version)</span>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrate Paragraphs of Content with Migrate (Enhanced version)&lt;/span&gt;
 
 
-            <p>In the article <em>Migrating Paragraphs of Content with Migrate</em>, I explore the possibilities of migrating <em>Paragraphs</em> with migration configuration files independent of the parent node. However, it's true that, although <em>Paragraphs</em> are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate <em>Paragraphs</em> and link them to the parent within the same migration.</p>
-
-      <span class="field field--name-uid field--type-entity-reference field--label-hidden"><a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username">Pablo Urrea</a></span>
-<span class="field field--name-created field--type-created field--label-hidden">Sat, 10/08/2024 - 14:32
-</span>
-]]></description>
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;In the article &lt;em&gt;Migrating Paragraphs of Content with Migrate&lt;/em&gt;, I explore the possibilities of migrating &lt;em&gt;Paragraphs&lt;/em&gt; with migration configuration files independent of the parent node. However, it's true that, although &lt;em&gt;Paragraphs&lt;/em&gt; are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate &lt;em&gt;Paragraphs&lt;/em&gt; and link them to the parent within the same migration.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-10T14:32:17+00:00" title="Saturday, August 10, 2024 - 14:32" class="datetime"&gt;Sat, 10/08/2024 - 14:32&lt;/time&gt;
+&lt;/span&gt;
+</description>
   <pubDate>Sat, 10 Aug 2024 14:32:17 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">34 at https://pablourrea.github.io</guid>
