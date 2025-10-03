@@ -7,6 +7,22 @@
     <language>en</language>
     
     <item>
+  <title>El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager-&gt;getDefinitionWithReplacements() en Drupal</title>
+  <link>https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;The error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager-&amp;gt;getDefinitionWithReplacements() in Drupal&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;If when updating &lt;em&gt;Drupal&lt;/em&gt; you encounter the error “&lt;em&gt;TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager-&amp;gt;getDefinitionWithReplacements()&lt;/em&gt;” related to data type definitions, in this article I explain step by step how to fix it and allow &lt;em&gt;drush updatedb&lt;/em&gt; to run correctly, without modifying the core.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2025-10-03T11:26:33+00:00" title="Friday, October 3, 2025 - 11:26" class="datetime"&gt;Fri, 03/10/2025 - 11:26&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Fri, 03 Oct 2025 11:26:33 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">48 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>La caché back-end personalizada de Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;The Drupal custom back-end cache&lt;/span&gt;
@@ -149,22 +165,6 @@
   <pubDate>Sun, 25 Aug 2024 19:19:39 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">35 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</title>
-  <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrate Paragraphs of Content with Migrate (Enhanced version)&lt;/span&gt;
-
-
-            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;In the article &lt;em&gt;Migrating Paragraphs of Content with Migrate&lt;/em&gt;, I explore the possibilities of migrating &lt;em&gt;Paragraphs&lt;/em&gt; with migration configuration files independent of the parent node. However, it's true that, although &lt;em&gt;Paragraphs&lt;/em&gt; are an entity, they are not a primary entity and always depend on a parent. In this article, I show how to migrate &lt;em&gt;Paragraphs&lt;/em&gt; and link them to the parent within the same migration.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="View user profile." href="https://pablourrea.github.io/en/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-10T14:32:17+00:00" title="Saturday, August 10, 2024 - 14:32" class="datetime"&gt;Sat, 10/08/2024 - 14:32&lt;/time&gt;
-&lt;/span&gt;
-</description>
-  <pubDate>Sat, 10 Aug 2024 14:32:17 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">34 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>

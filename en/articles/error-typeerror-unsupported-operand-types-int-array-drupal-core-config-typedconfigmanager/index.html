@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="The other day I installed a completely lawful and paid game on my Steam Deck, in another article I will talk about which methods are the best or most comfortable to install depending on the origin and the size that occupy the games, on this occasion, going one step ahead, when running/opening/running the game I found the following error: To facilitate the installation of these add-ons used by most video games, Steam provides them with the “Steamworks Common Redistributables” package, but how do you install them manually on the Steam Deck or Linux with Proton and/or Wine? Installing the Swiss army knife. Assuming that the game is installed and added to Steam, the first thing to do is to install the program “Protontricks”, to do this go to Discover or the application store of your Linux distribution and search for this application: Microsoft Windows outside Microsoft Windows. Protontricks allows to make many adjustments to Proton environments, but in this occasion select the options “Select the default wineprefix” > “OK” > “Install a Windows DLL or component” > “OK”. This will display a huge alphabetical list of Microsoft components for Windows applications, you will need to search for the component you need, although for Microsoft Visual C++ Runtime there are many similar ones, the correct component is the following (You must substitute XX for the year closest to the current year):PackageTitlePublishervcrun20XXVisual C++ 2015-20XX libraries (concrt140.dll,mfc140.dll,mfc140chs.dll,mfc140cht.dll,mfc140deu. ...MicrosoftYou can select as many components as you need or want to install and continue with “OK”. This will start the installation process of all the selected components (Some like Microsoft Visual C++ Runtime will require two component installation processes) launching the necessary installation windows. In this example Microsoft Visual C++ Runtime will require you to accept the terms and conditions (Optional reading) and click “Install”, wait for it to install and then click “Close” to continue to the next component installer or end the process.Once the process is finished it will return to the initial screen, which you can close if you do not need anything else from Protontricks. And that's it, now when you run the game it will not show the Microsoft component error. Also in Heroic Games Launcher. If you experience the Microsoft components error in a game installed via Heroic Games Launcher, you can perform the above process in the settings by simply looking for “Winetricks” in the game settings within the launcher. Credits and Acknowledgements. Thanks to Steam Deck Gaming for the video Fix C++ Runtime Error on Steam Deck Steam OS - Steam and Heroic Games Launcher that inspired and guided this article." name="description">
-<meta content="If you've ever had trouble running games on your Steam Deck LCD / OLED or Linux with Proton and/or Wine due to missing Microsoft components, this article will guide you step by step on how to easily fix it." name="abstract">
-<meta content='Pablo Urrea,"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Linux,Steam Deck,Proton,Wine' name="keywords">
-<link href="https://pablourrea.github.io/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-and-or-wine" rel="canonical">
+<meta content="When it was time to perform maintenance on a website running Drupal 10.2.5, I honestly did not expect everything to break because “the dumb box” turned out to be really dumb. Before I start explaining how I solved it, I need to clarify a couple of things. The first is that there may be better or worse solutions to this block, but I found absolutely no documentation as of a couple of weeks before this article was published; the second thing I need to clarify is as simple as specifying that the Drupal update was from version 10.2.5 to 10.5.3 passing through 10.3.0 (I will explain the relevance of this later) with PHP 8.2 and MariaDB 10.7 as the starting database versions. The iceberg of this ship. Updating a minor version of the latest Drupal versions should not be costly, at least that’s what I thought when taking on this development. With all modules updated to the highest possible version and everything checked, it was time to upgrade the Drupal core. Changing versions and fixing dependencies as errors popped up during the cold update—everything went perfectly, packages upgraded without issues. Clearing caches so new elements are recognized and, of course, updating the database with drush updatedb, confirming updates, and when reaching a specific hook_update (from the book module) it failed with the following error:> [error] TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() (line 305 of /var/www/html/docroot/core/lib/Drupal/Core/Config/TypedConfigManager.php) #0 /var/www/html/docroot/core/lib/Drupal/Core/Config/TypedConfigManager.php(114): Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements('weight', Array) > #1 /var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/ArrayElement.php(172): Drupal\Core\Config\TypedConfigManager->buildDataDefinition(Array, 0, 'weight', Object(Drupal\Core\Config\Schema\Mapping)) > #2 /var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/Mapping.php(52): Drupal\Core\Config\Schema\ArrayElement->buildDataDefinition(Array, 0, 'weight') > #3 /var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/ArrayElement.php(56): Drupal\Core\Config\Schema\Mapping->getElementDefinition('weight') > #4 /var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/ArrayElement.php(104): Drupal\Core\Config\Schema\ArrayElement->parse() > #5And a long trace of paths, but let's focus on these first five. The method getDefinitionWithReplacements() went through interesting debugging, ultimately confirming, as the trace correctly shows, that the weight data type definition was trying to add an array to an integer, but why? Where and when does the weight field come from? Looking at the Drupal core changelog, an interesting update to the data type schema definitions arrived in version 10.3.0, adding weight as a data type, inheriting the properties of the integer type:weight: type: integer label: 'Weight' constraints: Range: # @see PHP_INT_MIN (32-bit) min: -2147483648 # @see PHP_INT_MAX (32-bit) max: 2147483647 FullyValidatable: ~Relating this to the previous error trace with some debugging, it seems that the weight data type should be a metadata array of the element, but it is 0, and processing it produces the error. Getting straight to the point: how can I fix it? In this particular case, the only viable solution seemed to be manually creating the data type definition, in this case weight. To do this, you need to hook into the application's data types by creating the following class in a custom module at /src/CustomModuleServiceProvider.php:" name="description">
+<meta content="If when updating Drupal you encounter the error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” related to data type definitions, in this article I explain step by step how to fix it and allow drush updatedb to run correctly, without modifying the core." name="abstract">
+<meta content="Pablo Urrea,The error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() in Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Updates" name="keywords">
+<link href="https://pablourrea.github.io/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/steam_deck-the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.png" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-o-wine" property="og:url">
-<meta content='"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine' property="og:title">
-<meta content="If you've ever had trouble running games on your Steam Deck LCD / OLED or Linux with Proton and/or Wine due to missing Microsoft components, this article will guide you step by step on how to easily fix it." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck-the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.png" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck-the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.png" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck-the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.png" property="og:image:secure_url">
+<meta content="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" property="og:url">
+<meta content="The error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() in Drupal" property="og:title">
+<meta content="If when updating Drupal you encounter the error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” related to data type definitions, in this article I explain step by step how to fix it and allow drush updatedb to run correctly, without modifying the core." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" property="og:image:secure_url">
 <meta content="image/png" property="og:image:type">
-<meta content="Wed, 02/10/2024 - 20:49" property="og:updated_time">
+<meta content="Fri, 03/10/2025 - 11:49" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,29 +62,29 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Wed, 02/10/2024 - 16:44" property="article:published_time">
-<meta content="Wed, 02/10/2024 - 20:49" property="article:modified_time">
+<meta content="Fri, 03/10/2025 - 11:26" property="article:published_time">
+<meta content="Fri, 03/10/2025 - 11:49" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content='"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine' property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck-the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.png" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-o-wine" property="pin:url">
-<meta content="If you've ever had trouble running games on your Steam Deck LCD / OLED or Linux with Proton and/or Wine due to missing Microsoft components, this article will guide you step by step on how to easily fix it." property="pin:description">
+<meta content="The error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() in Drupal" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" property="pin:url">
+<meta content="If when updating Drupal you encounter the error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” related to data type definitions, in this article I explain step by step how to fix it and allow drush updatedb to run correctly, without modifying the core." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="If you've ever had trouble running games on your Steam Deck LCD / OLED or Linux with Proton and/or Wine due to missing Microsoft components, this article will guide you step by step on how to easily fix it." name="twitter:description">
-<meta content='"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine | Pablo Urrea' name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/steam_deck-the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.png" name="twitter:image">
+<meta content="If when updating Drupal you encounter the error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” related to data type definitions, in this article I explain step by step how to fix it and allow drush updatedb to run correctly, without modifying the core." name="twitter:description">
+<meta content="The error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() in Drupal | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-o-wine" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-o-wine" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-and-or-wine" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" rel="alternate" hreflang="en">
 <meta content="Drupal 10 (https://www.drupal.org)" name="Generator">
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-o-wine",en:"/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-and-or-wine",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_en/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager",en:"/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager",langcode:"en"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_en/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -108,12 +108,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "\u0022The Following Component(s) Are Required To Run This Program:\u0022 On Steam Deck LCD / OLED Or Linux With Proton And/or Wine",
-                        "item": "https://pablourrea.github.io/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-and-or-wine"
+                        "name": "The Error TypeError: Unsupported Operand Types: Int + Array In Drupal\\Core\\Config\\TypedConfigManager-\u003EgetDefinitionWithReplacements() In Drupal",
+                        "item": "https://pablourrea.github.io/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager"
                     }
                 ]
             },
-            "description": "\u0022The following component(s) are required to run this program:\u0022 on Steam Deck LCD / OLED or Linux with Proton and/or Wine",
+            "description": "The error TypeError: Unsupported operand types: int + array in Drupal\\Core\\Config\\TypedConfigManager-\u003EgetDefinitionWithReplacements() in Drupal",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -156,7 +156,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-10-02T16:44:48+0000"
+                "datePublished": "2025-10-03T11:26:33+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -197,16 +197,18 @@
 }</script>
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
-    <title>"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_cncR8yiBqbM0514vEpBVHafCsiZWQb8abfl9ghZFiT4.css?delta=0&language=en&theme=pablo_urrea&include=eJxNjkEKwzAMBD9k6lPeY2RFNcKyZCTnkLy-IbTQ2w7ssFshGHOFoFSf2MQqyBcGRUCjSNhp52W-lSlHYy0TsBfWnXSVKoY9_0NCc8pqPkD4ojRuG_KbZZG_EOZi0zTh7pbDneC3GmcsGs-dD6-ZOx0" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_IRKhJkX-TrsJJAlPj3SGO5Jgnb4V95etU6B1J2urzNQ.css?delta=1&language=en&theme=pablo_urrea&include=eJxNjkEKwzAMBD9k6lPeY2RFNcKyZCTnkLy-IbTQ2w7ssFshGHOFoFSf2MQqyBcGRUCjSNhp52W-lSlHYy0TsBfWnXSVKoY9_0NCc8pqPkD4ojRuG_KbZZG_EOZi0zTh7pbDneC3GmcsGs-dD6-ZOx0" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_KpN7rqTun5RZjgxaCNCATtn8gm0q7Jo9zCW7PYNMD4k.css?delta=2&language=en&theme=pablo_urrea&include=eJxNjkEKwzAMBD9k6lPeY2RFNcKyZCTnkLy-IbTQ2w7ssFshGHOFoFSf2MQqyBcGRUCjSNhp52W-lSlHYy0TsBfWnXSVKoY9_0NCc8pqPkD4ojRuG_KbZZG_EOZi0zTh7pbDneC3GmcsGs-dD6-ZOx0" rel="stylesheet" media="print">
-<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=3&language=en&theme=pablo_urrea&include=eJxNjkEKwzAMBD9k6lPeY2RFNcKyZCTnkLy-IbTQ2w7ssFshGHOFoFSf2MQqyBcGRUCjSNhp52W-lSlHYy0TsBfWnXSVKoY9_0NCc8pqPkD4ojRuG_KbZZG_EOZi0zTh7pbDneC3GmcsGs-dD6-ZOx0" rel="stylesheet" media="all">
+    <title>The error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() in Drupal | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_m0lQ5p9gf76LgmtDOfzEoQe4MI_RIysAMOIFWpSGvoA.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+<link href="https://unpkg.com/highlightjs-copy@1.0.5/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
+<link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_IRKhJkX-TrsJJAlPj3SGO5Jgnb4V95etU6B1J2urzNQ.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_KpN7rqTun5RZjgxaCNCATtn8gm0q7Jo9zCW7PYNMD4k.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="node--type-article no-sidebar page-articles-following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-and-or-wine path-node role--anonymous section-articles with-subnav">
+      <body class="node--type-article no-sidebar page-articles-error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager path-node role--anonymous section-articles with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -267,7 +269,7 @@
 <div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
   
     
-      <ul class="links"><li data-drupal-link-system-path="node/39" hreflang="es"><a href="/es/articulos/following-components-are-required-run-program-steam-deck-lcd-oled-o-linux-proton-o-wine" class="language-link" title="Español" data-drupal-link-system-path="node/39" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/39" hreflang="en"><a href="/en/articles/following-components-are-required-run-program-steam-deck-lcd-oled-or-linux-proton-and-or-wine" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/39" hreflang="en" aria-current="page">en</a></li></ul>
+      <ul class="links"><li data-drupal-link-system-path="node/48" hreflang="es"><a href="/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" class="language-link" title="Español" data-drupal-link-system-path="node/48" hreflang="es">es</a></li><li class="is-active" aria-current="page" data-drupal-link-system-path="node/48" hreflang="en"><a href="/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" class="is-active language-link" title="Inglés" data-drupal-link-system-path="node/48" hreflang="en" aria-current="page">en</a></li></ul>
   </div>
 
   </div>
@@ -297,7 +299,7 @@
 <h1 class="content-title">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>"The following component(s) are required to run this program:" on Steam Deck LCD / OLED or Linux with Proton and/or Wine</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>The error <em>TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()</em> in Drupal</p>
 </div>
       
   </h1>
@@ -305,10 +307,8 @@
     
 
       <div class="field field--label-hidden field--name-field-tags field__items">
-              <div class="field__item"><a href="/en/articles/categories/linux" hreflang="en">Linux</a></div>
-              <div class="field__item"><a href="/en/articles/categories/steam-deck" hreflang="en">Steam Deck</a></div>
-              <div class="field__item"><a href="/en/articles/categories/proton" hreflang="en">Proton</a></div>
-              <div class="field__item"><a href="/en/articles/categories/wine" hreflang="en">Wine</a></div>
+              <div class="field__item"><a href="/en/articles/categories/drupal" hreflang="en">Drupal</a></div>
+              <div class="field__item"><a href="/en/articles/categories/updates" hreflang="en">Updates</a></div>
           </div>
   
   </div>
@@ -321,7 +321,7 @@
   
       
 
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Steam: Steam Deck" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/steam_deck-the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.png?itok=zMM9PElf" height="540" loading="lazy" title="Steam: Steam Deck" width="1072">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Definition of the weight data type in Drupal" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/drupal_weight_data_type_definition.png?itok=yuzznj5f" height="540" loading="lazy" title="Definition of the weight data type in Drupal" width="1072">
 
 
 </div>
@@ -332,7 +332,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-image-html"><p><em>Steam Deck</em> - <em>Steam</em></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-image-html"><p>Definition of the <em>weight</em> data type in Drupal</p>
 </div>
       
   </div>
@@ -406,7 +406,7 @@
 <div class="reading-time">
     
 
-            <div class="field__item field field--label-hidden field--name-field-reading-time" content="7">7 minutes reading</div>
+            <div class="field__item field field--label-hidden field--name-field-reading-time" content="8">8 minutes reading</div>
       
   </div>
 <div class="authorship-dates">
@@ -416,8 +416,8 @@
     Published
   </div>
 
-  <time class="datetime" datetime="2024-10-02">
-    02/10/2024
+  <time class="datetime" datetime="2025-10-03">
+    03/10/2025
   </time>
 </div>
 
@@ -427,68 +427,108 @@
 <div class="content-description">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-html"><p>The other day I installed a completely lawful and paid game on my <em>Steam Deck</em>, in another article I will talk about which methods are the best or most comfortable to install depending on the origin and the size that occupy the games, on this occasion, going one step ahead, when running/opening/running the game I found the following error:</p>
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-  
-      
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-html"><p>When it was time to perform maintenance on a website running <em>Drupal 10.2.5</em>, I honestly did not expect everything to break because “<em>the dumb box</em>” turned out to be really dumb. Before I start explaining how I solved it, I need to clarify a couple of things. The first is that there may be better or worse solutions to this block, but I found absolutely no documentation as of a couple of weeks before this article was published; the second thing I need to clarify is as simple as specifying that the Drupal update was from version <em>10.2.5</em> to <em>10.5.3</em> passing through <em>10.3.0</em> (I will explain the relevance of this later) with <em>PHP 8.2</em> and <em>MariaDB 10.7</em> as the starting database versions.</p>
+<p> </p>
+<p><strong>The iceberg of this ship.</strong> Updating a minor version of the latest Drupal versions should not be costly, at least that’s what I thought when taking on this development. With all modules updated to the highest possible version and everything checked, it was time to upgrade the Drupal core. Changing versions and fixing dependencies as errors popped up during the cold update—everything went perfectly, packages upgraded without issues. Clearing caches so new elements are recognized and, of course, updating the database with <code>drush updatedb</code>, confirming updates, and when reaching a specific <code>hook_update</code> (from the <em>book</em> module) it failed with the following error:</p>
+<pre><code class="language-bash">> [error] TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() (line 305 of /var/www/html/docroot/core/lib/Drupal/Core/Config/TypedConfigManager.php) #0
 
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="The following component(s) are required to run this program: Microsoft Visual C++ Runtime" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/the_following_components_are_required_to_run_this_program-microsoft_visual_c_plus_plus_runtime.jpg?itok=buN6yxmw" height="691" loading="lazy" title="The following component(s) are required to run this program: Microsoft Visual C++ Runtime" width="1920">
+/var/www/html/docroot/core/lib/Drupal/Core/Config/TypedConfigManager.php(114): Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements('weight', Array) > #1
 
+/var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/ArrayElement.php(172): Drupal\Core\Config\TypedConfigManager->buildDataDefinition(Array, 0, 'weight', Object(Drupal\Core\Config\Schema\Mapping)) > #2
 
-</div>
-      
-  </article>
+/var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/Mapping.php(52): Drupal\Core\Config\Schema\ArrayElement->buildDataDefinition(Array, 0, 'weight') > #3
 
-<figcaption>The following component(s) are required to run this program: Microsoft Visual C++ Runtime</figcaption>
-</figure>
-<p> </p>
-<p>To facilitate the installation of these add-ons used by most video games, <em>Steam</em> provides them with the “<em>Steamworks Common Redistributables</em>” package, but how do you install them manually on the <em>Steam Deck</em> or <em>Linux</em> with <em>Proton</em> and/or <em>Wine</em>?</p>
-<p> </p>
-<p> </p>
-<p><strong>Installing the Swiss army knife.</strong> Assuming that the game is installed and added to <em>Steam</em>, the first thing to do is to install the program “<em>Protontricks</em>”, to do this go to <em>Discover</em> or the application store of your <em>Linux</em> distribution and search for this application:</p>
-<article class="media media--type-image media--view-mode-default">
-  
-      
+/var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/ArrayElement.php(56): Drupal\Core\Config\Schema\Mapping->getElementDefinition('weight') > #4
 
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Discover: Protontricks" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/discover_protontricks_en.png?itok=EtWb_Ptr" height="346" loading="lazy" title="Discover: Protontricks" width="1920">
+/var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/ArrayElement.php(104): Drupal\Core\Config\Schema\ArrayElement->parse() > #5</code></pre><p>And a long trace of paths, but let's focus on these first five. The method <code>getDefinitionWithReplacements()</code> went through interesting debugging, ultimately confirming, as the trace correctly shows, that the <code>weight</code> data type definition was trying to add an <em>array</em> to an <em>integer</em>, but why?</p>
+<p> </p>
+<p><strong>Where and when does the </strong><code><strong>weight</strong></code><strong> field come from?</strong> Looking at the Drupal core changelog, an interesting update to the data type schema definitions arrived in version 10.3.0, adding <code>weight</code> as a data type, inheriting the properties of the <code>integer</code> type:</p>
+<pre><code class="language-yaml">weight:
+  type: integer
+  label: 'Weight'
+  constraints:
+    Range:
+      # @see PHP_INT_MIN (32-bit)
+      min: -2147483648
+      # @see PHP_INT_MAX (32-bit)
+      max: 2147483647
+    FullyValidatable: ~</code></pre><p>Relating this to the previous error trace with some debugging, it seems that the <code>weight</code> data type should be a <em>metadata array</em> of the element, but it is <code>0</code>, and processing it produces the error.</p>
+<p> </p>
+<p><strong>Getting straight to the point: how can I fix it?</strong> In this particular case, the only viable solution seemed to be manually creating the data type definition, in this case <code>weight</code>. To do this, you need to hook into the application's data types by creating the following class in a custom module at /src/CustomModuleServiceProvider.php:</p>
+<pre><code class="language-php">&lt;?php
 
+namespace Drupal\custom_module;
 
-</div>
-      
-  </article>
+use Drupal\Core\DependencyInjection\ContainerBuilder;
+use Drupal\Core\DependencyInjection\ServiceProviderBase;
+use Drupal\custom_module\Service\WeightTypedConfigManagerService;
+
+/**
+ * Service provider to override core services.
+ */
+class CustomModuleServiceProvider extends ServiceProviderBase {
+
+ /**
+  * {@inheritdoc}
+  */
+ public function alter(ContainerBuilder $container) {
+   if ($container->hasDefinition('config.typed')) {
+     $definition = $container->getDefinition('config.typed');
+
+     // {@inheritdoc}
+     // @see \Drupal\custom_module\Service\WeightTypedConfigManagerService
+     $definition->setClass(WeightTypedConfigManagerService::class);
+   }
+ }
+
+}
+</code></pre><p>This hooks into the services and subsequently the data types. Here we will set the class, which we will also create in <code>/src/Service/WeightTypedConfigManagerService.php</code>, although for this service it is not necessary to define it in the <code>custom_module.services.yml</code> file:</p>
+<pre><code class="language-php">&lt;?php
+
+namespace Drupal\custom_module\Service;
+
+use Drupal\Core\Config\TypedConfigManager;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+
+/**
+* @fix
+* TypeError: Unsupported operand types: int + array in
+* Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()
+*
+* @see https://www.drupal.org/node/3426319
+*/
+class WeightTypedConfigManagerService extends TypedConfigManager {
+
+ use StringTranslationTrait;
+
+ /**
+  * {@inheritdoc}
+  */
+ public function getDefinitions() {
+   $definitions = parent::getDefinitions();
+
+   // Inject custom weight field definition if broken.
+   if (array_key_exists('weight', $definitions) && !is_array($definitions['weight'])) {
+     $definitions['weight'] = [
+       'type' => 'integer',
+       'label' => $this->t('Weight'),
+       'constraints' => [
+         'Range' => [
+           'min' => PHP_INT_MIN,
+           'max' => PHP_INT_MAX,
+         ],
+         'FullyValidatable' => NULL,
+       ],
+     ];
+   }
+
+   return $definitions;
+ }
+
+}
+</code></pre><p>The definition is exactly the same as found in <code>/core/config/schema/core.data_types.schema.yml</code>. In this case, it doesn’t need to be modified, just added so that the system detects and installs it. Now, running <code>drush updatedb</code> executes all <code>hook_update</code> operations without producing the previous error. Later, if the system detects the <code>weight</code> definition, this small patch can be removed.</p>
 <p> </p>
-<p> </p>
-<p> </p>
-<p><em><strong>Microsoft Windows</strong></em><strong> outside </strong><em><strong>Microsoft Windows</strong></em><strong>.</strong> <em>Protontricks</em> allows to make many adjustments to <em>Proton</em> environments, but in this occasion select the options “<em>Select the default wineprefix</em>” > “<em>OK</em>” > “<em>Install a Windows DLL or component</em>” > “<em>OK</em>”. This will display a huge alphabetical list of <em>Microsoft</em> components for <em>Windows</em> applications, you will need to search for the component you need, although for <em>Microsoft Visual C++ Runtime</em> there are many similar ones, the correct component is the following (You must substitute XX for the year closest to the current year):</p>
-<table style="border:1px solid #4c4c4c">
-<tbody>
-<tr>
-<td style="background-color:#e5e5e5;border:1px solid #4c4c4c;text-align:center"><span style="color:#545454"><strong>Package</strong></span></td>
-<td style="background-color:#e5e5e5;border:1px solid #4c4c4c;text-align:center"><span style="color:#545454"><strong>Title</strong></span></td>
-<td style="background-color:#e5e5e5;border:1px solid #4c4c4c;text-align:center"><span style="color:#545454"><strong>Publisher</strong></span></td>
-</tr>
-<tr>
-<td style="border:1px solid #4c4c4c;text-align:center">vcrun20XX</td>
-<td style="border:1px solid #4c4c4c;text-align:center">Visual C++ 2015-20XX libraries (concrt140.dll,mfc140.dll,mfc140chs.dll,mfc140cht.dll,mfc140deu. ...</td>
-<td style="border:1px solid #4c4c4c;text-align:center"><em>Microsoft</em></td>
-</tr>
-</tbody>
-</table>
-<p>You can select as many components as you need or want to install and continue with “<em>OK</em>”. This will start the installation process of all the selected components (Some like <em>Microsoft Visual C++ Runtime</em> will require two component installation processes) launching the necessary installation windows. In this example <em>Microsoft Visual C++ Runtime</em> will require you to accept the terms and conditions (Optional reading) and click “<em>Install</em>”, wait for it to install and then click “<em>Close</em>” to continue to the next component installer or end the process.</p>
-<p>Once the process is finished it will return to the initial screen, which you can close if you do not need anything else from <em>Protontricks</em>. And that's it, now when you run the game it will not show the <em>Microsoft</em> component error.</p>
-<p> </p>
-<p> </p>
-<p><strong>Also in </strong><em><strong>Heroic Games Launcher</strong></em><strong>.</strong> If you experience the <em>Microsoft</em> components error in a game installed via <em>Heroic Games Launcher</em>, you can perform the above process in the settings by simply looking for “<em>Winetricks</em>” in the game settings within the launcher.</p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p><strong>Credits and Acknowledgements.</strong> Thanks to <a href="https://www.youtube.com/@SteamDeckGaming"><em>Steam Deck Gaming</em></a> for the video <a href="https://www.youtube.com/watch?v=a0PiPf775h4"><em>Fix C++ Runtime Error on Steam Deck Steam OS - Steam and Heroic Games Launcher</em></a> that inspired and guided this article.</p>
+<p><strong>Conclusion.</strong> These types of errors are very interesting as well as challenging, especially when no documentation exists online, but a custom solution can always be implemented and later tested for removal.</p>
 <p> </p>
 </div>
       
@@ -549,7 +589,7 @@
   
       
 
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Graphic representation of a VPN" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/vpn.png?itok=1KGTnHTK" height="270" loading="lazy" title="Graphic representation of a VPN" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Windows Package Manager (WinGet) (Source: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/windows_package_manager_logo-wikipedia.png?itok=XyI5bhIr" height="270" loading="lazy" title="Windows Package Manager (WinGet) (Source: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)" width="423">
 
 
 </div>
@@ -561,17 +601,17 @@
 <h3 class="title">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Configure <em>Fortinet</em> VPN on <em>Linux</em></p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>How to install all pending updates with a single command in Windows?</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>On <em>Linux</em>, the <em>Fortinet</em> VPN can be configured through the graphical interface, the console, or the system's network connections, each method having its own advantages and disadvantages. It combines ease of use and technical flexibility, catering to various user needs.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>A Windows command allows updating all programs with pending updates automatically after its execution.</p>
 </div>
       
-  </div><a href="/en/articles/configure-fortinet-vpn-linux" class="link-content" hreflang="en" aria-label="Configure Fortinet VPN on Linux"></a>
+  </div><a href="/en/articles/how-install-all-pending-updates-single-command-windows" class="link-content" hreflang="en" aria-label="How to install all pending updates with a single command in Windows?"></a>
   </div>
   </div>
 
@@ -590,7 +630,7 @@
   
       
 
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Definition of the weight data type in Drupal" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/drupal_weight_data_type_definition.png?itok=5tjuE1yz" height="270" loading="lazy" title="Definition of the weight data type in Drupal" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Tome" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/tome.png?itok=8mTelvki" height="270" loading="lazy" title="Tome" width="423">
 
 
 </div>
@@ -602,17 +642,17 @@
 <h3 class="title">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>The error <em>TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()</em> in Drupal</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Building and exporting a static website with decoupled Drupal and Tome</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>If when updating <em>Drupal</em> you encounter the error “<em>TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()</em>” related to data type definitions, in this article I explain step by step how to fix it and allow <em>drush updatedb</em> to run correctly, without modifying the core.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>Drupal, known for its robustness, becomes a standout choice for static sites. With Tome, it transforms a dynamic site into static, ideal for projects without frequent updates. Decoupled Drupal and Tome offer security, performance, and ease of implementation, simplifying the setup and deployment process. Joining forces, they provide a powerful and flexible solution for high-performance static websites.</p>
 </div>
       
-  </div><a href="/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" class="link-content" hreflang="en" aria-label="The error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager-&amp;gt;getDefinitionWithReplacements() in Drupal"></a>
+  </div><a href="/en/articles/building-and-exporting-static-website-decoupled-drupal-and-tome" class="link-content" hreflang="en" aria-label="Building and exporting a static website with decoupled Drupal and Tome"></a>
   </div>
   </div>
 
@@ -641,7 +681,7 @@
                   <a href="/en/articles">Articles</a>
               </li>
           <li>
-                  "The Following Component(s) Are Required To Run This Program:" On Steam Deck LCD / OLED Or Linux With Proton And/or Wine
+                  The Error TypeError: Unsupported Operand Types: Int + Array In Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() In Drupal
               </li>
         </ol>
   </nav>
@@ -905,7 +945,10 @@
   </div>
 
     
-    <script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSswBAEUGBy0"></script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/48","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","yaml":"yaml","php":"php"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
+<script src="/sites/default/files/js/js_8RYbW2UfMct-KnU8JKkwXBwbMWUmmeGtTwSAGCWU5U4.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+<script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
+<script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=2&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 
       </body>
 </html>

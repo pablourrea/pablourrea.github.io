@@ -11,15 +11,15 @@
   gtag('js', new Date());
   gtag('config', 'G-QPJMYH8NQN');
 </script>
-<meta content="El pasado octubre Benidorm acogió a abuelos, británicos y asistentes a la DrupalCamp 2024, el evento regional anual que reúne a los desarrolladores de Drupal en España." name="description">
-<meta content="El pasado octubre Benidorm acogió a abuelos, británicos y asistentes a la DrupalCamp 2024, el evento regional anual que reúne a los desarrolladores de Drupal en España." name="abstract">
-<meta content="Pablo Urrea,DrupalCamp 2024: Benidorm,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Eventos" name="keywords">
-<link href="https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm" rel="canonical">
+<meta content="Si al actualizar Drupal te aparece el error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” relacionado con la definición de los tipos de datos, en este artículo explico paso a paso cómo corregirlo y permitir que drush updatedb se ejecute correctamente, sin modificar el núcleo." name="description">
+<meta content="Si al actualizar Drupal te aparece el error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” relacionado con la definición de los tipos de datos, en este artículo explico paso a paso cómo corregirlo y permitir que drush updatedb se ejecute correctamente, sin modificar el núcleo." name="abstract">
+<meta content="Pablo Urrea,El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() en Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Actualizaciones" name="keywords">
+<link href="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" rel="canonical">
 <meta content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" name="robots">
 <meta content="Drupal" name="generator">
 <meta content="Pablo Urrea" name="author">
 <meta content="https://pablourrea.github.io" name="original-source">
-<link href="https://pablourrea.github.io/sites/default/files/images/drupal_camp_2024-banner.jpg" rel="image_src">
+<link href="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" rel="image_src">
 <meta content="origin" name="referrer">
 <link href="/sites/default/files/logo.png" rel="icon">
 <link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16">
@@ -44,14 +44,14 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon-precomposed" sizes="180x180">
 <meta content="Pablo Urrea" property="og:site_name">
 <meta content="article" property="og:type">
-<meta content="https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm" property="og:url">
-<meta content="DrupalCamp 2024: Benidorm" property="og:title">
-<meta content="El pasado octubre Benidorm acogió a abuelos, británicos y asistentes a la DrupalCamp 2024, el evento regional anual que reúne a los desarrolladores de Drupal en España." property="og:description">
-<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_camp_2024-banner.jpg" property="og:image">
-<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_camp_2024-banner.jpg" property="og:image:url">
-<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_camp_2024-banner.jpg" property="og:image:secure_url">
-<meta content="image/jpeg" property="og:image:type">
-<meta content="Sáb, 14/12/2024 - 00:57" property="og:updated_time">
+<meta content="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" property="og:url">
+<meta content="El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() en Drupal" property="og:title">
+<meta content="Si al actualizar Drupal te aparece el error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” relacionado con la definición de los tipos de datos, en este artículo explico paso a paso cómo corregirlo y permitir que drush updatedb se ejecute correctamente, sin modificar el núcleo." property="og:description">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" property="og:image">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" property="og:image:url">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" property="og:image:secure_url">
+<meta content="image/png" property="og:image:type">
+<meta content="Vie, 03/10/2025 - 11:49" property="og:updated_time">
 <meta content="https://pablourrea.github.io" property="og:see_also">
 <meta content="es_ES,en_AU,en_BE,en_GB,en_JP,en_US,en_ZA" property="og:locale">
 <meta content="es_ES" property="og:locale:alternate">
@@ -62,29 +62,29 @@
 <meta content="en_US" property="og:locale:alternate">
 <meta content="en_ZA" property="og:locale:alternate">
 <meta content="Pablo Urrea" property="article:section">
-<meta content="Sáb, 14/12/2024 - 00:20" property="article:published_time">
-<meta content="Sáb, 14/12/2024 - 00:57" property="article:modified_time">
+<meta content="Vie, 03/10/2025 - 11:26" property="article:published_time">
+<meta content="Vie, 03/10/2025 - 11:49" property="article:modified_time">
 <meta content="Pablo" property="profile:first_name">
 <meta content="Urrea" property="profile:last_name">
 <meta content="male" property="profile:gender">
 <meta content="purrea" property="profile:username">
-<meta content="DrupalCamp 2024: Benidorm" property="pin:id">
-<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_camp_2024-banner.jpg" property="pin:media">
-<meta content="https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm" property="pin:url">
-<meta content="El pasado octubre Benidorm acogió a abuelos, británicos y asistentes a la DrupalCamp 2024, el evento regional anual que reúne a los desarrolladores de Drupal en España." property="pin:description">
+<meta content="El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() en Drupal" property="pin:id">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" property="pin:media">
+<meta content="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" property="pin:url">
+<meta content="Si al actualizar Drupal te aparece el error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” relacionado con la definición de los tipos de datos, en este artículo explico paso a paso cómo corregirlo y permitir que drush updatedb se ejecute correctamente, sin modificar el núcleo." property="pin:description">
 <meta content="summary_large_image" name="twitter:card">
-<meta content="El pasado octubre Benidorm acogió a abuelos, británicos y asistentes a la DrupalCamp 2024, el evento regional anual que reúne a los desarrolladores de Drupal en España." name="twitter:description">
-<meta content="DrupalCamp 2024: Benidorm | Pablo Urrea" name="twitter:title">
-<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_camp_2024-banner.jpg" name="twitter:image">
+<meta content="Si al actualizar Drupal te aparece el error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” relacionado con la definición de los tipos de datos, en este artículo explico paso a paso cómo corregirlo y permitir que drush updatedb se ejecute correctamente, sin modificar el núcleo." name="twitter:description">
+<meta content="El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() en Drupal | Pablo Urrea" name="twitter:title">
+<meta content="https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png" name="twitter:image">
 <meta content="aSHzhJrrdgVzas8_htfYXMoEZhF6NoLomwGYa4EPN6Y" name="google-site-verification">
-<link href="https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm" rel="alternate" hreflang="x-default">
-<link href="https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm" rel="alternate" hreflang="es">
-<link href="https://pablourrea.github.io/en/articles/drupalcamp-2024-benidorm" rel="alternate" hreflang="en">
+<link href="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" rel="alternate" hreflang="x-default">
+<link href="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" rel="alternate" hreflang="es">
+<link href="https://pablourrea.github.io/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" rel="alternate" hreflang="en">
 <meta content="Drupal 10 (https://www.drupal.org)" name="Generator">
 <meta content="width" name="MobileOptimized">
 <meta content="true" name="HandheldFriendly">
 <meta content="width=device-width,initial-scale=1" name="viewport">
-<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/drupalcamp-2024-benidorm",en:"/en/articles/drupalcamp-2024-benidorm",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_es/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
+<script type="text/javascript">var Drupal={},StaticDrupal={breakpoints:{xs:320,s:480,m:768,l:1024,xl:1200},route:{current:{es:"/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager",en:"/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager",langcode:"es"}},domains:["pablourrea.github.io","pablourrea.ddev.site"],search_api:{index:"_es/index.json",limit:"SEARCH_API_LIMIT"}}</script><script type="application/ld+json">{
     "@context": "https://schema.org",
     "@graph": [
         {
@@ -108,12 +108,12 @@
                     {
                         "@type": "ListItem",
                         "position": 3,
-                        "name": "DrupalCamp 2024: Benidorm",
-                        "item": "https://pablourrea.github.io/es/articulos/drupalcamp-2024-benidorm"
+                        "name": "El Error TypeError: Unsupported Operand Types: Int + Array In Drupal\\Core\\Config\\TypedConfigManager-\u003EgetDefinitionWithReplacements() En Drupal",
+                        "item": "https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager"
                     }
                 ]
             },
-            "description": "DrupalCamp 2024: Benidorm",
+            "description": "El error TypeError: Unsupported operand types: int + array in Drupal\\Core\\Config\\TypedConfigManager-\u003EgetDefinitionWithReplacements() en Drupal",
             "author": {
                 "@type": "Person",
                 "@id": "pablourrea.github.io",
@@ -156,7 +156,7 @@
                     "https://github.com/pablourrea",
                     "https://stackoverflow.com/users/19547744/enchufe"
                 ],
-                "datePublished": "2024-12-14T00:20:49+0000"
+                "datePublished": "2025-10-03T11:26:33+0000"
             },
             "inLanguage": "Español",
             "workTranslation": [
@@ -197,16 +197,18 @@
 }</script>
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
-    <title>DrupalCamp 2024: Benidorm | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_cncR8yiBqbM0514vEpBVHafCsiZWQb8abfl9ghZFiT4.css?delta=0&language=es&theme=pablo_urrea&include=eJxNjkEKwzAMBD9k6lPeY2RFNcKyZCTnkLy-IbTQ2w7ssFshGHOFoFSf2MQqyBcGRUCjSNhp52W-lSlHYy0TsBfWnXSVKoY9_0NCc8pqPkD4ojRuG_KbZZG_EOZi0zTh7pbDneC3GmcsGs-dD6-ZOx0" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_IRKhJkX-TrsJJAlPj3SGO5Jgnb4V95etU6B1J2urzNQ.css?delta=1&language=es&theme=pablo_urrea&include=eJxNjkEKwzAMBD9k6lPeY2RFNcKyZCTnkLy-IbTQ2w7ssFshGHOFoFSf2MQqyBcGRUCjSNhp52W-lSlHYy0TsBfWnXSVKoY9_0NCc8pqPkD4ojRuG_KbZZG_EOZi0zTh7pbDneC3GmcsGs-dD6-ZOx0" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_KpN7rqTun5RZjgxaCNCATtn8gm0q7Jo9zCW7PYNMD4k.css?delta=2&language=es&theme=pablo_urrea&include=eJxNjkEKwzAMBD9k6lPeY2RFNcKyZCTnkLy-IbTQ2w7ssFshGHOFoFSf2MQqyBcGRUCjSNhp52W-lSlHYy0TsBfWnXSVKoY9_0NCc8pqPkD4ojRuG_KbZZG_EOZi0zTh7pbDneC3GmcsGs-dD6-ZOx0" rel="stylesheet" media="print">
-<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=3&language=es&theme=pablo_urrea&include=eJxNjkEKwzAMBD9k6lPeY2RFNcKyZCTnkLy-IbTQ2w7ssFshGHOFoFSf2MQqyBcGRUCjSNhp52W-lSlHYy0TsBfWnXSVKoY9_0NCc8pqPkD4ojRuG_KbZZG_EOZi0zTh7pbDneC3GmcsGs-dD6-ZOx0" rel="stylesheet" media="all">
+    <title>El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() en Drupal | Pablo Urrea</title>
+    <link href="/sites/default/files/css/css_m0lQ5p9gf76LgmtDOfzEoQe4MI_RIysAMOIFWpSGvoA.css?delta=0&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+<link href="https://unpkg.com/highlightjs-copy@1.0.5/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
+<link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_IRKhJkX-TrsJJAlPj3SGO5Jgnb4V95etU6B1J2urzNQ.css?delta=3&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_KpN7rqTun5RZjgxaCNCATtn8gm0q7Jo9zCW7PYNMD4k.css?delta=4&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
 
     
   </head>
           
-      <body class="node--type-article no-sidebar page-articulos-drupalcamp-2024-benidorm path-node role--anonymous section-articulos with-subnav">
+      <body class="node--type-article no-sidebar page-articulos-error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager path-node role--anonymous section-articulos with-subnav">
     <div id="skip">
       <a href="#main-menu" class="visually-hidden focusable skip-link">
         Skip to main navigation
@@ -267,7 +269,7 @@
 <div class="block-language-switcher-langcode-block block-pablo-urrea-languageswitcherlangcode language-switcher-language-url" id="block-pablo-urrea-languageswitcherlangcode">
   
     
-      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/40" hreflang="es"><a href="/es/articulos/drupalcamp-2024-benidorm" class="is-active language-link" title="Español" data-drupal-link-system-path="node/40" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/40" hreflang="en"><a href="/en/articles/drupalcamp-2024-benidorm" class="language-link" title="Inglés" data-drupal-link-system-path="node/40" hreflang="en">en</a></li></ul>
+      <ul class="links"><li class="is-active" aria-current="page" data-drupal-link-system-path="node/48" hreflang="es"><a href="/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" class="is-active language-link" title="Español" data-drupal-link-system-path="node/48" hreflang="es" aria-current="page">es</a></li><li data-drupal-link-system-path="node/48" hreflang="en"><a href="/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" class="language-link" title="Inglés" data-drupal-link-system-path="node/48" hreflang="en">en</a></li></ul>
   </div>
 
   </div>
@@ -297,7 +299,7 @@
 <h1 class="content-title">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>DrupalCamp 2024: Benidorm</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>El error <em>TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()</em> en Drupal</p>
 </div>
       
   </h1>
@@ -306,7 +308,7 @@
 
       <div class="field field--label-hidden field--name-field-tags field__items">
               <div class="field__item"><a href="/es/articulos/categorias/drupal" hreflang="es">Drupal</a></div>
-              <div class="field__item"><a href="/es/articulos/categorias/eventos" hreflang="es">Eventos</a></div>
+              <div class="field__item"><a href="/es/articulos/categorias/actualizaciones" hreflang="es">Actualizaciones</a></div>
           </div>
   
   </div>
@@ -319,7 +321,7 @@
   
       
 
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="DrupalCamp 2024 - Banner - Asociación Española de Drupal (Escalado)" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/drupal_camp_2024-banner.jpg?itok=GIrWHBki" height="540" loading="lazy" title="DrupalCamp 2024 - Banner - Asociación Española de Drupal (Escalado)" width="1072">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Definición del tipo de dato weight en Drupal" class="image-style-full-landscape-1072x540" src="/sites/default/files/styles/full_landscape_1072x540/public/images/drupal_weight_data_type_definition.png?itok=yuzznj5f" height="540" loading="lazy" title="Definición del tipo de dato weight en Drupal" width="1072">
 
 
 </div>
@@ -330,7 +332,7 @@
 <div class="title title-right title-small">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-image-html"><p>Banner de la DrupalCamp 2024 - Asociación Española de Drupal (Escalado)</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-image-html"><p>Definición del tipo de dato <em>weight</em> en Drupal</p>
 </div>
       
   </div>
@@ -404,111 +406,129 @@
 <div class="reading-time">
     
 
-            <div class="field__item field field--label-hidden field--name-field-reading-time" content="10">Lectura de 10 minutos</div>
+            <div class="field__item field field--label-hidden field--name-field-reading-time" content="8">Lectura de 8 minutos</div>
       
+  </div>
+<div class="authorship-dates">
+    
+<div class="date">
+  <div class="label">
+    Publicado
+  </div>
+
+  <time class="datetime" datetime="2025-10-03">
+    03/10/2025
+  </time>
+</div>
+
   </div>
   </div>
   </div>
 <div class="content-description">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-html"><p>Llevo un tiempo ausente por aquí, y no es para menos. Estuve disfrutando de un paseo por la ciudad española favorita de los abuelos, los británicos y, este año, de los asistentes a la <em>DrupalCamp 2024</em>, el evento regional anual que reúne a los desarrolladores de <em>Drupal</em> en España.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-description-html"><p>Cuando tocó hacer mantenimiento de una web con la versión de <em>Drupal 10.2.5</em> sinceramente no esperaba que todo se rompiese porque “<em>la caja tonta</em>” resultó ser realmente tonta. Antes de empezar a contar como lo resolví debo aclarar un par de cosas, la primera es que puede haber soluciones mejores o peores a este bloqueo, pero no encontré absolutamente nada de documentación a fecha de un par de semanas antes de la publicación de este artículo; la segunda cosa que debo aclarar es tan sencilla como especificar que la actualización de Drupal era de la versión <em>10.2.5</em> a la <em>10.5.3</em> pasando por la <em>10.3.0</em> (Ya explicaré la relevancia de esto más adelante) con <em>PHP 8.2</em>, y <em>MariaDB 10.7</em> en la base de datos como versiones de partida.</p>
 <p> </p>
-<p><strong>Jueves 24 de octubre, </strong><em><strong>Business Day</strong></em><strong>.</strong> El evento comenzó el jueves, y como siempre el primer día está dedicado al networking entre empresas y desarrolladores. Pero, aunque mi odisea no comienza hasta el día siguiente, si es verdad que este día resulta muy útil para conocer empresas que ofrezcan soluciones del ecosistema de <em>Drupal</em> ya sea como potencial cliente o posible trabajador en el caso de buscar empleo.</p>
+<p><strong>El iceberg de este barco.</strong> Actualizar una versión menor de las últimas versiones de Drupal no debería de ser algo costoso, al menos eso pensaba yo al tomar este desarrollo. Ya con todos los módulos actualizados a la versión más alta posible, y todo revisado, tocaba subir el núcleo de Drupal. Cambiar versiones y corregir dependencias a medida que saltaban errores en la actualización en frío, todo perfecto, los paquetes subían de versión sin problema. Limpiar cachés para que reconozca nuevos elementos y por supuesto actualizar la base de datos con <code>drush updatedb</code>, confirmar actualizaciones, y al llegar a un <code>hook_update</code> concreto (Del módulo <em>book</em>) fallaba con el siguiente error:</p>
+<pre><code class="language-bash">> [error] TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() (line 305 of /var/www/html/docroot/core/lib/Drupal/Core/Config/TypedConfigManager.php) #0
+
+/var/www/html/docroot/core/lib/Drupal/Core/Config/TypedConfigManager.php(114): Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements('weight', Array) > #1
+
+/var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/ArrayElement.php(172): Drupal\Core\Config\TypedConfigManager->buildDataDefinition(Array, 0, 'weight', Object(Drupal\Core\Config\Schema\Mapping)) > #2
+
+/var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/Mapping.php(52): Drupal\Core\Config\Schema\ArrayElement->buildDataDefinition(Array, 0, 'weight') > #3
+
+/var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/ArrayElement.php(56): Drupal\Core\Config\Schema\Mapping->getElementDefinition('weight') > #4
+
+/var/www/html/docroot/core/lib/Drupal/Core/Config/Schema/ArrayElement.php(104): Drupal\Core\Config\Schema\ArrayElement->parse() > #5</code></pre><p>Y un trazado largo de rutas, pero centrémonos en estos cinco primeros. Interesante depuración se llevó el método <code>getDefinitionWithReplacements()</code>, para acabar confirmando, como menciona correctamente el trazado, que la definición de tipo de dato <code>weight</code> trataba de agregar un <em>array</em> a un <em>número entero</em>, pero ¿Por qué?</p>
 <p> </p>
-<p><strong>Viernes 25 de octubre, primer día.</strong> La alarma sonó a las 6 de la mañana. Un autobús me esperaba (pero no demasiado) para llevarme hasta Benidorm. A pesar de lo cómodo y espacioso que era el vehículo, las casi seis horas de viaje no pudieron ser compensadas ni por el asiento más confortable del mundo. Una vez allí, estiré la espalda, que sentía como una caja para mudanzas, y me aseguré de asentar los mantecados y el zumo que me dio el conductor del autobús.</p>
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-  
-      
-
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Toro de Osborne de camino a la DrupalCamp 2024" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/drupal_camp_2024-toro_de_osborne.png?itok=2WIm-zOC" height="1080" loading="lazy" title="Toro de Osborne de camino a la DrupalCamp 2024" width="1920">
-
-
-</div>
-      
-  </article>
-
-<figcaption>Toro de Osborne de camino a la DrupalCamp 2024</figcaption>
-</figure>
-</article>
-</figure>
+<p><strong>¿Desde dónde y cuándo viene el campo de tipo </strong><code><strong>weight</strong></code><strong>?</strong> Mirando el registro de cambios del núcleo de Drupal, una interesante actualización de las definiciones del esquema de tipos de datos llegaron en la versión 10.3.0 agregando <code>weight</code> como un tipo de dato, heredando las propiedades del tipo de dato <code>integer</code>:</p>
+<pre><code class="language-yaml">weight:
+  type: integer
+  label: 'Weight'
+  constraints:
+    Range:
+      # @see PHP_INT_MIN (32-bit)
+      min: -2147483648
+      # @see PHP_INT_MAX (32-bit)
+      max: 2147483647
+    FullyValidatable: ~</code></pre><p>Relacionando esto con el trazo del error anterior con un poco de depuración, parece ser que el tipo de dato <code>weight</code> debería de ser un <em>array de metadatos</em> del elemento, pero es <code>0</code> y al procesarlo se produce el error.</p>
 <p> </p>
-<p>Busqué la parada de autobuses, que estaba frente a la estación de Benidorm, una estación que, por cierto, es un centro comercial abandonado donde no se puede acceder a ninguna planta. Los autobuses de Benidorm no admiten pago con tarjeta, algo que parece evidente una vez lo sabes, pero ahí estaba yo, sin una sola moneda, caminando hacia el hotel con mi maleta y el roll-up publicitario de <a href="https://jakala.es/">JAKALA</a>. Para alguien que viene de una ciudad grande, los treinta minutos de paseo fueron bastante amenos, aunque habría preferido reducir ese tiempo a la mitad en autobús.</p>
-<p>Ya en la habitación del hotel, en la planta 18 (21 si contamos las plantas de restaurante, baile y espectáculos), pude realizar la tarea que más esperaba: comerme el bocadillo de tortilla que llevaba conmigo. Lo hice con cierta prisa, ya que la primera charla después del almuerzo estaba por comenzar. Fue una pena no haber llegado antes; me habría gustado mucho aparecer en la foto de grupo.</p>
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-  
-      
+<p><strong>Al grano ¿Cómo puedo solucionarlo?</strong> En este caso particular la única salida que parecía viable era crear manualmente la definición del tipo de dato, en este caso <code>weight</code>, para ello hay que engancharse a los tipos de datos de la aplicación, para ello hay que crear en un módulo personalizado la siguiente clase /src/CustomModuleServiceProvider.php:</p>
+<pre><code class="language-php">&lt;?php
 
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Foto de grupo de la DrupalCamp 2024 (Fuente: https://2024.drupalcamp.es)" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/drupalcamp-2024-viernes-25_54094369706_o.png?itok=wwzpF2zL" height="1080" loading="lazy" title="Foto de grupo de la DrupalCamp 2024 (Fuente: https://2024.drupalcamp.es)" width="1920">
+namespace Drupal\custom_module;
 
+use Drupal\Core\DependencyInjection\ContainerBuilder;
+use Drupal\Core\DependencyInjection\ServiceProviderBase;
+use Drupal\custom_module\Service\WeightTypedConfigManagerService;
 
-</div>
-      
-  </article>
+/**
+ * Service provider to override core services.
+ */
+class CustomModuleServiceProvider extends ServiceProviderBase {
 
-<figcaption>Foto de grupo de la DrupalCamp 2024 (Fuente: https://2024.drupalcamp.es)</figcaption>
-</figure>
-</article>
-</figure>
+ /**
+  * {@inheritdoc}
+  */
+ public function alter(ContainerBuilder $container) {
+   if ($container->hasDefinition('config.typed')) {
+     $definition = $container->getDefinition('config.typed');
+
+     // {@inheritdoc}
+     // @see \Drupal\custom_module\Service\WeightTypedConfigManagerService
+     $definition->setClass(WeightTypedConfigManagerService::class);
+   }
+ }
+
+}
+</code></pre><p>Esto se enganchará a los servicios y posteriormente a los tipos de datos, aquí estableceremos la clase que también vamos a crear en <code>/src/Service/WeightTypedConfigManagerService.php</code>, aunque para este servicio no es necesario crear su definición en el archivo <code>custom_module.services.yml</code>:</p>
+<pre><code class="language-php">&lt;?php
+
+namespace Drupal\custom_module\Service;
+
+use Drupal\Core\Config\TypedConfigManager;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+
+/**
+* @fix
+* TypeError: Unsupported operand types: int + array in
+* Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()
+*
+* @see https://www.drupal.org/node/3426319
+*/
+class WeightTypedConfigManagerService extends TypedConfigManager {
+
+ use StringTranslationTrait;
+
+ /**
+  * {@inheritdoc}
+  */
+ public function getDefinitions() {
+   $definitions = parent::getDefinitions();
+
+   // Inject custom weight field definition if broken.
+   if (array_key_exists('weight', $definitions) && !is_array($definitions['weight'])) {
+     $definitions['weight'] = [
+       'type' => 'integer',
+       'label' => $this->t('Weight'),
+       'constraints' => [
+         'Range' => [
+           'min' => PHP_INT_MIN,
+           'max' => PHP_INT_MAX,
+         ],
+         'FullyValidatable' => NULL,
+       ],
+     ];
+   }
+
+   return $definitions;
+ }
+
+}
+</code></pre><p>La definición es exactamente la misma a la que nos encontramos en <code>/core/config/schema/core.data_types.schema.yml</code>, y es que en este caso no hay que modificarla, sino simplemente agregarla y que el sistema la detecte y la instale. Ahora, al ejecutar <code>drush updatedb</code>, se ejecutan todos los <code>hook_update</code> sin producir el error anterior. Posteriormente, si el sistema detecta la definición de <code>weight</code> se puede eliminar este pequeño parche.</p>
 <p> </p>
-<p>Casi media hora antes de que empezara la primera charla de la tarde, llegué al hotel donde se celebraba el evento: el <em>Hotel Deloix Aqua Center 4****</em>, un lugar enorme con forma rectangular y un patio central (donde se tomó la foto grupal). En la recepción me entregaron una tarjeta identificadora y una bolsa con productos de los patrocinadores del evento, que este año incluía una toalla de mi tamaño, una bolsa para llevar el móvil a la playa y una guía turística de Benidorm.</p>
-<p>A las 15:00 asistí a la primera charla, “<em>Teoría y práctica sobre Drupal recipes</em>” impartida por Manuel Adán Bonald, quien explicó una de las nuevas funcionalidades de <em>Drupal</em>: las recetas de instalación. A las 16:00, en la misma sala, Borja Sanz Sanz ofreció la conferencia “<em>De un sistema de diseño a portales desacoplados</em>”, donde presentó un ecosistema similar al que usamos en <a href="https://jakala.es/"><em>JAKALA</em></a> para desarrollar sitios web desacoplados con <em>Drupal</em> como backend y <em>Next.js</em> como frontend.</p>
-<p>Después llegó el “Coffee Break” con una selección de aperitivos y bebidas increíblemente buenos. A las 17:00 comenzó “<em>Introducción a la Caché en Drupal</em>”, una charla impartida por Luis Ruiz Peidro, excompañero de trabajo, donde destacó la importancia de implementar la caché de Drupal de manera adecuada. Posteriormente, a las 18:15, Alejandro Arnau presentó “<em>Estructura de tu Contenido y Cache Tags en Drupal: Una Relación Vital para obtener un rendimiento superior</em>”, con un enfoque más básico sobre el uso de cachés.</p>
-<p>Para cerrar el día, fui a cenar con cerca de veinte compañeros de profesión a un restaurante hindú cercano al hotel, donde disfrutamos de una comida deliciosa antes de retirarnos.</p>
-<p> </p>
-<p><strong>Sábado 26 de octubre, segundo y último día.</strong> El día comenzó en el campo de batalla: el buffet desayuno del hotel. Después de enfrentarme a la variedad de alimentos a una hora tan temprana, asistí a la primera charla del sábado, a las 10:00: “<em>How will Starshot redefine Drupal for a new generation of users</em>” por Lauri Timmanee. Esta charla cumplió con creces mis altas expectativas, mostrando cómo <em>Starshot</em> supondrá un lavado de cara completo para Drupal.</p>
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-  
-      
-
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Lauri Timmanee en “How will Starshot redefine Drupal for a new generation of users” en la DrupalCamp 2024 (Fuente: https://2024.drupalcamp.es)" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/drupalcamp-2024-sbado-26_54093699507_o.png?itok=4mREC-it" height="1080" loading="lazy" title="Lauri Timmanee en “How will Starshot redefine Drupal for a new generation of users” en la DrupalCamp 2024 (Fuente: https://2024.drupalcamp.es)" width="1920">
-
-
-</div>
-      
-  </article>
-
-<figcaption>Lauri Timmanee en “How will Starshot redefine Drupal for a new generation of users” en la DrupalCamp 2024 (Fuente: https://2024.drupalcamp.es)</figcaption>
-</figure>
-</article>
-</figure>
-<p> </p>
-<p>A las 11:00, Dennis A. Torres presentó “<em>FactorIA de Contenidos: Generación autónoma de contenidos en Drupal</em>”, donde exploró cómo generar contenido automáticamente mediante inteligencia artificial. A las 12:00, Mauricio Dinarte explicó las bases de <em>DDEV</em> para entornos locales de <em>Drupal</em> en “<em>Local development environments for Drupal with DDEV</em>”, y a las 13:00 João Bruges Galamba continuó con “<em>AI-Assisted Module Development</em>” mostrando métodos de desarrollo con inteligencia artifical.</p>
-<p>Por la tarde, a las 15:00, asistí a la charla “<em>Seguridad de APIs en Drupal: herramientas, mejores prácticas y estrategias para asegurar las APIs</em>”, donde Jose Manuel Ortega Candel compartió valiosas estrategias para proteger APIs. A las 16:00, Óskar Calvo presentó “<em>Uso de Hux para la creación de módulos</em>”, mostrando cómo implementar oyentes de eventos en lugar de hooks en versiones anteriores a <em>Drupal 10</em>.</p>
-<p>La merienda del sábado no superó a la del día anterior, aunque mantuvo un nivel aceptable. Finalmente, la charla de Pedro González Serrano, “<em>Supplying Drupal* Projects: Billing all materials</em>”, analizó herramientas para gestionar el ecosistema <em>Drupal</em> en servidores. La jornada concluyó con una charla de cierre, sorteos y la revelación de la sede para la <em>DrupalCamp 2025</em>: <a href="https://g.co/kgs/LLgonPF">Santiago de Compostela</a>.</p>
-<p>La cena de clausura, en el rooftop de la tercera planta del hotel, fue espectacular. El catering estuvo a la altura, aunque el frío me recordó que un abrigo habría sido una buena idea.</p>
-<p> </p>
-<p><strong>En resumen</strong>, el evento fue increíble. Los ponentes, las charlas y el equipo organizador demostraron un nivel de profesionalismo impresionante. Desde aquí, mi enhorabuena a todos ellos por hacer de este año el principal evento de <em>Drupal</em> en España.</p>
-<p> </p>
-<p><strong>Agradecimientos</strong> a <a href="https://jakala.es/">JAKALA</a> por llevarme a la <em>DrupalCamp 2024</em> y por patrocinar el evento. Y, por supuesto, gracias a todos los drupaleros que conocí. Nos vemos en Santiago de Compostela el próximo año.</p>
-<figure class="caption caption-drupal-media align-center" role="group">
-<article class="media media--type-image media--view-mode-default">
-<figure class="caption caption-drupal-media" role="group">
-<article class="media media--type-image media--view-mode-default">
-  
-      
-
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Roll-up publicitario de JAKALA en la DrupalCamp 2024" class="image-style-_6-9-1920x1080" src="/sites/default/files/styles/16_9_1920x1080/public/images/drupal_camp_2024-roll_up_JAKALA.png?itok=c4-bhTFk" height="1080" loading="lazy" title="Roll-up publicitario de JAKALA en la DrupalCamp 2024" width="608">
-
-
-</div>
-      
-  </article>
-
-<figcaption>Roll-up publicitario de JAKALA en la DrupalCamp 2024</figcaption>
-</figure>
-</article>
-</figure>
-<p> </p>
+<p><strong>Conclusión.</strong> Este tipo de errores son muy interesantes a la vez que desafiantes, sobre todo si no existe ninguna documentación en Internet al respecto, pero siempre se puede implementar una solución personalizada y posteriormente probar su eliminación.</p>
 <p> </p>
 </div>
       
@@ -528,7 +548,7 @@
   
       
 
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Definición del tipo de dato weight en Drupal" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/drupal_weight_data_type_definition.png?itok=5tjuE1yz" height="270" loading="lazy" title="Definición del tipo de dato weight en Drupal" width="423">
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Error en el paquete en Linux: No se cumplen las dependencias" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/linux_package_code-cannot_satisfy_dependencies.png?itok=xjnKIfOI" height="270" loading="lazy" title="Error en el paquete en Linux: No se cumplen las dependencias" width="423">
 
 
 </div>
@@ -540,17 +560,58 @@
 <h3 class="title">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>El error <em>TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()</em> en Drupal</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>Error en el paquete de <em>Linux</em>: No se cumplen las dependencias</p>
 </div>
       
   </h3>
 <div class="description-short">
     
 
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>Si al actualizar <em>Drupal </em>te aparece el error “<em>TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()</em>” relacionado con la definición de los tipos de datos, en este artículo explico paso a paso cómo corregirlo y permitir que <em>drush updatedb</em> se ejecute correctamente, sin modificar el núcleo.</p>
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>El error “<em>No se cumplen las dependencias”</em> (O “<em>Cannot satisfy dependencies”</em> en inglés) al tratar de instalar un paquete en <em>Linux</em> significa que este requiere ciertas dependencias que no están disponibles, no son compatibles o entran en conflicto con otras versiones ya instaladas en el sistema.</p>
 </div>
       
-  </div><a href="/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager" class="link-content" hreflang="es" aria-label="El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager-&amp;gt;getDefinitionWithReplacements() en Drupal"></a>
+  </div><a href="/es/articulos/error-paquete-linux-no-cumplen-dependencias" class="link-content" hreflang="es" aria-label="Error en el paquete de Linux: No se cumplen las dependencias"></a>
+  </div>
+  </div>
+
+  
+</article>
+
+<article class="node--type-article node">
+  <div class="content">
+    
+<div class="wrapper wrapper-article wrapper-related-entity">
+    
+<div class="polaroid main-media">
+    
+
+            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
+  
+      
+
+            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Windows Package Manager (WinGet) (Fuente: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/windows_package_manager_logo-wikipedia.png?itok=XyI5bhIr" height="270" loading="lazy" title="Windows Package Manager (WinGet) (Fuente: https://commons.wikimedia.org/wiki/File:Windows_Package_Manager_logo.svg)" width="423">
+
+
+</div>
+      
+  </article>
+</div>
+      
+  </div>
+<h3 class="title">
+    
+
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>¿Cómo instalar todas las actualizaciones pendientes con un solo comando en Windows?</p>
+</div>
+      
+  </h3>
+<div class="description-short">
+    
+
+            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>Un comando de Windows permite actualizar todos los programas con actualizaciones pendientes de forma automática tras su ejecución.</p>
+</div>
+      
+  </div><a href="/es/articulos/instalar-todas-actualizaciones-pendientes-solo-comando-windows" class="link-content" hreflang="es" aria-label="¿Cómo instalar todas las actualizaciones pendientes con un solo comando en Windows?"></a>
   </div>
   </div>
 
@@ -597,47 +658,6 @@
 
   
 </article>
-
-<article class="node--type-article node">
-  <div class="content">
-    
-<div class="wrapper wrapper-article wrapper-related-entity">
-    
-<div class="polaroid main-media">
-    
-
-            <div class="field__item field field--label-hidden field--name-field-main-media"><article class="media media--type-image media--view-mode-landscape-small">
-  
-      
-
-            <div class="field__item field field--label-hidden field--name-field-media-image">  <img alt="Nube, tecnología, web, Internet, negocio, desarrollador, etc. de PxHere" class="image-style-thumbnail-landscape-423x270" src="/sites/default/files/styles/thumbnail_landscape_423x270/public/images/cloud_technology_web_internet_business_developer-from_pxhere_com.jpg?itok=q1eYnG3v" height="270" loading="lazy" title="Nube, tecnología, web, Internet, negocio, desarrollador, etc. de PxHere" width="423">
-
-
-</div>
-      
-  </article>
-</div>
-      
-  </div>
-<h3 class="title">
-    
-
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-title-html"><p>La caché back-end personalizada de <em>Drupal</em></p>
-</div>
-      
-  </h3>
-<div class="description-short">
-    
-
-            <div class="field__item field field--label-hidden clearfix text-formatted field--name-field-short-description"><p>En <em>Drupal</em>, el uso eficiente de la caché es clave para mejorar el rendimiento del sistema, especialmente cuando se manejan grandes volúmenes de datos. La caché de back-end permite gestionar datos de manera eficiente y reducir la carga del servidor.</p>
-</div>
-      
-  </div><a href="/es/articulos/cache-back-end-personalizada-drupal" class="link-content" hreflang="es" aria-label="La caché back-end personalizada de Drupal"></a>
-  </div>
-  </div>
-
-  
-</article>
 <h2 class="related-entities-align-left related-entities-subtitle"></h2>
 </div>
 
@@ -661,7 +681,7 @@
                   <a href="/es/articulos">Artículos</a>
               </li>
           <li>
-                  DrupalCamp 2024: Benidorm
+                  El Error TypeError: Unsupported Operand Types: Int + Array In Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() En Drupal
               </li>
         </ol>
   </nav>
@@ -925,7 +945,10 @@
   </div>
 
     
-    <script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=0&language=es&theme=pablo_urrea&include=eJwrSEzKyY8vLSpKTdRPz8lPSswBAEUGBy0"></script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/48","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","yaml":"yaml","php":"php"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
+<script src="/sites/default/files/js/js_v-01tRn8pEbJm9f08gZvYxY3IMnoQWi1BRsvYOoWO9c.js?scope=footer&delta=0&language=es&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+<script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
+<script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=2&language=es&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 
       </body>
 </html>

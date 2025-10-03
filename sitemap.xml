@@ -30,7 +30,7 @@
  </url>
  <url>
   <loc>https://pablourrea.github.io/sitemap.xml</loc>
-  <lastmod>2025-09-30T14:03:31+00:00</lastmod>
+  <lastmod>2025-10-03T11:50:53+00:00</lastmod>
  </url>
  <url>
   <loc>https://pablourrea.github.io/es/404</loc>
@@ -576,6 +576,32 @@
    <image:loc>https://pablourrea.github.io/sites/default/files/images/cloud_technology_web_internet_business_developer-from_pxhere_com.jpg</image:loc>
    <image:title>Nube, tecnología, web, Internet, negocio, desarrollador, etc. de PxHere</image:title>
    <image:caption>Nube, tecnología, web, Internet, negocio, desarrollador, etc. de PxHere</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager"/>
+  <lastmod>2025-10-03T11:49:11+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png</image:loc>
+   <image:title>Definición del tipo de dato weight en Drupal</image:title>
+   <image:caption>Definición del tipo de dato weight en Drupal</image:caption>
+  </image:image>
+ </url>
+ <url>
+  <loc>https://pablourrea.github.io/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager</loc>
+  <xhtml:link rel="alternate" hreflang="es" href="https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://pablourrea.github.io/en/articles/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager"/>
+  <lastmod>2025-10-03T11:49:11+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.9</priority>
+  <image:image>
+   <image:loc>https://pablourrea.github.io/sites/default/files/images/drupal_weight_data_type_definition.png</image:loc>
+   <image:title>Definición del tipo de dato weight en Drupal</image:title>
+   <image:caption>Definición del tipo de dato weight en Drupal</image:caption>
   </image:image>
  </url>
  <url>

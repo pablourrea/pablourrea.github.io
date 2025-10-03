@@ -7,6 +7,22 @@
     <language>es</language>
     
     <item>
+  <title>El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager-&gt;getDefinitionWithReplacements() en Drupal</title>
+  <link>https://pablourrea.github.io/es/articulos/error-typeerror-unsupported-operand-types-int-array-drupal-core-config-typedconfigmanager</link>
+  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager-&amp;gt;getDefinitionWithReplacements() en Drupal&lt;/span&gt;
+
+
+            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;Si al actualizar &lt;em&gt;Drupal &lt;/em&gt;te aparece el error “&lt;em&gt;TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager-&amp;gt;getDefinitionWithReplacements()&lt;/em&gt;” relacionado con la definición de los tipos de datos, en este artículo explico paso a paso cómo corregirlo y permitir que &lt;em&gt;drush updatedb&lt;/em&gt; se ejecute correctamente, sin modificar el núcleo.&lt;/p&gt;
+&lt;/div&gt;
+      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
+&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2025-10-03T11:26:33+00:00" title="Viernes, Octubre 3, 2025 - 11:26" class="datetime"&gt;Vie, 03/10/2025 - 11:26&lt;/time&gt;
+&lt;/span&gt;
+</description>
+  <pubDate>Fri, 03 Oct 2025 11:26:33 +0000</pubDate>
+    <dc:creator>Pablo Urrea</dc:creator>
+    <guid isPermaLink="false">48 at https://pablourrea.github.io</guid>
+    </item>
+<item>
   <title>La caché back-end personalizada de Drupal</title>
   <link>https://pablourrea.github.io/es/articulos/cache-back-end-personalizada-drupal</link>
   <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;La caché back-end personalizada de Drupal&lt;/span&gt;
@@ -149,22 +165,6 @@
   <pubDate>Sun, 25 Aug 2024 19:19:39 +0000</pubDate>
     <dc:creator>Pablo Urrea</dc:creator>
     <guid isPermaLink="false">35 at https://pablourrea.github.io</guid>
-    </item>
-<item>
-  <title>Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)</title>
-  <link>https://pablourrea.github.io/es/articulos/migrar-paragraphs-de-contenidos-con-migrate-version-mejorada</link>
-  <description>&lt;span class="field field--name-title field--type-string field--label-hidden"&gt;Migrar Paragraphs de Contenidos con Migrate (Versión mejorada)&lt;/span&gt;
-
-
-            &lt;div class="clearfix text-formatted field field--name-field-short-description field--label-hidden field__item"&gt;&lt;p&gt;En el artículo &lt;em&gt;Migrar Paragraphs de Contenidos con Migrate&lt;/em&gt; exploro las posibilidades para migrar &lt;em&gt;Paragraphs&lt;/em&gt; con archivos de configuración de migración independientes al nodo padre, pero es cierto que, a pesar de ser los &lt;em&gt;Paragraphs&lt;/em&gt; una entidad, no son una entidad principal y siempre dependen de un padre. En este artículo muestro como migrar &lt;em&gt;Paragraphs&lt;/em&gt; y casarlos con el padre dentro de la misma migración que este.&lt;/p&gt;
-&lt;/div&gt;
-      &lt;span class="field field--name-uid field--type-entity-reference field--label-hidden"&gt;&lt;a title="Ver perfil del usuario." href="https://pablourrea.github.io/es/user/1" class="username"&gt;Pablo Urrea&lt;/a&gt;&lt;/span&gt;
-&lt;span class="field field--name-created field--type-created field--label-hidden"&gt;&lt;time datetime="2024-08-10T14:32:17+00:00" title="Sábado, Agosto 10, 2024 - 14:32" class="datetime"&gt;Sáb, 10/08/2024 - 14:32&lt;/time&gt;
-&lt;/span&gt;
-</description>
-  <pubDate>Sat, 10 Aug 2024 14:32:17 +0000</pubDate>
-    <dc:creator>Pablo Urrea</dc:creator>
-    <guid isPermaLink="false">34 at https://pablourrea.github.io</guid>
     </item>
 
   </channel>
