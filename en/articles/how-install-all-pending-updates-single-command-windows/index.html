@@ -4,13 +4,8 @@
     <meta charset="utf-8">
 
 
-<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-QPJMYH8NQN"></script>
-<script type="text/plain" data-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QPJMYH8NQN');
-</script>
+<script src="https://www.googletagmanager.com/gtag/js?id=G-QPJMYH8NQN" async></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-QPJMYH8NQN")</script>
 <meta content="Since computers appeared in my daily life, I have to admit that I have polarized pending updates to either black or white, meaning I either checked and installed pending updates almost daily or I did it almost never. It's true that on mobile devices, it's more convenient to update all apps from the update view in the App Store or Play Store; in Linux, you can update with an apt-get command; but in Windows, I’ve always opened each third-party application one by one to check for updates. But, what if I told you that there is a command in Windows to install all pending updates for installed programs on the system? CMD, Windows' greatest ally. First, you need to access the system's CMD console as an administrator. To do so, press the “Windows 🪟” and type “CMD”. The Command Prompt will appear. To run it as an administrator, simply right-click and select “Run as administrator”. After confirming its execution as an administrator, the CMD console will open in a new window. WinGet to control them all. To check which programs have a pending update to download and install, you need to run the Windows Package Manager (WinGet for friends):winget upgradeThis command will return a table with information about the pending updates. To update a single package from this list, simply run the same command followed by the ID of the program you want to update:winget upgrade There is also an option to update the entire list with the --all parameter after the command:winget upgrade --allThis will take a moment depending on the number of updates available to download and install, and will open update windows depending on each program. If a program has an unchecked update, meaning the system is not yet aware of the pending update, you can search for updates for a program with the search command followed by the ID:winget search It is important to note that WinGet supports the following direct installer formats; any other format or additional steps will require manual actions:.exe.zip.inno.nsi.msi.wixproj.appx.msix Conclusion. Although some updates may still require your attention and you may need to open the programs, most of them are downloaded and installed automatically without any issues, so in the end, WinGet is a very useful tool for automating this maintenance task in Windows. If you need more information about WinGet, you can run winget --help in the console or visit Use the WinGet tool to install and manage applications." name="description">
 <meta content="A Windows command allows updating all programs with pending updates automatically after its execution." name="abstract">
 <meta content="Pablo Urrea,How to install all pending updates with a single command in Windows?,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Windows,Updates" name="keywords">
@@ -198,11 +193,11 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
     <title>How to install all pending updates with a single command in Windows? | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_XMc9NPyhSFKd2YmR0tdi2GJOOg009r7iJMesicVsH5o.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+    <link href="/sites/default/files/css/css_prsf-B97OjD-T2MLRIdo9Wr7MwtpMdpx_jPsGf-sXbU.css?delta=0&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy@1.0.5/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_h9fo0ul-4KYY8L39A-iUTqcVH6WIlUGzC2ZPk7jJ7Vo.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_d6YvuuVIpqAkEIdeUO_3Y_DvdegBxnCkbGZscoMMWUg.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_Ao_p-0EspyqwHZDrBo4n0PzFFyC_FLtlZwKDGPoKoqg.css?delta=3&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_9s-C-NG4Cq07etTUZJ7Kl-Nrbb0eSaYedxtCXa9RcfA.css?delta=4&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="print">
 <link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=en&theme=pablo_urrea&include=eJyNj0sOwzAIRC_k1quex8KEOiT4I0MW6elrRYmU7rpAYhg9MRNBGX0EJRePNUmNIKfIpAqJ1OFKE1vtr9BkS1xCA1wDl4mKhSgVV38XDmsnX2rPIPwhN3OaZYwtOqC2WXizGHV_Mx5Y2_5U22X8-wf4MS4wj5zgzxtCM67FNRipwtY7wdVPdzXKR_EvioNmDw" rel="stylesheet" media="all">
 
     
@@ -944,8 +939,8 @@
 
     
     <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/44","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"powershell":"powershell"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
-<script src="/sites/default/files/js/js_MHsYVWwyHlfsgllt39rlOzbtJXnuLZVfILWDPRkjazQ.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
-<script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
+<script src="/sites/default/files/js/js_FvcN1T2tuNzb8DRGSj4n3xF0gYS0wnvNkpOwc38G4gY.js?scope=footer&delta=0&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+<script src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0" type="module"></script>
 <script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=2&language=en&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 
       </body>

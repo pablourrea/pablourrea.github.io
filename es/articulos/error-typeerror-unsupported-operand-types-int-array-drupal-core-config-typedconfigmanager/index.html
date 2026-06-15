@@ -4,13 +4,8 @@
     <meta charset="utf-8">
 
 
-<script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-QPJMYH8NQN"></script>
-<script type="text/plain" data-category="analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-QPJMYH8NQN');
-</script>
+<script src="https://www.googletagmanager.com/gtag/js?id=G-QPJMYH8NQN" async></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-QPJMYH8NQN")</script>
 <meta content="Si al actualizar Drupal te aparece el error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” relacionado con la definición de los tipos de datos, en este artículo explico paso a paso cómo corregirlo y permitir que drush updatedb se ejecute correctamente, sin modificar el núcleo." name="description">
 <meta content="Si al actualizar Drupal te aparece el error “TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements()” relacionado con la definición de los tipos de datos, en este artículo explico paso a paso cómo corregirlo y permitir que drush updatedb se ejecute correctamente, sin modificar el núcleo." name="abstract">
 <meta content="Pablo Urrea,El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() en Drupal,Drupal, Drupal 6, Drupal 7, Drupal 8, Drupal 9, Drupal 10, Drupal 11,Drupal 12,Drupal,Actualizaciones" name="keywords">
@@ -198,11 +193,11 @@
 <link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
     <title>El error TypeError: Unsupported operand types: int + array in Drupal\Core\Config\TypedConfigManager->getDefinitionWithReplacements() en Drupal | Pablo Urrea</title>
-    <link href="/sites/default/files/css/css_eMkIlbFzfUiYe_kbnbxDLfhbU4xcW23XChjkdRf5YsU.css?delta=0&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+    <link href="/sites/default/files/css/css_ihBt0vjgxoWCDTqs8C49w0HJHpmlEFw8wqJkpCP7DUs.css?delta=0&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
 <link href="https://unpkg.com/highlightjs-copy@1.0.5/dist/highlightjs-copy.min.css" rel="stylesheet" media="all">
 <link href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/github-dark.min.css" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_h9fo0ul-4KYY8L39A-iUTqcVH6WIlUGzC2ZPk7jJ7Vo.css?delta=3&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
-<link href="/sites/default/files/css/css_d6YvuuVIpqAkEIdeUO_3Y_DvdegBxnCkbGZscoMMWUg.css?delta=4&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="print">
+<link href="/sites/default/files/css/css_Ao_p-0EspyqwHZDrBo4n0PzFFyC_FLtlZwKDGPoKoqg.css?delta=3&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
+<link href="/sites/default/files/css/css_9s-C-NG4Cq07etTUZJ7Kl-Nrbb0eSaYedxtCXa9RcfA.css?delta=4&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="print">
 <link href="/sites/default/files/css/css_rrWYypa-uvicaioDv01-hJE-cEg31TDc5FZolcFmMV4.css?delta=5&language=es&theme=pablo_urrea&include=eJyNj80KAyEMhF_I1lOfR6KbuqnxBxMP9ukrSxe2tx4GMgwfmfEgFKwHQeOPM3L1wF-TUQQiigkJN9LaH67xiFRcg5AclQ2LOs81JHs1JtSOttSegemNZqe485K-ZEFtqHsSK3Z7CW6htnkXnbz-_QP8BCfYYBVwo3eEc4pMUczHxg-BkV4S" rel="stylesheet" media="all">
 
     
@@ -946,8 +941,8 @@ class WeightTypedConfigManagerService extends TypedConfigManager {
 
     
     <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"es\/","currentPath":"node\/48","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"es"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"field_group":{"html_element":{"mode":"default","context":"view","settings":{"classes":"content-title","show_empty_fields":false,"id":"","element":"h1","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast","label_as_html":false}}},"enableCopyButton":true,"highlightJsLanguages":{"bash":"bash","yaml":"yaml","php":"php"},"user":{"uid":0,"permissionsHash":"17d70b489e5e0d2f9a9ea21ef6d04afa9b73993d94d9ef82798f022b59c4d8da"}}</script>
-<script src="/sites/default/files/js/js_6rYYj-0s7r-HwOKhzbTMLpZFv4Y0_tOeKxuusELIdoc.js?scope=footer&delta=0&language=es&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
-<script type="module" src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0"></script>
+<script src="/sites/default/files/js/js_6znVhi1K5onMU_f1z39c9TaTmmlnu3lZGredCOdhlEo.js?scope=footer&delta=0&language=es&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
+<script src="/modules/contrib/highlightjs_input_filter/js/highlightjs_input_filter.js?v=1.0.0" type="module"></script>
 <script src="/sites/default/files/js/js_UTNRhl07ttJ-6Y5SbAMUPRPQVj0mEyvQX7mSHaHOXxo.js?scope=footer&delta=2&language=es&theme=pablo_urrea&include=eJzLyEzPyAHikqzi-My8gtKS-LTMnJLUIv0MhIROQWJSTn58aVFRaqJ-ek5-UmIOAHQfFiY"></script>
 
       </body>
